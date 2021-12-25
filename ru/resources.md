@@ -44,9 +44,16 @@
 -------------------------------
 
 - [MDN Web Docs](https://developer.mozilla.org/)
+- [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Osolete, see Obsoleted by/Updated by links.
+- [Hypertext Transfer Protocol Version 2. HTTP/2. RFC7540](https://www.rfc-editor.org/info/rfc7540)
+- [MPEG-4 Standard](https://mpeg.chiariglione.org/standards/mpeg-4)
+- [MPEG-DASH: Dynamic Adaptive Streaming over HTTP](https://mpeg.chiariglione.org/standards/mpeg-dash)
+- [HLS: HTTP Live Streaming](https://developer.apple.com/streaming/)
 - [Media Source Extensions. W3C Draft](https://w3c.github.io/media-source/)
-- [HTTP Live Streaming. RFC8216](https://datatracker.ietf.org/doc/html/rfc8216)
+- [HTTP Live Streaming. RFC8216](https://www.rfc-editor.org/info/rfc8216)
 - [HTTP Live Streaming, 2nd Ed. Draft](https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-10)
+- [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://datatracker.ietf.org/doc/html/rfc8259)
+
 
 ### PTZ Protocols
 
@@ -69,6 +76,8 @@
 ----------------------------------------
 
 - [REST API Tutorial](https://restfulapi.net/)
+- [Video Codec Guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
+- [The "codecs" parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
 - [Video Encoding and Playback With GStreamer (Linux)](https://developer.toradex.com/knowledge-base/video-playback-linux)
 
 
