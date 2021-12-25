@@ -21,6 +21,7 @@
 
 ### Матрицы
 
+- [GalaxyCore](https://en.gcoreinc.com/)
 - [OmniVision](https://www.ovt.com/)
 - [ON Semiconductor](https://www.onsemi.com/)
 - [Silicon Optronics](https://www.soinc.com.tw/)
