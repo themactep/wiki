@@ -44,7 +44,7 @@
 -------------------------------
 
 - [MDN Web Docs](https://developer.mozilla.org/)
-- [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Osolete, see Obsoleted by/Updated by links.
+- [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Obsolete, see Obsoleted by/Updated by links.
 - [Hypertext Transfer Protocol Version 2. HTTP/2. RFC7540](https://www.rfc-editor.org/info/rfc7540)
 - [The Common Gateway Interface (CGI) Version 1.1. RFC3875](https://www.rfc-editor.org/info/rfc3875)
 - [MPEG-4 Standard](https://mpeg.chiariglione.org/standards/mpeg-4)
