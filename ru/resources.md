@@ -34,6 +34,7 @@
 Операционная система и программное обеспечение
 ----------------------------------------------
 
+- [U-Boot](https://www.denx.de/wiki/U-Boot)
 - [Buildroot](https://buildroot.org/)
 - [Bootlin](https://github.com/bootlin)
 - [HLS.js](https://github.com/video-dev/hls.js/)
