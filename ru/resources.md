@@ -22,7 +22,10 @@
 ### Матрицы
 
 - [OmniVision](https://www.ovt.com/)
-- [Sony](https://www.sony-semicon.co.jp/)
+- [ON Semiconductor](https://www.onsemi.com/)
+- [Silicon Optronics](https://www.soinc.com.tw/)
+- [SmartSens Technology](https://www.smartsenstech.com/)
+- [Sony Semiconductor](https://www.sony-semicon.co.jp/)
 
 
 ### Периферия
