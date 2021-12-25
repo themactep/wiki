@@ -21,6 +21,7 @@
 
 ### Матрицы
 
+- [Forza Silicon](https://www.forzasilicon.com/)
 - [GalaxyCore](https://en.gcoreinc.com/)
 - [OmniVision](https://www.ovt.com/)
 - [ON Semiconductor](https://www.onsemi.com/)
@@ -93,5 +94,5 @@
 
 - [CNX Software](https://www.cnx-software.com/)
 - [Unifore](https://www.unifore.net/)
-
+- [Image Sensors World](http://image-sensors-world.blogspot.com/)
 
