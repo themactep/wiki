@@ -52,7 +52,7 @@
 - [Media Source Extensions. W3C Draft](https://w3c.github.io/media-source/)
 - [HTTP Live Streaming. RFC8216](https://www.rfc-editor.org/info/rfc8216)
 - [HTTP Live Streaming, 2nd Ed. Draft](https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-10)
-- [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://datatracker.ietf.org/doc/html/rfc8259)
+- [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://www.rfc-editor.org/info/rfc8259)
 
 
 ### PTZ Protocols
