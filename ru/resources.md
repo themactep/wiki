@@ -51,19 +51,25 @@
 
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [W3cubDocs API Documentation](https://docs.w3cub.com/)
-- [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Obsolete, see Obsoleted by/Updated by links.
-- [Hypertext Transfer Protocol Version 2. HTTP/2. RFC7540](https://www.rfc-editor.org/info/rfc7540)
-- [The Common Gateway Interface (CGI) Version 1.1. RFC3875](https://www.rfc-editor.org/info/rfc3875)
 - [MPEG-4 Standard](https://mpeg.chiariglione.org/standards/mpeg-4)
 - [MPEG-DASH: Dynamic Adaptive Streaming over HTTP](https://mpeg.chiariglione.org/standards/mpeg-dash)
 - [HLS: HTTP Live Streaming](https://developer.apple.com/streaming/)
 - [Media Source Extensions. W3C Draft](https://w3c.github.io/media-source/)
 - [Microsoft Media Foundation SDK](https://docs.microsoft.com/en-us/windows/win32/medfound/microsoft-media-foundation-sdk)
-- [Real-Time Streaming Protocol Version 2.0. RFC7826](https://www.rfc-editor.org/info/rfc7826)
+- [Chromium MediaSource Tests](https://chromium.googlesource.com/external/w3c/web-platform-tests/+/refs/heads/master/media-source)
+
+### RFC
+- [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Obsolete, see Obsoleted by/Updated by links.
+- [Hypertext Transfer Protocol Version 2. HTTP/2. RFC7540](https://www.rfc-editor.org/info/rfc7540)
+- [The Common Gateway Interface (CGI) Version 1.1. RFC3875](https://www.rfc-editor.org/info/rfc3875)
+- [Scripting Media Types. RFC4329](https://www.rfc-editor.org/info/rfc4329)
+- [JavaScript Object Notation (JSON) Pointer. RFC6901](https://www.rfc-editor.org/info/rfc6901)
+- [JavaScript Object Notation (JSON) Patch. RFC6902](https://www.rfc-editor.org/info/rfc6902)
+- [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://www.rfc-editor.org/info/rfc8259)
 - [HTTP Live Streaming. RFC8216](https://www.rfc-editor.org/info/rfc8216)
 - [HTTP Live Streaming, 2nd Ed. Draft](https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-10)
-- [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://www.rfc-editor.org/info/rfc8259)
-- [Chromium MediaSource Tests](https://chromium.googlesource.com/external/w3c/web-platform-tests/+/refs/heads/master/media-source)
+- [Real-Time Streaming Protocol Version 2.0. RFC7826](https://www.rfc-editor.org/info/rfc7826)
+
 
 ### PTZ Protocols
 
