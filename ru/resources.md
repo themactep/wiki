@@ -65,6 +65,7 @@
 - [Scripting Media Types. RFC4329](https://www.rfc-editor.org/info/rfc4329)
 - [JavaScript Object Notation (JSON) Pointer. RFC6901](https://www.rfc-editor.org/info/rfc6901)
 - [JavaScript Object Notation (JSON) Patch. RFC6902](https://www.rfc-editor.org/info/rfc6902)
+- [JavaScript Object Notation (JSON) Text Sequences. RFC7464](https://www.rfc-editor.org/info/rfc7464)
 - [The JavaScript Object Notation (JSON) Data Interchange Format. RFC8259](https://www.rfc-editor.org/info/rfc8259)
 - [HTTP Live Streaming. RFC8216](https://www.rfc-editor.org/info/rfc8216)
 - [HTTP Live Streaming, 2nd Ed. Draft](https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-10)
