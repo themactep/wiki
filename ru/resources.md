@@ -58,6 +58,7 @@
 - [MPEG-DASH: Dynamic Adaptive Streaming over HTTP](https://mpeg.chiariglione.org/standards/mpeg-dash)
 - [HLS: HTTP Live Streaming](https://developer.apple.com/streaming/)
 - [Media Source Extensions. W3C Draft](https://w3c.github.io/media-source/)
+- [Microsoft Media Foundation SDK](https://docs.microsoft.com/en-us/windows/win32/medfound/microsoft-media-foundation-sdk)
 - [Real-Time Streaming Protocol Version 2.0. RFC7826](https://www.rfc-editor.org/info/rfc7826)
 - [HTTP Live Streaming. RFC8216](https://www.rfc-editor.org/info/rfc8216)
 - [HTTP Live Streaming, 2nd Ed. Draft](https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-10)
