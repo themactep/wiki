@@ -50,6 +50,7 @@
 -------------------------------
 
 - [MDN Web Docs](https://developer.mozilla.org/)
+- [W3cubDocs API Documentation](https://docs.w3cub.com/)
 - [Hypertext Transfer Protocol HTTP/1.1. RFC2616](https://www.rfc-editor.org/info/rfc2616). Obsolete, see Obsoleted by/Updated by links.
 - [Hypertext Transfer Protocol Version 2. HTTP/2. RFC7540](https://www.rfc-editor.org/info/rfc7540)
 - [The Common Gateway Interface (CGI) Version 1.1. RFC3875](https://www.rfc-editor.org/info/rfc3875)
