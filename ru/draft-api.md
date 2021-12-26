@@ -19,19 +19,6 @@
 	sampling-rate		{number}
 	codec			[mp3,opus,pcm,alaw,ulaw]
 	card			{string}
-/system
-	api-key			{string}!
-	hostname		{string}
-	loglevel		[trace,debug,info,warn,error]
-	sensor-config-path	{string}
-	sensor-configs-dir	{string}
-	www-home-dir		{string}
-	http-port		{number}
-	https-port		{number}
-	ssl-cert-path		{string}
-	ssl-key-path		{string}
-	updates-channel		[stable,beta]
-	max-buffer-size		{number}
 /image
 	api-key			{string}!
 	flip			{boolean}
@@ -94,6 +81,19 @@
 	api-key			{string}!
 	enabled			{boolean}
 	mode			[slow,fast,none]
+/system
+	api-key			{string}!
+	hostname		{string}
+	loglevel		[trace,debug,info,warn,error]
+	sensor-config-path	{string}
+	sensor-configs-dir	{string}
+	www-home-dir		{string}
+	http-port		{number}
+	https-port		{number}
+	ssl-cert-path		{string}
+	ssl-key-path		{string}
+	updates-channel		[stable,beta]
+	max-buffer-size		{number}
 /video
 	api-key			{string}!
 	channel			[0,1]!
