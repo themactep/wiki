@@ -105,3 +105,6 @@
 - [Unifore](https://www.unifore.net/)
 - [Image Sensors World](http://image-sensors-world.blogspot.com/)
 
+- <http://www.hasecu.com/>
+- <http://www.hasecurity.com/>
+- <http://www.hlong.asia/>
