@@ -96,7 +96,7 @@
 - [Video Codec Guide](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs)
 - [The "codecs" parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)
 - [Video Encoding and Playback With GStreamer (Linux)](https://developer.toradex.com/knowledge-base/video-playback-linux)
-
+- [Xiongmai Open Platform](https://oppf.xmcsrv.com/)
 
 Интересные ресурсы
 ------------------
