@@ -74,8 +74,25 @@ OpenIPC Wiki
 - <https://github.com/OpenIPC/camerasrnd>
 - <https://openwrt.org/docs/techref/hardware/soc/soc.hisilicon.hi35xx>
 
-[logo]: images/logo_openipc.png
+In Russian
+----------
+- [О проекте](ru/about.md)
+- [Установка. Шаг за шагом.](ru/installation.md)
+- [Темы для дискуссий разработчиков](ru/discussion.md)
+- [Программный переход с openipc-1.0 (OpenWrt) на openipc-2.x (Buildroot)](ru/upgrade-from-1.md)
+- [Вопросы и ответы](ru/faq.md)
+- [Хочу помочь!](ru/participate.md)
 
+### Помощь
+- [Веб-интерфейс](ru/help-webui.md)
+
+### Камеры
+- [Switcam HS-303](ru/hardware-hs303.md)
+- [Ростелекомовская камера с NAND](ru/hardware-rtk-nand.md)
+
+## Что можно прочитать про прошивку OpenIPC?
+- [Часто задаваемые вопросы и ответы на них][faq1]
+- [Заметки от Олега Левшина][faq3]
 
 #### This is an open project, so you can help, too.
 
@@ -86,4 +103,6 @@ less familiar with nuts and bolts behind the scene. That is why we set up this
 wiki and let anyone having a GitHub account to make additions and improvements
 to the knowledgebase. Read [How to contribute.](contribute.md)
 
-[English](index.md) | [Русский](ru/index.md)
+[faq1]: https://github.com/OpenIPC/camerasrnd/blob/master/docs/XM-FAQ-ru.md
+[faq3]: https://alarmsystem-cctv.ru/openipc-%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2/
+[logo]: images/logo_openipc.png

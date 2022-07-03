@@ -1,10 +1,8 @@
 # OpenIPC Wiki
-[Оглавление](index.md)
-
+[Оглавление](../index.md)
 
 SoC
 ---
-
 - https://www.augentix.com/
 - http://www.goke.com/
 - https://www.hisilicon.com/
@@ -14,7 +12,6 @@ SoC
 
 Полезные ссылки
 ---------------
-
 - https://zftlab.org/
 - http://www.ipcam.xin/
 - https://ipcamtalk.com/

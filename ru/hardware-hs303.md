@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Оглавление](index.md)
+[Оглавление](../index.md)
 
 Switcam HS-303
 --------------
