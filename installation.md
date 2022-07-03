@@ -14,16 +14,16 @@ _Hisilicon Hi3518EV100 SoC marking. Relevant symbols highlighted with yellow._
 
 Go to <https://github.com/OpenIPC/firmware> and find your SoC in the table of
 supported hardware. Make sure there is a downloadable binary file for that SoC.
-If you are lucky and there is a pre-compiled firmware file for your processor -- 
-download it to your PC.
+If you are lucky and there is a pre-compiled firmware file for your processor --
+download it onto your PC.
 
 ### Step 3. Install and set up a TFTP server.
 
 TFTP stands for _Trivial File Transfer Protocol_. As the name implies, it is a 
-very simple protocol intended for transferring files over a computer network.
-TFTP does not support authentication. Its code is so tiny and simple that
-TFTP-clients are widely used in thin-clients and embedded systems for retrieving
-bootable images from a designated boot server on the local network.
+very simple protocol intended for transferring files over a local computer
+network. TFTP does not support authentication. Its code is so tiny and simple
+that TFTP-clients are widely used in thin-clients and embedded systems for
+retrieving bootable images from a designated boot server on the local network.
 
 #### If you have Linux...
 
@@ -173,13 +173,13 @@ sf read 0x82000000 0x0 0x1000000
 tftp 0x82000000 firmware-full.bin 0x1000000
 ```
 
-* NB! Please note, that the starting address and length will be different for
-  different cameras with different Flash memory chips. Consult data sheets or
-  seek help on [our Telegram channel][telegram].
+NB! Please note, that the starting address and length will be different for
+different cameras with different Flash memory chips. Consult data sheets or
+seek help on [our Telegram channel][telegram].
 
 ### Step 7. Install OpenIPC firmware.
 
-#### Chose you flavor...
+#### Part one.
 
 No two camera models are alike. Different camera models consist of different
 sets of components. The most important of them, the central processor and the
@@ -198,8 +198,6 @@ the basic version (_Lite_) for cameras with 8 MB of flash memory and the
 advanced version (_Ultimate_) with additional features for cameras with 16 MB 
 flash memory.
 
-#### Burn the witch...
-
 As said before, firmware installation routine differs for different cameras.
 There are different memory addresses and different environment parameters,
 so before proceeding, determine what kind of SoC is in your camera, what sensor,
@@ -211,7 +209,7 @@ flash memory, do not skip this text. Read it carefully to understand the
 principle and the sequence of operations. We will provide specific commands
 for different cameras in the second part of this section.
 
-##### part one. An Example.
+##### Preparation.
 
 So, we have a guinea pig, a camera with hi3518ev100 SoC, equipped with a ov9712 
 sensor and 64 MB of RAM. 
@@ -254,7 +252,7 @@ Save updated values to flash memory.
 saveenv
 ```
 
-#### part two. Installation.
+##### Installation.
 
 First, clear the memory region at address 0x82000000, 0x1000000 bytes long, by 
 writing 0xff to it. Then retrieve kernel file for the camera from the TFTP 
@@ -315,7 +313,7 @@ in the console:
 reset
 ```
 
-##### Part two.
+#### Part two.
 
 If you have read the first part of this section (if not - go read it), then you
 already know what manipulations and why you need to do to install the OpenIPC
@@ -360,7 +358,7 @@ sf write 0x42000000 0x250000 ${filesize}
 reset
 ```
 
-###### HiSilicon
+##### HiSilicon
 
 SoC: hi3516ev200, hi3516ev300, hi3518ev300.
 
