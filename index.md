@@ -19,7 +19,6 @@ OpenIPC Wiki
 
 ### Installation
 - [Installation, step by step](installation.md)
-
 - [Installation on Goke based boards](install-goke.md)
 - [Installation on HiSilicon based boards](install-hisi.md)
 - [Installation on Novatek based boards](install-novatek.md)
