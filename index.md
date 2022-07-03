@@ -39,6 +39,7 @@ OpenIPC Wiki
 - [ACMEv2](acme-v2.md)
 - [YouTube streaming](youtube-streaming.md)
 - [WiFi XM530](wifi-xm530.md)
+- [Board manufacturers](board-manufacturers.md)
 
 ### Firmware
 - [Releases in GitHub](https://github.com/OpenIPC/firmware/releases/tag/latest)
