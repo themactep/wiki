@@ -55,6 +55,10 @@ OpenIPC Wiki
 - [U-boot](help-uboot.md)
 - [Web UI](help-webui.md)
 
+### Reference Book
+- [Board manufacturers](board-manufacturers.md)
+- [Company names](company-names.md)
+
 ### Contacts
 - [Bug reports](https://github.com/OpenIPC/firmware/issues)
 

@@ -370,7 +370,7 @@ Also set execution permission:
 
 Run `ffmpeg` with the following parameters:
 
-`ffmpeg -stream_loop -1 -i /usr/lib/silence.aac -rtsp_transport udp -thread_queue_size 64 -i rtsp://127.0.0.1:554/stream=0 -c :v copy -c:a copy -f flv rtmp://a.rtmp.youtube.com/live2/<your key>`
+`ffmpeg -stream_loop -1 -i /usr/lib/silence.aac -rtsp_transport udp -thread_queue_size 64 -i rtsp://127.0.0.1:554/stream=0 -c:v copy -c:a copy -f flv rtmp://a.rtmp.youtube.com/live2/<your key>`
 
 [H265 over HLS](https://gist.github.com/widgetii/ec275524dd621cd55774c952bee4c622)
 
