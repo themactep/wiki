@@ -1,12 +1,12 @@
 # OpenIPC Wiki
-[Table of Content](index.md)
+-[Table of Content](../index.md)
 
 OpenIPC firmware installation, step by step.
 ------------------------------
 
 ### Step 1. Determine the CPU chip
 
-![SoC Marking](images/soc-hisilicon.jpg) 
+![SoC Marking](../images/soc-hisilicon.jpg)
 
 _Hisilicon Hi3518EV100 SoC marking. Relevant symbols highlighted with yellow._
 
@@ -19,7 +19,7 @@ download it onto your PC.
 
 ### Step 3. Install and set up a TFTP server.
 
-TFTP stands for _Trivial File Transfer Protocol_. As the name implies, it is a 
+TFTP stands for _Trivial File Transfer Protocol_. As the name implies, it is a
 very simple protocol intended for transferring files over a local computer
 network. TFTP does not support authentication. Its code is so tiny and simple
 that TFTP-clients are widely used in thin-clients and embedded systems for
@@ -47,18 +47,18 @@ sudo tar -C /srv/tftp/ -xvf openipc.*.tgz
 ### Step 4. Connect to UART port of your camera.
 
 In order to make a connection to UART port you will need a
-[serial port adapter][ftdi] for your PC.
+[serial port adapter][FTDI] for your PC.
 
-__Before you connect that adapter to you camera, make sure that it's working 
+__Before you connect that adapter to you camera, make sure that it's working
 voltage is set to 3.3 volt!__
 Sometimes, you only need to flip a jumper to achieve that. But in some cases you
 might need to solder a wire, a zero Ohm resistor, or make a connection between
 two contacts with a blob of solder. Some adapters support only 5 volt. In that
-case, you will need an additional [logic level converter][tllc] connected
+case, you will need an additional [logic level converter][TLLC] connected
 between the adapter and UART port on your camera.
 
-One of the contact pads you will need to connect you adapter to is GND (ground). 
-It is easy to discover using a multimeter in continuity mode. Put one of the 
+One of the contact pads you will need to connect you adapter to is GND (ground).
+It is easy to discover using a multimeter in continuity mode. Put one of the
 leads onto a well-known exposed ground pads. Usually, these are large open
 copper contact areas around mounting screw holes, USB port housing, SD card slot
 metallic walls. Use another lead to slightly touch control pads until you see or
@@ -73,7 +73,7 @@ showing 3.3 volt. This way you won't have to test everything, and you save
 yourself from hitting say a 12 volt connector intended for infrared LED array
 or whatnot.
 
-Connect `GND` pin on your camera to `GND` pad of the adapter, connect USB 
+Connect `GND` pin on your camera to `GND` pad of the adapter, connect USB
 connector of the adapter to a USB port on your PC, start a terminal emulator
 application and connect to your adapter. Use connection speed of 115200 bps,
 no flow control, no parity bit.
@@ -98,11 +98,11 @@ a UART connection to you camera. Now you may drink the vodka.
 NB! Usually, there is a fourth contact on a UART connector marked `VCC`. It is
 used for powering camera during initial programming by manufacturer. We strongly
 advise not to power your camera though that pin, but use the OEM power connector
-for this purpose.  
+for this purpose.
 
 ### Step 5. Get access to the bootloader.
 
-Reboot the camera and try to interrupt its boot sequence in order to access 
+Reboot the camera and try to interrupt its boot sequence in order to access
 bootloader console by pressing a key combination on your computer keyboard,
 between the time the bootloader starts and before Linux kernel kicks in.
 Key combinations differ from vendor to vendor but, in most cases, it is
@@ -130,7 +130,7 @@ NB! If your bootloader does not have `tftp`, you can still make a copy of the
 original firmware. [Read here for more](help-uboot.md).
 
 Check the system environment using `printenv` command. Look for `ipaddr`,
-`netmask`, `gatewayip` and `serverip` parameters. The first three set IP address, 
+`netmask`, `gatewayip` and `serverip` parameters. The first three set IP address,
 netmask of your camera, and the IP address of the network gateway for accessing
 local network. The fourth parameter is an IP address of your TFTP server. Assign
 the values by `setenv` command (use IP addresses and netmask corresponding to
@@ -162,7 +162,7 @@ SPI Nor total size: 16MB
 To dump the original firmware, you need to save the contents of camera's flash
 memory to a file. For that, you must first load the contents into RAM. Here's
 how you do that. Initialize the Flash memory. Clean a region of RAM of 0x1000000
-bytes long starting from address 0x82000000*. Read contents of the Flash from 
+bytes long starting from address 0x82000000*. Read contents of the Flash from
 address 0x0 0x1000000 bytes long and place it into the prepared region or RAM.
 Now, you only have to export it to a file on the TFTP server.
 
@@ -193,9 +193,9 @@ and its firmware capabilities. For example, different cameras may have different
 flash memory chips installed. Some cameras may have 8MB of flash memory, while
 others may have 16MB or more. More flash memory can fit more software code and
 allow the camera to run additional services that are not available on cameras
-with less flash memory. So we decided to build two versions of our firmware: 
+with less flash memory. So we decided to build two versions of our firmware:
 the basic version (_Lite_) for cameras with 8 MB of flash memory and the
-advanced version (_Ultimate_) with additional features for cameras with 16 MB 
+advanced version (_Ultimate_) with additional features for cameras with 16 MB
 flash memory.
 
 As said before, firmware installation routine differs for different cameras.
@@ -211,8 +211,8 @@ for different cameras in the second part of this section.
 
 ##### Preparation.
 
-So, we have a guinea pig, a camera with hi3518ev100 SoC, equipped with a ov9712 
-sensor and 64 MB of RAM. 
+So, we have a guinea pig, a camera with hi3518ev100 SoC, equipped with a OV9712
+sensor and 64 MB of RAM.
 
 Connect to the camera via the UART port and access the bootloader console.
 Set the component parameters to the appropriate environment variables:
@@ -235,7 +235,7 @@ setenv bootcmd 'setenv setargs setenv bootargs ${bootargs}; run setargs; sf prob
 Set environment variables for the camera to access local network, where
 `ethaddr` is the original camera MAC address, `ipaddr` is camera's IP address
 on the network, `gatewayip` is the IP address of a router to access the network,
-`netmask` is the subnet mask, and `serverip` is am IP address of the TFTP server 
+`netmask` is the subnet mask, and `serverip` is am IP address of the TFTP server
 from step 3.
 
 ```
@@ -254,8 +254,8 @@ saveenv
 
 ##### Installation.
 
-First, clear the memory region at address 0x82000000, 0x1000000 bytes long, by 
-writing 0xff to it. Then retrieve kernel file for the camera from the TFTP 
+First, clear the memory region at address 0x82000000, 0x1000000 bytes long, by
+writing 0xff to it. Then retrieve kernel file for the camera from the TFTP
 server and place it into memory starting with address 0x82000000.
 
 The `$soc` variable in the name of the requested file is substituted with its
@@ -273,11 +273,11 @@ do not continue the procedure until all previous commands succeed. Otherwise,
 you might end up with a bricked camera!
 
 So, you've made sure that the file is downloaded and placed in the camera's RAM.
-Now you need to write it down to the flash memory. To do that, you need to get 
-access to the flash memory, then clean erase the region from address 0x50000 
+Now you need to write it down to the flash memory. To do that, you need to get
+access to the flash memory, then clean erase the region from address 0x50000
 that is 0x200000 bytes long, and copy the contents of camera's RAM from address
 0x82000000 and the size of the kernel file to the flash memory starting at
-address 0x50000. 
+address 0x50000.
 
 ```
 sf probe 0
@@ -294,7 +294,7 @@ in `bootargs` parameter.
 
 It is easy to memorize the sequence if you give it a little thought:
 clean RAM, download file there, unlock flash chip, wipe the target region in
-flash memory, write file from memory into there.  
+flash memory, write file from memory into there.
 
 ```
 mw.b 0x82000000 ff 1000000
@@ -305,7 +305,7 @@ sf write 0x82000000 0x250000 ${filesize}
 ```
 
 After both partitions have been successfully written to the flash memory and all
-necessary changes have been made to the bootloader to prepare it for starting 
+necessary changes have been made to the bootloader to prepare it for starting
 the new firmware, it is time to reboot the camera. To do that, type this command
 in the console:
 
@@ -322,7 +322,7 @@ firmware. And all you need are the commands suitable for your particular camera.
 Below are samples of such commands for cameras equipped with [Goke](#goke),
 [HiSilicon](#hisilicon), [SigmaStar/MStar](#sigmastarmstar), [XM](#xm) SoCs.
 
-##### Goke 
+##### Goke
 
 SoC: gk7202v300, gk7205v200, gk7205v300
 
@@ -471,7 +471,7 @@ reset
 If all previous steps are done correctly, your camera should start with the new
 firmware. Welcome to OpenIPC!
 
-After the first boot with the new firmware you need to clean the overlay 
+After the first boot with the new firmware you need to clean the overlay
 partition. Run this in your terminal window:
 
 ```
@@ -500,7 +500,7 @@ sf write 0x42000000 0x50000 ${filesize}
 To create the `uk` macro, join all the above commands into one line, alternating
 them with semicolons. For added protection against writing invalid data to flash
 memory in case file downloading from TFTP server fails, replace semicolon before
-`sf probe 0` with logical AND operator (`&&`). It will make macro to abort if 
+`sf probe 0` with logical AND operator (`&&`). It will make macro to abort if
 file fails to download.
 ```
 fw_setenv uk 'mw.b 0x42000000 ff 1000000; tftp 0x42000000 uImage.${soc} && sf probe 0; sf erase 0x50000 0x200000; sf write 0x42000000 0x50000 ${filesize}'
@@ -524,7 +524,7 @@ Naturally, to create your own macro, you should use the commands suitable for
 your specific camera, not mindlessly copying the above lines, but using them as
 an example and understanding the actions to be taken.
 
-NB! Although these commands create a macro to run in the bootloader console, 
+NB! Although these commands create a macro to run in the bootloader console,
 they must be executed inside Linux environment. This way we avoid the
 restrictions on the number of arguments in the `setenv` command existing in
 some older versions of the bootloader.
@@ -536,7 +536,7 @@ rebooting the camera directly from the bootloader console. It's as easy as that!
 run uk; run ur; reset
 ```
 
-[logo]: images/logo_openipc.png
-[ftdi]: https://www.google.com/search?q=ftdi+usb+ttl
-[ttlc]: https://google.com/search?q=logic+level+converter+3.3v+5v
+[logo]: ../images/logo_openipc.png
+[FTDI]: https://www.google.com/search?q=ftdi+usb+ttl
+[TLLC]: https://google.com/search?q=logic+level+converter+3.3v+5v
 [telegram]: https://t.me/OpenIPC

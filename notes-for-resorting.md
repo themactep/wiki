@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](index.md)
+-[Table of Content](../index.md)
 
 Installation: how to make OpenIPC running on certain hardware
 -------------------------------------------------------------
@@ -339,7 +339,7 @@ fi
 
 ## Direct streaming to YouTube
 
-YouTube offers not only LiveStreming but also can record this stream.
+YouTube offers not only LiveStreaming but also can record this stream.
 
 Up to 12 hours of LiveStream can be recorded.
 
