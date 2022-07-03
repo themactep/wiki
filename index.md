@@ -1,19 +1,25 @@
-# OpenIPC Wiki
-[Table of Content](index.md)
+OpenIPC Wiki
+============
 
-## Introduction
+> "Improving the world, one patch at a time."
+
+## Table of Content
+
+### Introduction
 - [About the project](menu-index.md)
 - [Supported devices](guide-supported-devices.md)
 - [Changelog](show-changelog.md)
 
-## Subprojects
+### Subprojects
 - [coupler](https://openipc.org/coupler)
 - [firmware](https://openipc.org/firmware)
 - [ipctool](https://openipc.org/ipctool)
 - [telemetry](https://openipc.org/telemetry)
 - [Firmware Partitions Calculation](https://themactep.com/tools/firmware-partitions-calculation)
 
-## Installation
+### Installation
+- [Installation, step by step](installation.md)
+
 - [Installation on Goke based boards](install-goke.md)
 - [Installation on HiSilicon based boards](install-hisi.md)
 - [Installation on Novatek based boards](install-novatek.md)
@@ -22,7 +28,7 @@
 - [Installation on XM530 based boards](install-xm530.md)
 - [Very old full manual](old-manual.md)
 
-## Usage
+### Usage
 - [System features](system-features.md)
 - [Majestic streamer](majestic-streamer.md)
 - [Microbe web interface](microbe-web.md)
@@ -35,37 +41,49 @@
 - [YouTube streaming](youtube-streaming.md)
 - [WiFi XM530](wifi-xm530.md)
 
-## Firmware
+### Firmware
 - [Releases in GitHub](https://github.com/OpenIPC/firmware/releases/tag/latest)
 - [Releases in Telegram](https://t.me/s/openipc_dev)
 - [Source code](source-code.md)
 
-## Development
+### Development
 - [Interesting tricks](dev-tricks.md)
 - [Boot device with NFS](dev-nfs-boot.md)
 - [FFMPEG usage](dev-ffmpeg-usage.md)
 - [Kernel configuration for adding new platforms](integration-kernel.md)
 
-## Help, Tips, and Tricks
+### Help, Tips, and Tricks
 - [U-boot](help-uboot.md)
 - [Web UI](help-webui.md)
 
-## Contacts
+### Contacts
 - [Bug reports](https://github.com/OpenIPC/firmware/issues)
 
-## Our resources
+### Our resources
 - [OpenIPC](https://openipc.org/)
 - [OpenCollective](https://opencollective.com/openipc)
 - [Twitter](https://twitter.com/OpenIPC)
 - [Telegram](https://t.me/openipc)
 
-## Roadmap
+### Roadmap
 - [ToDo](todo-all.md)
 - [Developers](developers.md)
 - [Notes from old sources](notes-for-resorting.md)
 
-## Resources for recycling and integration
+### Resources for recycling and integration
 - <https://github.com/OpenIPC/camerasrnd>
 - <https://openwrt.org/docs/techref/hardware/soc/soc.hisilicon.hi35xx>
 
-[logo]: ../images/logo_openipc.png
+[logo]: images/logo_openipc.png
+
+
+#### This is an open project, so you can help, too.
+
+We try to collect, organize and share as much information regarding different
+aspects of the project as we can. But sometimes we overlook things that seem
+obvious to us, developers, but are not so obvious to end-users, people who are
+less familiar with nuts and bolts behind the scene. That is why we set up this
+wiki and let anyone having a GitHub account to make additions and improvements
+to the knowledgebase. Read [How to contribute.](contribute.md)
+
+[English](index.md) | [Русский](ru/index.md)
