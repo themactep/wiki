@@ -58,6 +58,11 @@ Ingenic SoC
 
 - [Linux port of Ingenic USB boot tools](https://github.com/gcwnow/ingenic-boot)
 
+### Troubleshooting
+
+Some boards with low voltage Ingenic SoC hang on boot if connected to an UART adapter before booting.
+Either unplug the adapter from USB port or disconnect TX line on the adapter before booting.
+
 ### Zeratul
 
 #### 君正Zeratul开发 (Ingenic Zeratul Development)
