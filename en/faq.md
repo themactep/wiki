@@ -12,8 +12,8 @@ it stop the Linux kernel booting and throw you into the shell.
 
 The first thing to do is locate the flash memory chip on the camera circuit
 board. Typically this is a square chip with 8 pins labeled 25Q64 or 25Q128,
-rarely 25L64 or 25L128. If you have trouble locating the chip, try taking 
-some pictures of your board from both sides. Then ask for help 
+rarely 25L64 or 25L128. If you have trouble locating the chip, try taking
+some pictures of your board from both sides. Then ask for help
 [in our Telegram channel](https://t.me/openipc).
 __Do not try to short-circuit any random chip! It will most likely burn your camera circuit.__
 
@@ -81,7 +81,7 @@ Sign in on camera via `ssh` and run `ipctool`.
 You don't see it because initially it is not there, but there is a shell
 command of the same name.
 
-_(Since it's a shell command, it won't work from Web Console in web UI.
+_(Since it's a shell command, it won't work from Web Console in Web UI.
 Sign in to the camera via SSH and run the command in there.)_
 
 When you run this command, the latest available version of `ipctool` utility
@@ -163,7 +163,6 @@ then download it to the camera:
 tftp -g -r ipctool -l /tmp/ipctool 192.168.1.1
 chmod +x /tmp/ipctool
 /tmp/ipctool
-
 ```
 
 If the camera has access to the internet, you can try to mount a public NFS
@@ -207,6 +206,7 @@ On recent Linux systems the following error may occur:
 sh: /usr/libexec/sftp-server: not found
 scp: Connection closed
 ```
+
 In this case, add `-O` option to the command:
 ```
 scp -O ~/myfile root@192.168.1.65:/tmp/

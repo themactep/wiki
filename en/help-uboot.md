@@ -307,6 +307,5 @@ root@openipc-hi3518ev100:~# fw_setenv uk 'mw.b ${baseaddr} 0xff ${flashsize}; tf
 ```
 
 
-
 [burn]: https://github.com/OpenIPC/burn
 [telegram]: https://t.me/OpenIPC
