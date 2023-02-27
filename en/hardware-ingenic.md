@@ -54,6 +54,10 @@ Ingenic SoC
 - [T40N](../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
 - [T40XP](../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
 
+### Software
+
+- [Linux port of Ingenic USB boot tools](https://github.com/gcwnow/ingenic-boot)
+
 ### Zeratul
 
 #### 君正Zeratul开发 (Ingenic Zeratul Development)
