@@ -1,14 +1,41 @@
 Ingenic SoC
 -----------
 
+### T21 Family
+
+|             | T21L      | T21N      | T21X      | T21ZL     | 
+|-------------|-----------|-----------|-----------|-----------|
+| SoC Freq.   | 800MHz    | 800MHz    | 800MHz    | 800MHz    |
+| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 
+| RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | 
+| RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      |
+| Resolution  | 2560x2048 | 2560x2048 | 2560x2048 | 2560x2048 |
+| Package     | BGA152    | BGA152    | BGA152    | BGA152    |
+
+### T30 Family
+
+|             | T30L      | T30N      | T30X      | T30A      | 
+|-------------|-----------|-----------|-----------|-----------|
+| SoC Freq.   | 1.0GHz    | 1.0GHz    | 1.0GHz    | 1.0GHz    |
+| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 1Gbit     | 
+| RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | 
+| L1 Cache    | 64KB      | 64KB      | 64KB      | 64KB      |
+| L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     |
+| SIMD128     |           | +         | +         | +         |
+| Quick start |           | +         | +         | +         |
+| Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
+| Package     | BGA223    | BGA223    | BGA223    | BGA223    |
+
 ### T31 Family
 
 |             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      |
 |-------------|-----------|-----------|-----------|-----------|-----------|-----------|
-| SoC Freq.   | 1.0GHz    | 1.5GHz    | 1.5GHz    | 1.5GHz    | 1.5GHz    | 1.5GHz    |
+| SoC Freq.   | 1.0GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.5GHz    |
 | RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 1Gbit     | 1Gbit     |
 | RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | DDR2      | DDR3L     |
 | RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      | 1.5V      | 1.35V     |
+| L1 Cache    | 64KB      | 64KB      | 64KB      | 64KB      | 64KB      | 64KB      |
+| L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     |
 | SIMD128     |           | +         | +         | +         | +         | +         |
 | Quick start |           | +         | +         | +         | +         | +         |
 | DNN         |           | +         | +         | +         | +         | +         |
@@ -19,27 +46,53 @@ Ingenic SoC
 | I2S         |           |           |           |           |           | +         |
 | Package     | QFN88     | QFN88     | QFN88     | QFN88     | QFN88     | BGA       |
 
-### T40 & T41 Families
+### T40 Family
 
-|             | T40N       | T40XP      | T40A       | T41L       | T41        | T41N       | T41ZL      | T41ZN      | T41A       |
-|-------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-| SoC Freq.   | 1.0GHz     | 1.2GHz     | 1.5GHz     | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz |
-| RAM Size    | 1Gbit      | 2Gbit      | external   | 512Mbit    | 1Gbit      | 2Gbit      | 512Mbit    | 1Gbit      | external   |
-| RAM Type    | 32bit      | 32bit      | 32bit      |            |            |            |            |            |            |
-| RAM Voltage | 1.8V       | 1.8V       | 1.8V       |            |            |            |            |            |            |
-| Quick start | +          | +          | +          |            |            |            | +          | +          | +          |
-| DNN         | 2TOPS      | 4TOPS      | 8TOPS      | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  |
-|             |            |            |            | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  |
-| Resolution  | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         |
-| Max Sensors | 8          | 3          | 3          |            |            |            |            |            |            |
-| Battery pwr | +          | +          | +          |            |            | +          |            | +          | +          |
-| Magick ISP  | +          | +          | +          | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        |
-| RTC         | +          | +          | +          | +          | +          | +          | +          | +          | +          |
-| MAC PHY     |            |            |            | built-in   | built-in   | built-in   | external   | external   | external   |
-| 4 Mic Array | +          | +          | +          |            |            |            |            |            |            |
-| Echo cancel.| +          | +          | +          |            |            |            |            |            |            |
-| Fast stream | +          | +          | +          |            |            |            |            |            |            |
-| Package     | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        |
+|             | T40N       | T40XP      | T40A       |
+|-------------|------------|------------|------------|
+| SoC Freq.   | 1.0GHz     | 1.2GHz     | 1.0GHz     |
+| RAM Size    | 1Gbit      | 2Gbit      | external   |
+| RAM Type    | 32bit      | 32bit      | 32bit      |
+| RAM Voltage | 1.8V       | 1.8V       | 1.8V       |
+| L1 Cache    | 64KB       | 64KB       | 64KB       |
+| L2 Cache    | 128KB~1MB  | 128KB~1MB  | 128KB~1MB  |
+| SIMD512     | +          | +          | +          |
+| Quick start | +          | +          | +          |
+| DNN         | 2TOPS      | 4TOPS      | 8TOPS      |
+|             |            |            |            |
+| Resolution  | 4K         | 4K         | 4K         |
+| Max Sensors | 8          | 3          | 3          |
+| Battery pwr | +          | +          | +          |
+| Magick ISP  | +          | +          | +          |
+| RTC         | +          | +          | +          |
+| MAC PHY     |            |            |            |
+| 4 Mic Array | +          | +          | +          |
+| Echo cancel.| +          | +          | +          |
+| Fast stream | +          | +          | +          |
+| Package     | BGA356     | BGA356     | BGA356     |
+
+### T41 Family
+
+|             | T41L       | T41        | T41N       | T41ZL      | T41ZN      | T41A       |
+|-------------|------------|------------|------------|------------|------------|------------|
+| SoC Freq.   | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz |
+| RAM Size    | 512Mbit    | 1Gbit      | 2Gbit      | 512Mbit    | 1Gbit      | external   |
+| RAM Type    |            |            |            |            |            |            |
+| RAM Voltage |            |            |            |            |            |            |
+| L1 Cache    | 64KB       | 64KB       | 64KB       | 64KB       | 64KB       | 64KB       |
+| L2 Cache    | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      |
+| SIMD512     | +          | +          | +          | +          | +          | +          |
+| Quick start |            |            |            | +          | +          | +          |
+| DNN         | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  |
+|             | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  |
+| Resolution  | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         |
+| Max Sensors |            |            |            |            |            |            |
+| Battery pwr |            |            | +          |            | +          | +          |
+| Magick ISP  | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        |
+| RTC         | +          | +          | +          | +          | +          | +          |
+| MAC PHY     | built-in   | built-in   | built-in   | external   | external   | external   |
+| Package     | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        |
+
 
 ### Data Sheets
 
