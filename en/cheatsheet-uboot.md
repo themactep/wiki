@@ -75,25 +75,25 @@ sf probe 0; sf erase 0x50000 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
 #### burn rootfs from an SD card (lite)
 ```
 setenv rootfssize 0x500000; mw.b ${baseaddr} 0xff ${rootfssize};
-fatload mmc 0:1 ${baseaddr} uImage.${soc}; 
+fatload mmc 0:1 ${baseaddr} rootfs.squashfs.${soc}; 
 sf probe 0; sf erase 0x250000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 #### burn rootfs from TFTP (lite)
 ```
 setenv rootfssize 0x500000; mw.b ${baseaddr} 0xff ${rootfssize};
-tftp ${baseaddr} uImage.${soc};
+tftp ${baseaddr} rootfs.squashfs.${soc};
 sf probe 0; sf erase 0x250000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 #### burn rootfs from an SD card (ultimate)
 ```
 setenv rootfssize 0xA00000; mw.b ${baseaddr} 0xff ${rootfssize};
-fatload mmc 0:1 ${baseaddr} uImage.${soc}; 
+fatload mmc 0:1 ${baseaddr} rootfs.squashfs.${soc}; 
 sf probe 0; sf erase 0x350000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 #### burn rootfs from TFTP (ultimate)
 ```
 setenv rootfssize 0xA00000; mw.b ${baseaddr} 0xff ${rootfssize};
-tftp ${baseaddr} uImage.${soc};
+tftp ${baseaddr} rootfs.squashfs.${soc};
 sf probe 0; sf erase 0x350000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
