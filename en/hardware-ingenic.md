@@ -1,27 +1,74 @@
 Ingenic SoC
 -----------
 
+### T10 Family
+
+|             | T10L      | T10N      |
+|-------------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   |
+| SoC Freq.   | 860MHz    | 860MHz    |
+| RAM Size    | 512Mbit   | 512Mbit   |
+| RAM Type    | DDR2-800  | DDR2-800  |
+| RAM Speed   | 400Mhz    | 400Mhz    |
+| RAM Voltage | 1.8V      | 1.8V      |
+| RAM bus     | 16bit     | 16bit     |
+| L1 I-Cache  | 32KB      | 32KB      |
+| L1 D-Cache  | 32KB      | 32KB      |
+| L2 Cache    | 128KB     | 128KB     |
+| SIMD        |           | 128bit    |
+| Resolution  | 1280x960  | 1280x960  |
+| Video Main  | 1280x960  | 1280x960  |
+| Video Sub   | 640x640   | 640x640   |
+| Package     | BGA181    | BGA181    |
+
+### T15 Family
+
+### T20 Family
+
+|             | T20L      | T20N      | T20X      |
+|-------------|-----------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   | Xburst1   |
+| SoC Freq.   | 800MHz    | 800MHz    | 800MHz    |
+| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     |
+| RAM Type    | DDR2      | DDR2      | DDR2      |
+| RAM Voltage | 1.8V      | 1.8V      | 1.8V      |
+| L1 I-Cache  | 32KB      | 32KB      | 32KB      |
+| L1 D-Cache  | 32KB      | 32KB      | 32KB      |
+| L2 Cache    | 128KB     | 128KB     | 128KB     |
+| SIMD        |           | 128bit    | 128bit    |
+| Resolution  | 2048x1536 | 2048x1536 | 2048x1536 |
+| Video Main  | 2048x1536 | 2048x1536 | 2048x1536 |
+| Video Sub   | 800x800   | 800x800   | 800x800   |
+| Package     | BGA181    | BGA181    | BGA181    |
+
 ### T21 Family
 
 |             | T21L      | T21N      | T21X      | T21ZL     | 
 |-------------|-----------|-----------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
 | SoC Freq.   | 800MHz    | 800MHz    | 800MHz    | 800MHz    |
 | RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 
 | RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | 
 | RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      |
+| L1 I-Cache  | 16KB      | 16KB      | 16KB      | 16KB      |
+| L1 D-Cache  | 16KB      | 16KB      | 16KB      | 16KB      |
+| L2 Cache    | 64KB      | 64KB      | 64KB      | 64KB      |
 | Resolution  | 2560x2048 | 2560x2048 | 2560x2048 | 2560x2048 |
 | Package     | BGA152    | BGA152    | BGA152    | BGA152    |
+| Process tech| 28nm      | 28nm      | 28nm      | 28nm      |
 
 ### T30 Family
 
 |             | T30L      | T30N      | T30X      | T30A      | 
 |-------------|-----------|-----------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
 | SoC Freq.   | 1.0GHz    | 1.0GHz    | 1.0GHz    | 1.0GHz    |
 | RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 1Gbit     | 
 | RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | 
-| L1 Cache    | 64KB      | 64KB      | 64KB      | 64KB      |
+| L1 I-Cache  | 32KB      | 32KB      | 32KB      | 32KB      |
+| L1 D-Cache  | 32KB      | 32KB      | 32KB      | 32KB      |
 | L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     |
-| SIMD128     |           | +         | +         | +         |
+| SIMD        |           | 128bit    | 128bit    | 128bit    |
 | Quick start |           | +         | +         | +         |
 | Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
 | Package     | BGA223    | BGA223    | BGA223    | BGA223    |
@@ -30,13 +77,15 @@ Ingenic SoC
 
 |             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      |
 |-------------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
 | SoC Freq.   | 1.0GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.5GHz    |
 | RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 1Gbit     | 1Gbit     |
 | RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | DDR2      | DDR3L     |
 | RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      | 1.5V      | 1.35V     |
-| L1 Cache    | 64KB      | 64KB      | 64KB      | 64KB      | 64KB      | 64KB      |
+| L1 I-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
+| L1 D-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
 | L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     |
-| SIMD128     |           | +         | +         | +         | +         | +         |
+| SIMD        |           | 128bit    | 128bit    | 128bit    | 128bit    | 128bit    |
 | Quick start |           | +         | +         | +         | +         | +         |
 | DNN         |           | +         | +         | +         | +         | +         |
 | DVP/MIPI    | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  |
@@ -50,13 +99,16 @@ Ingenic SoC
 
 |             | T40N       | T40XP      | T40A       |
 |-------------|------------|------------|------------|
+| Core        | Xburst2    | Xburst2    | Xburst2    |
 | SoC Freq.   | 1.0GHz     | 1.2GHz     | 1.0GHz     |
 | RAM Size    | 1Gbit      | 2Gbit      | external   |
-| RAM Type    | 32bit      | 32bit      | 32bit      |
+| RAM Type    | DDR2       | DDR3       | DDR3L      |
+| RAM Bus     | 32bit      | 32bit      | 32bit      |
 | RAM Voltage | 1.8V       | 1.8V       | 1.8V       |
-| L1 Cache    | 64KB       | 64KB       | 64KB       |
+| L1 I-Cache  | 32KB       | 32KB       | 32KB       |
+| L1 D-Cache  | 32KB       | 32KB       | 32KB       |
 | L2 Cache    | 128KB~1MB  | 128KB~1MB  | 128KB~1MB  |
-| SIMD512     | +          | +          | +          |
+| SIMD        | 512bit     | 512bit     | 512bit     |
 | Quick start | +          | +          | +          |
 | DNN         | 2TOPS      | 4TOPS      | 8TOPS      |
 |             |            |            |            |
@@ -73,15 +125,17 @@ Ingenic SoC
 
 ### T41 Family
 
-|             | T41L       | T41        | T41N       | T41ZL      | T41ZN      | T41A       |
+|             | T41L       | T41N       | T41ZX      | T41ZL      | T41ZN      | T41A       |
 |-------------|------------|------------|------------|------------|------------|------------|
+| Core        | Xburst2    | Xburst2    | Xburst2    | Xburst2    | Xburst2    | Xburst2    |
 | SoC Freq.   | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz |
 | RAM Size    | 512Mbit    | 1Gbit      | 2Gbit      | 512Mbit    | 1Gbit      | external   |
 | RAM Type    |            |            |            |            |            |            |
 | RAM Voltage |            |            |            |            |            |            |
-| L1 Cache    | 64KB       | 64KB       | 64KB       | 64KB       | 64KB       | 64KB       |
+| L1 I-Cache  | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       |
+| L1 D-Cache  | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       |
 | L2 Cache    | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      |
-| SIMD512     | +          | +          | +          | +          | +          | +          |
+| SIMD        | 512bit     | 512bit     | 512bit     | 512bit     | 512bit     | 512bit     |
 | Quick start |            |            |            | +          | +          | +          |
 | DNN         | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  |
 |             | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  |
