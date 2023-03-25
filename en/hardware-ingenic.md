@@ -1,7 +1,7 @@
 Ingenic SoC
 -----------
 
-### T10 Family
+### T10 Family (Mango)
 
 |             | T10L      | T10N      |
 |-------------|-----------|-----------|
@@ -21,9 +21,9 @@ Ingenic SoC
 | Video Sub   | 640x640   | 640x640   |
 | Package     | BGA181    | BGA181    |
 
-### T15 Family
+### T15 Family (?)
 
-### T20 Family
+### T20 Family (Bull)
 
 |             | T20L      | T20N      | T20X      |
 |-------------|-----------|-----------|-----------|
@@ -41,7 +41,7 @@ Ingenic SoC
 | Video Sub   | 800x800   | 800x800   | 800x800   |
 | Package     | BGA181    | BGA181    | BGA181    |
 
-### T21 Family
+### T21 Family (Turkey)
 
 |             | T21L      | T21N      | T21X      | T21ZL     | 
 |-------------|-----------|-----------|-----------|-----------|
@@ -57,7 +57,7 @@ Ingenic SoC
 | Package     | BGA152    | BGA152    | BGA152    | BGA152    |
 | Process tech| 28nm      | 28nm      | 28nm      | 28nm      |
 
-### T30 Family
+### T30 Family (Monkey)
 
 |             | T30L      | T30N      | T30X      | T30A      | 
 |-------------|-----------|-----------|-----------|-----------|
@@ -73,7 +73,7 @@ Ingenic SoC
 | Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
 | Package     | BGA223    | BGA223    | BGA223    | BGA223    |
 
-### T31 Family
+### T31 Family (Swan)
 
 |             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      |
 |-------------|-----------|-----------|-----------|-----------|-----------|-----------|
