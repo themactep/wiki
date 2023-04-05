@@ -15,6 +15,14 @@ setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize};
 tftp ${baseaddr} openipc-${soc}-lite-8mb.bin;
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
+#### burn full image from a serial connection (8MB)
+```
+setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize}
+loady
+# press "Ctrl-a" followed by ":", then type
+exec !! sz --ymodem openipc-${soc}-lite-8mb.bin;
+sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
 #### burn full image from an SD card (16MB)
 ```
 setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize};
@@ -25,6 +33,14 @@ sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize};
 tftp ${baseaddr} openipc-${soc}-lite-16mb.bin;
+sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+#### burn full image from a serial connection (16MB)
+```
+setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize}
+loady
+# press "Ctrl-a" followed by ":", then type
+exec !! sz --ymodem openipc-${soc}-lite-16mb.bin;
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
@@ -114,14 +130,4 @@ sf probe 0; sf erase 0xD50000 0x2B0000
 #### erase U-Boot environment
 ```
 sf probe 0; sf erase 0x40000 0x10000
-```
-
-## Uploading via serial
-
-```
-setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize}
-loady
-# press "Ctrl-a" followed by ":", then type
-exec !! sz --ymodem <fullimage.bin>
-sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
