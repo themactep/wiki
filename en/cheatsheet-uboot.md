@@ -19,8 +19,7 @@ sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize}
 loady
-# press "Ctrl-a" followed by ":", then type
-exec !! sz --ymodem openipc-${soc}-lite-8mb.bin;
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem openipc-${soc}-lite-8mb.bin;`
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 #### burn full image from an SD card (16MB)
@@ -39,8 +38,7 @@ sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize}
 loady
-# press "Ctrl-a" followed by ":", then type
-exec !! sz --ymodem openipc-${soc}-lite-16mb.bin;
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem openipc-${soc}-lite-16mb.bin;`
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
