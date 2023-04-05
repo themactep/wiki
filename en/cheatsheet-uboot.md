@@ -15,7 +15,7 @@ setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize};
 tftp ${baseaddr} openipc-${soc}-lite-8mb.bin;
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
-#### burn full image from a serial connection (8MB)
+#### burn full image via a serial connection (8MB)
 ```
 setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize}
 loady
@@ -34,7 +34,7 @@ setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize};
 tftp ${baseaddr} openipc-${soc}-lite-16mb.bin;
 sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
-#### burn full image from a serial connection (16MB)
+#### burn full image via a serial connection (16MB)
 ```
 setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize}
 loady
@@ -54,7 +54,14 @@ sf probe 0; sf erase 0x0 ${bootsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 setenv bootsize 0x50000; mw.b ${baseaddr} 0xff ${bootsize};
 tftp ${baseaddr} u-boot-${soc}-universal.bin;
-sf probe 0; sf erase 0x0  ${bootsize}; sf write ${baseaddr} 0x0 ${filesize}
+sf probe 0; sf erase 0x0 ${bootsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+#### burn bootloader via a serial connection
+```
+setenv bootsize 0x50000; mw.b ${baseaddr} 0xff ${bootsize}
+loady
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem u-boot-${soc}-universal.bin`
+sf probe 0; sf erase 0x0 ${bootsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
 ## Burn kernel only
@@ -71,6 +78,14 @@ setenv kernelsize 0x200000; mw.b ${baseaddr} 0xff ${kernelsize};
 tftp ${baseaddr} uImage.${soc};
 sf probe 0; sf erase 0x50000 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
+#### burn kernel via a serial connection (lite)
+```
+setenv kernelsize 0x200000; mw.b ${baseaddr} 0xff ${kernelsize}
+loady
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem uImage.${soc}`
+sf probe 0; sf erase 0x0 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+
 #### burn kernel from an SD card (ultimate)
 ```
 setenv kernelsize 0x300000; mw.b ${baseaddr} 0xff ${kernelsize};
@@ -82,6 +97,13 @@ sf probe 0; sf erase 0x50000 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
 setenv kernelsize 0x300000; mw.b ${baseaddr} 0xff ${kernelsize};
 tftp ${baseaddr} uImage.${soc};
 sf probe 0; sf erase 0x50000 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+#### burn kernel via a serial connection (ultimate)
+```
+setenv kernelsize 0x300000; mw.b ${baseaddr} 0xff ${kernelsize}
+loady
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem uImage.${soc}`
+sf probe 0; sf erase 0x0 ${kernelsize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
 ## Burn rootfs only
@@ -98,6 +120,14 @@ setenv rootfssize 0x500000; mw.b ${baseaddr} 0xff ${rootfssize};
 tftp ${baseaddr} rootfs.squashfs.${soc};
 sf probe 0; sf erase 0x250000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
+#### burn rootfs via a serial connection (lite)
+```
+setenv rootfssize 0x500000; mw.b ${baseaddr} 0xff ${rootfssize}
+loady
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem rootfs.squashfs.${soc}`
+sf probe 0; sf erase 0x250000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+
 #### burn rootfs from an SD card (ultimate)
 ```
 setenv rootfssize 0xA00000; mw.b ${baseaddr} 0xff ${rootfssize};
@@ -108,6 +138,13 @@ sf probe 0; sf erase 0x350000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize
 ```
 setenv rootfssize 0xA00000; mw.b ${baseaddr} 0xff ${rootfssize};
 tftp ${baseaddr} rootfs.squashfs.${soc};
+sf probe 0; sf erase 0x350000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
+```
+#### burn rootfs via a serial connection (ultimate)
+```
+setenv rootfssize 0xA00000; mw.b ${baseaddr} 0xff ${rootfssize}
+loady
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem rootfs.squashfs.${soc}`
 sf probe 0; sf erase 0x350000 ${rootfssize}; sf write ${baseaddr} 0x0 ${filesize}
 ```
 
