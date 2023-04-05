@@ -115,3 +115,13 @@ sf probe 0; sf erase 0xD50000 0x2B0000
 ```
 sf probe 0; sf erase 0x40000 0x10000
 ```
+
+## Uploading via serial
+
+```
+setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize}
+loady
+# press "Ctrl-a" followed by ":", then type
+exec !! sz --ymodem <fullimage.bin>
+sf probe 0; sf erase 0x0 ${flashsize}; sf write ${baseaddr} 0x0 ${filesize}
+```
