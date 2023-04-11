@@ -16,3 +16,7 @@ Hardware: SoC Manufacturers
 - [Novatek](http://www.novatek.com.tw/)
 - [SigmaStar](http://www.sigmastarsemi.com/)
 - [XiongmaiTech](https://www.xiongmaitech.com/)
+
+#### Hikvision (EZVIZ) re-branded SoCs
+
+- HK-2018-11 TKVU38-1 C2237 - Fullhan
