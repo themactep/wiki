@@ -19,4 +19,10 @@ Hardware: SoC Manufacturers
 
 #### Hikvision (EZVIZ) re-branded SoCs
 
-- HK-2018-11 TKVU38-1 C2237 - Fullhan
+- HK-2013-6 - HiSilicon HI3516CV300 ?
+- HK-2013-7 - HiSilicon HI3516CV100 ?
+- HK-2015-6 - ?
+- HK-2016-3 - HiSilicon HI3516CV300
+- HK-2016-3 - HiSilicon HI3516CV300
+- HK-2018-11 - Fullhan ?
+- HK-2018-12 - Fullhan FH8852
