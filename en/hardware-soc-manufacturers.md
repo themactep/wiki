@@ -21,6 +21,7 @@ Hardware: SoC Manufacturers
 
 - HK-2013-6 - HiSilicon HI3516CV300 ?
 - HK-2013-7 - HiSilicon HI3516CV100 ?
+- HK-2015-1 - HiSilicon HI3516AV100 ?
 - HK-2015-6 - ?
 - HK-2016-3 - HiSilicon HI3516CV300
 - HK-2016-3 - HiSilicon HI3516CV300
