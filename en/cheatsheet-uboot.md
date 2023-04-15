@@ -1,6 +1,25 @@
 U-Boot Cheatsheet
 -----------------
 
+## Save firmware
+
+#### save firmware image to an SD card (8MB)
+```
+mmc dev 0;
+mmc erase 0x10 0x4000;
+setenv flashsize 0x800000; mw.b ${baseaddr} ff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+mmc write ${baseaddr} 0x10 0x4000
+```
+#### save firmware image to an SD card (16MB)
+```
+mmc dev 0;
+mmc erase 0x10 0x8000;
+setenv flashsize 0x1000000; mw.b ${baseaddr} ff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+mmc write ${baseaddr} 0x10 0x8000
+```
+
 ## Burn full image
 
 #### burn full image from an SD card (8MB)
