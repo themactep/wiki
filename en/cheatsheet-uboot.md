@@ -11,7 +11,7 @@ setenv flashsize 0x800000; mw.b ${baseaddr} ff ${flashsize};
 sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
 mmc write ${baseaddr} 0x10 0x4000
 ```
-Read it later on a desktop with `sudo dd bs=512 skip=16 count=16384 if=/dev/sdc of=./fulldump.bin`, where `/dev/sdc` is the card device.
+Read it later on a desktop with `sudo dd bs=512 skip=16 count=16384 if=/dev/sdb of=./fulldump.bin`, where `/dev/sdb` is the card device.
 #### save firmware image to an SD card (16MB)
 ```
 mmc dev 0;
@@ -20,7 +20,7 @@ setenv flashsize 0x1000000; mw.b ${baseaddr} ff ${flashsize};
 sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
 mmc write ${baseaddr} 0x10 0x8000
 ```
-Read it later on a desktop with `sudo dd bs=512 skip=16 count=32768 if=/dev/sdc of=./fulldump.bin`, where `/dev/sdc` is the card device.
+Read it later on a desktop with `sudo dd bs=512 skip=16 count=32768 if=/dev/sdb of=./fulldump.bin`, where `/dev/sdb` is the card device.
 
 ## Burn full image
 
