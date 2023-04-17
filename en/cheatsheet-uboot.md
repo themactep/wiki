@@ -187,3 +187,9 @@ sf probe 0; sf erase 0xD50000 0x2B0000
 ```
 sf probe 0; sf erase 0x40000 0x10000
 ```
+
+## Flash stock firmware
+For each `.img` file in stock bundle run
+```
+mw.b ${baseaddr} 0xff ${flashsize}; tftp ${baseaddr} <filename.img>; sf probe 0; flwrite
+```
