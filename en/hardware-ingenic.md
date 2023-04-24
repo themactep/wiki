@@ -95,7 +95,7 @@ Ingenic SoC
 | I2S         |           |           |           |           |           | +         |
 | Package     | QFN88     | QFN88     | QFN88     | QFN88     | QFN88     | BGA       |
 
-### T40 Family
+### T40 Family (Shark)
 
 |             | T40N       | T40XP      | T40A       |
 |-------------|------------|------------|------------|
