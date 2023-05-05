@@ -17,3 +17,9 @@ ipctool reginfo
 ipctool reginfo --script
 ipctool gpio scan
 ```
+
+
+### Finding IR-cut GPIO pins
+
+On the stock firmware, run `ipctool gpio scan` and open-close camera's lens with a palm oh your hand a few times. Check the
+output for changes.
