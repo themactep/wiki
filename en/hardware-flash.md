@@ -29,6 +29,7 @@ data sheet from the manufacturer.
 - MT - [Micron](https://www.micron.com/) [20h]
 - MX - [Macronix](https://www.macronix.com) [C2h]
 - N - [Numonyx](https://www.micron.com/) [20h]
+- NM - [NOR-MEM](http://www.normem.com/)[52h]
 - S - [Cypress](https://www.infineon.com/)
 - S - [Spansion](https://www.infineon.com/) [01h]
 - SST - [Microchip](https://www.microchip.com/) [00h]
