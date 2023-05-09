@@ -125,28 +125,30 @@ Ingenic SoC
 
 ### T41 Family
 
-|             | T41L       | T41N       | T41ZX      | T41ZL      | T41ZN      | T41A       |
+|             | T41LQ      | T41NQ      | T41ZL      | T41ZN      | T41ZX      | T41A       |
 |-------------|------------|------------|------------|------------|------------|------------|
 | Core        | Xburst2    | Xburst2    | Xburst2    | Xburst2    | Xburst2    | Xburst2    |
-| SoC Freq.   | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz | 1.2-1.4GHz |
-| RAM Size    | 512Mbit    | 1Gbit      | 2Gbit      | 512Mbit    | 1Gbit      | external   |
-| RAM Type    |            |            |            |            |            |            |
+| SoC Freq.   | 1.0-1.4GHz | 1.0-1.4GHz | 1.0-1.4GHz | 1.0-1.4GHz | 1.0-1.4GHz | 1.0-1.4GHz |
+| RAM Size    | 512Mbit    | 1Gbit      | 512Mbit    | 1Gbit      | 2Gbit      | ext. 4Gbit |
+| RAM Type    | DDR2       | DDR3       |            |            |            |            |
 | RAM Voltage |            |            |            |            |            |            |
 | L1 I-Cache  | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       |
 | L1 D-Cache  | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       | 32KB       |
 | L2 Cache    | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      | 128KB      |
 | SIMD        | 512bit     | 512bit     | 512bit     | 512bit     | 512bit     | 512bit     |
-| Quick start |            |            |            | +          | +          | +          |
+| Quick start |            |            | +          | +          |            | +          |
 | DNN         | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  | 1.2T@int8  |
 |             | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  | 4.8T@int4  |
 | Resolution  | 4K         | 4K         | 4K         | 4K         | 4K         | 4K         |
 | Max Sensors |            |            |            |            |            |            |
-| Battery pwr |            |            | +          |            | +          | +          |
+| Battery pwr |            |            |            | +          | +          | +          |
 | Magick ISP  | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        |
-| RTC         | +          | +          | +          | +          | +          | +          |
-| MAC PHY     | built-in   | built-in   | built-in   | external   | external   | external   |
-| Package     | BGA        | BGA        | BGA        | BGA        | BGA        | BGA        |
+| RTC         |            |            | +          | +          | +          | +          |
+| MAC PHY     | external   | external   | external   | external   | built-in   | external   |
+| Package     | QFN96      | QFN96      | BGA232     | BGA232     | BGA232     | BGA232     |
+| Pins        | Pin2Pin LQ | Pin2Pin NQ | Package 2  | Package 2  | Package 1  | Package 2  |
 
+* Package 1 and Package 2 differ only in MAC/PHY, the rest is the same.
 
 ### Data Sheets
 
