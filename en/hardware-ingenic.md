@@ -167,6 +167,12 @@ Ingenic SoC
 
 - [Linux port of Ingenic USB boot tools](https://github.com/gcwnow/ingenic-boot)
 
+### Security
+
+Known passwords for accessing U-Boot:
+_hdt2020t31_
+
+
 ### Troubleshooting
 
 Some boards with low voltage Ingenic SoC hang on boot if connected to an UART adapter before booting.
