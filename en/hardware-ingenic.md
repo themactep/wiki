@@ -75,12 +75,12 @@ Ingenic SoC
 
 ### T31 Family (Swan)
 
-|             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      |
-|-------------|-----------|-----------|-----------|-----------|-----------|-----------|
-| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
-| SoC Freq.   | 1.0GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.5GHz    |
-| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 1Gbit     | 1Gbit     |
-| RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | DDR2      | DDR3L     |
+|             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      | T31AL     |
+|-------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
+| SoC Freq.   | 1.0GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.5GHz    | 1.5GHz    |
+| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 1Gbit     | 1Gbit     | 1Gbit     |
+| RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | DDR2      | DDR3L     | DDR2      |
 | RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      | 1.5V      | 1.35V     |
 | L1 I-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
 | L1 D-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
