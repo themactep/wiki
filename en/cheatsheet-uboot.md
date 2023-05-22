@@ -1,6 +1,22 @@
 U-Boot Cheatsheet
 -----------------
 
+Make sure network setting are set correctly in U-Boot environment.
+If not, set it yourself according to your network configuration.
+```
+setenv ipaddr 192.168.1.10;
+setenv netmask 255.255.255.0;
+setenv gatewayip 192.168.1.1;
+setenv serverip 192.168.1.254;
+saveenv
+```
+Set base address for your SoC.
+Look up proper value for your SoC in a corresponding data sheet.
+```
+setenv baseaddr 0x82000000;
+saveenv
+```
+
 ## Save firmware
 
 #### save firmware image to an SD card (8MB)
@@ -21,6 +37,26 @@ sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
 mmc write ${baseaddr} 0x10 0x8000
 ```
 Read it later on a desktop with `sudo dd bs=512 skip=16 count=32768 if=/dev/sdb of=./fulldump.bin`, where `/dev/sdb` is the card device.
+#### save firmware to an TFTP (8MB)
+```
+setenv flashsize 0x800000; mw.b ${baseaddr} 0xff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+tftpput ${baseaddr} ${flashsize} backup-${soc}-nor8m.bin
+```
+if there is no `tftpput` but `tftp` then run this instead
+```
+tftp ${baseaddr} backup-${soc}-nor8m.bin ${flashsize}
+```
+#### save firmware to an TFTP (16MB)
+```
+setenv flashsize 0x1000000; mw.b ${baseaddr} 0xff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+tftpput ${baseaddr} ${flashsize} backup-${soc}-nor16m.bin
+```
+if there is no `tftpput` but `tftp` then run this instead
+```
+tftp ${baseaddr} backup-${soc}-nor16m.bin ${flashsize}
+```
 
 ## Burn full image
 
