@@ -8,10 +8,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | Package                     | OpenIPC       | 2021.02.12   | 2023.02      | HEAD         | comments                         |
 |-----------------------------|---------------|--------------|--------------|--------------|----------------------------------|
 | allwinner-osdrv-v83x        |               |              |              |              |                                  |
-| allwinner-patcher           | 0.1           |              |              |              |                                  |
 | ambarella-osdrv-s3l         |               |              |              |              |                                  |
-| ambarella_patcher           | 0.1           |              |              |              |                                  |
-| anyka_patcher               | 0.1           |              |              |              |                                  |
 | atbm603x                    | git           |              |              |              |                                  |
 | aura-httpd                  | git           |              |              |              |                                  |
 | aws-producer                | git           |              |              |              |                                  |
@@ -27,15 +24,11 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | ffmpeg                      | 4.4.2         | 4.3.3        | 4.4.3        | 4.4.3        |                                  |
 | fullhan-osdrv-fh8852v100    |               |              |              |              |                                  |
 | fullhan-osdrv-fh8852v200    |               |              |              |              |                                  |
-| fullhan_patcher             | 0.1           |              |              |              |                                  |
 | gdbserver-lite              | git           |              |              |              |                                  |
 | goke-osdrv-gk710x           |               |              |              |              |                                  |
 | goke-osdrv-gk7205v200       |               |              |              |              |                                  |
-| goke_patcher                | 0.1           |              |              |              |                                  |
 | grainmedia-osdrv-gm8136     |               |              |              |              |                                  |
-| grainmedia_patcher          | 0.1           |              |              |              |                                  |
 | hisi_gpio                   |               |              |              |              |                                  |
-| hisi_patcher                | 0.1           |              |              |              |                                  |
 | hisilicon-opensdk           | git           |              |              |              |                                  |
 | hisilicon-osdrv1-sources    |               |              |              |              |                                  |
 | hisilicon-osdrv-hi3516av100 |               |              |              |              |                                  |
@@ -52,7 +45,6 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | ingenic-osdrv-t21           |               |              |              |              |                                  |
 | ingenic-osdrv-t30           |               |              |              |              |                                  |
 | ingenic-osdrv-t31           |               |              |              |              |                                  |
-| ingenic_patcher             | 0.1           |              |              |              |                                  |
 | ipctool                     | git           |              |              |              |                                  |
 | json-c                      | 0.15-20200726 | 0.15         | 0.16         | 0.16         |                                  |
 | jsonfilter                  | git           |              |              |              |                                  |
@@ -83,11 +75,9 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | nabto                       | 5.12.0        |              |              |              |                                  |
 | node-exporter               |               |              |              |              |                                  |
 | novatek-osdrv-nt9856x       |               |              |              |              |                                  |
-| novatek_patcher             | 0.1           |              |              |              |                                  |
 | opus                        | 1.3.1         | 1.3.1        | 1.3.1        | 1.3.1        |                                  |
 | quirc                       | git           |              |              |              |                                  |
 | rockchip-osdrv-rv11xx       |               |              |              |              |                                  |
-| rockchip_patcher            | 0.1           |              |              |              |                                  |
 | rtl8188eus                  | git           |              |              |              |                                  |
 | rtl8188fu                   | git           |              |              |              |                                  |
 | rtl8192eu                   | git           |              |              |              |                                  |
@@ -96,9 +86,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | rtw-hostapd                 | git           |              |              |              |                                  |
 | sigmastar-osdrv-msc313e     |               |              |              |              |                                  |
 | sigmastar-osdrv-ssc335      |               |              |              |              |                                  |
-| sigmastar_patcher           | 0.1           |              |              |              |                                  |
 | ssd101b                     | git           |              |              |              |                                  |
-| ti_patcher                  | 0.1           |              |              |              |                                  |
 | uacme                       | 1.2.4         | 1.4.1        | 1.7.4        | 1.7.4        |                                  |
 | uqmi                        | git           |              |              |              |                                  |
 | usrsctp                     | git           |              |              |              |                                  |
@@ -109,7 +97,6 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | xiongmai-opensdk-xm510      |               |              |              |              |                                  |
 | xiongmai-osdrv-xm510        |               |              |              |              |                                  |
 | xiongmai-osdrv-xm530        |               |              |              |              |                                  |
-| xiongmai_patcher            | 0.1           |              |              |              |                                  |
 | xmdp                        | src           |              |              |              |                                  |
 | yaml-cli                    | git           |              |              |              |                                  |
 | zerotier-one                | 1.10.3        |              |              |              |                                  |
