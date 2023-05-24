@@ -19,10 +19,10 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | datalink                    | src           |              |              |              |                                  |
 | df_sdwan_edge               | dl            |              |              |              |                                  |
 | dropbear                    | 2022.82       | 2020.81      | 2022.83      | 2022.83      |                                  |
-| exfat                       | git           |
+| exfat                       | git           |              |              | 1.4.0        |                                  |
 | f2fs-tools                  | 1.13.0        | 1.14.0       | 1.15.0       | 1.15.0       |                                  |
 | fdk-aac                     | git           | 2.0.1        | 2.0.2        | 2.0.2        |                                  |
-| ffmpeg                      | 4.4.2         | 4.3.3        | 4.4.3        | 4.4.3        |                                  |
+| ffmpeg                      | 4.4.2         | 4.3.3        | 4.4.3        | 4.4.4        |                                  |
 | fullhan-osdrv-fh8852v100    |               |              |              |              |                                  |
 | fullhan-osdrv-fh8852v200    |               |              |              |              |                                  |
 | gdbserver-lite              | git           |              |              |              |                                  |
@@ -40,7 +40,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | hisilicon-osdrv-hi3516ev200 |               |              |              |              |                                  |
 | hisilicon-osdrv-hi3519v101  |               |              |              |              |                                  |
 | hisilicon-osdrv-hi3536dv100 |               |              |              |              |                                  |
-| hisilicon-osdrv1-sources    |
+| hisilicon-osdrv1-sources    |               |              |              |              |                                  |
 | i2c-telemetry               | src           |              |              |              |                                  |
 | ingenic-opensdk             |               |              |              |              |                                  |
 | ingenic-osdrv-t20           |               |              |              |              |                                  |
@@ -52,7 +52,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | json-c                      | 0.15-20200726 | 0.15         | 0.16         | 0.16         |                                  |
 | jsonfilter                  | git           |              |              |              |                                  |
 | lame                        | 3.100         | 3.100        | 3.100        | 3.100        |                                  |
-| libcurl                     | 7.76.0        | 7.79.1       | 7.88.1       | 7.88.1       |                                  |
+| libcurl                     | 7.76.0        | 7.79.1       | 7.88.1       | 8.0.1        |                                  |
 | libevent                    | git           | 2.1.12       | 2.1.12       | 2.1.12       | waiting for stable 2.2.x release |
 | libhv                       | 1.1.1         |              |              |              |                                  |
 | libogg                      | 1.3.5         | 1.3.4        | 1.3.5        | 1.3.5        |                                  |
@@ -80,29 +80,29 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | novatek-osdrv-nt9856x       |               |              |              |              |                                  |
 | opus                        | 1.3.1         | 1.3.1        | 1.3.1        | 1.3.1        |                                  |
 | quirc                       | git           |              |              |              |                                  |
-| rcjoystick                  | src           |
+| rcjoystick                  | src           |              |              |              |                                  |
 | rockchip-osdrv-rv11xx       |               |              |              |              |                                  |
 | rtl8188eus                  | git           |              |              |              |                                  |
 | rtl8188fu                   | git           |              |              |              |                                  |
-| rtl8189fs                   | git           |
+| rtl8189fs                   | git           |              |              |              |                                  |
 | rtl8192eu                   | git           |              |              |              |                                  |
-| rtl8733bu                   | git           |
+| rtl8733bu                   | git           |              |              |              |                                  |
 | rtl8812au                   | git           |              |              |              |                                  |
 | rtptools                    |               | 1.22         | 1.22         | 1.22         |                                  |
 | rtw-hostapd                 | git           |              |              |              |                                  |
-| sigmastar-osdrv-infinity6e  |
+| sigmastar-osdrv-infinity6e  |               |              |              |              |                                  |
 | sigmastar-osdrv-msc313e     |               |              |              |              |                                  |
 | sigmastar-osdrv-ssc335      |               |              |              |              |                                  |
 | ssw101b                     | git           |              |              |              |                                  |
 | uacme                       | 1.2.4         | 1.4.1        | 1.7.4        | 1.7.4        |                                  |
 | uqmi                        | git           |              |              |              |                                  |
 | usrsctp                     | git           |              |              |              |                                  |
-| vendor-patcher              | src           |
+| vendor-patcher              | src           |              |              |              |                                  |
 | vtund                       | 3.0.2         |              |              |              |                                  |
 | wifibroadcast               | 23.01         |              |              |              |                                  |
 | wireguard-linux-compat      | 1.0.20220627  | 1.0.20210606 | 1.0.20220627 | 1.0.20220627 |                                  |
 | wireguard-tools             |               | 1.0.20200827 | 1.0.20210914 | 1.0.20210914 |                                  |
-| wireless-configuration      |
+| wireless-configuration      |               |              |              |              |                                  |
 | xiongmai-opensdk-xm510      |               |              |              |              |                                  |
 | xiongmai-osdrv-xm510        |               |              |              |              |                                  |
 | xiongmai-osdrv-xm530        |               |              |              |              |                                  |
