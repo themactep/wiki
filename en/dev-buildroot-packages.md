@@ -28,7 +28,6 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | fullhan-osdrv-fh8852v100    |               |              |              |              |              |              |
 | fullhan-osdrv-fh8852v200    |               |              |              |              |              |              |
 | fullhan_patcher             | 0.1           |              |              |              |              |              |
-| fwprintenv (uboot-tools)    | 2020.04       | 2020.01      | 2020.04      | 2021.07      | 2021.07      | 2021.07      |
 | gdbserver-lite              | git           |              |              |              |              |              |
 | goke-osdrv-gk710x           |               |              |              |              |              |              |
 | goke-osdrv-gk7205v200       |               |              |              |              |              |              |
