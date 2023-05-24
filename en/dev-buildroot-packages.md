@@ -18,7 +18,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | aws-webrtc                  | git           |              |              |              |              |              |
 | baresip                     | 1.0.0         |              |              |              |              |              |
 | busybox                     |               |              |              |              |              |              |
-| busybox                     | 1.31.1        | 1.31.1       | 1.33.2       | 1.35.0       | 1.36.0       | 1.36.0       |
+| busybox                     | from BR       | 1.31.1       | 1.33.2       | 1.35.0       | 1.36.0       | 1.36.0       |
 | comgt                       | src           |              |              |              |              |              |
 | df_sdwan_edge               | dl            |              |              |              |              |              |
 | dropbear                    | 2022.82       | 2019.78      | 2020.81      | 2022.82      | 2022.83      | 2022.83      |
