@@ -1,6 +1,10 @@
 Ingenic SoC
 -----------
 
+Xburst http://www.ingenic.com.cn/en/?xburst.html
+
+
+
 ### T10 Family (Mango)
 
 |             | T10L      | T10N      |
