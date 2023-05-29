@@ -7,6 +7,12 @@ Xburst http://www.ingenic.com.cn/en/?xburst.html
 
 ### T10 Family (Mango)
 
+SoC UART pins:
+- P11 - UART0_TX
+- P12 - UART0_RTS
+- R11 - UART0_RX
+- R12 - UART0_CTS
+
 |             | T10L      | T10N      |
 |-------------|-----------|-----------|
 | Core        | Xburst1   | Xburst1   |
