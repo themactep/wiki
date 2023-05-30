@@ -255,6 +255,7 @@ Package:
 
 ### Links
 
+- https://github.com/burlizzi/ak3918ev300v18
 - https://github.com/mucephi/anyka_ak3918_kernel
 - https://github.com/ricardojlrufino/anyka_v380ipcam_experiments
 - https://github.com/ricardojlrufino/arm-anykav200-crosstool
