@@ -91,19 +91,19 @@ SoC UART pins:
 | SoC Freq.   | 1.0GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.4GHz    | 1.5GHz    | 1.5GHz    |
 | RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 1Gbit     | 1Gbit     | 1Gbit     |
 | RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | DDR2      | DDR3L     | DDR2      |
-| RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      | 1.5V      | 1.35V     |
-| L1 I-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
-| L1 D-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
-| L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     |
-| SIMD        |           | 128bit    | 128bit    | 128bit    | 128bit    | 128bit    |
-| Quick start |           | +         | +         | +         | +         | +         |
-| DNN         |           | +         | +         | +         | +         | +         |
-| DVP/MIPI    | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  |
-| Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
-| Battery pwr |           |           |           | +         | +         | +         |
-| 4 Mic Array |           |           |           |           |           | +         |
-| I2S         |           |           |           |           |           | +         |
-| Package     | QFN88     | QFN88     | QFN88     | QFN88     | QFN88     | BGA       |
+| RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      | 1.5V      | 1.35V     | ?         |
+| L1 I-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
+| L1 D-Cache  | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      | 32KB      |
+| L2 Cache    | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     | 128KB     |
+| SIMD        |           | 128bit    | 128bit    | 128bit    | 128bit    | 128bit    | ?         |
+| Quick start |           | +         | +         | +         | +         | +         | ?         |
+| DNN         |           | +         | +         | +         | +         | +         | ?         |
+| DVP/MIPI    | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  | DVP/MIPI  |
+| Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
+| Battery pwr |           |           |           | +         | +         | +         | ?         |
+| 4 Mic Array |           |           |           |           |           | +         | ?         |
+| I2S         |           |           |           |           |           | +         | ?         |
+| Package     | QFN88     | QFN88     | QFN88     | QFN88     | QFN88     | BGA       | BGA       |
 
 ### T40 Family (Shark)
 

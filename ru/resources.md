@@ -83,6 +83,7 @@
 - [CNX Software](https://www.cnx-software.com/)
 - [Unifore](https://www.unifore.net/)
 - [Image Sensors World](http://image-sensors-world.blogspot.com/)
+- [Блог о техносфере Китая на корейском языке](https://blog.naver.com/phillipyu73)
 
 - <https://www.goprawn.com/forum>
 - <http://www.hasecu.com/>
