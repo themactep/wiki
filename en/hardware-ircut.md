@@ -22,14 +22,14 @@ device that uses electromagnetic force to move the filter in front of and away f
 the image sensor.
 
 There are at least two types of sliding mechanism for moving the filter: a drawer type
-where filter moves front and back, and swing type where filter rotates around a pivoting
-point.
+where the filter moves front and back, and swing type where the filter rotates around a 
+pivoting point.
 
 A typical IR-CUT filter switcher for an IP camera will operate within a voltage range
-of 3.5V to 12V DC. The switcher uses two wires to connect to the board and it uses
-polarity reversal to change the direction of its action. The polarity change is 
-controlled via GPIO. Therefore it is important to set the correct GPIO pins in the
-camera settings.
+of 3.5V to 12V DC, sending short pulses about 100 ms long. The switcher uses two wires
+to connect to the board, and it uses polarity reversal to change the direction of its
+action. The polarity change is controlled via GPIO. Therefore, it is important to set
+the correct GPIO pins in the camera settings.
 
 Often, an infrared filter (IR) is combined with an anti-reflection filter (AR), which
 reduces the amount of reflected light and increases the sensitivity of the sensor.
