@@ -1,0 +1,85 @@
+Firmware bundles component file sizes
+-------------------------------------
+_as of 2023-06-08 17:55 EST_
+
+| bundle                                |  kernel |   rootfs |
+|---------------------------------------|--------:|---------:|
+| openipc.fh8852v100-nor-lite.tgz       | 1761712 |  4124672 |
+| openipc.fh8852v200-nor-lite.tgz       | 1516328 |  4722688 |
+| openipc.gk7102-nor-lite.tgz           | 1447376 |  4255744 |
+| openipc.gk7102s-nor-lite.tgz          | 1436584 |  4255744 |
+| openipc.gk7202v300-nor-lite.tgz       | 1871700 |  5103616 |
+| openipc.gk7205v200-nor-fpv.tgz        | 2094416 |  5009408 |
+| openipc.gk7205v200-nor-lite.tgz       | 1869504 |  5029888 |
+| openipc.gk7205v200-nor-lte.tgz        | 2094424 |  4513792 |
+| openipc.gk7205v200-nor-ultimate.tgz   | 1869576 |  6512640 |
+| openipc.gk7205v210-nor-lite.tgz       | 1869480 |  5095424 |
+| openipc.gk7205v300-nor-fpv.tgz        | 2095001 |  5009408 |
+| openipc.gk7205v300-nor-lite.tgz       | 1871617 |  5103616 |
+| openipc.gk7205v300-nor-lte.tgz        | 2095017 |  4513792 |
+| openipc.gk7205v300-nor-ultimate.tgz   | 1871633 |  6520832 |
+| openipc.gk7605v100-nor-lite.tgz       | 1856349 |  5087232 |
+| openipc.gm8136-nor-lite.tgz           | 1294488 |  5005312 |
+| openipc.hi3516av100-nand-ultimate.tgz | 1916652 | 12451840 |
+| openipc.hi3516av100-nor-lite.tgz      | 1914372 |  3764224 |
+| openipc.hi3516av100-nor-ultimate.tgz  | 1916652 |  6025216 |
+| openipc.hi3516av200-nand-ultimate.tgz | 1969726 | 12713984 |
+| openipc.hi3516av200-nor-lite.tgz      | 1970286 |  4173824 |
+| openipc.hi3516av200-nor-ultimate.tgz  | 1969726 |  6238208 |
+| openipc.hi3516av300-nor-lite.tgz      | 2030817 |  8142848 |
+| openipc.hi3516cv100-nor-lite.tgz      | 1925332 |  4370432 |
+| openipc.hi3516cv200-nor-lite.tgz      | 1763939 |  5087232 |
+| openipc.hi3516cv300-nand-ultimate.tgz | 1778043 | 14024704 |
+| openipc.hi3516cv300-nor-lite.tgz      | 1776283 |  4452352 |
+| openipc.hi3516cv300-nor-mini.tgz      | 1776315 |  4444160 |
+| openipc.hi3516cv300-nor-ultimate.tgz  | 1778043 |  6496256 |
+| openipc.hi3516cv500-nor-lite.tgz      | 2038380 |  8241152 |
+| openipc.hi3516dv100-nand-ultimate.tgz | 1922516 | 12451840 |
+| openipc.hi3516dv100-nor-lite.tgz      | 1922564 |  4849664 |
+| openipc.hi3516dv100-nor-ultimate.tgz  | 1922516 |  6049792 |
+| openipc.hi3516dv200-nor-lite.tgz      | 1856709 |  4505600 |
+| openipc.hi3516dv300-nor-lite.tgz      | 2030849 |  8142848 |
+| openipc.hi3516ev100-nor-lite.tgz      | 1693315 |  4530176 |
+| openipc.hi3516ev200-nand-ultimate.tgz | 1870668 | 13500416 |
+| openipc.hi3516ev200-nor-fpv.tgz       | 2095436 |  5181440 |
+| openipc.hi3516ev200-nor-lite.tgz      | 1870452 |  4526080 |
+| openipc.hi3516ev200-nor-lte.tgz       | 2095460 |  4689920 |
+| openipc.hi3516ev200-nor-ultimate.tgz  | 1870668 |  6742016 |
+| openipc.hi3516ev300-nand-ultimate.tgz | 1872853 | 14286848 |
+| openipc.hi3516ev300-nor-fpv.tgz       | 2095749 |  5181440 |
+| openipc.hi3516ev300-nor-lite.tgz      | 1871045 |  4509696 |
+| openipc.hi3516ev300-nor-lte.tgz       | 2095941 |  4689920 |
+| openipc.hi3516ev300-nor-ultimate.tgz  | 1872853 |  7122944 |
+| openipc.hi3518cv100-nor-lite.tgz      | 1925332 |  4370432 |
+| openipc.hi3518ev100-nor-lite.tgz      | 1925328 |  4448256 |
+| openipc.hi3518ev200-nand-ultimate.tgz | 1885635 | 14286848 |
+| openipc.hi3518ev200-nor-lite.tgz      | 1885651 |  5058560 |
+| openipc.hi3518ev200-nor-mini.tgz      | 1885611 |  4980736 |
+| openipc.hi3518ev200-nor-ultimate.tgz  | 1885635 |  6688768 |
+| openipc.hi3518ev300-nand-ultimate.tgz | 1929064 | 14811136 |
+| openipc.hi3518ev300-nor-lite.tgz      | 1929048 |  5160960 |
+| openipc.hi3518ev300-nor-ultimate.tgz  | 1929064 |  7491584 |
+| openipc.hi3519v101-nor-lite.tgz       | 1900506 |  5017600 |
+| openipc.hi3536cv100-nor-lite.tgz      | 1777887 |  3465216 |
+| openipc.hi3536dv100-nor-lite.tgz      | 1804679 |  5173248 |
+| openipc.nt98562-nor-lite.tgz          | 1994256 |  4435968 |
+| openipc.nt98566-nor-lite.tgz          | 1994224 |  4435968 |
+| openipc.rv1109-nand-lite.tgz          |         |  7602176 |
+| openipc.rv1126-nand-lite.tgz          |         |  7602176 |
+| openipc.ssc335de-nor-lite.tgz         | 1927424 |  5095424 |
+| openipc.ssc335-nor-lite.tgz           | 1931352 |  5095424 |
+| openipc.ssc337de-nor-lite.tgz         | 1927064 |  5095424 |
+| openipc.ssc337-nor-lite.tgz           | 1930488 |  5095424 |
+| openipc.ssc338q-nand-lite.tgz         | 2134056 |  9175040 |
+| openipc.ssc338q-nor-lite.tgz          | 2134056 |  6389760 |
+| openipc.t10-nor-lite.tgz              | 1589232 |  4984832 |
+| openipc.t20-nor-lite.tgz              | 1592023 |  4558848 |
+| openipc.t21-nor-lite.tgz              | 1548773 |  4763648 |
+| openipc.t30-nor-lite.tgz              | 1550179 |  5025792 |
+| openipc.t31-nor-lite.tgz              | 1838699 |  4976640 |
+| openipc.t31-nor-ultimate.tgz          | 1838687 |  6160384 |
+| openipc.t40-nor-lite.tgz              | 1908412 |  4530176 |
+| openipc.t40-nor-ultimate.tgz          | 1908873 |  5189632 |
+| openipc.xm510-nor-lite.tgz            | 1329800 |  2465792 |
+| openipc.xm530-nor-lite.tgz            | 1204800 |  3788800 |
+| openipc.xm550-nor-lite.tgz            | 1204760 |  3788800 |
