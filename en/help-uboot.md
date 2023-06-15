@@ -4,8 +4,8 @@
 Help: U-Boot
 ------------
 
-### Prepare the enviroment
-In booloader shell, check if `baseaddr` variable is already defined.
+### Prepare the environment
+In bootloader shell, check if `baseaddr` variable is already defined.
 ```
 printenv baseaddr
 ```
@@ -15,18 +15,22 @@ If it is not there, set it yourself.
 setenv baseaddr 0x80600000
 ```
 Assign the hex size of your flash chip to a variable called `flashsize`.
+Use `0x800000` for an 8MB flash chip.
 ```
-# Use 0x800000 for an 8MB flash chip, 0x1000000 for 16MB.
 setenv flashsize 0x800000
 ```
-Save these values into the environment afterwards.
+Use `0x1000000` for 16MB flash chip.
+```
+setenv flashsize 0x1000000
+```
+Save these values into the environment afterward.
 ```
 saveenv
 ```
 
 ### Saving original firmware without using TFTP.
 
-Before you start, [prepare the enviroment](#prepare-the-enviroment).
+Before you start, [prepare the environment](#prepare-the-enviroment).
 
 In the terminal program that you use to connect to the UART port, enable saving
 log file of the session. I like to use `screen` for this and my command for
@@ -37,8 +41,8 @@ $ screen -L -Logfile fulldump.log /dev/ttyUSB0 115200
 ```
 
 After connecting to the bootloader console, run a set of commands for reading
-whole amount of data from flash memory chip into RAM, and then dumping it as
-hexadecimal values into terminal window.
+the whole amount of data from flash memory chip into RAM, and then dumping it as
+hexadecimal values into a terminal window.
 
 ```
 mw.b ${baseaddr} 0xff ${flashsize}
@@ -56,7 +60,7 @@ Reading of an 8 MB flash memory should result in a ~40 MB log file, and for a
 16 MB chip the file should be twice that size.
 
 Convert the hex dump into a binary firmware file and use it for further research
-or restoring camera to its pristine state.
+or restoring the camera to its pristine state.
 
 ```
 cat fulldump.log | sed -E "s/^[0-9a-f]{8}\b: //i" | sed -E "s/ {4}.{16}\r?$//" > fulldump.hex
@@ -67,15 +71,15 @@ Use [binwalk](https://github.com/ReFirmLabs/binwalk) to unpack the binary file.
 
 ### Saving firmware via SD card.
 
-Before you start, [prepare the enviroment](#prepare-the-enviroment).
+Before you start, [prepare the environment](#prepare-the-enviroment).
 
 Sometimes your camera only has a wireless connection, which does not work
 directly from the bootloader. Very often such cameras have a microSD card slot.
-In this case you can try to save a copy of the original firmware using an
+In this case, you can try to save a copy of the original firmware using an
 SD card as an intermediary medium.
 
 Since you're going to save firmware in its binary form, the amount of data will
-be either 8 MB or 16 MB, depending on the size of camera's flash memory chip.
+be either 8 MB or 16 MB, depending on the size of the camera's flash memory chip.
 So any SD card will do, even the smallest one.
 
 Insert the card into the card slot on the camera, connect the serial adapter to
@@ -83,8 +87,8 @@ the UART port, supply power to the camera and stop the boot process to get into
 the bootloader console.
 
 Initialize access to the card, and clear some space to save firmware on.
-Data is written onto card in blocks of 512 bytes. You need to erase 16384 blocks
-to clear 8 MB, 32768 blocks for 16 MB, which are 0x4000 and 0x8000 hexadecimal,
+Data is written onto the card in blocks of 512 bytes. You need to erase 16384 blocks
+to clear 8 MB, 32768 blocks for 16 MB, which are 0x4000 and 0x8000, hexadecimal,
 respectively.
 
 Note that we are going to write directly to the card registers, bypassing the
@@ -146,13 +150,13 @@ sudo dd bs=512 skip=16 count=32768 if=/dev/sdc of=./fulldump.bin
 ### Uploading binary image via serial connection.
 
 There are cameras that only have wireless connection unavailable directly from
-bootloader. Most of such cameras also have SD card slot but some don't, or it
+bootloader. Most of such cameras also have SD card slot, but some don't, or it
 does not work for some reason, or you don't have a card, or something. Anyway,
-you still can upload a binary image onto camera and either run it, or save it
-into the flash memory. Here's how.
+you still can upload a binary image onto the camera and either run it or save
+it into the flash memory. Here's how.
 
 First of all, you'll need to install `lrzsz` package on your desktop computer.
-I presume it runs Linux and preferrably of a Debian family, that'll be easier
+I presume it runs Linux and preferably of a Debian family; that'll be easier
 on examples. So, run this command to satisfy prerequisites:
 ```
 apt install lrzsz
@@ -166,7 +170,7 @@ boot into the bootloader console interrupting booting routine with a key combo.
 Now you can run `help` and check what data transfer protocols are supported by
 your version of bootloader. If you see `loady` in the list of commands, then
 you can use ymodem protocol. Run `loady` on you camera, then press `Ctrl-a`
-followed by `:` (semi-colon). It will switch you into command line at the very
+followed by `:` (semicolon). It will switch you into command line at the very
 bottom of the screen.
 
 Enter `exec !! sz --ymodem filename.bin` where _filename.bin_ and see your file
@@ -177,11 +181,11 @@ memory image right away using `bootm`, or write it into the flash memory.
 
 ### Flashing full image via serial connection
 
-Before you start, [prepare the enviroment](#prepare-the-enviroment).
+Before you start, [prepare the environment](#prepare-the-enviroment).
 
 Download the full firmware binary for your SoC and flash chip from
-[OpenIPC web site](https://openipc.org/supported-hardware/) after submitting the
-settings form and clicking the link hidden under "Alternative method" button.
+[OpenIPC website](https://openipc.org/supported-hardware/) after submitting the settings form and clicking the link
+hidden under "Alternative method" button.
 
 ![](../images/firmware-full-binary-link.webp)
 
@@ -207,13 +211,13 @@ sf write ${baseaddr} 0x0 ${filesize}
 
 ### Reading binary image from SD card.
 
-Before you start, [prepare the enviroment](#prepare-the-enviroment).
+Before you start, [prepare the environment](#prepare-the-enviroment).
 
-If your camera supports SD card and you have `fatload` command in bootloader,
+If your camera supports SD card, and you have `fatload` command in bootloader,
 then you can read firmware binary files from an SD card.
 
-First, prepage the card: format it into FAT filesystem and place bootloader,
-kernel, and rootsf binary files there. Insert the card into camera and boot
+First, prepare the card: format it into FAT filesystem and place bootloader,
+kernel, and rootfs binary files there. Insert the card into camera and boot
 into bootloader console.
 
 Check that you have access to the card.
@@ -224,7 +228,7 @@ Then unlock access to flash memory and start writing content of the files from
 the card into the flash memory.
 
 NB! Please note that load address and names of files used in this example not
-necessarily match those for your particular camera. Consult documentation, or
+necessarily match those for your particular camera. Consult documentation or
 seek help on [our Telegram channel][telegram].
 
 Flash bootloader.
@@ -258,19 +262,19 @@ sf write ${baseaddr} 0x250000 ${filesize}
 
 Changing the bootloader is a risky operation. There's a high probability of
 turning your camera into a paperweight if something goes wrong. So before you
-flash a new bootloader you have to weigh up all the risks and benefits. In most
-cases the original bootloader plus new kernel and new operating system should
+flash a new bootloader, you have to weigh up all the risks and benefits. In most
+cases, the original bootloader plus new kernel and new operating system should
 work just fine. But there are exceptions.
 
 #### Downgrading stock firmware.
 
-Today, we see more and more cameras where access to bootloader console is
+Today we see more and more cameras where access to bootloader console is
 protected with a password. Thus, even if you connect to the camera's UART port,
 all you will see after interrupting the standard boot cycle is a prompt for
 password. In that case, a relatively safe solution is to downgrade the firmware
 to a version where the password protection was not yet implemented. For example,
-for Xiongmai cameras the bootloader password protection started popping up
-somewhere around July 2021, hence you need a firmware for your camera from an
+for Xiongmai cameras, the bootloader password protection started popping up
+somewhere around July 2021; hence you need firmware for your camera from an
 earlier date. After you successfully downgrade your camera to a password-free
 bootloader, you could install the OpenIPC firmware in a regular way.
 
@@ -290,7 +294,7 @@ __DO NOT FORGET TO MAKE A BACKUP OF YOUR ORIGINAL FIRMWARE!__
 
 ## Troubleshooting
 
-Before you start, [prepare the enviroment](#prepare-the-enviroment).
+Before you start, [prepare the environment](#prepare-the-enviroment).
 
 If you get `Too many args` error while trying to set an environment variable,
 try to do that from within Linux using `fw_setenv` instead of `setenv` in U-boot.
