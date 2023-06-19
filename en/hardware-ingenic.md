@@ -181,7 +181,7 @@ SoC UART pins:
 
 Known passwords for accessing U-Boot:
 - _hdt2020t31_
-- _gvqrs*&_
+- _gvqrs*&_ (Galayou G7 camera)
 
 ### Troubleshooting
 
