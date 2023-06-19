@@ -179,6 +179,7 @@ SoC UART pins:
 ### Security
 
 Known passwords for accessing U-Boot:
+- _HI2105CHIP_ (CamHi cameras)
 - _hdt2020t31_
 - _gvqrs*&_ (Galayou G7 camera)
 
