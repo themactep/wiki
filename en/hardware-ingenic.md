@@ -180,8 +180,8 @@ SoC UART pins:
 ### Security
 
 Known passwords for accessing U-Boot:
-_hdt2020t31_
-
+- _hdt2020t31_
+- _gvqrs*&_
 
 ### Troubleshooting
 
@@ -189,6 +189,8 @@ Some boards with low voltage Ingenic SoC hang on boot if connected to an UART ad
 Either unplug the adapter from USB port or disconnect TX line on the adapter before booting.
 
 ### Zeratul
+
+
 
 #### 君正Zeratul开发 (Ingenic Zeratul Development)
 - [序言及目录](https://caibiao-lee.blog.csdn.net/article/details/115302346) Preface and Table of Contents
