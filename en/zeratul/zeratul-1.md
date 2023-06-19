@@ -1,8 +1,8 @@
 Ingenic Zeratul Development
 ===========================
 
-I. Partition Boot Analysis
---------------------------
+Partition Boot Analysis
+-----------------------
 
 ### Global partitioning
 

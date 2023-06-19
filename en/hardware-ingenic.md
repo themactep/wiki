@@ -4,7 +4,6 @@ Ingenic SoC
 Xburst http://www.ingenic.com.cn/en/?xburst.html
 
 
-
 ### T10 Family (Mango)
 
 SoC UART pins:
@@ -183,20 +182,48 @@ Known passwords for accessing U-Boot:
 - _hdt2020t31_
 - _gvqrs*&_ (Galayou G7 camera)
 
+### Tools
+
+#### Cloner
+
+The latest version of the cloner is available from <ftp://ftp.ingenic.com.cn/> FTP server.
+- [cloner for Ubuntu Linux](ftp://ftp.ingenic.com.cn/DevSupport/Tools/USBBurner/loner-latest-ubuntu.tar.gz)
+- [cloner for Windows](ftp://ftp.ingenic.com.cn/DevSupport/Tools/USBBurner/loner-latest-windows.zip)
+
+Connect the camera to a PC with a trusted USB cable. Some USB cables are used only for supplying power, 
+so they lack data lines. Invalidate bootloader in flash memory chip by shorting pins 5 and 6 on that chip,
+then power on the camera.
+
+##### Troubleshooting
+
+For _ZB25VQ128_ flash chip, add these lines to `configs/spiflashinfo.cfg`:
+```
+[norkey47]
+value="DS_ZB25VQ128ASIG,0x5e4018,16777216,256,32768,0x60,1,0,800,5,7,100,50,0x03,0,3,0,0x6B,8,3,5,0x02,0,3,0,0x32,0,3,5,0x52,0,3,0,0x06,0,0,0,-1,-1,-1,-1,0x31,1,1,1,1,0,0x35,1,1,1,1,0,0x05,0,1,0,1,0"
+```
+
 ### Troubleshooting
 
-Some boards with low voltage Ingenic SoC hang on boot if connected to an UART adapter before booting.
-Either unplug the adapter from USB port or disconnect TX line on the adapter before booting.
+Some boards with low-voltage Ingenic SoC freeze on boot if connected to an UART adapter before booting due 
+to power backfeeding from UART to the SoC. Either unplug the adapter from USB port or disconnect TX line 
+on the adapter before booting.
 
 ### Zeratul
 
-
-
 #### 君正Zeratul开发 (Ingenic Zeratul Development)
-- [序言及目录](https://caibiao-lee.blog.csdn.net/article/details/115302346) Preface and Table of Contents
-- [分区启动分析](https://caibiao-lee.blog.csdn.net/article/details/114748921) Partition Startup Analysis
-- [uboot启动分析](https://caibiao-lee.blog.csdn.net/article/details/115245258) UBoot Boot Analysis
-- [升级回滚](https://caibiao-lee.blog.csdn.net/article/details/115303900) Upgrade Rollback
-- [图像效果调试](https://caibiao-lee.blog.csdn.net/article/details/115308705) Image Effect Debugging
-- [快速启动优化](https://caibiao-lee.blog.csdn.net/article/details/115327992) Quick Startup Optimization
-- [为什么禁止使用system](https://caibiao-lee.blog.csdn.net/article/details/114757327) Why the system is prohibited
+- [序言及目录](https://caibiao-lee.blog.csdn.net/article/details/115302346)
+- [分区启动分析](https://caibiao-lee.blog.csdn.net/article/details/114748921)
+- [uboot启动分析](https://caibiao-lee.blog.csdn.net/article/details/115245258)
+- [升级回滚](https://caibiao-lee.blog.csdn.net/article/details/115303900)
+- [图像效果调试](https://caibiao-lee.blog.csdn.net/article/details/115308705)
+- [快速启动优化](https://caibiao-lee.blog.csdn.net/article/details/115327992)
+- [为什么禁止使用system](https://caibiao-lee.blog.csdn.net/article/details/114757327)
+
+#### Ingenic Zeratul Development (English translation by Deepl)
+- [Part 0. Preface and Table of Contents](zeratul/zeratul-0.md)
+- [Part 1. Partition Boot Analysis](zeratul/zeratul-1.md)
+- [Part 2. U-Boot Boot Analysis](zeratul/zeratul-2.md) 
+- [Part 3. Upgrade and Rollback](zeratul/zeratul-3.md)
+- [Part 4. Image Effects Debugging](zeratul/zeratul-4.md)
+- [Part 5. Quick Start Optimization](zeratul/zeratul-5.md)
+- [Part 6. Why disable the use of system_system function to disable the reason](zeratul/zeratul-6.md)
