@@ -5,7 +5,7 @@
 
 List of OpenIPC Buildroot packages and shadowed original Buildroot packages per releases.
 
-| Package                     | OpenIPC       | 2021.02.12   | 2023.02      | HEAD         | comments                         |
+| Package                     | OpenIPC       | 2021.02.12   | 2023.02.1    | HEAD         | comments                         |
 |-----------------------------|---------------|--------------|--------------|--------------|----------------------------------|
 | allwinner-osdrv-v83x        |               |              |              |              |                                  |
 | ambarella-osdrv-s3l         |               |              |              |              |                                  |
@@ -22,7 +22,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | exfat                       | git           |              |              | 1.4.0        |                                  |
 | f2fs-tools                  | 1.13.0        | 1.14.0       | 1.15.0       | 1.15.0       |                                  |
 | fdk-aac                     | git           | 2.0.1        | 2.0.2        | 2.0.2        |                                  |
-| ffmpeg                      | 4.4.2         | 4.3.3        | 4.4.3        | 4.4.4        |                                  |
+| ffmpeg                      | 4.4.2         | 4.3.3        | 4.4.4        | 4.4.4        |                                  |
 | fullhan-osdrv-fh8852v100    |               |              |              |              |                                  |
 | fullhan-osdrv-fh8852v200    |               |              |              |              |                                  |
 | gdbserver-lite              | git           |              |              |              |                                  |
@@ -84,7 +84,7 @@ List of OpenIPC Buildroot packages and shadowed original Buildroot packages per 
 | rockchip-osdrv-rv11xx       |               |              |              |              |                                  |
 | rtl8188eus                  | git           |              |              |              |                                  |
 | rtl8188fu                   | git           |              |              |              |                                  |
-| rtl8189fs                   | git           |              |              |              |                                  |
+| rtl8189fs                   | git           |              | git          | git          |                                  |
 | rtl8192eu                   | git           |              |              |              |                                  |
 | rtl8733bu                   | git           |              |              |              |                                  |
 | rtl8812au                   | git           |              |              |              |                                  |
