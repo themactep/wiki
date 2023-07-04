@@ -10,6 +10,7 @@
 - [Frigate](https://frigate.video/)
 - [motion](https://motion-project.github.io/)
 - [motionEyeOS](https://github.com/motioneye-project/motioneyeos)
+- [OS-NVR](https://github.com/OSNVR/OS-NVR)
 - [Shinobi](https://shinobi.video/)
 - [ZoneMinder](https://zoneminder.com/)
 
