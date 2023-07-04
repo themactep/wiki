@@ -1,8 +1,7 @@
 # OpenIPC Wiki
 [Table of Content](../index.md)
 
-Video Recording Software
-------------------------
+### Video Security and Webcam Recording Software
 
 - [Blue Iris](https://blueirissoftware.com/)
 - [camera.ui](https://github.com/seydx/camera.ui)
@@ -17,3 +16,13 @@ Video Recording Software
 - [tinyCam Monitor](https://tinycammonitor.com/)
 - [ZoneMinder](https://zoneminder.com/)
 - [Xeoma](https://felenasoft.com/xeoma/en/)
+
+### Object Detection Services
+
+- [Deepstack](https://www.deepstack.ai/)
+- [DOODS2](https://github.com/snowzach/doods2)
+
+###  Machine Learning Frameworks
+
+- [PyTorch](https://pytorch.org/)
+- [TensorFlow](https://www.tensorflow.org/)
