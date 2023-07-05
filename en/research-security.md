@@ -8,6 +8,23 @@ Very often stock firmware provides access to its operating system but the
 access is closed with an undisclosed password. We can recover a cryptographic
 hash of that password while extracting a copy of the firmware image.
 
+Usually, password hashes reside in `/etc/password` or in `/etc/shadow` files.
+How to determine which one you need? First, look inside `/etc/password`:
+```
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+hacker:!:666:666:hell:/dev/null:/usr/sbin/nologin
+user:$1$bh2njiGH$4duacOMcXDh6myANzbZTf.:1000:1000:/home/user:/bin/sh
+guest::9999:9999:guest:/tmp:/bin/jail
+...
+```
+Each line starts with a username followed by a password and other fields delimited 
+by semicolons. An empty password field means the account can be accessed without 
+any password. An asterisk (`*`) or an exclamation mark (`!`) means the account 
+don't have any password and no password will access the account. 
+While `x` means the password is in `/etc/shadow` file.
+
 ### Password hash
 
 ```
