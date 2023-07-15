@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../index.md)
+[Table of Content](../README.md)
 
 For XM vendor boards with XM530/XM550 SoC ONLY !!!
 --------------------------------------------------
@@ -67,4 +67,3 @@ md.b 0x81000000 0x800000
 ```
 
 use `cut -b 11-57 | xxd -r -p` to reconstruct the binary from `md.b` output
-
