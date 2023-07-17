@@ -58,6 +58,35 @@ if there is no `tftpput` but `tftp` then run this instead
 tftp ${baseaddr} backup-${soc}-nor16m.bin ${flashsize}
 ```
 
+#### saving firmware via hex dump
+
+In the terminal program that you use to connect to the UART port, enable saving log file of the session.
+```
+$ screen -L -Logfile fulldump.log /dev/ttyUSB0 115200
+```
+Set flash memory size. Use this command for a 8MB flash chip
+```
+setenv flashsize 0x800000
+```
+or this one for a 16MB flash chip
+```
+setenv flashsize 0x1000000
+```
+Then dump the memory content into the console:
+```
+mw.b ${baseaddr} 0xff ${flashsize};
+sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
+md.b ${baseaddr} ${flashsize}
+```
+Since the process of reading is going to take a considerable amount of time (literally hours), you might want to disconnect from the terminal session to avoid accidental keystrokes contaminating the output. Press Ctrl-a followed by d to detach the session from active terminal. Run screen -r when you need to reconnect it later, after the size of the log file will stop growing. Reading of an 8 MB flash memory should result in a ~40 MB log file, and for a 16 MB chip the file should be twice that size.
+
+Convert the hex dump into a binary firmware file and use it for further research or restoring the camera to its pristine state.
+```
+cat fulldump.log | sed -E "s/^[0-9a-f]{8}\b: //i" | sed -E "s/ {4}.{16}\r?$//" > fulldump.hex
+xxd -revert -plain fulldump.hex fulldump.bin
+```
+Use binwalk to unpack the binary file.
+
 ## Burn full image
 
 #### burn full image from a SD card (8MB)
