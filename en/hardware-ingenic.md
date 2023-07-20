@@ -84,6 +84,13 @@ SoC UART pins:
 
 ### T31 Family (Swan)
 
+> The main difference between T31 and T30/T21 are:
+> 1. FrameSource module adds `fcrop` parameter to realize pre-crop function.
+>     The process for T30/T21 is Scale->Crop, and the process for T31 is Crop->Scale->Crop.
+> 2. The image encoding parameters are different. The T31 encoding channel parameters are
+>    different from T30/T21 parameters, adding the gop attribute (`gopAttr`) to the original
+>    encoder attribute (`encAttr`) and the code rate controller attribute (`rcAttr`).
+
 |             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      | T31AL     |
 |-------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
 | Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
