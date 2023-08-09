@@ -74,6 +74,7 @@ Hardware: SoC Manufacturers
 | Hi3516CV300 |            |             |           |           |
 | Hi3516CV500 |            | SCC336(D/Q) |           |           |
 | Hi3516DV100 |            |             |           |           |
+| Hi3516DV200 | GK7605V100 |
 | Hi3516DV300 |            | SCC338(G/Q) |           |           |
 | Hi3516EV100 |            |             |           |           |
 | Hi3516EV200 | GK7205V200 | SCC335      |           |           |
