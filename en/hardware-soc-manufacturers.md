@@ -88,3 +88,4 @@ Hardware: SoC Manufacturers
 | Hi3556AV200 |            |             |           |           |
 | SD3403V100  | GK7608V100 |             | SS928V100 | 108DC2910 |
 
+Goke GK7205V200 SDK replaces HiSilicon HI3516EV200 SDK.
