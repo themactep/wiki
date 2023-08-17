@@ -59,3 +59,7 @@ IPC Glossary
 - UPnP - Universal Plug and Play
 - USB - Universal Serial Bus
 - WDR - Wide Dynamic Range
+
+
+- SDK offline mode - image is stored in DDR
+- SDK online mode - image is not stored in DDR
