@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Wyze integration
 ----------------
@@ -10,20 +10,20 @@ This is where we'll be writing down our guide to flashing new devices and report
 
 * Exposure does not work well https://github.com/OpenIPC/majestic/issues/102
 * ~~SD card does not work in the U-Boot (power is available)~~ fixed
-* ~~Problem with loading u-boot from an microSD card. It doesn't reach the promt. Not only on wyze v3 (https://t.me/openipc_modding/179369), but also on another board T31L (https://t.me/openipc/47739). Most likely it will be IMPOSSIBLE, because in the camera there is a microSD power management MOSFET, which must be turned on BEFORE booting from the card (the experiment with not fully loaded u-boot was possible due to direct power supply to the microSD card, bypassing the transistor). Please confirm my version if it is not possible otherwise.~~ impossible without modification (direct 3.3V power supply to the microSD card reader)
+* ~~Problem with loading u-boot from a microSD card. It doesn't reach the promt. Not only on wyze v3 (https://t.me/openipc_modding/179369), but also on another board T31L (https://t.me/openipc/47739). Most likely it will be IMPOSSIBLE, because in the camera there is a microSD power management MOSFET, which must be turned on BEFORE booting from the card (the experiment with not fully loaded u-boot was possible due to direct power supply to the microSD card, bypassing the transistor). Please confirm my version if it is not possible otherwise.~~ impossible without modification (direct 3.3V power supply to the microSD card reader)
 
 ### Known camera modifications
 * WYZE Cam v3
 
-| MODEL | IC | FCC ID | PCB VER | SoC | WIFI | NOTES |
-| --- | --- | --- | --- | --- | --- | --- |
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V1.2_20200715 | T31X | SDIO: Realtek 8189FTV | MAC: 7C:78:B2:99:6E:BA https://youtu.be/jm4wze_HY78 |
-| WYZEC3 | 25466-WYZEC3 | 2AUIUWYZEC3 | WYZEV3_T31GC2053 V1.4_20201010 | T31ZX | SDIO: Realtek 8189FTV | https://t.me/openipc/49957 MAC: 7C:78:B2:69:95:C9 https://youtu.be/t7Nzo-KXTH0 |
-| WYZEC3 | 25466-WYZEC3B | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX | SDIO: Realtek 8189FTV | MAC: D0:3F:27:46:A7:7B https://t.me/openipc/38728 https://t.me/openipc/38753 |
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX | SDIO: AltoBeam 6031 | https://t.me/openipc/49049 https://t.me/openipc/49050 |
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.03_20211206 | T31X | SDIO: AltoBeam 6031 | https://t.me/openipc/45444 https://t.me/openipc/48942|
-| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031 | https://t.me/openipc/43299 https://t.me/openipc/38755 https://t.me/openipc/38757 |
-| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031 | MAC:D0:3F:27:4F:23:19 https://youtu.be/VkqX9yg0odU |
+| MODEL  | IC            | FCC ID       | PCB VER                         | SoC      | WIFI                  | NOTES                                                                            |
+|--------|---------------|--------------|---------------------------------|----------|-----------------------|----------------------------------------------------------------------------------|
+| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V1.2_20200715  | T31X     | SDIO: Realtek 8189FTV | MAC: 7C:78:B2:99:6E:BA https://youtu.be/jm4wze_HY78                              |
+| WYZEC3 | 25466-WYZEC3  | 2AUIUWYZEC3  | WYZEV3_T31GC2053 V1.4_20201010  | T31ZX    | SDIO: Realtek 8189FTV | https://t.me/openipc/49957 MAC: 7C:78:B2:69:95:C9 https://youtu.be/t7Nzo-KXTH0   |
+| WYZEC3 | 25466-WYZEC3B | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO: Realtek 8189FTV | MAC: D0:3F:27:46:A7:7B https://t.me/openipc/38728 https://t.me/openipc/38753     |
+| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO: AltoBeam 6031   | https://t.me/openipc/49049 https://t.me/openipc/49050                            |
+| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.03_20211206 | T31X     | SDIO: AltoBeam 6031   | https://t.me/openipc/45444 https://t.me/openipc/48942                            |
+| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031   | https://t.me/openipc/43299 https://t.me/openipc/38755 https://t.me/openipc/38757 |
+| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031   | MAC:D0:3F:27:4F:23:19 https://youtu.be/VkqX9yg0odU                               |
 
 ### OpenIPC installation
 * Disassemble camera and connect UART adapter
@@ -67,7 +67,7 @@ Output sample:
 128+0 records out
 65536 bytes (64.0KB) copied, 0.027560 seconds, 2.3MB/s
 ```
-If there wasn't errors, then you backed up such partitions:
+If there weren't errors, then you backed up such partitions:
 ```
 [root@WCV3:~]# cat /proc/mtd 
 dev:    size   erasesize  name
@@ -95,8 +95,8 @@ drwxrwxrwt    3 root     root            60 May 14 01:50 ..
 -rwxr-xr-x    1 root     root        393216 May 14 01:52 mtdblock6.bin
 -rwxr-xr-x    1 root     root         65536 May 14 01:52 mtdblock7.bin
 ```
-Save and keep this files in safe place.
-In case of any errors you should perform this operation once again, probably with microSD card replacement.
+Save and keep these files in a safe place.
+In case of any errors, you should perform this operation once again, probably with microSD card replacement.
 
 * Determine SoC model
 
@@ -155,7 +155,7 @@ firmware:
 
 Open https://openipc.org/cameras/vendors/ingenic and choose appropriate SoC model from list.
 
-In this case our choice Ingenic T31X.
+In this case, our choice is Ingenic T31X.
 
 In Downloads section find `OpenIPC Bootloader for Ingenic T31X` and download it.
 
@@ -196,7 +196,7 @@ During power on the camera press `Ctrl+C` several times until it shows OpenIPC p
 
 Then issue command `run setnor16m`
 
-After you press the Enter key the camera will almost immediately restart and you will have to catch the prompt again.
+After you press the Enter key, the camera will almost immediately restart, and you will have to catch the prompt again.
 
 Then issue command 
 
@@ -234,7 +234,7 @@ SF: 5079040 bytes @ 0x350000 Written: OK
 --->write spend 8949 ms
 
 ```
-If everything went well, issue the command `reset` and camera should start boot OpenIPC.
+If everything went well, issue the command `reset` and camera should start to boot OpenIPC.
 
 ```
 Welcome to OpenIPC

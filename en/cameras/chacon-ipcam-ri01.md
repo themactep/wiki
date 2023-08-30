@@ -1,4 +1,8 @@
-# Chacon IPCAM-RI01
+# OpenIPC Wiki
+[Table of Content](../../README.md)
+
+Chacon IPCAM-RI01
+-----------------
 
 ![device_chacon_ipcam-ri01](https://user-images.githubusercontent.com/1659543/149517176-6803cc6d-600f-4841-ac9b-69eeea23d0a6.jpg)
 
