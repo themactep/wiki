@@ -4,7 +4,7 @@
 VH-NM-H33C
 ----------
 
-- Manufacturer: [Vanhuav](https://vanhua.en.alibaba.com/)
+- Manufacturer: [Vanhua](https://vanhua.en.alibaba.com/)
 - Board: T31_GC2083_MINIONS_V1_1
 - SoC: Ingenic T31L
 - Sensor: Galaxycore GC2083

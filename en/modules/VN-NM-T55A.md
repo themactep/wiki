@@ -5,7 +5,7 @@ VN-NM-T55A (T55A-D07Y-1)
 ------------------------
 
 
-- Manufacturer: [Vanhuav](https://vanhua.en.alibaba.com/)
+- Manufacturer: [Vanhua](https://vanhua.en.alibaba.com/)
 - Board: T41Q_G42_V1_1
 - SoC: Ingenic T41LQ
 - Sensor: Galaxycore GC5603
