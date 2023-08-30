@@ -40,7 +40,7 @@ Hardware: SoC Manufacturers
   - MSC316
 - [Nextchip](http://www.nextchip.com/)
 - [Novatek](http://www.novatek.com.tw/)
-- [Realtek]()
+- [Realtek](https://www.realtek.com/)
   - RTS3915N
   - RTS3916
   - RTS3916N
@@ -51,7 +51,12 @@ Hardware: SoC Manufacturers
 - [SigmaStar](http://www.sigmastarsemi.com/)
   - SSC337DE
   - SSC339G
+- [VATICS](https://www.vatics.com/)
+  - M3881C
 - [XiongmaiTech](https://www.xiongmaitech.com/)
+  - XM510
+  - XM530
+  - XM550
 
 #### Hikvision (EZVIZ) re-branded SoCs
 
