@@ -1,8 +1,8 @@
 # OpenIPC Wiki
 [Table of Content](../README.md)
 
-Frequesntly Asked Questions
----------------------------
+Frequently Asked Questions
+--------------------------
 
 ### How to get into bootloader shell?
 
@@ -11,7 +11,7 @@ camera requires a bootloader password that you don't know, you can still make
 it stop the Linux kernel booting and throw you into the shell.
 
 The first thing to do is locate the flash memory chip on the camera circuit
-board. Typically this is a square chip with 8 pins labeled 25Q64 or 25Q128,
+board. Typically, this is a square chip with 8 pins labeled 25Q64 or 25Q128,
 rarely 25L64 or 25L128. If you have trouble locating the chip, try taking
 some pictures of your board from both sides. Then ask for help
 [in our Telegram channel](https://t.me/openipc).
@@ -26,6 +26,8 @@ by the embossed or drawn dot next to it.
 
 ![](../images/flash-pins.webp)
 ![](../images/flash-pins-2.webp)
+
+[This hack in details](https://cybercx.co.nz/bypassing-bios-password/)
 
 ### How to reset camera settings from U-Boot
 
@@ -57,7 +59,7 @@ successful login.
 
 __Please note, it will also change your ssh root password!__
 
-### How to reset password for SSH/Web UI?
+### How to reset the password for SSH/Web UI?
 
 Create a serial connection to the camera using a UART adapter and a terminal
 program. After turning on the camera, press Ctrl-C to interrupt the boot
@@ -87,14 +89,14 @@ Sign in to the camera via SSH and run the command in there.)_
 When you run this command, the latest available version of `ipctool` utility
 gets downloaded into `/tmp/` directory and runs from there. Since the utility
 resides in `/tmp/`, it won't survive a reboot, thus won't take any useful space
-on the camera afterwards.
+on the camera afterward.
 
 If you need to know what is in the command, search for `ipctool` in the
 `/etc/profile` file.
 
 ### How to dump full firmware to an NFS share
 
-This could work if you are lucky, you gained access into Linux shell on stock
+This could work if you are lucky, you gained access to Linux shell on stock
 firmware, and it does support NFS mounting:
 ```
 fw=$(mktemp -t)
@@ -149,7 +151,7 @@ Enable and configure Core Dump in the menu Majestic > Majestic Debugging.
 
 You need to specify GPIO pins to control the infrared filter.
 Settings for some cameras can be found in [this table][1].
-If your camera is not in the table then you need to use [ipctool utility][2].
+If your camera is not in the table, then you need to use [ipctool utility][2].
 
 The OpenIPC firmware will automatically download the latest version of the
 utility to the /tmp directory when `ipctool` is invoked first time.
@@ -166,7 +168,7 @@ chmod +x /tmp/ipctool
 ```
 
 If the camera has access to the internet, you can try to mount a public NFS
-sharing and run the utility from it, without downloading to the camera:
+sharing and run the utility from there, without downloading it to the camera:
 ```
 mkdir -p /tmp/utils
 mount -o nolock 95.217.179.189:/srv/ro /tmp/utils/
@@ -183,17 +185,12 @@ the IR filter curtain.
 Enter the values obtained in the settings for the night mode Majestic. If the
 pink tint still persists, you may need to enable sensor signal inversion.
 
-Don't forget to add the camera model and found GPIO values to the table!
+Don't forget to add the camera model and the found GPIO values to the table!
 
-#### Is it possible to display the data for setting the auto focus of lenses
-instead of the current sample_af in the standard /metrics?
-
-No, this is a difficult algorithm, it does not have a sense to run it this way.
-
-#### Copy files from Linux system to camera
+#### Copy files from a Linux system to camera
 
 Sometimes you need to transfer files to the camera. In addition to the above
-method using NFS (Network File System) you can use the standard Linux `scp`
+method using NFS (Network File System), you can use the standard Linux `scp`
 command to copy files over an SSH connection:
 ```
 scp ~/myfile root@192.168.1.65:/tmp/
@@ -201,7 +198,7 @@ scp ~/myfile root@192.168.1.65:/tmp/
 This command will copy `myfile` from the home directory to the `/tmp/`
 directory on the camera.
 
-On recent Linux systems the following error may occur:
+On modern Linux systems, the following error may occur:
 ```
 sh: /usr/libexec/sftp-server: not found
 scp: Connection closed
