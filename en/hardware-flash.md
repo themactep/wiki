@@ -22,6 +22,7 @@ data sheet from the manufacturer.
 - EN - [Eon](https://www.esmt.com.tw/) [1Ch]
 - F - [ESMT](https://www.esmt.com.tw/) [8Ch]
 - F - [Fudan](https://www.fm-chips.com/) [A1h]
+- FM - [Fidelix](https://www.fidelix.co.kr/) [F8h]
 - GD - [GigaDevice](https://www.gigadevice.com/) [C8h]
 - IS - [ISSI](https://www.issi.com/) [9Dh]
 - KH - [KHIC](https://www.macronix.com.hk/) [C2h]
