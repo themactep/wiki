@@ -23,6 +23,7 @@ data sheet from the manufacturer.
 - F - [ESMT](https://www.esmt.com.tw/) [8Ch]
 - F - [Fudan](https://www.fm-chips.com/) [A1h]
 - FM - [Fidelix](https://www.fidelix.co.kr/) [F8h]
+- FM - [Dosilicon](http://www.dosilicon.com/) [F8h]
 - GD - [GigaDevice](https://www.gigadevice.com/) [C8h]
 - IS - [ISSI](https://www.issi.com/) [9Dh]
 - KH - [KHIC](https://www.macronix.com.hk/) [C2h]
@@ -35,7 +36,8 @@ data sheet from the manufacturer.
 - S - [Spansion](https://www.infineon.com/) [01h]
 - SST - [Microchip](https://www.microchip.com/) [00h]
 - W - [Winbond](https://www.winbond.com/) [EFh]
-- ZB - [Zbit](http://zbitsemi.com/)
+- ZB - [Zbit](http://zbitsemi.com/) [5Eh]
+- ZD - [Zetta](http://www.zettadevice.com/) [BAh]
 
 ##### Product Family
 
