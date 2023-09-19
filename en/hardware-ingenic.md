@@ -52,19 +52,19 @@ SoC UART pins:
 
 ### T21 Family (Turkey)
 
-|             | T21L      | T21N      | T21X      | T21ZL     | 
-|-------------|-----------|-----------|-----------|-----------|
-| Core        | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
-| SoC Freq.   | 800MHz    | 800MHz    | 800MHz    | 800MHz    |
-| RAM Size    | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 
-| RAM Type    | DDR2      | DDR2      | DDR2      | DDR2      | 
-| RAM Voltage | 1.8V      | 1.8V      | 1.8V      | 1.5V      |
-| L1 I-Cache  | 16KB      | 16KB      | 16KB      | 16KB      |
-| L1 D-Cache  | 16KB      | 16KB      | 16KB      | 16KB      |
-| L2 Cache    | 64KB      | 64KB      | 64KB      | 64KB      |
-| Resolution  | 2560x2048 | 2560x2048 | 2560x2048 | 2560x2048 |
-| Package     | BGA152    | BGA152    | BGA152    | BGA152    |
-| Process tech| 28nm      | 28nm      | 28nm      | 28nm      |
+|              | T21L      | T21N      | T21X      | T21ZL     | 
+|--------------|-----------|-----------|-----------|-----------|
+| Core         | Xburst1   | Xburst1   | Xburst1   | Xburst1   |
+| SoC Freq.    | 800MHz    | 800MHz    | 800MHz    | 800MHz    |
+| RAM Size     | 512Mbit   | 512Mbit   | 1Gbit     | 512Mbit   | 
+| RAM Type     | DDR2      | DDR2      | DDR2      | DDR2      | 
+| RAM Voltage  | 1.8V      | 1.8V      | 1.8V      | 1.5V      |
+| L1 I-Cache   | 16KB      | 16KB      | 16KB      | 16KB      |
+| L1 D-Cache   | 16KB      | 16KB      | 16KB      | 16KB      |
+| L2 Cache     | 64KB      | 64KB      | 64KB      | 64KB      |
+| Resolution   | 2560x2048 | 2560x2048 | 2560x2048 | 2560x2048 |
+| Package      | BGA152    | BGA152    | BGA152    | BGA152    |
+| Process tech | 28nm      | 28nm      | 28nm      | 28nm      |
 
 ### T30 Family (Monkey)
 
@@ -86,10 +86,10 @@ SoC UART pins:
 
 > The main difference between T31 and T30/T21 are:
 > 1. FrameSource module adds `fcrop` parameter to realize pre-crop function.
->     The process for T30/T21 is Scale->Crop, and the process for T31 is Crop->Scale->Crop.
+> The process for T30/T21 is Scale->Crop, and the process for T31 is Crop->Scale->Crop.
 > 2. The image encoding parameters are different. The T31 encoding channel parameters are
->    different from T30/T21 parameters, adding the gop attribute (`gopAttr`) to the original
->    encoder attribute (`encAttr`) and the code rate controller attribute (`rcAttr`).
+> different from T30/T21 parameters, adding the gop attribute (`gopAttr`) to the original
+> encoder attribute (`encAttr`) and the code rate controller attribute (`rcAttr`).
 
 |             | T31L      | T31N      | T31X      | T31ZL     | T31ZX     | T31A      | T31AL     |
 |-------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
@@ -113,31 +113,31 @@ SoC UART pins:
 
 ### T40 Family (Shark)
 
-|             | T40N       | T40XP      | T40A       |
-|-------------|------------|------------|------------|
-| Core        | Xburst2    | Xburst2    | Xburst2    |
-| SoC Freq.   | 1.0GHz     | 1.2GHz     | 1.0GHz     |
-| RAM Size    | 1Gbit      | 2Gbit      | external   |
-| RAM Type    | DDR2       | DDR3       | DDR3L      |
-| RAM Bus     | 32bit      | 32bit      | 32bit      |
-| RAM Voltage | 1.8V       | 1.8V       | 1.8V       |
-| L1 I-Cache  | 32KB       | 32KB       | 32KB       |
-| L1 D-Cache  | 32KB       | 32KB       | 32KB       |
-| L2 Cache    | 128KB~1MB  | 128KB~1MB  | 128KB~1MB  |
-| SIMD        | 512bit     | 512bit     | 512bit     |
-| Quick start | +          | +          | +          |
-| DNN         | 2TOPS      | 4TOPS      | 8TOPS      |
-|             |            |            |            |
-| Resolution  | 4K         | 4K         | 4K         |
-| Max Sensors | 8          | 3          | 3          |
-| Battery pwr | +          | +          | +          |
-| Magick ISP  | +          | +          | +          |
-| RTC         | +          | +          | +          |
-| MAC PHY     |            |            |            |
-| 4 Mic Array | +          | +          | +          |
-| Echo cancel.| +          | +          | +          |
-| Fast stream | +          | +          | +          |
-| Package     | BGA356     | BGA356     | BGA356     |
+|              | T40N      | T40XP     | T40A      |
+|--------------|-----------|-----------|-----------|
+| Core         | Xburst2   | Xburst2   | Xburst2   |
+| SoC Freq.    | 1.0GHz    | 1.2GHz    | 1.0GHz    |
+| RAM Size     | 1Gbit     | 2Gbit     | external  |
+| RAM Type     | DDR2      | DDR3      | DDR3L     |
+| RAM Bus      | 32bit     | 32bit     | 32bit     |
+| RAM Voltage  | 1.8V      | 1.8V      | 1.8V      |
+| L1 I-Cache   | 32KB      | 32KB      | 32KB      |
+| L1 D-Cache   | 32KB      | 32KB      | 32KB      |
+| L2 Cache     | 128KB~1MB | 128KB~1MB | 128KB~1MB |
+| SIMD         | 512bit    | 512bit    | 512bit    |
+| Quick start  | +         | +         | +         |
+| DNN          | 2TOPS     | 4TOPS     | 8TOPS     |
+|              |           |           |           |
+| Resolution   | 4K        | 4K        | 4K        |
+| Max Sensors  | 8         | 3         | 3         |
+| Battery pwr  | +         | +         | +         |
+| Magick ISP   | +         | +         | +         |
+| RTC          | +         | +         | +         |
+| MAC PHY      |           |           |           |
+| 4 Mic Array  | +         | +         | +         |
+| Echo cancel. | +         | +         | +         |
+| Fast stream  | +         | +         | +         |
+| Package      | BGA356    | BGA356    | BGA356    |
 
 ### T41 Family
 
