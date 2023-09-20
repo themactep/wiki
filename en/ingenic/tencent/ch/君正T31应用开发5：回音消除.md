@@ -1,0 +1,231 @@
+# 君正T31应用开发5：回音消除
+
+## 君正T31应用开发5：回音消除
+
+原创
+
+**发布于** **2023-05-14 17:21:10**
+
+**229**0
+
+**举报**
+
+# 1.什么是回音消除？
+
+1.1.单工模式&半双工模式
+
+如果你的设备是这两种模式的话，一般都不需要考虑回音消除的困扰。
+
+音频通过MIC头输入音频数据，然后再通过喇叭传播音频数据出去。
+
+如果你这边只是一台设备，那么好说，就不太需要回音消除，因为你对着MIC头传音频数据的时候，你传输结束后，你才会通过喇叭传播音频数据出去，所以这时候，你一般不会有回音的困扰。
+
+1.2.全双工模式
+
+在[即时通讯](https://cloud.tencent.com/product/im?from_column=20065&from=20065)应用中，需要进行双方，或是多方的实时语音交流，在要求较高的场合，通常都是采用外置音箱放音，这样必然会产生回音，即一方说话后，通过对方的音箱放音，然后又被对方的Mic采集到回传给自己。如果不对回音进行处理，将会影响通话质量和用户体验，更严重的还会形成震荡，产生啸叫。
+
+实现原理：
+
+回声消除就是在Mic采集到声音之后，将本地音箱播放出来的声音从Mic采集的声音数据中消除掉，使得Mic录制的声音只有本地用户说话的声音。
+
+# 2.君正的回音消除
+
+君正的回音消除主要使用两个API函数，其中一个API函数是
+
+1.1.开启回音消除
+
+```js
+	ret = IMP_AI_EnableAec(devID, chnID, 0, 0);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record enable channel failed\n");
+		return NULL;
+	}
+```
+
+复制
+
+1.2.结束回音消除
+
+```js
+	ret = IMP_AI_DisableAec(devID, chnID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "IMP_AI_DisableAecRefFrame\n");
+		return NULL;
+	}
+```
+
+复制
+
+君正完整回音消除代码
+
+```js
+static void * IMP_Audio_Record_AEC_Thread(void *argv)
+{
+	int ret = -1;
+	int record_num = 0;
+
+	if(argv == NULL) {
+		IMP_LOG_ERR(TAG, "Please input the record file name.\n");
+		return NULL;
+	}
+
+	FILE *record_file = fopen(argv, "wb");
+	if(record_file == NULL) {
+		IMP_LOG_ERR(TAG, "fopen %s failed\n", AUDIO_RECORD_FILE);
+		return NULL;
+	}
+
+	/* set public attribute of AI device. */
+	int devID = 1;
+	IMPAudioIOAttr attr;
+	attr.samplerate = AUDIO_SAMPLE_RATE_16000;
+	attr.bitwidth = AUDIO_BIT_WIDTH_16;
+	attr.soundmode = AUDIO_SOUND_MODE_MONO;
+	attr.frmNum = 40;
+	attr.numPerFrm = 640;
+	attr.chnCnt = 1;
+	ret = IMP_AI_SetPubAttr(devID, &attr);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "set ai %d attr err: %d\n", devID, ret);
+		return NULL;
+	}
+
+	memset(&attr, 0x0, sizeof(attr));
+	ret = IMP_AI_GetPubAttr(devID, &attr);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "get ai %d attr err: %d\n", devID, ret);
+		return NULL;
+	}
+
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr samplerate : %d\n", attr.samplerate);
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr   bitwidth : %d\n", attr.bitwidth);
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr  soundmode : %d\n", attr.soundmode);
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr     frmNum : %d\n", attr.frmNum);
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr  numPerFrm : %d\n", attr.numPerFrm);
+	IMP_LOG_INFO(TAG, "Audio In GetPubAttr     chnCnt : %d\n", attr.chnCnt);
+
+	/* enable AI device. */
+	ret = IMP_AI_Enable(devID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "enable ai %d err\n", devID);
+		return NULL;
+	}
+
+	/* set audio channel attribute of AI device. */
+	int chnID = 0;
+	IMPAudioIChnParam chnParam;
+	chnParam.usrFrmDepth = 40;
+	ret = IMP_AI_SetChnParam(devID, chnID, &chnParam);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "set ai %d channel %d attr err: %d\n", devID, chnID, ret);
+		return NULL;
+	}
+
+	memset(&chnParam, 0x0, sizeof(chnParam));
+	ret = IMP_AI_GetChnParam(devID, chnID, &chnParam);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "get ai %d channel %d attr err: %d\n", devID, chnID, ret);
+		return NULL;
+	}
+
+	IMP_LOG_INFO(TAG, "Audio In GetChnParam usrFrmDepth : %d\n", chnParam.usrFrmDepth);
+
+	/* enable AI channel. */
+	ret = IMP_AI_EnableChn(devID, chnID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record enable channel failed\n");
+		return NULL;
+	}
+
+	ret = IMP_AI_EnableAec(devID, chnID, 0, 0);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record enable channel failed\n");
+		return NULL;
+	}
+
+	/* Set audio channel volume. */
+	int chnVol = 60;
+	ret = IMP_AI_SetVol(devID, chnID, chnVol);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record set volume failed\n");
+		return NULL;
+	}
+
+	ret = IMP_AI_GetVol(devID, chnID, &chnVol);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record get volume failed\n");
+		return NULL;
+	}
+	IMP_LOG_INFO(TAG, "Audio In GetVol    vol : %d\n", chnVol);
+
+	int aigain = 20;
+	ret = IMP_AI_SetGain(devID, chnID, aigain);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record Set Gain failed\n");
+		return NULL;
+	}
+
+	ret = IMP_AI_GetGain(devID, chnID, &aigain);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio Record Get Gain failed\n");
+		return NULL;
+	}
+	IMP_LOG_INFO(TAG, "Audio In GetGain    gain : %d\n", aigain);
+
+	while(1) {
+		/* get audio record frame. */
+
+		ret = IMP_AI_PollingFrame(devID, chnID, 1000);
+		if (ret != 0 ) {
+			IMP_LOG_ERR(TAG, "Audio Polling Frame Data error\n");
+		}
+		IMPAudioFrame frm;
+		ret = IMP_AI_GetFrame(devID, chnID, &frm, BLOCK);
+		if(ret != 0) {
+			IMP_LOG_ERR(TAG, "Audio Get Frame Data error\n");
+			return NULL;
+		}
+
+		/* Save the recording data to a file. */
+		fwrite(frm.virAddr, 1, frm.len, record_file);
+
+		/* release the audio record frame. */
+		ret = IMP_AI_ReleaseFrame(devID, chnID, &frm);
+		if(ret != 0) {
+			IMP_LOG_ERR(TAG, "Audio release frame data error\n");
+			return NULL;
+		}
+
+		if(++record_num >= AUDIO_RECORD_NUM)
+			break;
+	}
+
+	ret = IMP_AI_DisableAec(devID, chnID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "IMP_AI_DisableAecRefFrame\n");
+		return NULL;
+	}
+	sleep(3);
+	ret = IMP_AI_DisableChn(devID, chnID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio channel disable error\n");
+		return NULL;
+	}
+
+	/* disable the audio devices. */
+	ret = IMP_AI_Disable(devID);
+	if(ret != 0) {
+		IMP_LOG_ERR(TAG, "Audio device disable error\n");
+		return NULL;
+	}
+
+	fclose(record_file);
+	pthread_exit(0);
+}
+```
+
+复制
+
+原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
+
+如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
