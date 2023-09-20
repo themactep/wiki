@@ -1,124 +1,128 @@
-# 君正T31应用开发3-音频输入
+Ingenic T31 Application Development
+===================================
 
-## 君正T31应用开发3-音频输入
+3. Audio Inputs
+-----------------
 
-原创
+### 1. T31 chip audio support functions
 
-**发布于** **2023-04-01 11:57:20**
+The audio function contains ** audio input, audio output, echo cancellation, audio encoding and audio decoding ** 5 modules.
 
-**620**0
+Among them, the concepts of Device and Channel exist for Audio Input and Audio Output. A MIC is considered as a Device, while a MIC can have multiple Channel inputs. Similarly, a SPK is considered as a playback Device, and a SPK can also have multiple Channel outputs. The current version of the Audio API only supports one Channel per Device (T31 only has one input and one output).
 
-**举报**
+The echo cancellation is located in the Audio Input interface and is described in the Function Description.
 
-# 1.T31芯片音频支持的功能
 
-音频功能包含**音频输入，音频输出，回音消除，音频编码和音频解码** 5 个模块。
+### 2. Mainstream audio formats and audio formats supported by T31
 
-其中音频输入和音频输出存在设备和通道的概念。其中一个 MIC 认为是一个 Device，而一个 MIC 可以有多路 Channel 输入。同样的一个 SPK 认为是一个放音 Device， 而一个 SPK 也可以有多路 Channel 输出。当前版本的音频 API 一个 Device 只支持一个 Channel。 （T31只一路输入和一路输出）
 
-回音消除位于音频输入接口中，具体说明在功能描述中体现。
+#### 2.1. Mainstream audio formats: (audio formats commonly used in audio and video)
 
-# 2.主流的音频格式和T31支持的音频格式
+**PCM:** The original audio data stream from most of the chips.
 
-## 2.1.主流的音频格式：（音视频常用到的音频格式）
+**G711A&amp; G711U:**
 
-**PCM：**大部分芯片出来的原始音频数据流。
+G711 is a set of voice compression standards customized by the International Telecommunication Union ITU-T, which represents a logarithmic PCM (logarithmic pulse-code modulation) sampling standard, mainly used for telephony. It mainly samples audio with pulse-code modulation at a sampling rate of 8k per second. It utilizes a 64Kbps uncompressed channel to transmit the voice signal. The starting compression ratio is 1:2, i.e., 16-bit data is compressed into 8-bit.G.711 is the dominant waveform sound codec.
 
-**G711A&amp;G711U：**
+There are two main compression algorithms under the G.711 standard. One is the u-law algorithm (also known as often u-law, ulaw, mu-law), which is mainly used in North America and Japan; the other is the A-law algorithm, which is mainly used in Europe and other parts of the world. Among them, the latter is especially designed to facilitate computer processing
 
-G711是国际电信联盟ITU-T定制出来的一套语音压缩标准，它代表了对数PCM（logarithmic pulse-code modulation）抽样标准，主要用于电话。它主要用脉冲编码调制对音频采样，采样率为8k每秒。它利用一个 64Kbps 未压缩通道传输语音讯号。 起压缩率为1：2， 即把16位数据压缩成8位。G.711是主流的波形声音编解码器。
-
- G.711 标准下主要有两种压缩算法。一种是u-law algorithm （又称often u-law, ulaw, mu-law），主要运用于北美和日本；另一种是A-law algorithm，主要运用于欧洲和世界其他地区。其中，后者是特别设计用来方便计算机处理的
-
-G711的内容是将14bit(uLaw)或者13bit(aLaw)采样的PCM数据编码成8bit的数据流，播放的时候在将此8bit的数据还原成14bit或者13bit进行播放，不同于MPEG这种对于整体或者一段数据进行考虑再进行编解码的做法，G711是波形编解码算法，就是一个sample对应一个编码，所以压缩比固定为：
+The content of G711 is to encode the 14bit (uLaw) or 13bit (aLaw) sampled PCM data into an 8bit data stream, and then reduce the 8bit data to 14bit or 13bit for playback. Unlike MPEG, which considers the whole or a section of the data and then encodes and decodes it, G711 is a waveform. G711 is a waveform codec algorithm, that is, a sample corresponds to a code, so the compression ratio is fixed as:
 
 8/14 = 57% (uLaw)
 
-8/13 = 62% (aLaw)   简单理解，G.711就是语音模拟信号的一种非线性量化， bitrate 是64kbps
+8/13 = 62% (aLaw) Simply understood, G.711 is a non-linear quantization of the analog signal of the voice, bitrate is 64kbps
 
-**AAC：**
+**AAC: **AAC
 
-AAC，全称Advanced Audio Coding，中文名：高级音频编码,是一种专为声音数据设计的文件压缩格式。与MP3不同，它采用了全新的算法进行编码，更加高效，具有更高的“性价比”。利用AAC格式，可使人感觉声音质量没有明显降低的前提下，更加小巧。苹果ipod、诺基亚手机支持AAC格式的音频文件。
+AAC, full Advanced Audio Coding, Chinese name: Advanced Audio Coding, is a file compression format designed for sound data. Unlike MP3, it uses a new algorithm for encoding, which is more efficient and has a higher "cost-effective". Utilizing the AAC format can make people feel that there is no significant reduction in sound quality under the premise of more compact. Apple iPod, Nokia cell phones support AAC format audio files.
 
-## 2.2.T31目前支持的音频格式
 
-音频编码当前音频 API 中支持 PT_G711A、PT_G711U 和 PT_G726 格式音频编码，
+#### 2.2.T31 Currently Supported Audio Formats
 
-如需要增加新的编码方式，需要注册编码器。
+Audio encoding The current audio API supports PT_G711A, PT_G711U and PT_G726 format audio encoding.
 
-音频解码当前音频 API 中支持 PT_G711A、PT_G711U 和 PT_G726 格式音频解码，
+If you need to add a new encoding method, you need to register the encoder.
 
-如需要增加新的解码方式，需要注册解码器。
+The current audio API supports PT_G711A, PT_G711U and PT_G726 format audio decoding.
 
-# 3.代码框架流程图
+If you need to add a new decoding method, you need to register a decoder.
 
-以下我们画出系统的流程图：音频采集的过程图
 
-MIC指带的东西就是咪头，用来把外界的声音采集进来，采集模拟信号进来，通过T31芯片转成数字信号，再以一定格式的内容保存成文件下来。
+### 3. Code Framework Flowchart
 
-​![](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)​
+Below we draw the flowchart of the system: the process diagram of audio acquisition.
 
-# 4.代码实战
+MIC refers to the thing with the microphone, used to capture the external sound into the collection of analog signals into the T31 chip into digital signals, and then saved in a certain format into a file down.
 
-君正T31SDK里面提供了sample，关于如何从T31芯片获取音频裸数据，并保存到flash中的代码。
+! [](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
 
-里面有几个函数需要重点讲解一下：
 
-### 4.1：创建线程
+### 4. Code Practice
 
-**_ai_basic_record_test_thread：**我们所有的操作都是在这个线程里面运行的，你们可以理解为一个任务。
+Junzheng T31SDK inside the sample provided, about how to get audio bare data from the T31 chip, and save the code to flash.
 
-### 4.2：设置音频输入设备属性
+There are several functions inside that need to be focused on:
+
+
+#### 4.1: Creating threads
+
+**_ai_basic_record_test_thread:** All our operations are run inside this thread, you can understand it as a task.
+
+
+#### 4.2: Setting audio input device properties
 
 **IMP_AI_SetPubAttr：**
 
 ```js
-	int devID = 1;                                           //devID:0:数字MIC，1：代表模拟MIC
+	int devID = 1;                                           //devID:0: digital MIC, 1: represents the analog MIC
 	IMPAudioIOAttr attr;
-	attr.samplerate = AUDIO_SAMPLE_RATE_16000;               //音频采样率为16000
-	attr.bitwidth = AUDIO_BIT_WIDTH_16;                      //音频采样精度16位
-	attr.soundmode = AUDIO_SOUND_MODE_MONO;                  //采取单声道模式
-	attr.frmNum = 40;                                        //缓存帧的数目 
-	attr.numPerFrm = 640;                                    //每帧的采样点个数
-	attr.chnCnt = 1;                                         //支持的通道个数
+	attr.samplerate = AUDIO_SAMPLE_RATE_16000;               //Audio sampling rate of 16000
+	attr.bitwidth = AUDIO_BIT_WIDTH_16;                      //16-bit audio sampling precision
+	attr.soundmode = AUDIO_SOUND_MODE_MONO;                  //mono mode
+	attr.frmNum = 40;                                        //Number of cached frames 
+	attr.numPerFrm = 640;                                    //Number of sampling points per frame
+	attr.chnCnt = 1;                                         //Number of supported channels
 	ret = IMP_AI_SetPubAttr(devID, &attr);
 ```
 
-复制
-
-### 4.3：获取音频原始桢数据
+#### 4.3: Getting the Raw Audio Segment Data
 
 ```js
-		/* Step 6: get audio record frame. */
-		/*在使用IMP_AI_GetFrame之前使用该接口，当该接口调用成功之后表示音频
- 		  数据已经准备完毕，可以使用IMP_AI_GetFrame获取音频数据*/
-		ret = IMP_AI_PollingFrame(devID, chnID, 1000);
-		if (ret != 0 ) {
-			IMP_LOG_ERR(TAG, "Audio Polling Frame Data error\n");
-		}
-		/* 
-		* @param[in] audioDevId 音频设备号.
- 		* @param[in] aiChn 音频输入通道号.
- 		* @param[out] frm 音频帧结构体指针.
- 		* @param[in] block 阻塞/非阻塞标识.
- 		*/
-		IMPAudioFrame frm;
-		ret = IMP_AI_GetFrame(devID, chnID, &frm, BLOCK);
-		if(ret != 0) {
-			IMP_LOG_ERR(TAG, "Audio Get Frame Data error\n");
-			return NULL;
-		}
-		/* Step 8: release the audio record frame. */
-		ret = IMP_AI_ReleaseFrame(devID, chnID, &frm);
-		if(ret != 0) {
-			IMP_LOG_ERR(TAG, "Audio release frame data error\n");
-			return NULL;
-		}
+/* Step 6: get audio record frame. */
+/* Use this interface before using IMP_AI_GetFrame, and when the interface is successfully called,
+   it means that the audio data has been prepared and you can use IMP_AI_GetFrame to get the audio data.
+   data has been prepared, you can use IMP_AI_GetFrame to get the audio data.*/
+
+ret = IMP_AI_PollingFrame(devID, chnID, 1000);
+if (ret != 0 ) {
+	IMP_LOG_ERR(TAG, "Audio Polling Frame Data error\n");
+}
+
+/* 
+ * @param[in] audioDevId Audio device number.
+ * @param[in] aiChn Audio input channel number.
+ * @param[out] frm Pointer to the audio frame structure.
+ * @param[in] block Blocking/non-blocking identification.
+ */
+
+IMPAudioFrame frm;
+ret = IMP_AI_GetFrame(devID, chnID, &frm, BLOCK);
+if(ret != 0) {
+	IMP_LOG_ERR(TAG, "Audio Get Frame Data error\n");
+	return NULL;
+}
+
+/* Step 8: release the audio record frame. */
+
+ret = IMP_AI_ReleaseFrame(devID, chnID, &frm);
+if(ret != 0) {
+	IMP_LOG_ERR(TAG, "Audio release frame data error\n");
+	return NULL;
+}
 ```
 
-复制
+### 4.4: DEMO program for Junzheng's original SDK
 
-### 4.4:君正原始SDK的DEMO程序
 
 ```js
 /*
@@ -319,9 +323,3 @@ int main(void)
 	return 0;
 }
 ```
-
-复制
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
