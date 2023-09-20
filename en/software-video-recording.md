@@ -18,6 +18,7 @@
 - [OS-NVR](https://github.com/OSNVR/OS-NVR)
 - [SecureCam](https://sourceforge.net/projects/securecam/)
 - [OpenCCTV](https://github.com/ait-vgl/OpenCCTV)
+- [Skryped NVR](https://www.scrypted.app/)
 - [Shinobi](https://shinobi.video/)
 - [Simple NVR](https://github.com/TomHumphries/simple-nvr)
 - [Surveillance Center](https://github.com/1element/sc)
