@@ -1,109 +1,117 @@
-# 君正T31应用开发7：视频的基本知识
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发7：视频的基本知识
+The Basics of Video
+-------------------
 
-原创
+### Common encoding formats for video
 
-**发布于** **2023-06-04 09:35:55**
+The main coding formats for audio and video are H264 and H265.
 
-**271**0
+Among them, H265 encoding format compression level is even greater, so the current commonly used 
+IPC and NVR devices are using H265 encoding format.
 
-**举报**
+But H264 because of the early development of earlier, most of the open-source projects support 
+the format are H264 coding format, so many devices require you to have the ability to switch 
+the coding format.
 
-# 1.视频的常见编码格式
+Specifically, what is H264 and what is H265 format, specific protocol header, protocol content,
+many bloggers have a detailed description, I will not continue to summarize. But my side of the
+back of the recommended view format of the software, will also show.
 
-音视频主要的编码格式分为H264和H265的编码格式。
+### Junzheng's video encoding module
 
-其中H265的编码格式压缩水平更加大，所以目前常用的IPC和NVR设备都是使用H265编码格式。
+The video encoding (JPEG, H264, H265) module mainly provides functions such as creating and 
+destroying video encoding channels, turning on and stopping the reception of images, setting
+and obtaining the properties of encoding channels, and obtaining and releasing streams, etc.
+This module supports multichannel real-time encoding, and each channel is independent, and 
+you can set up different encoding protocols and profiles.
 
-但是H264因为早期开发的比较早，大部分的开源项目支持的格式都是H264的编码格式，所以目前很多设备要求你具备切换编码格式的能力。
+Ingenic supports the encoding module of JPEG, H264 and H265 formats.
 
-具体什么是H264和什么是H265格式，具体的协议头，协议内容，很多博主都有详细的描述，我这边不会继续总结。不过我这边后面有推荐的查看格式的软件，也会展示出来。
+That is to say, we can get the data of these three formats through the demo provided by Ingenic.
 
-# 2.君正的视频编码模块
+Among them, we are docking large projects, in addition to these three formats, need to call back
+to the upper layer, we also need to get the YUV stream, because this can be used elsewhere, later
+I will also be reflected in my large projects. (Large projects are used at the enterprise level, 
+i.e., things that are written on other people's job requirements)
 
-视频编码（JPEG, H264, H265）模块，主要提供视频编码通道的创建和销毁、开启和停止接收图像、设置和获取编码通道属性、获取和释放 码流等功能本模块支持多路 实时编码，每路独立，且可以设置不同编码协议和 profile。
+There are three demos in here, corresponding to the way Junzheng gets the three code stream calls.
 
-君正支持目前三种格式的编码模块JPEG，H264，H265格式的编码。
+![](assets/net-img-3faa21484cff414aca5f192127df53c2-20230919120230-bvm1yax.png)
 
-也就是说我们可以通过君正提供的demo得到这三种格式的数据。
+Block diagram of Ingenic's video coding:
 
-其中，我们对接大型项目的时候，除了这三种格式需要回调到上层以外，我们还需要得到YUV的码流，因为这个可以用到别的地方，后期我也会在我的大型项目中有所体现。（大型项目都是企业级别使用的，也就是别人招聘要求上写的东西）
+![](assets/net-img-64e2baae8160b42df88fd36ad78d65c2-20230919120230-o1em2m7.png)
 
-这里面有三个demo，分别对应君正获取三种码流的调用方式。
+The encoding module consists of Nogan Groups, each Group consists of an encoding Channel, and an
+encoding Channel is accompanied by an output stream buffer, which consists of multiple buffers.
 
-​![](assets/net-img-3faa21484cff414aca5f192127df53c2-20230919120230-bvm1yax.png)​
 
-君正的视频编码框图：
+### Basic concepts related to video
 
-​![](assets/net-img-64e2baae8160b42df88fd36ad78d65c2-20230919120230-o1em2m7.png)​
+Bit Rate Control:
 
-编码模块由诺干个Group组成，每个Group由编码Channel组成，一个编码Channel附带一个输出码流缓冲区，这个缓冲区由多个buffer组成。
+__CBR__ - Constant Bit Rate, i.e., the encoding bit rate is constant during the bit rate statistics time.
 
-# 3.视频相关的基础概念
+Take H.264 encoding as an example, users can set maxQp, minQp, bitrate, etc. maxQp, minQp are used to control the image quality range.
 
-码率控制：
+maxQp, minQp are used to control the quality range of the image.
 
-CBR：（Constent Bit Rate）恒定比特率，即在码率统计时间内编码码率恒定。
+__VBR__ - Variable Bit Rate.
 
-以 H.264 编码为例，用户可设置 maxQp，minQp，bitrate 等。
+We usually use CBR more in the process of practical application.
 
-maxQp，minQp 用于控制图像的质量范围。
+__VPS__ - video parameter set.
 
-VBR：可变比特率。
+__SPS__ - Sequence Parameter Set.
 
-我们一般在实际运用的过程中，都是使用CBR比较多的。
+__PPS__ - the set of image parameters.
 
-VPS：视频参数集。
 
-SPS：序列参数集。
+### Some of the Junzheng image encoding module APIs.
 
-PPS：图像参数集。
+![](assets/net-img-991c40cd229dfa520bb7a10db7ce5354-20230919120230-0olvaga.png)
 
-# 4.部分君正图像编码模块的API
+![](assets/net-img-e8cca30733b0f8b60291067690f916b7-20230919120230-vz1j9qa.png)
 
-​![](assets/net-img-991c40cd229dfa520bb7a10db7ce5354-20230919120230-0olvaga.png)​
 
-​![](assets/net-img-e8cca30733b0f8b60291067690f916b7-20230919120230-vz1j9qa.png)​
+### Video Source Module
 
-# 5.视频源模块：
+#### Function Description
 
-## 5.1:功能介绍：
+VideoSource is an image data source for the IMP system, which allows you to set the image resolution, 
+crop, scale, and other attributes, as well as the back-end noise reduction function.
 
-视频源，是 IMP 系统的图像数据源，可设置图像的分辨率、裁减、缩放等属性， 以及后端降噪功能
+FrameSource is a data stream related concept, which can set the image resolution, format, etc. and
+provide the original image to the backend.
 
-FrameSource 是一个数据流相关概念，可以设置图像分辨率，格式等，并向后端 提供原始图像。
+The structure of FrameSource is shown in the figure below:
 
-FrameSource 的结构如下图：
+Generally, we use the primary stream and the secondary stream.
 
-一般我们使用的是主码流，以及次码流。
+Channel0 is generally used as HD video stream
 
-Channel0一般作为高清视频流
+Channel1 is generally used as SD video stream, or the data source of IVS intelligent algorithm.
 
-Channel1一般作为标清视频流，或者IVS智能算法的数据源。
+Channel2 is an extended channel, used in special applications, and is generally not recommended.
 
-Channel2是扩展通道，在特殊应用下使用，一般不建议使用。
 
-## 5.2：模块操作流程
+#### Module Operation Flow
 
-Init初始化流程
+Init - initialization process:
 
-1.创建通道
+1. Create channel
+2. Set the channel
+3. Enable channel
 
-2.设置通道
+Exit - exit process:
 
-3.使能通道
+1. Disable channel
+2. Logout channel
 
-Exit退出流程
 
-1.失能通道
+#### FrameSource module partial API:
 
-2.注销通道
+![](assets/net-img-57228b918a5375fe77b925829b74150d-20230919120231-0fu6ih4.png)
 
-## 5.3FrameSource模块部分API：
-
-​![](assets/net-img-57228b918a5375fe77b925829b74150d-20230919120231-0fu6ih4.png)​
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+[toc]: index.md

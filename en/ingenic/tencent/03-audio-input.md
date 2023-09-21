@@ -1,10 +1,9 @@
-Ingenic T31 Application Development
-===================================
+# [Ingenic T31 Application Development][toc]
 
-3. Audio Inputs
------------------
+Audio Inputs
+------------
 
-### 1. T31 chip audio support functions
+### T31 chip audio support functions
 
 The audio function contains ** audio input, audio output, echo cancellation, audio encoding and audio decoding ** 5 modules.
 
@@ -13,10 +12,10 @@ Among them, the concepts of Device and Channel exist for Audio Input and Audio O
 The echo cancellation is located in the Audio Input interface and is described in the Function Description.
 
 
-### 2. Mainstream audio formats and audio formats supported by T31
+### Mainstream audio formats and audio formats supported by T31
 
 
-#### 2.1. Mainstream audio formats: (audio formats commonly used in audio and video)
+#### Mainstream audio formats: (audio formats commonly used in audio and video)
 
 **PCM:** The original audio data stream from most of the chips.
 
@@ -32,12 +31,12 @@ The content of G711 is to encode the 14bit (uLaw) or 13bit (aLaw) sampled PCM da
 
 8/13 = 62% (aLaw) Simply understood, G.711 is a non-linear quantization of the analog signal of the voice, bitrate is 64kbps
 
-**AAC: **AAC
+**AAC:** AAC
 
 AAC, full Advanced Audio Coding, Chinese name: Advanced Audio Coding, is a file compression format designed for sound data. Unlike MP3, it uses a new algorithm for encoding, which is more efficient and has a higher "cost-effective". Utilizing the AAC format can make people feel that there is no significant reduction in sound quality under the premise of more compact. Apple iPod, Nokia cell phones support AAC format audio files.
 
 
-#### 2.2.T31 Currently Supported Audio Formats
+#### T31 Currently Supported Audio Formats
 
 Audio encoding The current audio API supports PT_G711A, PT_G711U and PT_G726 format audio encoding.
 
@@ -48,32 +47,32 @@ The current audio API supports PT_G711A, PT_G711U and PT_G726 format audio decod
 If you need to add a new decoding method, you need to register a decoder.
 
 
-### 3. Code Framework Flowchart
+### Code Framework Flowchart
 
-Below we draw the flowchart of the system: the process diagram of audio acquisition.
+Below, we draw the flowchart of the system: the process diagram of audio acquisition.
 
 MIC refers to the thing with the microphone, used to capture the external sound into the collection of analog signals into the T31 chip into digital signals, and then saved in a certain format into a file down.
 
 ! [](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
 
 
-### 4. Code Practice
+### Code Practice
 
-Junzheng T31SDK inside the sample provided, about how to get audio bare data from the T31 chip, and save the code to flash.
+Ingenic T31 SDK inside the sample provided, about how to get audio bare data from the T31 chip, and save the code to flash.
 
 There are several functions inside that need to be focused on:
 
 
-#### 4.1: Creating threads
+#### Creating threads
 
 **_ai_basic_record_test_thread:** All our operations are run inside this thread, you can understand it as a task.
 
 
-#### 4.2: Setting audio input device properties
+#### Setting audio input device properties
 
 **IMP_AI_SetPubAttr：**
 
-```js
+```
 	int devID = 1;                                           //devID:0: digital MIC, 1: represents the analog MIC
 	IMPAudioIOAttr attr;
 	attr.samplerate = AUDIO_SAMPLE_RATE_16000;               //Audio sampling rate of 16000
@@ -85,9 +84,9 @@ There are several functions inside that need to be focused on:
 	ret = IMP_AI_SetPubAttr(devID, &attr);
 ```
 
-#### 4.3: Getting the Raw Audio Segment Data
+#### Getting the Raw Audio Segment Data
 
-```js
+```
 /* Step 6: get audio record frame. */
 /* Use this interface before using IMP_AI_GetFrame, and when the interface is successfully called,
    it means that the audio data has been prepared and you can use IMP_AI_GetFrame to get the audio data.
@@ -124,7 +123,7 @@ if(ret != 0) {
 ### 4.4: DEMO program for Junzheng's original SDK
 
 
-```js
+```
 /*
  * Ingenic IMP AI implement.
  *
@@ -323,3 +322,5 @@ int main(void)
 	return 0;
 }
 ```
+
+[toc]: index.md

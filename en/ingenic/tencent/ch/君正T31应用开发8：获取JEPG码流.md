@@ -30,7 +30,7 @@ IMP_ISP_AddSensor
 
 ### 1.1：初始化T31系统参数：sample_system_init
 
-```js
+```
 int sample_system_init()
 {
 	int ret = 0;
@@ -128,7 +128,7 @@ Init初始化流程
 
 创建通道和设置通道属性。
 
-```js
+```
 主码流：
 	struct chn_conf chn[FS_CHN_NUM] = {
 	{
@@ -160,7 +160,7 @@ Init初始化流程
 
 复制
 
-```js
+```
 int sample_framesource_init()
 {
 	int i, ret;
@@ -193,7 +193,7 @@ int sample_framesource_init()
 
 一个编码组不仅仅可以编码H264的码流数据，也可以编码JPEG的数据。
 
-```js
+```
 	for (i = 0; i < FS_CHN_NUM; i++) {
 		if (chn[i].enable) {
 			ret = IMP_Encoder_CreateGroup(chn[i].index);
@@ -213,7 +213,7 @@ int sample_framesource_init()
 
 设置编码默认参数：IMP_ENC_PROFILE_JPEG
 
-```js
+```
 int sample_jpeg_init()
 {
 	int i, ret;
@@ -253,7 +253,7 @@ int sample_jpeg_init()
 
 主要的步奏：就是将你初始化的视频源和编码器绑定在一块。
 
-```js
+```
 	/* Step.4 Bind */
 	for (i = 0; i < FS_CHN_NUM; i++) {
 		if (chn[i].enable) {
@@ -272,7 +272,7 @@ int sample_jpeg_init()
 
 这部分就是前面说到的先创建视频源，再次设置视频源，然后使能视频源。
 
-```js
+```
 int sample_framesource_streamon()
 {
 	int ret = 0, i = 0;
@@ -311,7 +311,7 @@ IMP_Encoder_GetStream：
 
 **最后我们通过这个函数回调结构体的数据上来，进行保存到我们的TF卡上面就完成了获取JPEG码流的步奏。**
 
-```js
+```
 /**
  * 定义编码帧码流类型结构体
  */
@@ -332,7 +332,7 @@ typedef struct {
 
 复制
 
-```js
+```
 static int save_stream(int fd, IMPEncoderStream *stream)
 {
 	int ret, i, nr_pack = stream->packCount;
@@ -384,7 +384,7 @@ IMP_Encoder_StopRecvPic：停止编码Channel接收图像
 
 sample_framesource_streamoff
 
-```js
+```
 int sample_framesource_streamoff()
 {
 	int ret = 0, i = 0;
@@ -408,7 +408,7 @@ IMP_System_UnBind
 
 解绑，我们刚才绑定获取图片的线程，从这边来看，我们只是在主码流或者子码流的情况下获取一帧数据，所以demo得实验情况也是得到两张图片，一张是主码流的图像，一张是子码流的图像。
 
-```js
+```
 int sample_jpeg_exit(void)
 {
 	int ret = 0, i = 0, chnNum = 0;
@@ -450,7 +450,7 @@ int sample_jpeg_exit(void)
 
 sample_system_exit
 
-```js
+```
 int sample_system_exit()
 {
 	int ret = 0;

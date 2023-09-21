@@ -1,54 +1,53 @@
-# 君正T31应用开发6：音频编解码
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发6：音频编解码
+Audio Coding and Decoding
+-------------------------
 
-原创
+### Why do we need audio codecs?
 
-**发布于** **2023-05-27 22:48:23**
+In the example mentioned earlier, we use Ingenic T31 devices are directly using API functions for
+sound acquisition, and then directly playback of sound, which involves two sets of API, one is AI,
+audio input function, and one is AO, audio output function.
 
-**245**0
+The audio data captured here:
 
-**举报**
+Through the AI interface, it is saved as the file audio.pcm.
 
-# 1.为什么需要音频编解码？
+Through the AO interface, by parsing the audio.pcm file.
 
-前面提到的例子中，我们使用君正T31的设备都是直接使用API函数进行采集声音，然后直接播放声音的，其中涉及两组API，一组是AI，音频输入函数，一组是AO，音频输出函数。
+The PCM file is relatively large. In some cases where the network bandwidth is not very good, the audio 
+will be lost, resulting in audio lagging sound, so our side of the audio codec technology also came into being.
 
-这里面采集到的音频数据：
+Generally, the audio codec data will be twice as small as the original data PCM file, G711A data format or AAC format file.
 
-通过AI接口，保存为文件audio.pcm文件。
+![](assets/net-img-24651c215b6993da009e0a56215ad9fb-20230919120206-f875jt1.png)
 
-通过AO接口，通过解析audio.pcm文件。
+![](assets/net-img-ae5154ac8d45a11fe8c73daab92d7d92-20230919120206-xcjzo25.jpg)
 
-这里面PCM的文件是比较大的，在某些网络带宽不是很好的情况下，可能音频桢会丢掉，导致音频出现卡顿的声音，所以我们这边音频编解码技术也就应运而生。
 
-一般经过音频编解码的数据会比原始数据PCM文件小一倍，G711A数据格式或者AAC格式文件。
+### Audio Codec APIs used by Ingenic
 
-​![](assets/net-img-24651c215b6993da009e0a56215ad9fb-20230919120206-f875jt1.png)​
+![](assets/net-img-f078d0dc4504faa469db08444e7d182d-20230919120207-sga690o.png)
 
-​![](assets/net-img-ae5154ac8d45a11fe8c73daab92d7d92-20230919120206-xcjzo25.jpg)​
+![](assets/net-img-d9fd5768a3e7c8e230744e517a280a80-20230919120207-1v5hwgz.png)
 
-## 2.君正使用的音频编解码API
 
-​![](assets/net-img-f078d0dc4504faa469db08444e7d182d-20230919120207-sga690o.png)​
+### Ingenic's Audio Codec Practice
 
-​![](assets/net-img-d9fd5768a3e7c8e230744e517a280a80-20230919120207-1v5hwgz.png)​
+Over here I bought a development board from the internet, roughly as shown below.
 
-# 3.君正的音频编解码实战。
+![](assets/net-img-8939c52f97ff4e0f5690ae14cf84d86b-20230919120207-bzgvjbt.png)
 
-这边我从网络上买了一个开发板，大概如下图所示。
+We modified the demo written in Ingenic's SDK, and then experimented with the following results;
+you can see that the size of the same size recording audio file G711A is only about half the size of PCM.
 
-​![](assets/net-img-8939c52f97ff4e0f5690ae14cf84d86b-20230919120207-bzgvjbt.png)​
+![](assets/net-img-ee29e10de3223514470d6a25a69046a2-20230919120207-xrkz9ax.png)
 
-稍微修改了君正的SDK里面写的demo,然后实验结果如下，可以看到同样大小的录制音频文件g711A的大小大概只有PCM大小的一半。
+#### Appendix Code
 
-​![](assets/net-img-ee29e10de3223514470d6a25a69046a2-20230919120207-xrkz9ax.png)​
+Functions used for coding:
 
-附录代码：
-
-编码使用的函数
-
-```js
+```
 static int IMP_Audio_Encode(void)
 {
 	char *buf_pcm = NULL;
@@ -177,11 +176,9 @@ static int IMP_Audio_Encode(void)
 }
 ```
 
-复制
+Functions used for decoding:
 
-解码使用的函数：
-
-```js
+```
 static int IMP_Audio_Decode(void)
 {
 	char *buf_g711 = NULL;
@@ -319,24 +316,28 @@ static int IMP_Audio_Decode(void)
 }
 ```
 
-复制
+### On follow-up
 
-# 3.关于后续
+I will continue to update this T31 series, the next may have the corresponding development exchange group.
 
-这个T31系列我会继续更新下去，接下来可能会有相应的开发交流群。
+Into the group will not be free, because I used to do other groups when free will have a lot of hyper elite inside,
+there are also a lot of white whoring party download the resources without saying a word, delete the group to run 
+away people. Maybe five dollars to enter the group fee, this fee is a great limit to exclude that group of people out.
 
-进群的不会是免费的，因为以前我做别的群时候免费会有一大堆亢精进去里面，也有一大堆白嫖党下载完资源一句话不说，删群跑路的人。可能是五块钱的进群费用，这个费用就是极大限度的把那群人排除出去。
+After I finish organizing the information, I will release the group number.
 
-后续我整理完资料之后，就会发布群号。
+PS:
 
-PS：
+For the salary in the monthly salary of more than 20,000 people, this group is actually prohibited to go in,
+because if you reach 20,000, or even more than 30,000, do embedded this line, you want a higher salary, 
+you may need to specialize in the direction of the algorithm. You enter this group also no one to help you 
+solve industry problems, unless you are beautiful.
 
-对于工资在月薪2万以上的人，这个群其实禁止进去的，因为如果你达到2万，甚至3万以上了，做嵌入式这行，你想要更高的工资，你可能需要往算法的方向专研了。你进入这群也没有人去帮你解决行业难题，除非你是美女。
+This group is very suitable for undergraduate students who are not 985-211, if it is a freshman will be more
+suitable, because you do not have any direction in the university, someone to you to push a hand, after you 
+graduate to find a job will have a very big help.
 
-这群非常适合本科不是985-211的学生，如果是大一的新生就更加适合了，因为你在大学没有任何方向的时候，有人往你身上推一把，之后你毕业找工作会有十分大的助力。
+As for the salary of this line, all students go to MileagePlus, BOSS direct employment to search for keywords:
+embedded software engineer, IPC, NVR can be. Because I said you will not believe, you can search by yourself.
 
-至于这行的薪资，各位同学自行去前程无忧，BOSS直聘去搜索关键字：嵌入式软件工程师，IPC，NVR即可。因为我说的你们也不会相信，你们自行去搜索即可。
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+[toc]: index.md

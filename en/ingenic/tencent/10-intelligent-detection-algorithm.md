@@ -1,398 +1,404 @@
-# 君正T31应用开发10：智能算法检测
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发10：智能算法检测
+Intelligent Detection Algorithm 
+-------------------------------
 
-原创
+### What is the intelligent detection algorithm?
 
-**发布于** **2023-06-18 11:18:50**
+We will see a variety of cameras (IPC) on Taobao, some are 99 RMB, some are 1000 RMB, such as the camera of Yuntian Reedfine.
 
-**320**0
+Why is the price difference so huge?
 
-**举报**
+Answer: Intelligent algorithm integration leads to different chip prices, which then leads to a huge difference in product prices.
 
-# 1：什么是智能算法检测？
+For example, some time ago, XX pass released a car shape detection algorithm, his price is a penny, his shipments are estimated to be tens of millions of a year may be there, and here there are 100,000 dollars. In fact, this algorithm is the chip comes with, at least T41 comes with free, only the chip price is much more expensive than T31.
 
-我们在淘宝上会看到各种各样的摄像头（IPC），有些99元包邮，有些1000元一台，比如云天励飞的摄像头。
+Most smart algorithms for detection have a few main components:
+- 
+- Motion detection algorithm.
+- Sound detection algorithm.
+- Cry detection algorithm.
+- Vehicle detection algorithms.
+- Humanoid detection algorithms.
+- Face recognition algorithm.
+- and so on.
 
-同样都是摄像头，为什么价格差别会如此巨大？答案：智能算法集成导致芯片价格不一样，于是导致产品价格天差地别。
+The T31 chip belongs to the entry-level chip, so it doesn't integrate so many algorithms, 
+and there are only three algorithms that can be done at present.
 
-比如前段时间，XX通发布的一个车形检测算法，他标价是一个一分钱，他出货量估计一年上千万可能是有的，这里就有十万块钱。实际上这个算法是芯片自带的，至少T41是自带免费的，只不过芯片价格比T31贵了很多。
+Motion detection algorithm, human shape detection algorithm, sound detection algorithm.
 
-大部分的智能算法检测主要有几个部分组成：
+The following T31 sample to tell how the Ingenic platform calls the IVS intelligent detection platform.
 
-移动侦测算法。
 
-声音检测算法。
+### Ingenic's Intelligent Algorithm Inspection Platform
 
-哭声检测算法。
+#### Use the steps:
 
-车型检测算法。
+IMP embeds intelligent analysis algorithms into the SDK by calling the instantiated `IMPIVSInterface` 
+through IVS's generic interface API to analyze the frame images in the SDK.
 
-人形检测算法。
+`IMPIVSInterface` is a generic algorithm interface that is implemented by a specific algorithm and
+passed to IMP IVS for the purpose of running the specific algorithm in the SDK.
 
-[人脸检测](https://cloud.tencent.com/product/facerecognition?from_column=20065&from=20065)算法。
+A channel is a carrier for a single example algorithm, and the specific implementation of the algorithm
+interface must be passed to the specific channel in order to run the algorithm in the SDK.
 
-火焰检测算法等等。
+The `IMPIVSInterface` member param is an argument to the member function init.
 
-T31芯片属于入门级别的芯片，所以并没有集成那么多的算法，目前可以做的算法只有三种。
+IMP IVS will externally lock the frame passed to member function `ProcessAsync` parameter, 
+`ProcessAsync` must call `IMP_IVS_ReleaseData` to release the frame after using the frame to avoid deadlock.
 
-移动侦测算法，人形侦测算法，声音检测算法。
+In addition to the above algorithm call by binding the IMP IVS in the data stream, we also provide
+an unbound way to realize the algorithm call, that is, to get the frame image of framesouce channel
+and directly call the member function of IMPIVSInterface to realize the algorithm processing.
 
-下面以T31的sample来讲述一下，君正平台是怎么调用IVS智能检测平台的。
+In most cases, we use the unbound way to get the motion detection algorithm.
 
-# 2：君正的智能算法检测平台
 
-### 2.1：使用步奏：
+#### Algorithmic Usage of Binding Patterns:
 
-IMP 通过IVS的通用接口API调用实例化的IMPIVSInterface将智能化分析算法嵌入到SDK中来分析SDK中的frame图像。
+![](assets/net-img-b7acb9d0f97c496be196e5b5e7890614-20230919120311-f9fnqrh.png)
 
-IMPIVSInterface为通用算法接口，具体算法通过实现此接口并将其传给IMP IVS达到在SDK运行具体算法的目的。
 
-一个channel有且仅为单个算法示例的载体，必须将具体实现的算法接口传给具体的channel才能在SDK中运行算法。
 
-IMPIVSInterface 成员 param 为成员函数 init 的参数。
+#### Unbundled Mode Calling IVS Platforms
 
-IMP_IVS 会在传给成员函数 ProcessAsync 参数的 frame 时对其进行外部加锁， ProcessAsync 必须在使用完 frame 后调用 IMP_IVS_ReleaseData 释放 frame，以免死锁。
+![](assets/net-img-cdd0c9348b033fef2858a1b990122488-20230919120311-3ulxxni.png)
 
-除上述通过绑定在数据流中的 IMP IVS 实现算法调用之外，还提供一种非绑定的方式实现算法 调 用 ， 即 获 取 framesouce channel 的 frame 图 像 ， 直 接 调 用 IMPIVSInterface 的成员函数实现算法处理。
 
-大部分情况下，我们使用的都是不绑定的方式进行移动侦测算法的获取的。
+### APIs for intelligent algorithms
 
-### 2.2：绑定模式的算法使用方法：
+![](assets/net-img-2ffa3510851c79ed477bc78067bd7019-20230919120311-irh1kb5.png)
 
-​![](assets/net-img-b7acb9d0f97c496be196e5b5e7890614-20230919120311-f9fnqrh.png)​
 
-### 2.3非绑定模式调用IVS平台
+### Key Code Analysis
 
-​![](assets/net-img-cdd0c9348b033fef2858a1b990122488-20230919120311-3ulxxni.png)​
+#### `sample_ivs_move_init`
 
-# 3：智能算法的有关API
+Create IVS specific algorithm channel groups, multiple algorithms can share a channel group 
+or use separate channel groups `sample_ivs_move_init();`
 
-​![](assets/net-img-2ffa3510851c79ed477bc78067bd7019-20230919120311-irh1kb5.png)​
-
-# 4：关键代码分析
-
-### 4.1：sample_ivs_move_init
-
-创建IVS具体算法通道组，多个算法可以共用一个通道组，也可以分别使用通道组sample_ivs_move_init();
-
-```js
+```
 static int sample_ivs_move_init(int grp_num)
 {
-	int ret = 0;
+    int ret = 0;
 
-	ret = IMP_IVS_CreateGroup(grp_num);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "IMP_IVS_CreateGroup(%d) failed\n", grp_num);
-		return -1;
-	}
-	return 0;
+    ret = IMP_IVS_CreateGroup(grp_num);
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "IMP_IVS_CreateGroup(%d) failed\n", grp_num);
+        return -1;
+    }
+    return 0;
 }
 ```
 
-复制
 
-### 4.2:sample_ivs_move_start
+#### `sample_ivs_move_start`
 
-这里面我们传递进去的组的值是0,也就是刚才初始化的IVS的组的值，然后我们输入的编码通道是2，也就是我们使用子码流进行分析，因为T31的算力不太行，所以我们使用子码流进行分析，不然我们分配的内存会不够，记住，嵌入式设备跟电脑PC端的软件最大的不同就是嵌入式设备的资源大部分是不够用的。
+Here we pass in the value of the group is 0, that is, just initialized the value of the group of IVS,
+and then we enter the encoding channel is 2, that is, we use the sub-stream for analysis, because the
+T31 arithmetic is not too good, so we use the sub-stream for analysis, otherwise we will not have 
+enough memory allocated, remember, embedded devices and PC software with the PC side of the biggest
+difference is that the embedded devices Most of the resources are not enough.
 
-里面最主要的函数：
+The most important functions inside is `IMP_IVS_CreateMoveInterface`
 
-IMP_IVS_CreateMoveInterface
+How to set the parameters of motion detection?
 
-如何设置移动侦测的参数？
-
-```js
+```
 /**
  * @file
- * IMP IVS 移动侦测模块
+ * IMP IVS Motion Detection Module
  */
 
 /**
  * @defgroup MoveDetection
  * @ingroup IMP_IVS
- * @brief 移动侦测接口
+ * @brief Motion Detection Interface
  * @{
  */
 
 /**
- * 移动侦测算法的输入结构体
+ * Input structure for motion detection algorithm
  */
 typedef struct {
-	int             sense[IMP_IVS_MOVE_MAX_ROI_CNT];   /**< 移动侦测的灵敏度, 对正常摄像机范围是0-4，对全景摄像机范围是0-8 */
-	int             skipFrameCnt;                      /*< 隔帧检测的个数 */
-	IMPFrameInfo    frameInfo;                         /**< 帧尺寸信息,只需要配置width和height */
-	IMPRect         roiRect[IMP_IVS_MOVE_MAX_ROI_CNT]; /*< 需要检测的roi区域坐标信息 */
-	int             roiRectCnt;                        /*< 需要检测的roi区域数量，范围为0-51，若为0：则不检测，1：检测roiRect 0
-														 区域，2、检测roiRect 0,1区域，3、检测roiRect 0,1,2区域，依次类推 */
+    int             sense[IMP_IVS_MOVE_MAX_ROI_CNT];   /**< Motion detection sensitivity, range 0-4 for normal cameras, 0-8 for panoramic cameras */
+    int             skipFrameCnt;                      /*< Number of inter-frame detections */
+    IMPFrameInfo    frameInfo;                         /**< Frame size information, only width and height need to be configured. */
+    IMPRect         roiRect[IMP_IVS_MOVE_MAX_ROI_CNT]; /*< Coordinate information of the ROI area to be detected */
+    int             roiRectCnt;                        /*< The number of ROI to be detected, the range is 0-51, 
+                                                           if 0 - no detection,
+                                                           1 - detect roiRect 0 region, 
+                                                           2 - detect roiRect 0,1 region,
+                                                           3 - detect roiRect 0,1,2 region, and so on */
 } IMP_IVS_MoveParam;
 ```
 
-复制
+Set the motion detection parameters:
 
-设置移动侦测参数：
+```
+    IMP_IVS_MoveParam param;
+    int i = 0, j = 0;
 
-```js
-	IMP_IVS_MoveParam param;
-	int i = 0, j = 0;
+    memset(&param, 0, sizeof(IMP_IVS_MoveParam));
+    //Set the detection interval to 5.
+    param.skipFrameCnt = 5;
+    param.frameInfo.width = SENSOR_WIDTH_SECOND;
+    param.frameInfo.height = SENSOR_HEIGHT_SECOND;
+    //Set detection area to 1 area  
+    param.roiRectCnt = 1;
+    //Set the sensitivity of all areas detected to 4, the highest sensitivity 
+    for(i=0; i<param.roiRectCnt; i++){
+        param.sense[i] = 4;
+    }
 
-	memset(&param, 0, sizeof(IMP_IVS_MoveParam));
-	//设置桢的检测间隔是5
-	param.skipFrameCnt = 5;
-	param.frameInfo.width = SENSOR_WIDTH_SECOND;
-	param.frameInfo.height = SENSOR_HEIGHT_SECOND;
-	//设置检测区域为1个区域  
-	param.roiRectCnt = 1;
-    //设置检测的所有区域的灵敏度为4，最高的灵敏度 
-	for(i=0; i<param.roiRectCnt; i++){
-	  param.sense[i] = 4;
-	}
-
-	//设置移动侦测的范围，和人形侦测应该是一样的，都是拥有区域检测的功能。
-	/* printf("param.sense=%d, param.skipFrameCnt=%d, param.frameInfo.width=%d, param.frameInfo.height=%d\n", param.sense, param.skipFrameCnt, param.frameInfo.width, param.frameInfo.height); */
-	for (j = 0; j < 2; j++) {
-		for (i = 0; i < 2; i++) {
-		  if((i==0)&&(j==0))
-		  {
-			param.roiRect[j * 2 + i].p0.x = i * param.frameInfo.width /* / 2 */;
-			param.roiRect[j * 2 + i].p0.y = j * param.frameInfo.height /* / 2 */;
-			param.roiRect[j * 2 + i].p1.x = (i + 1) * param.frameInfo.width /* / 2 */ - 1;
-			param.roiRect[j * 2 + i].p1.y = (j + 1) * param.frameInfo.height /* / 2 */ - 1;
-			printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
-		  }
-		  else
-		  {
-		    param.roiRect[j * 2 + i].p0.x = param.roiRect[0].p0.x;
-			param.roiRect[j * 2 + i].p0.y = param.roiRect[0].p0.y;
-			param.roiRect[j * 2 + i].p1.x = param.roiRect[0].p1.x;;
-			param.roiRect[j * 2 + i].p1.y = param.roiRect[0].p1.y;;
-			printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
-		  }
-		}
-	}
+    //Set the range of motion detection, it should be the same as humanoid detection, both have the function of area detection.
+    /* printf("param.sense=%d, param.skipFrameCnt=%d, param.frameInfo.width=%d, param.frameInfo.height=%d\n", param.sense, param.skipFrameCnt, param.frameInfo.width, param.frameInfo.height); */
+    for (j = 0; j < 2; j++) {
+        for (i = 0; i < 2; i++) {
+            if((i==0)&&(j==0))
+            {
+                param.roiRect[j * 2 + i].p0.x = i * param.frameInfo.width /* / 2 */;
+                param.roiRect[j * 2 + i].p0.y = j * param.frameInfo.height /* / 2 */;
+                param.roiRect[j * 2 + i].p1.x = (i + 1) * param.frameInfo.width /* / 2 */ - 1;
+                param.roiRect[j * 2 + i].p1.y = (j + 1) * param.frameInfo.height /* / 2 */ - 1;
+                printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
+            }
+            else
+            {
+                param.roiRect[j * 2 + i].p0.x = param.roiRect[0].p0.x;
+                param.roiRect[j * 2 + i].p0.y = param.roiRect[0].p0.y;
+                param.roiRect[j * 2 + i].p1.x = param.roiRect[0].p1.x;;
+                param.roiRect[j * 2 + i].p1.y = param.roiRect[0].p1.y;;
+                printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
+            }
+        }
+    }
 ```
 
-复制
-
-```js
+```
 static int sample_ivs_move_start(int grp_num, int chn_num, IMPIVSInterface **interface)
 {
-	int ret = 0;
-	IMP_IVS_MoveParam param;
-	int i = 0, j = 0;
+    int ret = 0;
+    IMP_IVS_MoveParam param;
+    int i = 0, j = 0;
 
-	memset(&param, 0, sizeof(IMP_IVS_MoveParam));
-	param.skipFrameCnt = 5;
-	param.frameInfo.width = SENSOR_WIDTH_SECOND;
-	param.frameInfo.height = SENSOR_HEIGHT_SECOND;
-	param.roiRectCnt = 1;
+    memset(&param, 0, sizeof(IMP_IVS_MoveParam));
+    param.skipFrameCnt = 5;
+    param.frameInfo.width = SENSOR_WIDTH_SECOND;
+    param.frameInfo.height = SENSOR_HEIGHT_SECOND;
+    param.roiRectCnt = 1;
 
-	for(i=0; i<param.roiRectCnt; i++){
-	  param.sense[i] = 4;
-	}
+    for(i=0; i<param.roiRectCnt; i++){
+      param.sense[i] = 4;
+    }
 
-	/* printf("param.sense=%d, param.skipFrameCnt=%d, param.frameInfo.width=%d, param.frameInfo.height=%d\n", param.sense, param.skipFrameCnt, param.frameInfo.width, param.frameInfo.height); */
-	for (j = 0; j < 2; j++) {
-		for (i = 0; i < 2; i++) {
-		  if((i==0)&&(j==0)){
-			param.roiRect[j * 2 + i].p0.x = i * param.frameInfo.width /* / 2 */;
-			param.roiRect[j * 2 + i].p0.y = j * param.frameInfo.height /* / 2 */;
-			param.roiRect[j * 2 + i].p1.x = (i + 1) * param.frameInfo.width /* / 2 */ - 1;
-			param.roiRect[j * 2 + i].p1.y = (j + 1) * param.frameInfo.height /* / 2 */ - 1;
-			printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
-		  }
-		  else
-		    {
-		      	param.roiRect[j * 2 + i].p0.x = param.roiRect[0].p0.x;
-			param.roiRect[j * 2 + i].p0.y = param.roiRect[0].p0.y;
-			param.roiRect[j * 2 + i].p1.x = param.roiRect[0].p1.x;;
-			param.roiRect[j * 2 + i].p1.y = param.roiRect[0].p1.y;;
-			printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
-		    }
-		}
-	}
-	*interface = IMP_IVS_CreateMoveInterface(&param);
-	if (*interface == NULL) {
-		IMP_LOG_ERR(TAG, "IMP_IVS_CreateGroup(%d) failed\n", grp_num);
-		return -1;
-	}
+    /* printf("param.sense=%d, param.skipFrameCnt=%d, param.frameInfo.width=%d, param.frameInfo.height=%d\n", param.sense, param.skipFrameCnt, param.frameInfo.width, param.frameInfo.height); */
+    for (j = 0; j < 2; j++) {
+        for (i = 0; i < 2; i++) {
+            if((i==0)&&(j==0)){
+                param.roiRect[j * 2 + i].p0.x = i * param.frameInfo.width /* / 2 */;
+                param.roiRect[j * 2 + i].p0.y = j * param.frameInfo.height /* / 2 */;
+                param.roiRect[j * 2 + i].p1.x = (i + 1) * param.frameInfo.width /* / 2 */ - 1;
+                param.roiRect[j * 2 + i].p1.y = (j + 1) * param.frameInfo.height /* / 2 */ - 1;
+                printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
+            }
+            else
+            {
+                param.roiRect[j * 2 + i].p0.x = param.roiRect[0].p0.x;
+                param.roiRect[j * 2 + i].p0.y = param.roiRect[0].p0.y;
+                param.roiRect[j * 2 + i].p1.x = param.roiRect[0].p1.x;;
+                param.roiRect[j * 2 + i].p1.y = param.roiRect[0].p1.y;;
+                printf("(%d,%d) = ((%d,%d)-(%d,%d))\n", i, j, param.roiRect[j * 2 + i].p0.x, param.roiRect[j * 2 + i].p0.y,param.roiRect[j * 2 + i].p1.x, param.roiRect[j * 2 + i].p1.y);
+            }
+        }
+    }
 
-	ret = IMP_IVS_CreateChn(chn_num, *interface);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "IMP_IVS_CreateChn(%d) failed\n", chn_num);
-		return -1;
-	}
+    *interface = IMP_IVS_CreateMoveInterface(&param);
+    if (*interface == NULL) {
+        IMP_LOG_ERR(TAG, "IMP_IVS_CreateGroup(%d) failed\n", grp_num);
+        return -1;
+    }
 
-	ret = IMP_IVS_RegisterChn(grp_num, chn_num);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "IMP_IVS_RegisterChn(%d, %d) failed\n", grp_num, chn_num);
-		return -1;
-	}
+    ret = IMP_IVS_CreateChn(chn_num, *interface);
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "IMP_IVS_CreateChn(%d) failed\n", chn_num);
+        return -1;
+    }
 
-	ret = IMP_IVS_StartRecvPic(chn_num);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "IMP_IVS_StartRecvPic(%d) failed\n", chn_num);
-		return -1;
-	}
+    ret = IMP_IVS_RegisterChn(grp_num, chn_num);
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "IMP_IVS_RegisterChn(%d, %d) failed\n", grp_num, chn_num);
+        return -1;
+    }
 
-	return 0;
+    ret = IMP_IVS_StartRecvPic(chn_num);
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "IMP_IVS_StartRecvPic(%d) failed\n", chn_num);
+        return -1;
+    }
+
+    return 0;
 }
 ```
 
-复制
 
-### 4.3：sample_ivs_move_get_result_start获取移动侦测结果。
+#### Get the result of the move detection with `sample_ivs_move_get_result_start`
 
-最主要的几个函数：
+The top few functions:
 
-```js
+```
 /**
- * 阻塞判断是否可以获得IVS功能已计算出的智能分析结果
+ * Blocking determines whether or not the IVS function has access 
+ * to the intelligent analytics that have already been calculated
  *
  * @fn int IMP_IVS_PollingResult(int ChnNum, int timeoutMs);
  *
- * @param[in] ChnNum IVS功能对应的通道号
+ * @param[in]  ChnNum   Channel number corresponding to IVS function
  *
- * @param[in] timeout 最大等待时间，单位ms; IMP_IVS_DEFAULT_TIMEOUTMS:库内部默认的等待时间,0:不等待,>0:用户设定的等待时间
+ * @param[in]  timeout  Maximum wait time in ms; 
+ *                      IMP_IVS_DEFAULT_TIMEOUTMS: library internal default wait time,
+ *                      0: no wait,
+ *                      >0: user set wait time
  *
- * @retval 0 成功
- * @retval -1 失败
+ * @retval 0   success
+ * @retval -1  failure
  *
- * @remark 只有该通道创建时参数IMPIVSInterface结构体中ProcessAsync函数成员返回0时，即实际检测正常返回时，此Polling函数才返回成功
+ * @remark     This Polling function returns success only if the ProcessAsync 
+ *             function member of the IMPIVSInterface structure parameterized
+ *             at the time the channel was created returns 0, i.e., 
+ *             if the actual test returns normally.
  *
- * @attention 无
+ * @attention  none
  */
 int IMP_IVS_PollingResult(int ChnNum, int timeoutMs);
 ```
 
-复制
-
-```js
+```
 /**
- * 获得IVS功能计算出的智能分析结果
+ * Access to intelligent analytics calculated by the IVS function
  *
  * @fn int IMP_IVS_GetResult(int ChnNum, void **result);
  *
- * @param[in] ChnNum IVS功能对应的通道号
+ * @param[in]  ChnNum  Channel number corresponding to IVS function
  *
- * @param[in] result IVS功能对应的通道号输出的结果，返回此通道对应的智能分析算法的结果指针，外部客户无需分配空间。
+ * @param[in]  result  The output of the channel number corresponding to the IVS
+ *                     function returns a pointer to the result of the Intelligent
+ *                     Analysis Algorithm corresponding to this channel, and no 
+ *                     space is required to be allocated by external clients.
  *
- * @retval 0 成功
- * @retval -1 失败
+ * @retval 0   success
+ * @retval -1  failure
  *
- * @remark 根据不同IVS功能绑定的通道,输出其对应的结果.
+ * @remark     According to the channels bound to different IVS functions, 
+ *             the corresponding results are output.
  *
  * @attention 无
  */
 int IMP_IVS_GetResult(int ChnNum, void **result);
 ```
 
-复制
-
-```js
+```
 /**
- * 释放IVS功能计算出的结果资源
+ * Releasing the resultant resources calculated by the IVS function
  *
  * @fn int IMP_IVS_ReleaseResult(int ChnNum, void *result);
  *
- * @param[in] GrpNum 通道组号
+ * @param[in]  GrpNum  channel group number
  *
- * @param[in] ChnNum IVS功能对应的通道号
+ * @param[in]  ChnNum  Channel number corresponding to IVS function
  *
- * @param[in] result IVS功能对应的通道号输出的结果
+ * @param[in]  result  Output of the channel number corresponding to the IVS function
  *
- * @retval 0 成功
- * @retval -1 失败
+ * @retval 0   success
+ * @retval -1  failure
  *
- * @remark 根据不同IVS功能绑定的通道,释放其输出的结果资源.
+ * @remark     Depending on the channel bound to the different IVS functions, 
+ *             the resultant resources of their outputs are released.
  *
  * @attention 无
  */
 int IMP_IVS_ReleaseResult(int ChnNum, void *result);
 ```
 
-复制
+Finally, you can write the code to get the motion detection:
 
-最后可以写出获取移动侦测的代码：
-
-```js
+```
 static void *sample_ivs_move_get_result_process(void *arg)
 {
-	int i = 0, ret = 0;
-	int chn_num = (int)arg;
-	IMP_IVS_MoveOutput *result = NULL;
+    int i = 0, ret = 0;
+    int chn_num = (int)arg;
+    IMP_IVS_MoveOutput *result = NULL;
 
-	for (i = 0; i < NR_FRAMES_TO_SAVE; i++) {
-		ret = IMP_IVS_PollingResult(chn_num, IMP_IVS_DEFAULT_TIMEOUTMS);
-		if (ret < 0) {
-			IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, IMP_IVS_DEFAULT_TIMEOUTMS);
-			return (void *)-1;
-		}
-		ret = IMP_IVS_GetResult(chn_num, (void **)&result);
-		if (ret < 0) {
-			IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
-			return (void *)-1;
-		}
-		IMP_LOG_INFO(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
+    for (i = 0; i < NR_FRAMES_TO_SAVE; i++) {
+        ret = IMP_IVS_PollingResult(chn_num, IMP_IVS_DEFAULT_TIMEOUTMS);
+        if (ret < 0) {
+            IMP_LOG_ERR(TAG, "IMP_IVS_PollingResult(%d, %d) failed\n", chn_num, IMP_IVS_DEFAULT_TIMEOUTMS);
+            return (void *)-1;
+        }
+        ret = IMP_IVS_GetResult(chn_num, (void **)&result);
+        if (ret < 0) {
+            IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
+            return (void *)-1;
+        }
+        IMP_LOG_INFO(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
 
-		ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
-		if (ret < 0) {
-			IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
-			return (void *)-1;
-		}
+        ret = IMP_IVS_ReleaseResult(chn_num, (void *)result);
+        if (ret < 0) {
+            IMP_LOG_ERR(TAG, "IMP_IVS_ReleaseResult(%d) failed\n", chn_num);
+            return (void *)-1;
+        }
 }
 ```
 
-复制
+#### Release resources needed for motion detection:
 
-### 4.4：释放移动侦测需要的资源：
+```
+/* Exit sequence as follow */
+/* Step.10 stop to get ivs move result */
+ret = sample_ivs_move_get_result_stop(ivs_tid);
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "sample_ivs_move_get_result_stop failed\n");
+    return -1;
+}
 
-```js
-	/* Exit sequence as follow */
-	/* Step.10 stop to get ivs move result */
-	ret = sample_ivs_move_get_result_stop(ivs_tid);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "sample_ivs_move_get_result_stop failed\n");
-		return -1;
-	}
-
-	/* Step.11 ivs move stop */
-	ret = sample_ivs_move_stop(2, inteface);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "sample_ivs_move_stop(0) failed\n");
-		return -1;
-	}
-	/* Step.12 Stream Off */
-	ret = sample_framesource_streamoff();
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "FrameSource StreamOff failed\n");
-		return -1;
-	}
+/* Step.11 ivs move stop */
+ret = sample_ivs_move_stop(2, inteface);
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "sample_ivs_move_stop(0) failed\n");
+    return -1;
+}
+/* Step.12 Stream Off */
+ret = sample_framesource_streamoff();
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "FrameSource StreamOff failed\n");
+    return -1;
+}
 ```
 
-复制
+### Experimental phenomena:
 
-# 5：实验现象：
+We use the following function to get the motion detection data information and 
+we can get the value we need from the return value side of the function.
 
-我们使用下面的函数获取移动侦测数据信息，可以从函数的返回值那边得到我们需要的数值。
+Since we get our value from the first field, we only need to focus on the first
+printed data.
 
-因为我们的数值是通过第一个区域得到的，所以我们只需要关注第一个打印的数据就可以了。
+If it is 1, it proves that the motion detection was triggered, and if it is 0,
+it proves that there was no motion detection. The result of the experiment also
+proves that when I put my hand over, it is 1, and if I don't put it over, it is 0.
+The experiment is perfectly and successfully verified.
 
-如果是1证明是移动侦测触发，如果是0证明没有移动侦测。实验结果也证明，当我把手放过去的时候，就是1，如果没有放过去就是0，实验完美成功验证。
-
-```js
-		ret = IMP_IVS_GetResult(chn_num, (void **)&result);
-		if (ret < 0) {
-			IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
-			return (void *)-1;
-		}
-		IMP_LOG_INFO(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
+```
+ret = IMP_IVS_GetResult(chn_num, (void **)&result);
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "IMP_IVS_GetResult(%d) failed\n", chn_num);
+    return (void *)-1;
+}
+IMP_LOG_INFO(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
 ```
 
-复制
+![](assets/net-img-1cfff84c898b3d0864e9ab113ab79142-20230919120311-kibggux.png)
 
-​![](assets/net-img-1cfff84c898b3d0864e9ab113ab79142-20230919120311-kibggux.png)​
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+[toc]: index.md

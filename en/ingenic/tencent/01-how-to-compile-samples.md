@@ -1,5 +1,4 @@
-Ingenic T31 Application Layer Development
-=========================================
+# [Ingenic T31 Application Development][toc]
 
 How to Compile Sample
 ---------------------
@@ -83,3 +82,5 @@ Just execute the make command directly.
 You can see that after recompiling, the time of the cyan application has changed, proving that we compiled successfully.
 
 ![](assets/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)
+
+[toc]: index.md

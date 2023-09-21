@@ -1,19 +1,18 @@
-A mirror of articles from <https://cloud.tencent.com/developer/column/98782>.
-
 Ingenic T31 Application Layer Development
 ------------------------------------------
+_Translated articles from <https://cloud.tencent.com/developer/column/98782>._
 
-<00 Ingenic SDK Overview.md>
-<01 How to Compile Samples.md>
-<02 Sample Introduction.md>
-<03 Audio Input.md>
-<04 Audio Output.md>
-<05 Echo Cancellation.md>
-<06 Audio Codecs.md>
-<07 Video Basics.md>
-<08 Getting JPEG Stream.md>
-<09 Getting H265 Stream.md>
-<10 Intelligent Detection Algorithm.md>
-<11 OSD Application.md>
-<12 YUV and RAW Data.md>
-<13 Switching Resolution.md>
+- [Ingenic SDK Overview](00-ingenic-sdk-overview.md)
+- [How to Compile Samples](01-how-to-compile-samples.md)
+- [Sample Introduction](02-sample-introduction.md)
+- [Audio Input](03-audio-input.md)
+- [Audio Output](04-audio-output.md)
+- [Echo Cancellation](05-echo-cancellation.md)
+- [Audio Codecs](06-audio-codecs.md)
+- [Video Basics](07-video-basics.md)
+- [Getting JPEG Stream](08-getting-jpeg-stream.md)
+- [Getting H265 Stream](09-getting-h265-stream.md)
+- [Intelligent Detection Algorithm](10-intelligent-detection-algorithm.md)
+- [OSD Application](11-osd-application.md)
+- [YUV and RAW Data](12-yuv-and-raw-data.md)
+- [Switching Resolution](13-switching-resolution.md)

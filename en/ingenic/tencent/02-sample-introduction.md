@@ -1,47 +1,40 @@
-# 君正T31应用开发2 sample介绍
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发2 sample介绍
+Sample Introduction
+-------------------
 
-原创
+### Samples location
 
-**发布于** **2023-03-18 18:17:37**
+Sample programs are located in `/samples/libimp-samples` directory.
+Samples depend on the SDK libraries, including recording and playback, echo cancellation and other applications.
+Users can refer to the provided sample programs to write their own project code.
 
-**460**1
+Here's the content of `ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2`:
 
-**举报**
+![](assets/net-img-6d2913682709a968e87965be9a6aad6b-20230919120645-umbwr8c.png)
 
-# 1.sample的位置
+- __include__ contains header files for system library functions.
+- __lib__ contains static and dynamic libraries of system library functions.
+- __sample__ contains the source files we need to compile.
 
-Sample 程序位于/samples/libimp-samples，目录下是依赖 SDK 库的应用程序， 包括录音放音、回应消除等应用程序。用户可以参考提供的 sample 程序，编写自己相应的工程代码。
 
-XXX\ingentic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2
+### What are the basic samples that Ingenic provides us with?
 
-​![](assets/net-img-6d2913682709a968e87965be9a6aad6b-20230919120645-umbwr8c.png)​
+There are actually three types of applications.
 
-include：是系统库函数的头文件
+The first one is a sample for audio codecs.
 
-lib:是系统库函数的静态和动态库。
+![](assets/net-img-bbcbcd3464e9ddaae73f48ae73bbc528-20230919120646-cqc081h.png)
 
-sample： 就是我们需要编译的文件内容。
+The second one is a sample for video codecs.
 
-# 2.君正为我们提供的基础sample有哪些？
+![](assets/net-img-061df27c3045846c7fbf1ae73de5b1b9-20230919120646-63azjba.png)
 
-实际就三种类型的应用程序
+The third one is a sample for motion detection, the OSD sample.
 
-第一种是关于音频编解码的sample
+![](assets/net-img-c3a544180aba33890ed6b3a50b6f4794-20230919120646-i8f4tkt.png)
 
-第二种是关于视频编解码的sample
+Later I will gradually explain the relationship between these samples and the Ingenic User's Manual.
+These samples are the basis for us to carry out large-scale projects, must be fully mastered.
 
-第三种是关于移动侦测的sample，OSD的sample
-
-​![](assets/net-img-bbcbcd3464e9ddaae73f48ae73bbc528-20230919120646-cqc081h.png)​
-
-​![](assets/net-img-061df27c3045846c7fbf1ae73de5b1b9-20230919120646-63azjba.png)​
-
-​![](assets/net-img-c3a544180aba33890ed6b3a50b6f4794-20230919120646-i8f4tkt.png)​
-
-**后面会逐步用解说这些sample和君正用户手册的关系，这些sample是我们进行大型项目的基础，必须完全掌握。**
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+[toc]: index.md

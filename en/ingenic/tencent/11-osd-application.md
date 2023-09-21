@@ -1,392 +1,385 @@
-# 君正T31应用开发11：OSD应用
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发11：OSD应用
+OSD Application
+---------------
 
-原创
+### Introduction to OSD Application
 
-**发布于** **2023-06-22 08:41:38**
+Overlay specific information into the video, such as dot matrix data, straight line, 
+rectangle box, rectangle mask, picture data, etc. The IPU module operates on the image
+mainly including OSD module and CSC module.
 
-**210**0
+The operation of IPU module on image mainly includes OSD module and CSC module.
 
-**举报**
+The OSD module mainly superimposes frame lines, rectangle masks, pictures and other 
+data on top of the video frame.
 
-# 1.OSD应用简介
+The CSC module converts the input video frames into hardware-supported images, 
+such as HSV, NV12, NV21, RGB32, ARGB or any other formats.
 
-将特定的信息叠加到视频当中，如点阵数据，直线，矩形框，矩形遮挡，图片数据等等。
+#### What is OSD?
 
-IPU模块对图像的操作主要包含OSD模块和CSC模块。
+The data information superimposed on the video data is called OSD region (Region), 
+the system uses the OSD device module to manage these OSD regions, the OSD device 
+module supports region creation, supports the type of region configured through 
+the region attribute setting interface.
 
-OSD模块主要在视频桢上面叠加框线，矩形遮挡，图片等数据。
+(OSD device module supports the creation of regions and the configuration of the 
+type of region through the region attribute setting interface (such as the configuration 
+of the region display attributes, location coordinates, foreground and background
+colors, etc.) to support the destruction of the region of the action, etc.
 
-CSC模块主要把输入视频桢转化成硬件支持的图像，如HSV格式，NV12，NV21，RGB32，ARGB格式的任意一种格式。
+After the OSD region has been created, registered, and properties have been set, 
+the OSD region will call the IPU for drawing.
 
-## 1.1:什么是OSD？
+#### The position of the OSD in the whole system.
 
-叠加在视频数据中的数据信息称为OSD区域（Region），系统中使用OSD设备模块来管理这些OSD区域，OSD设备模块支持区域创建，支持通过区域属性设置接口配置区域的类型。
+![](assets/net-img-ec5260a140a8f53be476e4d6e173bb5b-20230919120329-w2ynggr.png)
 
-（如配置区域区域显示的属性，位置坐标，前景色和背景色等等）支持区域的销毁的动作等等。
+#### Sequence of OSD module calls:
 
-在OSD区域完成创建，注册，设置属性等操作后，OSD区域内部会统一调用IPU进行绘制。
+First is the initialization process:
 
-## 1.2：OSD在整个系统的位置
+1. create OSD group, use IMP_OSD_CreateGroup to create an OSD group;
+2. create an OSD region, use IMP_OSD_CreateRgn to create a region. 3. register an OSD region to an OSD group;
+3. register the OSD region to the OSD group, using IMP_OSD_RegisterRgn to register the created region to the OSD group.
 
-​![](assets/net-img-ec5260a140a8f53be476e4d6e173bb5b-20230919120329-w2ynggr.png)​
+Register the created region to the OSD group via IMP_OSD_RegisterRgn;
 
-## 1.3 OSD模块调用的顺序：
+4. set OSD group region attributes and region attributes, set region attributes via IMP_OSD_SetRgnAttr.
 
-首先是初始化流程：
+Set the area group attributes via IMP_OSD_SetGrpRgnAttr;
 
-1. 创建 OSD 组，使用 IMP_OSD_CreateGroup 创建一个 OSD 组；
-2. 创建 OSD 区域，使用 IMP_OSD_CreateRgn 创建一个区域；
-3. 注册 OSD 区域到 OSD 组中，通过 IMP_OSD_RegisterRgn 将创建的区域注册到
+5. set the OSD function display switch, enable the osd display through IMP_OSD_ShowRgn. 6. bind the OSD group to the OSD group;
+6. bind the OSD group to the system, bind the OSD module to other modules through IMP_System_Bind.
 
-OSD 组中；
+Bind the OSD module to the system by IMP_System_Bind.
 
-4. 设置 OSD 组区域属性和区域属性，通过 IMP_OSD_SetRgnAttr 设置区域属性，
+Next is the exit process:
 
-通过 IMP_OSD_SetGrpRgnAttr 设置区域组属性；
+1. unbind, by IMP_System_UnBind;
+2. disable the OSD function display switch, IMP_OSD_ShowRgn disable osd display;
+3. cancel the OSD area in the OSD group, cancel the area by IMP_OSD_UnRegisterRgn
+4. destroy the OSD area, via IMP_OSD_DestroyRgn destroy the area
+5. destroy the OSD group and finally destroy the group via IMP_OSD_DestroyGroup
 
-5. 设置 OSD 功能显示开关，通过 IMP_OSD_ShowRgn 开启 osd 显示；
-6. 绑定 OSD 组到系统中，通过 IMP_System_Bind 将 OSD 模块和其他模块进行绑
 
-定。
+#### Functions called by the API
 
-接着是退出流程：
+![](assets/net-img-25e4f79b69eb19ab1f9a103182a20029-20230919120329-lsxb4q0.png)
 
-1. 解绑，通过 IMP_System_UnBind 进行解绑；
-2. 关闭 OSD 功能显示开关，IMP_OSD_ShowRgn 关闭 osd 显示；
-3. 注销 OSD 组中的 OSD 区域，通过 IMP_OSD_UnRegisterRgn 注销区域
-4. 销毁 OSD 区域，通过 IMP_OSD_DestroyRgn 销毁区域
-5. 销毁 OSD 组，最后通过 IMP_OSD_DestroyGroup 销毁组
 
-## 1.4：API调用的函数
+### Detailed analysis of Ingenic's demo:
 
-​![](assets/net-img-25e4f79b69eb19ab1f9a103182a20029-20230919120329-lsxb4q0.png)​
+#### Initialize OSD Function with `sample_osd_init`
 
-# 2：君正的demo详细分析：
+The demo mainly initializes four different OSD handles, each handle is 
+actually the type of each OSD.
 
-## 2.1：sample_osd_init初始化OSD函数
+They are time, picture, occlusion, rectangle type image, which also 
+corresponds to the four types supported by our Ingenic chip.
 
-demo里面主要是初始化了四种不同的OSD句柄，每种句柄实际就是每个OSD的类型
+```
+int ret;
+IMPRgnHandle *prHander;
+IMPRgnHandle rHanderFont;
+IMPRgnHandle rHanderLogo;
+IMPRgnHandle rHanderCover;
+IMPRgnHandle rHanderRect;
 
-分别是时间，图片，遮挡，长方形类型的图像，也对应我们君正芯片支持的四种类型。
-
-```js
-	int ret;
-	IMPRgnHandle *prHander;
-	IMPRgnHandle rHanderFont;
-	IMPRgnHandle rHanderLogo;
-	IMPRgnHandle rHanderCover;
-	IMPRgnHandle rHanderRect;
-
-	prHander = malloc(4 * sizeof(IMPRgnHandle));
-	if (prHander <= 0) {
-		IMP_LOG_ERR(TAG, "malloc() error !\n");
-		return NULL;
-	}
+prHander = malloc(4 * sizeof(IMPRgnHandle));
+if (prHander <= 0) {
+    IMP_LOG_ERR(TAG, "malloc() error !\n");
+    return NULL;
+}
 ```
 
-复制
+###### Create region of OSD: IMP_OSD_CreateRgn
 
-### 2.1.1创建OSD的区域：IMP_OSD_CreateRgn
+This function is used to create our OSD region.
 
-这个函数是用来创建我们的OSD区域的。
+For example, if you want to add some OSD information on top of the video stream, 
+then you have to call this function to allocate some resources to it, and if it 
+allocates successfully, the return value is the handle of the OSD region you created.
 
-比如你想要在视频流上面添加一些OSD的信息的话，那么你就必须调用这个函数，分配一些资源给它，它如果分配成功的话，返回值是你创建OSD区域的句柄。
-
-```js
+```
 /**
  * @fn IMPRgnHandle IMP_OSD_CreateRgn(IMPOSDRgnAttr *prAttr)
  *
- * 创建OSD区域
+ * Creating an OSD area
  *
- * @param[in] prAttr OSD区域属性
+ * @param[in] prAttr OSD Regional Properties
  *
- * @retval 大于等于0 成功
- * @retval 小于0 失败
+ * @retval >= 0  Success
+ * @retval < 0   Failure
  *
- * @remarks 无。
+ * @remarks    None.
  *
- * @attention 无。
+ * @attention  None.
  */
 IMPRgnHandle IMP_OSD_CreateRgn(IMPOSDRgnAttr *prAttr);
 ```
 
-复制
+##### Register OSD's region function with `IMP_OSD_RegisterRgn`
 
-### 2.1.2:注册OSD的区域函数IMP_OSD_RegisterRgn
+Register the handle of the OSD group we just created above into this function to notify
+the Ingenic T31 chip that we have just registered the OSD area information into it.
 
-将我们上面刚刚创建的OSD组的句柄，注册到这个函数里面，通知君正T31芯片，我们已经把刚才的OSD区域信息注册进去了。
-
-```js
+```
 /**
  * @fn int IMP_OSD_RegisterRgn(IMPRgnHandle handle, int grpNum, IMPOSDGrpRgnAttr *pgrAttr)
  *
- * 注册OSD区域
+ * Registered OSD area
  *
- * @param[in] handle 区域句柄，IMP_OSD_CreateRgn的返回值
- * @param[in] grpNum OSD组号
- * @param[in] pgrAttr OSD组显示属性
+ * @param[in] handle Area handle, return value of IMP_OSD_CreateRgn
+ * @param[in] grpNum OSD group number
+ * @param[in] pgrAttr OSD Group Display Properties
  *
- * @retval 0 成功
- * @retval 非0 失败
+ * @retval 0         Success
+ * @retval non-zero  Failure
  *
- * @remarks 调用此API时要求对应的OSD组已经创建。
+ * @remarks    Calling this API requires that the corresponding OSD group has been created.
  *
- * @attention 无。
+ * @attention  none.
  */
 int IMP_OSD_RegisterRgn(IMPRgnHandle handle, int grpNum, IMPOSDGrpRgnAttr *pgrAttr);
 ```
 
-复制
+##### Sets the region attribute with `IMP_OSD_SetRgnAttr`
 
-### 2.1.3:设置区域属性IMP_OSD_SetRgnAttr：
+This is the area property of the timestamp we want to display, first we set it to the picture `OSD_REG_PIC`
 
-这是我们要显示的时间戳的区域属性，首先我们设置为图片OSD_REG_PIC
+Then we set the size information of this OSD area, the starting point of the coordinates is `(10,10)`.
 
-然后我们设置这个OSD区域的大小信息,坐标的起点信息是(10,10)
+Then we need how much space? For example, `1970-02-20:13-23-23`, this needs about 19 digital units.
 
-然后我们需要多少的空间呢？比如1970-02-20：13-23-23，这个需要大概19个数字的单位。
+So we used `OSD_REGION_WIDTH` multiplied by 20 times.
 
-所以我们用了OSD_REGION_WIDTH乘以20倍的数值。
+The exact size is defined according to the file provided to us by our demo.
 
-具体大小是根据我们的demo提供给我们的文件来定义的。
-
-```js
-
-	IMPOSDRgnAttr rAttrFont;
-	memset(&rAttrFont, 0, sizeof(IMPOSDRgnAttr));
-	rAttrFont.type = OSD_REG_PIC;
-	rAttrFont.rect.p0.x = 10;
-	rAttrFont.rect.p0.y = 10;
-	rAttrFont.rect.p1.x = rAttrFont.rect.p0.x + 20 * OSD_REGION_WIDTH- 1;   //p0 is start，and p1 well be epual p0+width(or heigth)-1
-	rAttrFont.rect.p1.y = rAttrFont.rect.p0.y + OSD_REGION_HEIGHT - 1;
+```
+    IMPOSDRgnAttr rAttrFont;
+    memset(&rAttrFont, 0, sizeof(IMPOSDRgnAttr));
+    rAttrFont.type = OSD_REG_PIC;
+    rAttrFont.rect.p0.x = 10;
+    rAttrFont.rect.p0.y = 10;
+    rAttrFont.rect.p1.x = rAttrFont.rect.p0.x + 20 * OSD_REGION_WIDTH- 1;   //p0 is start，and p1 well be epual p0+width(or heigth)-1
+    rAttrFont.rect.p1.y = rAttrFont.rect.p0.y + OSD_REGION_HEIGHT - 1;
 #ifdef SUPPORT_RGB555LE
-	rAttrFont.fmt = PIX_FMT_RGB555LE;
+    rAttrFont.fmt = PIX_FMT_RGB555LE;
 #else
-	rAttrFont.fmt = PIX_FMT_BGRA;
+    rAttrFont.fmt = PIX_FMT_BGRA;
 #endif
-	rAttrFont.data.picData.pData = NULL;
-	ret = IMP_OSD_SetRgnAttr(rHanderFont, &rAttrFont);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "IMP_OSD_SetRgnAttr TimeStamp error !\n");
-		return NULL;
-	}
+    rAttrFont.data.picData.pData = NULL;
+    ret = IMP_OSD_SetRgnAttr(rHanderFont, &rAttrFont);
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "IMP_OSD_SetRgnAttr TimeStamp error !\n");
+        return NULL;
+    }
 ```
 
-复制
+##### Sets the region characteristic of the group with `IMP_OSD_SetGrpRgnAttr`
 
-### 2.1.4：设置组的区域特性IMP_OSD_SetGrpRgnAttr
-
-```js
+```
 /**
- * OSD组区域属性
+ * OSD Group Area Attributes
  */
 typedef struct {
-	int					show;			/**< 是否显示 */
-	IMPPoint			offPos;			/**< 显示起始坐标 */
-	float				scalex;			/**< 缩放x参数 */
-	float				scaley;			/**< 缩放y参数 */
-	int					gAlphaEn;		/**< Alpha开关 */
-	int					fgAlhpa;		/**< 前景Alpha */
-	int					bgAlhpa;		/**< 背景Alpha */
-	int					layer;			/**< 显示层 */
+    int        show;         /**< Display switch */
+    IMPPoint   offPos;       /**< Display start coordinates */
+    float      scalex;       /**< Scaling x parameter */
+    float      scaley;       /**< Scaling y parameter */
+    int        gAlphaEn;     /**< Alpha enabled */
+    int        fgAlhpa;      /**< Foreground Alpha */
+    int        bgAlhpa;      /**< Background Alpha */
+    int        layer;        /**< Display layer */
 } IMPOSDGrpRgnAttr;
 ```
 
-复制
+```
+IMPOSDGrpRgnAttr grAttrFont;
+if (IMP_OSD_GetGrpRgnAttr(rHanderFont, grpNum, &grAttrFont) < 0) {
+    IMP_LOG_ERR(TAG, "IMP_OSD_GetGrpRgnAttr Logo error !\n");
+    return NULL;
+}
+memset(&grAttrFont, 0, sizeof(IMPOSDGrpRgnAttr));
+grAttrFont.show = 0;
 
-```js
-	IMPOSDGrpRgnAttr grAttrFont;
-	if (IMP_OSD_GetGrpRgnAttr(rHanderFont, grpNum, &grAttrFont) < 0) {
-		IMP_LOG_ERR(TAG, "IMP_OSD_GetGrpRgnAttr Logo error !\n");
-		return NULL;
-
-	}
-	memset(&grAttrFont, 0, sizeof(IMPOSDGrpRgnAttr));
-	grAttrFont.show = 0;
-
-	/* Disable Font global alpha, only use pixel alpha. */
-	grAttrFont.gAlphaEn = 1;
-	grAttrFont.fgAlhpa = 0xff;
-	grAttrFont.layer = 3;
-	if (IMP_OSD_SetGrpRgnAttr(rHanderFont, grpNum, &grAttrFont) < 0) {
-		IMP_LOG_ERR(TAG, "IMP_OSD_SetGrpRgnAttr Logo error !\n");
-		return NULL;
-	}
+/* Disable Font global alpha, only use pixel alpha. */
+grAttrFont.gAlphaEn = 1;
+grAttrFont.fgAlhpa = 0xff;
+grAttrFont.layer = 3;
+if (IMP_OSD_SetGrpRgnAttr(rHanderFont, grpNum, &grAttrFont) < 0) {
+    IMP_LOG_ERR(TAG, "IMP_OSD_SetGrpRgnAttr Logo error !\n");
+    return NULL;
+}
 ```
 
-复制
 
-### 2.1.5：开启OSD组的显示IMP_OSD_Start
+##### Enables the display of the OSD group with `IMP_OSD_Start`
 
-```js
+```
 /**
  * @fn int IMP_OSD_Start(int grpNum)
  *
- * 设置开始OSD组的显示
+ * Setting the Start OSD group display
  *
- * @param[in] grpNum OSD组号
+ * @param[in] grpNum OSD group number
  *
- * @retval 0 成功
- * @retval 非0 失败
+ * @retval 0         Success
+ * @retval non-zero  Failure
  *
- * @remarks 调用此API时要求对应的OSD组已经创建。
+ * @remarks     Calling this API requires that the corresponding OSD group has been created.
  *
- * @attention 无。
+ * @attention   None.
  */
 int IMP_OSD_Start(int grpNum);
 ```
 
-复制
+#### Binding OSD layers to our coding sequence
 
-## 2.2：绑定OSD图层到我们的编码顺序中
+![](assets/net-img-2212e032620909327c6c3864b7c75a92-20230919120330-4wittfx.png)
 
-​![](assets/net-img-2212e032620909327c6c3864b7c75a92-20230919120330-4wittfx.png)​
-
-```js
-	/* Step.5 Bind */
-	IMPCell osdcell = {DEV_ID_OSD, grpNum, 0};
-	ret = IMP_System_Bind(&chn[0].framesource_chn, &osdcell);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "Bind FrameSource channel0 and OSD failed\n");
-		return -1;
-	}
-
-	ret = IMP_System_Bind(&osdcell, &chn[0].imp_encoder);
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "Bind OSD and Encoder failed\n");
-		return -1;
-	}
 ```
+/* Step.5 Bind */
+IMPCell osdcell = {DEV_ID_OSD, grpNum, 0};
+ret = IMP_System_Bind(&chn[0].framesource_chn, &osdcell);
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "Bind FrameSource channel0 and OSD failed\n");
+    return -1;
+}
 
-复制
-
-## 2.3：打开视频源，并获取视频流并保存下来
-
-```js
-	/* Step.7 Stream On */
-	IMP_FrameSource_SetFrameDepth(0, 0);
-	ret = sample_framesource_streamon();
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "ImpStreamOn failed\n");
-		return -1;
-	}
-
-	/* Step.6 Get stream */
-    if (byGetFd) {
-        ret = sample_get_video_stream_byfd();
-        if (ret < 0) {
-            IMP_LOG_ERR(TAG, "Get video stream byfd failed\n");
-            return -1;
-        }
-    } else {
-        ret = sample_get_video_stream();
-        if (ret < 0) {
-            IMP_LOG_ERR(TAG, "Get video stream failed\n");
-            return -1;
-        }
-    }
-```
-
-复制
-
-## 2.4：不断更新时间戳线程update_thread
-
-如果我们只是需要嵌入一张图片，或者设置一个遮挡区域，还有一些不动的图片之类的OSD的话，那么这个步奏是完全不需要的，但是我们的时间戳需要随着时间的改变而进行改变。
-
-所以这个时候我们必须要根据时间的变化来动态的显示时间戳这个OSD的信息了。
-
-主要就是根据localtime这个系统函数，获取系统当前的时间，然后按照当前的时间去写入OSD需要显示的数据内容。
-
-```js
-static void *update_thread(void *p)
-{
-	int ret;
-
-	/*generate time*/
-	char DateStr[40];
-	time_t currTime;
-	struct tm *currDate;
-	unsigned i = 0, j = 0;
-	void *dateData = NULL;
-	uint32_t *data = p;
-	IMPOSDRgnAttrData rAttrData;
-
-	ret = osd_show();
-	if (ret < 0) {
-		IMP_LOG_ERR(TAG, "OSD show error\n");
-		return NULL;
-	}
-
-	while(1) {
-			int penpos_t = 0;
-			int fontadv = 0;
-
-			time(&currTime);
-			currDate = localtime(&currTime);
-			memset(DateStr, 0, 40);
-			strftime(DateStr, 40, "%Y-%m-%d %I:%M:%S", currDate);
-			for (i = 0; i < OSD_LETTER_NUM; i++) {
-				switch(DateStr[i]) {
-					case '0' ... '9':
-						dateData = (void *)gBgramap[DateStr[i] - '0'].pdata;
-						fontadv = gBgramap[DateStr[i] - '0'].width;
-						penpos_t += gBgramap[DateStr[i] - '0'].width;
-						break;
-					case '-':
-						dateData = (void *)gBgramap[10].pdata;
-						fontadv = gBgramap[10].width;
-						penpos_t += gBgramap[10].width;
-						break;
-					case ' ':
-						dateData = (void *)gBgramap[11].pdata;
-						fontadv = gBgramap[11].width;
-						penpos_t += gBgramap[11].width;
-						break;
-					case ':':
-						dateData = (void *)gBgramap[12].pdata;
-						fontadv = gBgramap[12].width;
-						penpos_t += gBgramap[12].width;
-						break;
-					default:
-						break;
-				}
-#ifdef SUPPORT_RGB555LE
-				for (j = 0; j < OSD_REGION_HEIGHT; j++) {
-					memcpy((void *)((uint16_t *)data + j*OSD_LETTER_NUM*OSD_REGION_WIDTH + penpos_t),
-							(void *)((uint16_t *)dateData + j*fontadv), fontadv*sizeof(uint16_t));
-				}
-#else
-				for (j = 0; j < OSD_REGION_HEIGHT; j++) {
-					memcpy((void *)((uint32_t *)data + j*OSD_LETTER_NUM*OSD_REGION_WIDTH + penpos_t),
-							(void *)((uint32_t *)dateData + j*fontadv), fontadv*sizeof(uint32_t));
-				}
-
-#endif
-			}
-			rAttrData.picData.pData = data;
-			IMP_OSD_UpdateRgnAttrData(prHander[0], &rAttrData);
-
-			sleep(1);
-	}
-
-	return NULL;
+ret = IMP_System_Bind(&osdcell, &chn[0].imp_encoder);
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "Bind OSD and Encoder failed\n");
+    return -1;
 }
 ```
 
-复制
+#### Open the video source and get the video stream and save it
 
-## 2.5：释放资源函数
+```
+/* Step.7 Stream On */
+IMP_FrameSource_SetFrameDepth(0, 0);
+ret = sample_framesource_streamon();
+if (ret < 0) {
+    IMP_LOG_ERR(TAG, "ImpStreamOn failed\n");
+    return -1;
+}
 
-跟前几节课程是一样的，所以就不再说明了，就是一些反初始化函数之类的。
+/* Step.6 Get stream */
+if (byGetFd) {
+    ret = sample_get_video_stream_byfd();
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "Get video stream byfd failed\n");
+        return -1;
+    }
+} else {
+    ret = sample_get_video_stream();
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "Get video stream failed\n");
+        return -1;
+    }
+}
+```
 
-# 3：实验现象
+#### Constantly update timestamp with `thread update_thread`
 
-​![](assets/net-img-b1d0687bd8302118938b257aa980c8ff-20230919120330-yzf7z21.png)​
+If we just need to embed an image, or set a mask area, and some immobile images and so on OSD, 
+then this step is not needed at all, but our timestamp needs to be changed with the time change.
 
-​![](assets/net-img-25eff3e94b3c49e288a5ca0dffca3f48-20230919120330-fkbyou2.png)​
+So we have to dynamically display the timestamp OSD information according to the time change.
 
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
+Mainly according to the localtime system function, get the current time of the system, and then
+according to the current time to write the OSD need to display the content of the data.
 
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+```
+static void *update_thread(void *p)
+{
+    int ret;
+
+    /*generate time*/
+    char DateStr[40];
+    time_t currTime;
+    struct tm *currDate;
+    unsigned i = 0, j = 0;
+    void *dateData = NULL;
+    uint32_t *data = p;
+    IMPOSDRgnAttrData rAttrData;
+
+    ret = osd_show();
+    if (ret < 0) {
+        IMP_LOG_ERR(TAG, "OSD show error\n");
+        return NULL;
+    }
+
+    while(1) {
+        int penpos_t = 0;
+        int fontadv = 0;
+
+        time(&currTime);
+        currDate = localtime(&currTime);
+        memset(DateStr, 0, 40);
+        strftime(DateStr, 40, "%Y-%m-%d %I:%M:%S", currDate);
+        for (i = 0; i < OSD_LETTER_NUM; i++) {
+            switch(DateStr[i]) {
+                case '0' ... '9':
+                    dateData = (void *)gBgramap[DateStr[i] - '0'].pdata;
+                    fontadv = gBgramap[DateStr[i] - '0'].width;
+                    penpos_t += gBgramap[DateStr[i] - '0'].width;
+                    break;
+                case '-':
+                    dateData = (void *)gBgramap[10].pdata;
+                    fontadv = gBgramap[10].width;
+                    penpos_t += gBgramap[10].width;
+                    break;
+                case ' ':
+                    dateData = (void *)gBgramap[11].pdata;
+                    fontadv = gBgramap[11].width;
+                    penpos_t += gBgramap[11].width;
+                    break;
+                case ':':
+                    dateData = (void *)gBgramap[12].pdata;
+                    fontadv = gBgramap[12].width;
+                    penpos_t += gBgramap[12].width;
+                    break;
+                default:
+                    break;
+            }
+#ifdef SUPPORT_RGB555LE
+            for (j = 0; j < OSD_REGION_HEIGHT; j++) {
+                memcpy((void *)((uint16_t *)data + j*OSD_LETTER_NUM*OSD_REGION_WIDTH + penpos_t),
+                        (void *)((uint16_t *)dateData + j*fontadv), fontadv*sizeof(uint16_t));
+            }
+#else
+            for (j = 0; j < OSD_REGION_HEIGHT; j++) {
+                memcpy((void *)((uint32_t *)data + j*OSD_LETTER_NUM*OSD_REGION_WIDTH + penpos_t),
+                        (void *)((uint32_t *)dateData + j*fontadv), fontadv*sizeof(uint32_t));
+            }
+
+#endif
+        }
+        rAttrData.picData.pData = data;
+        IMP_OSD_UpdateRgnAttrData(prHander[0], &rAttrData);
+
+        sleep(1);
+    }
+
+    return NULL;
+}
+```
+
+
+#### Release Resource Functions
+
+It's the same as the previous lessons, so I won't explain it again. 
+It's just some anti-initialization functions and things like that.
+
+
+### Experimental Phenomena
+
+![](assets/net-img-b1d0687bd8302118938b257aa980c8ff-20230919120330-yzf7z21.png)
+
+![](assets/net-img-25eff3e94b3c49e288a5ca0dffca3f48-20230919120330-fkbyou2.png)
+
+[toc]: index.md

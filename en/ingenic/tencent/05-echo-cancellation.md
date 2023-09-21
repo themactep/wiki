@@ -1,64 +1,63 @@
-# 君正T31应用开发5：回音消除
+# [Ingenic T31 Application Development][toc]
 
-## 君正T31应用开发5：回音消除
+Echo Cancellation
+-----------------
 
-原创
+### What is echo cancellation?
 
-**发布于** **2023-05-14 17:21:10**
+#### Simplex Mode & Half Duplex Mode
 
-**229**0
+If your device is in these two modes, you generally don't need to think about echo cancellation troubles.
 
-**举报**
+The audio inputs audio data through the MIC header, and then the audio data is propagated out through the speakers.
 
-# 1.什么是回音消除？
+If it's just one device on your side, then well, there's less need for echo cancellation, 
+because when you transmit audio data to the MIC header, you don't propagate the audio data
+out through the speakers until after you've finished the transmission, so at that point, 
+you're not generally bothered by echo.
 
-1.1.单工模式&半双工模式
+### Full duplex mode
 
-如果你的设备是这两种模式的话，一般都不需要考虑回音消除的困扰。
+In Instant Messaging applications, it is necessary to carry out real-time voice communication between two parties,
+or more than one party, in the more demanding occasions, usually using an external speaker playback, which will 
+inevitably produce echoes, i.e. After a party speaks, it is played through the other party's speaker, and then 
+it is captured by the other party's Mic and transmitted back to itself. If the echo is not processed, it will 
+affect the call quality and user experience, the more serious will also form a vibration, resulting in whistling.
 
-音频通过MIC头输入音频数据，然后再通过喇叭传播音频数据出去。
+Realization principle:
 
-如果你这边只是一台设备，那么好说，就不太需要回音消除，因为你对着MIC头传音频数据的时候，你传输结束后，你才会通过喇叭传播音频数据出去，所以这时候，你一般不会有回音的困扰。
+Echo cancellation is the process of eliminating the sound played from the local speakers from the sound data
+captured by the Mic after the Mic has captured the sound, so that the only sound recorded by the Mic is the 
+sound of the local user speaking.
 
-1.2.全双工模式
 
-在[即时通讯](https://cloud.tencent.com/product/im?from_column=20065&from=20065)应用中，需要进行双方，或是多方的实时语音交流，在要求较高的场合，通常都是采用外置音箱放音，这样必然会产生回音，即一方说话后，通过对方的音箱放音，然后又被对方的Mic采集到回传给自己。如果不对回音进行处理，将会影响通话质量和用户体验，更严重的还会形成震荡，产生啸叫。
+### Ingenic's Echo Elimination
 
-实现原理：
+Junzheng's echo cancellation uses two main API functions, one of which is the
 
-回声消除就是在Mic采集到声音之后，将本地音箱播放出来的声音从Mic采集的声音数据中消除掉，使得Mic录制的声音只有本地用户说话的声音。
+#### Start echo cancellation
 
-# 2.君正的回音消除
-
-君正的回音消除主要使用两个API函数，其中一个API函数是
-
-1.1.开启回音消除
-
-```js
-	ret = IMP_AI_EnableAec(devID, chnID, 0, 0);
-	if(ret != 0) {
-		IMP_LOG_ERR(TAG, "Audio Record enable channel failed\n");
-		return NULL;
-	}
+```
+ret = IMP_AI_EnableAec(devID, chnID, 0, 0);
+if(ret != 0) {
+	IMP_LOG_ERR(TAG, "Audio Record enable channel failed\n");
+	return NULL;
+}
 ```
 
-复制
+#### End echo cancellation
 
-1.2.结束回音消除
-
-```js
-	ret = IMP_AI_DisableAec(devID, chnID);
-	if(ret != 0) {
-		IMP_LOG_ERR(TAG, "IMP_AI_DisableAecRefFrame\n");
-		return NULL;
-	}
+```
+ret = IMP_AI_DisableAec(devID, chnID);
+if(ret != 0) {
+	IMP_LOG_ERR(TAG, "IMP_AI_DisableAecRefFrame\n");
+	return NULL;
+}
 ```
 
-复制
+### Ingenic's Complete Echo Cancellation Code
 
-君正完整回音消除代码
-
-```js
+```
 static void * IMP_Audio_Record_AEC_Thread(void *argv)
 {
 	int ret = -1;
@@ -224,8 +223,4 @@ static void * IMP_Audio_Record_AEC_Thread(void *argv)
 }
 ```
 
-复制
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+[toc]: index.md

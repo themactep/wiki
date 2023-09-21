@@ -57,7 +57,7 @@ RAW数据
 
 YUV数据
 
-```js
+```
 	/* Step.3 Snap raw config */
 	ret = IMP_FrameSource_GetChnAttr(0, &fs_chn_attr[0]);
 	if (ret < 0) {
@@ -88,7 +88,7 @@ YUV数据
 
 ## 2.2：获取YUV图像数据&RAW数据
 
-```js
+```
     int m = 0;
     for (m=1;m<=51;m++) {
 	    ret = IMP_FrameSource_GetFrame(0, &frame_bak);
@@ -136,7 +136,7 @@ RAW:9600KB
 
 附录：截图YUV完整代码：
 
-```js
+```
 /*
  * sample-snap-raw.c
  *

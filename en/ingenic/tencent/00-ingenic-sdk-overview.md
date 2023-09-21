@@ -1,7 +1,9 @@
-Ingenic SDK Overview
-====================
+# [Ingenic T31 Application Development][toc]
 
-## What is Ingenic's SDK?
+Ingenic SDK Overview
+--------------------
+
+### What is Ingenic's SDK?
 
 ISVP SDK, i.e., Software Development Kit, includes API libraries, open-source source code, documentation,
 samples, and so on. 
@@ -12,41 +14,39 @@ use this SDK to develop products.
 ![](assets/net-img-0cae49d3ec17f86e3111d27a6dbe7255-20230919115938-971um0v.png)
 
 
-### Tools
+#### Tools
 
 It's actually the usual cross-compilation toolchain we use. (Development work is used in virtual machines)
 
 ISP Tuning tools are used to tune the picture.
 
 
-### Document
+#### Document
 
 It is the documentation we need to use for development, including software documentation and hardware documentation.
 
 
-### Resource
+#### Resource
 
 Some resource files, such as the root filesystem, HDK hardware development resources.
 
-### lib
+#### lib
 
 Software development library files, using these library files can call the hardware functions,
 including [audio and video codecs](06-audio-codecs.md), ISP mapping, OSD watermark, IVS motion detection.
 
-
-### opensource
+#### opensource
 
 Ingenic original factory has helped us to develop a good uboot and kernel, there are still some drivers we need 
 to compile, according to their own needs.
 
-
-### Sample
+#### Sample
 
 Software development kit reference demo. Most of the development kit is the board pole, including 
 the Ingenic system library function.
 
 
-## The level of our development needs?
+### The level of our development needs?
 
 Broadly speaking, a product-level project requires the following R&D workers: embedded software engineers 
 (driver layer), embedded software engineers (application layer), hardware engineers, system engineers.
@@ -74,3 +74,5 @@ Key points:
 - __Application__ - Application layer. It realizes the function logic and so on. 
   Application is recommended to use the API provided by the SDK library and drivers for development.
   For some special functional requirements, you can also directly call the kernel interface for development.
+
+[toc]: index.md
