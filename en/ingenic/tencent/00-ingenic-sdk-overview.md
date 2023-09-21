@@ -1,93 +1,76 @@
-# 1.君正SDK概述
+Ingenic SDK Overview
+====================
 
-## 1.君正SDK概述
+## What is Ingenic's SDK?
 
-原创
+ISVP SDK, i.e., Software Development Kit, includes API libraries, open-source source code, documentation,
+samples, and so on. 
 
-**发布于** **2023-03-12 16:05:52**
+Developers can quickly carry out product function development through SDK. Simply put, software developers
+use this SDK to develop products.
 
-**636**3
+![](assets/net-img-0cae49d3ec17f86e3111d27a6dbe7255-20230919115938-971um0v.png)
 
-**举报**
 
-## **1、什么是君正的SDK？**
+### Tools
 
-ISVP SDK，即软件开发工具包，包括 API 库、开源源码、文档、Samples 等。开发
+It's actually the usual cross-compilation toolchain we use. (Development work is used in virtual machines)
 
-者可以通过 SDK 快速的开展产品功能开发。简单的来说，就是软件开发者用这个SDK开发产品。
+ISP Tuning tools are used to tune the picture.
 
-​![](assets/net-img-0cae49d3ec17f86e3111d27a6dbe7255-20230919115938-971um0v.png)​
 
-1.1、Tools:
+### Document
 
-其实就是平时我们使用的交叉编译工具链。（开发工作在虚拟机中使用）
+It is the documentation we need to use for development, including software documentation and hardware documentation.
 
-ISP Tuning tools这个工具是用来调图的。
 
-1.2、Document
+### Resource
 
-就是我们开发所需要用到的文档，包含软件文档和硬件文档。
+Some resource files, such as the root filesystem, HDK hardware development resources.
 
-1.3、Resource
+### lib
 
-一些资源文件，比如根文件系统，HDK硬件开发资源。
+Software development library files, using these library files can call the hardware functions,
+including [audio and video codecs](06-audio-codecs.md), ISP mapping, OSD watermark, IVS motion detection.
 
-1.4、lib：
 
-软件开发库文件，使用这些库文件可以调用硬件的功能
+### opensource
 
-包含，[音视频编解码](https://cloud.tencent.com/solution/x-insight?from_column=20065&from=20065)，ISP调图功能，OSD的水印功能
+Ingenic original factory has helped us to develop a good uboot and kernel, there are still some drivers we need 
+to compile, according to their own needs.
 
-IVS的移动侦测功能。
 
-1.5、opensource
+### Sample
 
-君正原厂已经帮助我们开发好了uboot和kernel了，还有一些驱动需要我们自己根据自己需要编译。
+Software development kit reference demo. Most of the development kit is the board pole, including 
+the Ingenic system library function.
 
-1.6、sample
 
-软件开发包的参考demo。大部分就是板极的开发包，包括君正系统库函数
+## The level of our development needs?
 
-## 2、我们开发的需要的层次？
+Broadly speaking, a product-level project requires the following R&D workers: embedded software engineers 
+(driver layer), embedded software engineers (application layer), hardware engineers, system engineers.
 
-一般来说，一个产品级别的项目，需要以下研发工作者（指的是实际干活的）
+![](assets/net-img-014d3891d19039064ce48435e4d9281b-20230919115939-efep0c1.png)
 
-嵌入式软件工程师（驱动层），嵌入式软件工程师（应用层），硬件工程师，结构工程师。
+It is recommended that college students can first study the Embedded Software Engineer (Application Layer) direction, 
+which corresponds to the Application section of the chart above.
 
-​![](assets/net-img-014d3891d19039064ce48435e4d9281b-20230919115939-efep0c1.png)​
+Call the API of the system level SDK provided by Ingenic chip to develop the function in combination with the sample.
+This section corresponds to the application section in the figure above.
 
-**建议大学生可以先学习嵌入式软件工程师（应用层）方向，这个部分对应上图的application部分。**
+The following development experience can be engaged in the direction of the driver layer:
+- Hardware: Hardware layer, performs specific hardware functions such as I/O.
+- Linux Kernel: Kernel layer, performs basic system functions and defines hardware resources.
+- drivers: ko module drivers, through which hardware operations can be performed.
+- API lib: interface libraries, realize the abstraction of hardware functions and facilitate the development of the application layer.API libraries mainly have five parts
 
-**调用君正芯片提供的系统级别的SDK的API结合sample进行功能的开发。**
-
-**后续有开发经验了以后可以从事驱动层相关方向。**
-
-● Hardware: 硬件层，完成 I/O 等具体的硬件功能。
-
-● Linux Kernel: 内核层，完成基础的系统功能，定义硬件资源。
-
-● drivers: ko 模块驱动，可通过 driver 进行硬件操作。
-
-● API lib: 接口库，实现硬件功能的抽象，方便于应用层的开发。API 库主要有五部
-
-分：
-
-◆ libimp: 多媒体功能库。如 H264 编码，JPEG 编码，IVS 和 Audio 等。
-
-◆ libsysutils: 系统功能库。如重启，设置系统时间和电池功能等。
-
-◆ libalog: ISVP-SDK 的 log 实现库。
-
-◆ libivs_inf: IVS 算法库，包括越线检测，周界防范等。
-
-◆ libmxu: 128 位 mxu 加速指令算子库。
-
-● Application: 应用层。实现功能逻辑等。
-
-◆ Application 推荐使用 SDK 库提供的 API 及配合 drivers 进行开发。对于一些特
-
-殊的功能需求，也可以直接调用内核接口进行开发。
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+Key points:
+- __libimp__ - multimedia library. H264 encoding, JPEG encoding, IVS and Audio.
+- __libsysutils__ - system libraries. For example, reboot, set system time and battery functions.
+- __libalog__ - ISVP-SDK log implementation library.
+- __libivs_inf__ - IVS algorithm library, including line crossing detection, perimeter prevention, etc.
+- __libmxu__ - 128-bit MXU acceleration instruction library.
+- __Application__ - Application layer. It realizes the function logic and so on. 
+  Application is recommended to use the API provided by the SDK library and drivers for development.
+  For some special functional requirements, you can also directly call the kernel interface for development.

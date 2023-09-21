@@ -1,73 +1,85 @@
-# 君正T31应用层开发1 如何编译sample
+Ingenic T31 Application Layer Development
+=========================================
 
-## 君正T31应用层开发1如何编译sample
+How to Compile Sample
+---------------------
 
-原创
+### What is the Ingenic T31 application layer development?
 
-**发布于** **2023-03-18 17:46:27**
+Refers to the resources relying on the Ingenic T31 chip platform; the use of Ingenic linux system provides the API
+to operate the process of hardware.
 
-**703**0
+Why first speak Ingenic T31 application layer development, rather than first explain, uboot, kernel, root file system,
+and file system?
 
-**举报**
+Because most people go to the enterprise and will not be directly engaged in these jobs, and these jobs and the
+application layer work is strictly separate, relatively difficult, it is easy to hit the confidence of beginners,
+so this part I will stay until the end of the explanation, for the time being, you only need to use the system comes
+with the file system for development can be.
 
-# 君正T31开发应用层篇
+### Ingenic T31 development environment
 
-## 1.什么是君正T31应用层开发？
+#### Why do we need to build the T31 development environment?
 
-指的是依托君正T31芯片平台的资源，利用君正linux系统提供的API进行操作硬件的过程。
+Due to the limited resources of the embedded single board, you cannot run the development and debugging tools on
+the single board, usually you need to cross-compile debugging for development and debugging, that is 
+[host](https://cloud.tencent.com/product/cdh).
+The host and the target are usually used in the form of host+target machine.
+The host and target are usually connected by a serial port for displaying interactive information and a network port
+for transferring files.
 
-为什么先讲君正T31应用层开发，而不是先讲解，uboot,kernel,根文件系统，以及文件系统？
+However, the processors of the host and target are generally different. The host machine needs to establish a
+cross-compilation environment suitable for the target machine. The program is compiled, connected and positioned
+on the host to obtain an executable file. Through certain methods, the executable file will be burned into the 
+target machine, and then run on the target machine.
 
-**因为大部分人去到企业并不会直接从事这些工作，而且这些工作和应用层工作严格意义是分开的，相对而言比较难，很容易打击初学者的信心，所以这部分我会留到最后讲解，目前，大家只需要用系统自带的文件系统进行开发即可。**
+The simple fact is that embedded devices have limited resources, such as memory, flash, etc., so we can't compile
+the program directly on the embedded device.
 
-## **2.搭建君正T31开发环境**
+#### Install the cross-compilation toolchain.
 
-### **2.1.为什么我们需要搭建T31的开发环境？**
+Get our cross-compilation toolchain `mips-gcc472-glibc216-64bit-r2.3.3.7z` from the SDK package.
 
-由于嵌入式单板的资源有限，不能在单板上运行开发和调试工具，通常需要交叉编译调试的方式进行开发和调试，即“[宿主机](https://cloud.tencent.com/product/cdh?from_column=20065&from=20065)＋目标机”的形式。宿主机和目标机一般 采用串口连接显示交互信息，网口连接传输文件。
+Ubuntu 16.04 virtual machine installation process:
 
-但宿主机和目标机的处理器一般不相同。宿主机需要建立适合于目标机的交叉编译环境。程序在宿主机上经过“编译－连接－定位”得到可执行文件。通过一定的方法将可执行文件烧写到目标机中，然后在目标机上运行。
+Step 1: Install 7z decompression tool 
+```
+sudo apt-get install p7zip
+```
 
-**简单的话就是嵌入式设备的资源都有限，内存，flash等等，我们无法直接在嵌入式设备上进行程序的编译。**
+Step 2: Use the above software 7z to decompress
+```
+7z x mips-gcc472-glibc216-64bit.7z
+```
 
-### **2.2.安装交叉编译工具链。**
+You can clearly see the location of the decompressed cross-compilation toolchain.
 
-从SDK包中获取我们的交叉编译工具链mips-gcc472-glibc216-64bit-r2.3.3.7z
+![](assets/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)
 
-Ubuntu16.04虚拟机安装流程：
+Step 3: Add the bin directory under toolchain to the PATH environment variable or permanently change 
+it by adding the following sentence to `~/.bashrc` with the command `export PATH=xxxx:$PATH`.
 
-第一步：安装 7z 解压工具$ sudo apt-get install p7zip
+Show the absolute path of your installed cross-compilation toolchain with the pwd command and add it 
+to the `.bashrc` file, so that the virtual machine will execute your condition every time it gets up
+and then make your cross-compilation toolchain effective.
 
-第二步：使用上述软件7z进行解压7z x mips-gcc472-glibc216-64bit.7z
+![](assets/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)
 
-可以清晰的看到解压的交叉编译工具链的位置。
+Step 4: Detect whether the cross-compilation toolchain is installed successfully or not.
 
-​![](assets/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)​
+![](assets/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)
 
-第三步：通过 export PATH=xxxx:$PATH 命令，将 toolchain 下的 bin 目录添加到 PATH 环境变量中或者在~/.bashrc 中加上下面一句永久改变。
+### Compile Ingenic T31 sample files
 
-把你安装的交叉编译工具链的绝对路径用pwd指令显示出来，然后添加到.bashrc文件里面，这样虚拟机都会在每次起来的时候，执行你的条件，然后让你的交叉编译工具链生效。
+Get `ISVP-T31-1.1.5-20220428.7z` SDK file from Ingenic bundle.
 
-​![](assets/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)​
+Use 7z unzip command to unzip the file and compile it inside the SDK. We go to the directory where we store the 
+`SDK\ingenic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2\samples\libimp-samples`
 
-第四步：检测交叉编译工具链是否安装成功
+![](assets/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)
 
-​![](assets/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)​
+Just execute the make command directly.
 
-### 3.编译君正T31sample文件
+You can see that after recompiling, the time of the cyan application has changed, proving that we compiled successfully.
 
-从君正原厂获取SDK文件：ISVP-T31-1.1.5-20220428.7z
-
-使用7z的解压指令解压，进去SDK里面进行编译。我们进去我们存放SDK的目录里面\ingentic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2\samples\libimp-samples
-
-​![](assets/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)​
-
-直接执行make指令即可。
-
-可以查看到重新编译以后，青色的应用程序的时间已经变化了，证明我们编译成功了。
-
-​![](assets/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)​
-
-原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
-
-如有侵权，请联系 [cloudcommunity@tencent.com](mailto:cloudcommunity@tencent.com) 删除。
+![](assets/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)
