@@ -1,38 +1,34 @@
 # [Ingenic T31 Application Development][toc]
 
-Audio Coding and Decoding
+Audio coding and decoding
 -------------------------
 
 ### Why do we need audio codecs?
 
 In the example mentioned earlier, we use Ingenic T31 devices are directly using API functions for
-sound acquisition, and then directly playback of sound, which involves two sets of API, one is AI,
-audio input function, and one is AO, audio output function.
+sound capturing and playback, which involves two sets of API: one is __AI__ (Audio Input), and another 
+one is __AO__ (Audio Output).
 
-The audio data captured here:
+The audio data going through the AI interface is being saved as `audio.pcm` file.
+The audio data going through the AO interface is parsed from `audio.pcm` file.
 
-Through the AI interface, it is saved as the file audio.pcm.
-
-Through the AO interface, by parsing the audio.pcm file.
-
-The PCM file is relatively large. In some cases where the network bandwidth is not very good, the audio 
-will be lost, resulting in audio lagging sound, so our side of the audio codec technology also came into being.
-
-Generally, the audio codec data will be twice as small as the original data PCM file, G711A data format or AAC format file.
+The PCM file is relatively large.
+In some cases, when the network bandwidth is low, partial audio data can be lost, resulting in lagging sound.
+Audio data encoded with G711A or AAC codec will be twice as small as the original PCM file data.
 
 ![](assets/net-img-24651c215b6993da009e0a56215ad9fb-20230919120206-f875jt1.png)
 
 ![](assets/net-img-ae5154ac8d45a11fe8c73daab92d7d92-20230919120206-xcjzo25.jpg)
 
 
-### Audio Codec APIs used by Ingenic
+### Audio codec APIs used by Ingenic
 
 ![](assets/net-img-f078d0dc4504faa469db08444e7d182d-20230919120207-sga690o.png)
 
 ![](assets/net-img-d9fd5768a3e7c8e230744e517a280a80-20230919120207-1v5hwgz.png)
 
 
-### Ingenic's Audio Codec Practice
+### Ingenic's audio codec practice
 
 Over here I bought a development board from the internet, roughly as shown below.
 
@@ -43,7 +39,7 @@ you can see that the size of the same size recording audio file G711A is only ab
 
 ![](assets/net-img-ee29e10de3223514470d6a25a69046a2-20230919120207-xrkz9ax.png)
 
-#### Appendix Code
+#### Code
 
 Functions used for coding:
 

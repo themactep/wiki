@@ -1,9 +1,9 @@
 # [Ingenic T31 Application Development][toc]
 
-Getting JPEG Streams
---------------------
+Getting JPEG stream
+-------------------
 
-### Framework for getting JPEG streams
+### Framework for getting JPEG stream
 
 File name `sample-Encoder-jpeg.c`
 
@@ -12,7 +12,7 @@ The main code flow for fetching images is like the following:
 ![](assets/net-img-8c265ec5329bbaf0e3a37aa4e1f6464a-20230919120516-cgml85a.png)
 
 First of all, most of the functions in this file depend on the two files `sample-common.h` and `sample-common.c`.
-Most of the demos are developed by calling the base library provided by this `common.c`.
+Most of the demos are developed by calling the base library provided by `common.c`.
 
 PS: The base library API functions of Ingenic T31, most of them are `IMP_XXX_XXX` type functions, such as
 `IMP_OSD_SetPoolSize`, `IMP_ISP_AddSensor`, etc.

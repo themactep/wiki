@@ -1,6 +1,5 @@
 Ingenic T31 Application Layer Development
 ------------------------------------------
-_Translated articles from <https://cloud.tencent.com/developer/column/98782>._
 
 - [Ingenic SDK Overview](00-ingenic-sdk-overview.md)
 - [How to Compile Samples](01-how-to-compile-samples.md)
@@ -16,3 +15,5 @@ _Translated articles from <https://cloud.tencent.com/developer/column/98782>._
 - [OSD Application](11-osd-application.md)
 - [YUV and RAW Data](12-yuv-and-raw-data.md)
 - [Switching Resolution](13-switching-resolution.md)
+
+_Heavily based on articles from <https://cloud.tencent.com/developer/column/98782>._

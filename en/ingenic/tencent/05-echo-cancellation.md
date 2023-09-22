@@ -5,33 +5,31 @@ Echo Cancellation
 
 ### What is echo cancellation?
 
-#### Simplex Mode & Half Duplex Mode
+#### Simplex mode & half duplex mode
 
-If your device is in these two modes, you generally don't need to think about echo cancellation troubles.
+If your device is in these two modes, you don't need to think about echo cancellation.
 
-The audio inputs audio data through the MIC header, and then the audio data is propagated out through the speakers.
+The audio inputs audio data through the microphone, and then the audio data is propagated out through the speakers.
 
-If it's just one device on your side, then well, there's less need for echo cancellation,
-because when you transmit audio data to the MIC header, you don't propagate the audio data
-out through the speakers until after you've finished the transmission, so at that point,
-you're not generally bothered by echo.
+If it's just one device on your side, then there's less need for echo cancellation, because when you transmit audio
+data from the microphone, you don't propagate the audio data out through the speakers until after you've finished the
+transmission, so at that point, you're not bothered by echo.
 
 ### Full duplex mode
 
-In Instant Messaging applications, it is necessary to carry out real-time voice communication between two parties,
-or more than one party, in the more demanding occasions, usually using an external speaker playback, which will
-inevitably produce echoes, i.e. After a party speaks, it is played through the other party's speaker, and then
-it is captured by the other party's Mic and transmitted back to itself. If the echo is not processed, it will
-affect the call quality and user experience, the more serious will also form a vibration, resulting in whistling.
+In an Instant Messaging application, it is necessary to carry out real-time voice communication between two or more
+parties, usually using an external speaker for playback, which will inevitably produce echo as after a party speaks,
+the sound is played through the other party's speaker, and then captured by the other party's microphone and 
+transmitted back. If the echo is not processed, it will affect the call quality and user experience, resulting in 
+rattling sound and whistling.
 
-Realization principle:
+### Realization principle
 
 Echo cancellation is the process of eliminating the sound played from the local speakers from the sound data
-captured by the Mic after the Mic has captured the sound, so that the only sound recorded by the Mic is the
-sound of the local user speaking.
+captured by the microphone after the microphone has captured the sound, so that the only sound recorded by the
+microphone is the sound of the local user speaking.
 
-
-### Ingenic's Echo Elimination
+### Ingenic's echo elimination
 
 Ingenic's echo cancellation uses two main API functions, one of which is the
 
@@ -55,7 +53,7 @@ if(ret != 0) {
 }
 ```
 
-### Ingenic's Complete Echo Cancellation Code
+### Ingenic's complete echo cancellation code
 
 ```
 static void * IMP_Audio_Record_AEC_Thread(void *argv)
