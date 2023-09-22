@@ -38,7 +38,7 @@ The approximate occupied space is 12 bits of data.
 
 ![](assets/net-img-72655bea607588644d18d3626ac8c16b-20230919115838-17trt69.png)
 
-# 2: How to get YUV and RAW data for Junzheng T31
+# 2: How to get YUV and RAW data for Ingenic T31
 
 ## 2.1: Key attribute: set channel attribute to YUV attribute or RAW attribute
 

@@ -18,7 +18,7 @@ Specifically, what is H264 and what is H265 format, specific protocol header, pr
 many bloggers have a detailed description, I will not continue to summarize. But my side of the
 back of the recommended view format of the software, will also show.
 
-### Junzheng's video encoding module
+### Ingenic's video encoding module
 
 The video encoding (JPEG, H264, H265) module mainly provides functions such as creating and 
 destroying video encoding channels, turning on and stopping the reception of images, setting
@@ -35,7 +35,7 @@ to the upper layer, we also need to get the YUV stream, because this can be used
 I will also be reflected in my large projects. (Large projects are used at the enterprise level, 
 i.e., things that are written on other people's job requirements)
 
-There are three demos in here, corresponding to the way Junzheng gets the three code stream calls.
+There are three demos in here, corresponding to the way Ingenic gets the three code stream calls.
 
 ![](assets/net-img-3faa21484cff414aca5f192127df53c2-20230919120230-bvm1yax.png)
 
@@ -68,7 +68,7 @@ __SPS__ - Sequence Parameter Set.
 __PPS__ - the set of image parameters.
 
 
-### Some of the Junzheng image encoding module APIs.
+### Some of the Ingenic image encoding module APIs.
 
 ![](assets/net-img-991c40cd229dfa520bb7a10db7ce5354-20230919120230-0olvaga.png)
 

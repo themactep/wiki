@@ -120,7 +120,7 @@ if(ret != 0) {
 }
 ```
 
-### 4.4: DEMO program for Junzheng's original SDK
+### Demo program for Ingenic's original SDK
 
 
 ```

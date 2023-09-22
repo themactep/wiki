@@ -11,29 +11,29 @@ If your device is in these two modes, you generally don't need to think about ec
 
 The audio inputs audio data through the MIC header, and then the audio data is propagated out through the speakers.
 
-If it's just one device on your side, then well, there's less need for echo cancellation, 
+If it's just one device on your side, then well, there's less need for echo cancellation,
 because when you transmit audio data to the MIC header, you don't propagate the audio data
-out through the speakers until after you've finished the transmission, so at that point, 
+out through the speakers until after you've finished the transmission, so at that point,
 you're not generally bothered by echo.
 
 ### Full duplex mode
 
 In Instant Messaging applications, it is necessary to carry out real-time voice communication between two parties,
-or more than one party, in the more demanding occasions, usually using an external speaker playback, which will 
-inevitably produce echoes, i.e. After a party speaks, it is played through the other party's speaker, and then 
-it is captured by the other party's Mic and transmitted back to itself. If the echo is not processed, it will 
+or more than one party, in the more demanding occasions, usually using an external speaker playback, which will
+inevitably produce echoes, i.e. After a party speaks, it is played through the other party's speaker, and then
+it is captured by the other party's Mic and transmitted back to itself. If the echo is not processed, it will
 affect the call quality and user experience, the more serious will also form a vibration, resulting in whistling.
 
 Realization principle:
 
 Echo cancellation is the process of eliminating the sound played from the local speakers from the sound data
-captured by the Mic after the Mic has captured the sound, so that the only sound recorded by the Mic is the 
+captured by the Mic after the Mic has captured the sound, so that the only sound recorded by the Mic is the
 sound of the local user speaking.
 
 
 ### Ingenic's Echo Elimination
 
-Junzheng's echo cancellation uses two main API functions, one of which is the
+Ingenic's echo cancellation uses two main API functions, one of which is the
 
 #### Start echo cancellation
 

@@ -5,13 +5,13 @@ Audio Outputs
 
 ### What is audio output?
 
-In fact, cell phones, any device has the concept of audio output. For example, if you play the song 
+In fact, cell phones, any device has the concept of audio output. For example, if you play the song
 "Just because you are too beautiful" on the computer, the computer through Netease cloud music, or other music,
 call the underlying driver of the computer, and finally convert the digital signal into an analog signal in the
 device inside the speaker hardware playback.
 
 Ingenic T31 chip also provides such an interface, Ingenic chip also has two pins, connected to the docking speakers,
-hardware, through the specific API for control, and then to achieve the Ingenic chip microphone captured sound, 
+hardware, through the specific API for control, and then to achieve the Ingenic chip microphone captured sound,
 transmitted to the Ingenic T31 chip speakers play.
 
 
@@ -23,9 +23,9 @@ transmitted to the Ingenic T31 chip speakers play.
 ### Code details for audio output
 
 
-#### Audio output test thread_ao_test_play_thread: this is the demo program given by Junzheng.
+#### Audio output test thread_ao_test_play_thread: this is the demo program given by Ingenic.
 
-Basic algorithm: 
+Basic algorithm:
 
 we need to apply a temporary memory, because we need to transfer the audio file from the chip to the chip's memory,
 because the chip can't manipulate the flash fast enough, we will give the task of calculating the memory.
@@ -34,7 +34,7 @@ Calculate the method of memory:
 
 `AO_TEST_BUF_SIZE = (AO_TEST_SAMPLE_RATE*sizeof(short)*AO_TEST_SAMPLE_TIME/1000)`
 
-Where Hz (Hertz) is the unit of frequency, its meaning is the number of times per second, 
+Where Hz (Hertz) is the unit of frequency, its meaning is the number of times per second,
 which we sample rate is 16000, that is, we sample 16000 times per second.
 
 This buffer means, the size of our audio data in 20 ho seconds, which is the size of the audio file cache we read.
@@ -81,15 +81,15 @@ if (ret != 0) {
 
 The concept of blocking and non-blocking:
 
-Blocking is the process of waiting, when to wait, for example, when you pass to the AO data, 
-we need to wait for the last time to send all the data sent before we continue to send the 
+Blocking is the process of waiting, when to wait, for example, when you pass to the AO data,
+we need to wait for the last time to send all the data sent before we continue to send the
 next frame of audio data, otherwise it will produce the feeling of audio breakage.
 
 Because blocking is the only way to ensure that the data we pass is complete, with a small number of cases.
 
 For example, in the case of RTMP protocol, there are times when we black out due to network
 fluctuations because we are pursuing live real-time audio and video, but at this time, due
-to the network instability, retransmission is not possible when using the UDP protocol 
+to the network instability, retransmission is not possible when using the UDP protocol
 because we want to ensure the real-time nature of our live broadcast.
 
 ```
@@ -123,7 +123,7 @@ if (ret != 0) {
 
 #### IMP_AO_PauseChn, IMP_AO_ClearChnBuf, IMP_AO_ResumeChn
 
-When it reaches 40 frames, pause the interface that plays the audio, 
+When it reaches 40 frames, pause the interface that plays the audio,
 then type any character inside the linux command line and resume the
 interface that plays the audio file.
 
