@@ -73,8 +73,8 @@ There are several functions inside that need to be focused on:
 **IMP_AI_SetPubAttr：**
 
 ```
-	int devID = 1;                                           //devID:0: digital MIC, 1: represents the analog MIC
-	IMPAudioIOAttr attr;
+    int devID = 1;                                           //devID:0: digital MIC, 1: represents the analog MIC
+    IMPAudioIOAttr attr;
 	attr.samplerate = AUDIO_SAMPLE_RATE_16000;               //Audio sampling rate of 16000
 	attr.bitwidth = AUDIO_BIT_WIDTH_16;                      //16-bit audio sampling precision
 	attr.soundmode = AUDIO_SOUND_MODE_MONO;                  //mono mode
