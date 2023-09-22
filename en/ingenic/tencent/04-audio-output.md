@@ -5,14 +5,13 @@ Audio Outputs
 
 ### What is audio output?
 
-In fact, cell phones, any device has the concept of audio output. For example, if you play the song
-"Just because you are too beautiful" on the computer, the computer through Netease cloud music, or other music,
-call the underlying driver of the computer, and finally convert the digital signal into an analog signal in the
-device inside the speaker hardware playback.
+In fact, any device capable of playing audio. For example, if you play a song on a computer, the computer 
+through a music cloud, or other music, call the underlying driver of the computer, and finally convert the
+digital signal into an analog signal in the device inside the speaker hardware playback.
 
-Ingenic T31 chip also provides such an interface, Ingenic chip also has two pins, connected to the docking speakers,
-hardware, through the specific API for control, and then to achieve the Ingenic chip microphone captured sound,
-transmitted to the Ingenic T31 chip speakers play.
+Ingenic T31 chip also provides such an interface. Ingenic chip also has two pins, connected to the docking
+speakers, hardware, through the specific API for control, and then to achieve the Ingenic chip microphone 
+captured sound, transmitted to the Ingenic T31 chip speakers play.
 
 
 ### Audio output system block diagram
@@ -25,19 +24,17 @@ transmitted to the Ingenic T31 chip speakers play.
 
 #### Audio output test thread_ao_test_play_thread: this is the demo program given by Ingenic.
 
-Basic algorithm:
+The algorithm is simple. We need to transfer the audio file from the chip storage to the memory
+since the chip can't manipulate the flash fast enough. We need to apply for a region of temporary 
+memory, and to do so, we need to calculate the amount of required memory:
 
-we need to apply a temporary memory, because we need to transfer the audio file from the chip to the chip's memory,
-because the chip can't manipulate the flash fast enough, we will give the task of calculating the memory.
+```
+AO_TEST_BUF_SIZE = (AO_TEST_SAMPLE_RATE * sizeof(short) * AO_TEST_SAMPLE_TIME / 1000)
+```
 
-Calculate the method of memory:
-
-`AO_TEST_BUF_SIZE = (AO_TEST_SAMPLE_RATE * sizeof(short) * AO_TEST_SAMPLE_TIME / 1000)`
-
-Where Hz (Hertz) is the unit of frequency, its meaning is the number of times per second,
-which we sample rate is 16000, that is, we sample 16000 times per second.
-
-This buffer means, the size of our audio data in 20 ho seconds, which is the size of the audio file cache we read.
+Hertz (Hz) is the unit of frequency, its meaning is the number of times per second at which we sample the analog data.
+If we use the rate of 16000, we sample the wave 16000 times per second, and the buffer should hold the content of our
+20-second audio file.
 
 ```
 #define AO_TEST_SAMPLE_RATE 16000
