@@ -53,7 +53,7 @@ Below, we draw the flowchart of the system: the process diagram of audio acquisi
 
 MIC refers to the thing with the microphone, used to capture the external sound into the collection of analog signals into the T31 chip into digital signals, and then saved in a certain format into a file down.
 
-! [](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
+![](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
 
 
 ### Code Practice
@@ -73,15 +73,15 @@ There are several functions inside that need to be focused on:
 **IMP_AI_SetPubAttr：**
 
 ```
-    int devID = 1;                                           //devID:0: digital MIC, 1: represents the analog MIC
-    IMPAudioIOAttr attr;
-    attr.samplerate = AUDIO_SAMPLE_RATE_16000;               //Audio sampling rate of 16000
-    attr.bitwidth = AUDIO_BIT_WIDTH_16;                      //16-bit audio sampling precision
-    attr.soundmode = AUDIO_SOUND_MODE_MONO;                  //mono mode
-    attr.frmNum = 40;                                        //Number of cached frames 
-    attr.numPerFrm = 640;                                    //Number of sampling points per frame
-    attr.chnCnt = 1;                                         //Number of supported channels
-    ret = IMP_AI_SetPubAttr(devID, &attr);
+int devID = 1;                                 //devID:0: digital MIC, 1: represents the analog MIC
+IMPAudioIOAttr attr;
+attr.samplerate = AUDIO_SAMPLE_RATE_16000;     //Audio sampling rate of 16000
+attr.bitwidth = AUDIO_BIT_WIDTH_16;            //16-bit audio sampling precision
+attr.soundmode = AUDIO_SOUND_MODE_MONO;        //mono mode
+attr.frmNum = 40;                              //Number of cached frames 
+attr.numPerFrm = 640;                          //Number of sampling points per frame
+attr.chnCnt = 1;                               //Number of supported channels
+ret = IMP_AI_SetPubAttr(devID, &attr);
 ```
 
 #### Getting the Raw Audio Segment Data

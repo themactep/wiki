@@ -32,7 +32,7 @@ because the chip can't manipulate the flash fast enough, we will give the task o
 
 Calculate the method of memory:
 
-`AO_TEST_BUF_SIZE = (AO_TEST_SAMPLE_RATE*sizeof(short)*AO_TEST_SAMPLE_TIME/1000)`
+`AO_TEST_BUF_SIZE = (AO_TEST_SAMPLE_RATE * sizeof(short) * AO_TEST_SAMPLE_TIME / 1000)`
 
 Where Hz (Hertz) is the unit of frequency, its meaning is the number of times per second,
 which we sample rate is 16000, that is, we sample 16000 times per second.
@@ -98,8 +98,8 @@ because we want to ensure the real-time nature of our live broadcast.
  */
 
 typedef enum {
-    BLOCK = 0,                /**< blocking */
-    NOBLOCK = 1,            /**< non-blocking */
+    BLOCK = 0,        /**< blocking */
+    NOBLOCK = 1,      /**< non-blocking */
 } IMPBlock;
 
 /* Step 5: send frame data. We use blocking mode for */

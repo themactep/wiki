@@ -60,19 +60,33 @@ Call the API of the system level SDK provided by Ingenic chip to develop the fun
 This section corresponds to the application section in the figure above.
 
 The following development experience can be engaged in the direction of the driver layer:
-- Hardware: Hardware layer, performs specific hardware functions such as I/O.
-- Linux Kernel: Kernel layer, performs basic system functions and defines hardware resources.
-- drivers: ko module drivers, through which hardware operations can be performed.
-- API lib: interface libraries, realize the abstraction of hardware functions and facilitate the development of the application layer.API libraries mainly have five parts
 
-Key points:
-- __libimp__ - multimedia library. H264 encoding, JPEG encoding, IVS and Audio.
-- __libsysutils__ - system libraries. For example, reboot, set system time and battery functions.
-- __libalog__ - ISVP-SDK log implementation library.
-- __libivs_inf__ - IVS algorithm library, including line crossing detection, perimeter prevention, etc.
-- __libmxu__ - 128-bit MXU acceleration instruction library.
-- __Application__ - Application layer. It realizes the function logic and so on. 
-  Application is recommended to use the API provided by the SDK library and drivers for development.
-  For some special functional requirements, you can also directly call the kernel interface for development.
+#### Hardware
+
+Hardware layer, performs specific hardware functions such as I/O.
+
+#### Linux Kernel
+
+Kernel layer, performs basic system functions and defines hardware resources.
+
+#### Drivers
+
+.ko module drivers, through which hardware operations can be performed.
+
+#### API Lib
+
+Interface libraries, realize the abstraction of hardware functions and facilitate the development of the application layer.
+API libraries mainly have five parts. Key points:
+  - __libimp__ - multimedia library. H264 encoding, JPEG encoding, IVS and Audio.
+  - __libsysutils__ - system libraries. For example, reboot, set system time and battery functions.
+  - __libalog__ - ISVP-SDK log implementation library.
+  - __libivs_inf__ - IVS algorithm library, including line crossing detection, perimeter prevention, etc.
+  - __libmxu__ - 128-bit MXU acceleration instruction library.
+
+#### Application
+
+Application layer. It realizes the function logic and so on. 
+Application is recommended to use the API provided by the SDK library and drivers for development.
+For some special functional requirements, you can also directly call the kernel interface for development.
 
 [toc]: index.md
