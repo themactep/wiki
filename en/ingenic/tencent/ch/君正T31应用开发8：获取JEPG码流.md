@@ -33,47 +33,47 @@ IMP_ISP_AddSensor
 ```
 int sample_system_init()
 {
-	int ret = 0;
+    int ret = 0;
 
-	IMP_OSD_SetPoolSize(512*1024);
-	memset(&sensor_info, 0, sizeof(IMPSensorInfo));
-	memcpy(sensor_info.name, SENSOR_NAME, sizeof(SENSOR_NAME));
-	sensor_info.cbus_type = SENSOR_CUBS_TYPE;
-	memcpy(sensor_info.i2c.type, SENSOR_NAME, sizeof(SENSOR_NAME));
-	sensor_info.i2c.addr = SENSOR_I2C_ADDR;
+    IMP_OSD_SetPoolSize(512*1024);
+    memset(&sensor_info, 0, sizeof(IMPSensorInfo));
+    memcpy(sensor_info.name, SENSOR_NAME, sizeof(SENSOR_NAME));
+    sensor_info.cbus_type = SENSOR_CUBS_TYPE;
+    memcpy(sensor_info.i2c.type, SENSOR_NAME, sizeof(SENSOR_NAME));
+    sensor_info.i2c.addr = SENSOR_I2C_ADDR;
 
-	IMP_LOG_DBG(TAG, "sample_system_init start\n");
+    IMP_LOG_DBG(TAG, "sample_system_init start\n");
 
-	ret = IMP_ISP_Open();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "failed to open ISP\n");
-		return -1;
-	}
+    ret = IMP_ISP_Open();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "failed to open ISP\n");
+        return -1;
+    }
 
-	ret = IMP_ISP_AddSensor(&sensor_info);
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "failed to AddSensor\n");
-		return -1;
-	}
+    ret = IMP_ISP_AddSensor(&sensor_info);
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "failed to AddSensor\n");
+        return -1;
+    }
 
-	ret = IMP_ISP_EnableSensor();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
-		return -1;
-	}
+    ret = IMP_ISP_EnableSensor();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
+        return -1;
+    }
 
-	ret = IMP_System_Init();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "IMP_System_Init failed\n");
-		return -1;
-	}
+    ret = IMP_System_Init();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "IMP_System_Init failed\n");
+        return -1;
+    }
 
-	/* enable turning, to debug graphics */
-	ret = IMP_ISP_EnableTuning();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "IMP_ISP_EnableTuning failed\n");
-		return -1;
-	}
+    /* enable turning, to debug graphics */
+    ret = IMP_ISP_EnableTuning();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "IMP_ISP_EnableTuning failed\n");
+        return -1;
+    }
     IMP_ISP_Tuning_SetContrast(128);
     IMP_ISP_Tuning_SetSharpness(128);
     IMP_ISP_Tuning_SetSaturation(128);
@@ -92,9 +92,9 @@ int sample_system_init()
         return -1;
     }
 #endif
-	IMP_LOG_DBG(TAG, "ImpSystemInit success\n");
+    IMP_LOG_DBG(TAG, "ImpSystemInit success\n");
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -130,32 +130,32 @@ Init初始化流程
 
 ```
 主码流：
-	struct chn_conf chn[FS_CHN_NUM] = {
-	{
-		.index = CH0_INDEX,
-		.enable = CHN0_EN,
+    struct chn_conf chn[FS_CHN_NUM] = {
+    {
+        .index = CH0_INDEX,
+        .enable = CHN0_EN,
     .payloadType = IMP_ENC_PROFILE_HEVC_MAIN,
-		.fs_chn_attr = {
-			.pixFmt = PIX_FMT_NV12,
-			.outFrmRateNum = SENSOR_FRAME_RATE_NUM,
-			.outFrmRateDen = SENSOR_FRAME_RATE_DEN,
-			.nrVBs = 2,
-			.type = FS_PHY_CHANNEL,
+        .fs_chn_attr = {
+            .pixFmt = PIX_FMT_NV12,
+            .outFrmRateNum = SENSOR_FRAME_RATE_NUM,
+            .outFrmRateDen = SENSOR_FRAME_RATE_DEN,
+            .nrVBs = 2,
+            .type = FS_PHY_CHANNEL,
 
-			.scaler.enable = 0,
+            .scaler.enable = 0,
 
-			.crop.enable = CROP_EN,
-			.crop.top = 0,
-			.crop.left = 0,
-			.crop.width = SENSOR_WIDTH,
-			.crop.height = SENSOR_HEIGHT,
+            .crop.enable = CROP_EN,
+            .crop.top = 0,
+            .crop.left = 0,
+            .crop.width = SENSOR_WIDTH,
+            .crop.height = SENSOR_HEIGHT,
 
-			.picWidth = SENSOR_WIDTH,
-			.picHeight = SENSOR_HEIGHT,
-		   },
-		.framesource_chn =	{ DEV_ID_FS, CH0_INDEX, 0},
-		.imp_encoder = { DEV_ID_ENC, CH0_INDEX, 0},
-	},
+            .picWidth = SENSOR_WIDTH,
+            .picHeight = SENSOR_HEIGHT,
+           },
+        .framesource_chn =    { DEV_ID_FS, CH0_INDEX, 0},
+        .imp_encoder = { DEV_ID_ENC, CH0_INDEX, 0},
+    },
 ```
 
 复制
@@ -163,25 +163,25 @@ Init初始化流程
 ```
 int sample_framesource_init()
 {
-	int i, ret;
+    int i, ret;
 
-	for (i = 0; i < FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			IMP_LOG_INFO(TAG,"sample_framesource_init i = %d\n",i);
-			ret = IMP_FrameSource_CreateChn(chn[i].index, &chn[i].fs_chn_attr);
-			if(ret < 0){
-				IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", chn[i].index);
-				return -1;
-			}
+    for (i = 0; i < FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            IMP_LOG_INFO(TAG,"sample_framesource_init i = %d\n",i);
+            ret = IMP_FrameSource_CreateChn(chn[i].index, &chn[i].fs_chn_attr);
+            if(ret < 0){
+                IMP_LOG_ERR(TAG, "IMP_FrameSource_CreateChn(chn%d) error !\n", chn[i].index);
+                return -1;
+            }
 
-			ret = IMP_FrameSource_SetChnAttr(chn[i].index, &chn[i].fs_chn_attr);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n",  chn[i].index);
-				return -1;
-			}
-		}
-	}
-	return 0;
+            ret = IMP_FrameSource_SetChnAttr(chn[i].index, &chn[i].fs_chn_attr);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_FrameSource_SetChnAttr(chn%d) error !\n",  chn[i].index);
+                return -1;
+            }
+        }
+    }
+    return 0;
 }
 ```
 
@@ -194,15 +194,15 @@ int sample_framesource_init()
 一个编码组不仅仅可以编码H264的码流数据，也可以编码JPEG的数据。
 
 ```
-	for (i = 0; i < FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			ret = IMP_Encoder_CreateGroup(chn[i].index);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_Encoder_CreateGroup(%d) error !\n", i);
-				return -1;
-			}
-		}
-	}
+    for (i = 0; i < FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            ret = IMP_Encoder_CreateGroup(chn[i].index);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_Encoder_CreateGroup(%d) error !\n", i);
+                return -1;
+            }
+        }
+    }
 ```
 
 复制
@@ -216,34 +216,34 @@ int sample_framesource_init()
 ```
 int sample_jpeg_init()
 {
-	int i, ret;
-	IMPEncoderChnAttr channel_attr;
-	IMPFSChnAttr *imp_chn_attr_tmp;
+    int i, ret;
+    IMPEncoderChnAttr channel_attr;
+    IMPFSChnAttr *imp_chn_attr_tmp;
 
-	for (i = 0; i <  FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			imp_chn_attr_tmp = &chn[i].fs_chn_attr;
-			memset(&channel_attr, 0, sizeof(IMPEncoderChnAttr));
-			ret = IMP_Encoder_SetDefaultParam(&channel_attr, IMP_ENC_PROFILE_JPEG, IMP_ENC_RC_MODE_FIXQP,
-					imp_chn_attr_tmp->picWidth, imp_chn_attr_tmp->picHeight,
-					imp_chn_attr_tmp->outFrmRateNum, imp_chn_attr_tmp->outFrmRateDen, 0, 0, 25, 0);
-			/* Create Channel */
-			ret = IMP_Encoder_CreateChn(4 + chn[i].index, &channel_attr);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_Encoder_CreateChn(%d) error: %d\n",
-							chn[i].index, ret);
-				return -1;
-			}
-			/* Resigter Channel */
-			ret = IMP_Encoder_RegisterChn(i, 4 + chn[i].index);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(0, %d) error: %d\n",
-							chn[i].index, ret);
-				return -1;
-			}
-		}
-	}
-	return 0;
+    for (i = 0; i <  FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            imp_chn_attr_tmp = &chn[i].fs_chn_attr;
+            memset(&channel_attr, 0, sizeof(IMPEncoderChnAttr));
+            ret = IMP_Encoder_SetDefaultParam(&channel_attr, IMP_ENC_PROFILE_JPEG, IMP_ENC_RC_MODE_FIXQP,
+                    imp_chn_attr_tmp->picWidth, imp_chn_attr_tmp->picHeight,
+                    imp_chn_attr_tmp->outFrmRateNum, imp_chn_attr_tmp->outFrmRateDen, 0, 0, 25, 0);
+            /* Create Channel */
+            ret = IMP_Encoder_CreateChn(4 + chn[i].index, &channel_attr);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_Encoder_CreateChn(%d) error: %d\n",
+                            chn[i].index, ret);
+                return -1;
+            }
+            /* Resigter Channel */
+            ret = IMP_Encoder_RegisterChn(i, 4 + chn[i].index);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_Encoder_RegisterChn(0, %d) error: %d\n",
+                            chn[i].index, ret);
+                return -1;
+            }
+        }
+    }
+    return 0;
 }
 ```
 
@@ -254,16 +254,16 @@ int sample_jpeg_init()
 主要的步奏：就是将你初始化的视频源和编码器绑定在一块。
 
 ```
-	/* Step.4 Bind */
-	for (i = 0; i < FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			ret = IMP_System_Bind(&chn[i].framesource_chn, &chn[i].imp_encoder);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "Bind FrameSource channel%d and Encoder failed\n",i);
-				return -1;
-			}
-		}
-	}
+    /* Step.4 Bind */
+    for (i = 0; i < FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            ret = IMP_System_Bind(&chn[i].framesource_chn, &chn[i].imp_encoder);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "Bind FrameSource channel%d and Encoder failed\n",i);
+                return -1;
+            }
+        }
+    }
 ```
 
 复制
@@ -275,19 +275,19 @@ int sample_jpeg_init()
 ```
 int sample_framesource_streamon()
 {
-	int ret = 0, i = 0;
-	/* Enable channels */
-	for (i = 0; i < FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			IMP_LOG_INFO(TAG,"sample_framesource_streamon i = %d\n",i);
-			ret = IMP_FrameSource_EnableChn(chn[i].index);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_FrameSource_EnableChn(%d) error: %d\n", ret, chn[i].index);
-				return -1;
-			}
-		}
-	}
-	return 0;
+    int ret = 0, i = 0;
+    /* Enable channels */
+    for (i = 0; i < FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            IMP_LOG_INFO(TAG,"sample_framesource_streamon i = %d\n",i);
+            ret = IMP_FrameSource_EnableChn(chn[i].index);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_FrameSource_EnableChn(%d) error: %d\n", ret, chn[i].index);
+                return -1;
+            }
+        }
+    }
+    return 0;
 }
 ```
 
@@ -316,17 +316,17 @@ IMP_Encoder_GetStream：
  * 定义编码帧码流类型结构体
  */
 typedef struct {
-	uint32_t		  phyAddr;          /**< 帧码流物理地址 */
-	uint32_t		  virAddr;          /**< 帧码流包虚拟地址 */
-	uint32_t		  streamSize;       /**< virAddr对应分配的地址空间大小 */
-	IMPEncoderPack  *pack;				/**< 帧码流包结构 */
-	uint32_t        packCount;			/**< 一帧码流的所有包的个数 */
-	uint32_t        seq;				/**< 编码帧码流序列号 */
-	union
-	{
-		IMPEncoderStreamInfo streamInfo;
-		IMPEncoderJpegInfo jpegInfo;
-	};
+    uint32_t          phyAddr;          /**< 帧码流物理地址 */
+    uint32_t          virAddr;          /**< 帧码流包虚拟地址 */
+    uint32_t          streamSize;       /**< virAddr对应分配的地址空间大小 */
+    IMPEncoderPack  *pack;                /**< 帧码流包结构 */
+    uint32_t        packCount;            /**< 一帧码流的所有包的个数 */
+    uint32_t        seq;                /**< 编码帧码流序列号 */
+    union
+    {
+        IMPEncoderStreamInfo streamInfo;
+        IMPEncoderJpegInfo jpegInfo;
+    };
 } IMPEncoderStream;
 ```
 
@@ -335,36 +335,36 @@ typedef struct {
 ```
 static int save_stream(int fd, IMPEncoderStream *stream)
 {
-	int ret, i, nr_pack = stream->packCount;
+    int ret, i, nr_pack = stream->packCount;
 
   //IMP_LOG_DBG(TAG, "----------packCount=%d, stream->seq=%u start----------\n", stream->packCount, stream->seq);
-	for (i = 0; i < nr_pack; i++) {
+    for (i = 0; i < nr_pack; i++) {
     //IMP_LOG_DBG(TAG, "[%d]:%10u,%10lld,%10u,%10u,%10u\n", i, stream->pack[i].length, stream->pack[i].timestamp, stream->pack[i].frameEnd, *((uint32_t *)(&stream->pack[i].nalType)), stream->pack[i].sliceType);
-		IMPEncoderPack *pack = &stream->pack[i];
-		if(pack->length){
-			uint32_t remSize = stream->streamSize - pack->offset;
-			if(remSize < pack->length){
-				ret = write(fd, (void *)(stream->virAddr + pack->offset), remSize);
-				if (ret != remSize) {
-					IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].remSize(%d) error:%s\n", ret, i, remSize, strerror(errno));
-					return -1;
-				}
-				ret = write(fd, (void *)stream->virAddr, pack->length - remSize);
-				if (ret != (pack->length - remSize)) {
-					IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].(length-remSize)(%d) error:%s\n", ret, i, (pack->length - remSize), strerror(errno));
-					return -1;
-				}
-			}else {
-				ret = write(fd, (void *)(stream->virAddr + pack->offset), pack->length);
-				if (ret != pack->length) {
-					IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].length(%d) error:%s\n", ret, i, pack->length, strerror(errno));
-					return -1;
-				}
-			}
-		}
-	}
+        IMPEncoderPack *pack = &stream->pack[i];
+        if(pack->length){
+            uint32_t remSize = stream->streamSize - pack->offset;
+            if(remSize < pack->length){
+                ret = write(fd, (void *)(stream->virAddr + pack->offset), remSize);
+                if (ret != remSize) {
+                    IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].remSize(%d) error:%s\n", ret, i, remSize, strerror(errno));
+                    return -1;
+                }
+                ret = write(fd, (void *)stream->virAddr, pack->length - remSize);
+                if (ret != (pack->length - remSize)) {
+                    IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].(length-remSize)(%d) error:%s\n", ret, i, (pack->length - remSize), strerror(errno));
+                    return -1;
+                }
+            }else {
+                ret = write(fd, (void *)(stream->virAddr + pack->offset), pack->length);
+                if (ret != pack->length) {
+                    IMP_LOG_ERR(TAG, "stream write ret(%d) != pack[%d].length(%d) error:%s\n", ret, i, pack->length, strerror(errno));
+                    return -1;
+                }
+            }
+        }
+    }
   //IMP_LOG_DBG(TAG, "----------packCount=%d, stream->seq=%u end----------\n", stream->packCount, stream->seq);
-	return 0;
+    return 0;
 }
 ```
 
@@ -387,18 +387,18 @@ sample_framesource_streamoff
 ```
 int sample_framesource_streamoff()
 {
-	int ret = 0, i = 0;
-	/* Enable channels */
-	for (i = 0; i < FS_CHN_NUM; i++) {
-		if (chn[i].enable){
-			ret = IMP_FrameSource_DisableChn(chn[i].index);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_FrameSource_DisableChn(%d) error: %d\n", ret, chn[i].index);
-				return -1;
-			}
-		}
-	}
-	return 0;
+    int ret = 0, i = 0;
+    /* Enable channels */
+    for (i = 0; i < FS_CHN_NUM; i++) {
+        if (chn[i].enable){
+            ret = IMP_FrameSource_DisableChn(chn[i].index);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_FrameSource_DisableChn(%d) error: %d\n", ret, chn[i].index);
+                return -1;
+            }
+        }
+    }
+    return 0;
 }
 ```
 
@@ -411,36 +411,36 @@ IMP_System_UnBind
 ```
 int sample_jpeg_exit(void)
 {
-	int ret = 0, i = 0, chnNum = 0;
-	IMPEncoderChnStat chn_stat;
+    int ret = 0, i = 0, chnNum = 0;
+    IMPEncoderChnStat chn_stat;
 
-	for (i = 0; i <  FS_CHN_NUM; i++) {
-		if (chn[i].enable) {
-			chnNum = 4 + chn[i].index;
-			memset(&chn_stat, 0, sizeof(IMPEncoderChnStat));
-			ret = IMP_Encoder_Query(chnNum, &chn_stat);
-			if (ret < 0) {
-				IMP_LOG_ERR(TAG, "IMP_Encoder_Query(%d) error: %d\n", chnNum, ret);
-				return -1;
-			}
+    for (i = 0; i <  FS_CHN_NUM; i++) {
+        if (chn[i].enable) {
+            chnNum = 4 + chn[i].index;
+            memset(&chn_stat, 0, sizeof(IMPEncoderChnStat));
+            ret = IMP_Encoder_Query(chnNum, &chn_stat);
+            if (ret < 0) {
+                IMP_LOG_ERR(TAG, "IMP_Encoder_Query(%d) error: %d\n", chnNum, ret);
+                return -1;
+            }
 
-			if (chn_stat.registered) {
-				ret = IMP_Encoder_UnRegisterChn(chnNum);
-				if (ret < 0) {
-					IMP_LOG_ERR(TAG, "IMP_Encoder_UnRegisterChn(%d) error: %d\n", chnNum, ret);
-					return -1;
-				}
+            if (chn_stat.registered) {
+                ret = IMP_Encoder_UnRegisterChn(chnNum);
+                if (ret < 0) {
+                    IMP_LOG_ERR(TAG, "IMP_Encoder_UnRegisterChn(%d) error: %d\n", chnNum, ret);
+                    return -1;
+                }
 
-				ret = IMP_Encoder_DestroyChn(chnNum);
-				if (ret < 0) {
-					IMP_LOG_ERR(TAG, "IMP_Encoder_DestroyChn(%d) error: %d\n", chnNum, ret);
-					return -1;
-				}
-			}
-		}
-	}
+                ret = IMP_Encoder_DestroyChn(chnNum);
+                if (ret < 0) {
+                    IMP_LOG_ERR(TAG, "IMP_Encoder_DestroyChn(%d) error: %d\n", chnNum, ret);
+                    return -1;
+                }
+            }
+        }
+    }
 
-	return 0;
+    return 0;
 }
 ```
 
@@ -453,39 +453,39 @@ sample_system_exit
 ```
 int sample_system_exit()
 {
-	int ret = 0;
+    int ret = 0;
 
-	IMP_LOG_DBG(TAG, "sample_system_exit start\n");
+    IMP_LOG_DBG(TAG, "sample_system_exit start\n");
 
 
-	IMP_System_Exit();
+    IMP_System_Exit();
 
-	ret = IMP_ISP_DisableSensor();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
-		return -1;
-	}
+    ret = IMP_ISP_DisableSensor();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "failed to EnableSensor\n");
+        return -1;
+    }
 
-	ret = IMP_ISP_DelSensor(&sensor_info);
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "failed to AddSensor\n");
-		return -1;
-	}
+    ret = IMP_ISP_DelSensor(&sensor_info);
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "failed to AddSensor\n");
+        return -1;
+    }
 
-	ret = IMP_ISP_DisableTuning();
-	if(ret < 0){
-		IMP_LOG_ERR(TAG, "IMP_ISP_DisableTuning failed\n");
-		return -1;
-	}
+    ret = IMP_ISP_DisableTuning();
+    if(ret < 0){
+        IMP_LOG_ERR(TAG, "IMP_ISP_DisableTuning failed\n");
+        return -1;
+    }
 
-	if(IMP_ISP_Close()){
-		IMP_LOG_ERR(TAG, "failed to open ISP\n");
-		return -1;
-	}
+    if(IMP_ISP_Close()){
+        IMP_LOG_ERR(TAG, "failed to open ISP\n");
+        return -1;
+    }
 
-	IMP_LOG_DBG(TAG, " sample_system_exit success\n");
+    IMP_LOG_DBG(TAG, " sample_system_exit success\n");
 
-	return 0;
+    return 0;
 }
 ```
 
