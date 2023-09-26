@@ -103,7 +103,26 @@ SoC UART pins:
 | Package      | BGA152    | BGA152    | BGA152    | BGA152    |
 | Process tech | 28nm      | 28nm      | 28nm      | 28nm      |
 
+
 ### T30 Family (Monkey)
+
+![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191120/20191120114629_49922.png)
+
+* Smart H.265/H.264 encoding engine, full real-time performance
+* Starlight-level ISP, multiple noise reduction
+* HD resolution,5M/4M/3M/2M/1M simultaneous support
+* Ultra low power consumption, minimum 300MW
+* Support microphone arrays, activate audio and video applications
+* Built-in vector acceleration engine to support end-level  lightweight AI applications
+* CPU operating at 1.0GHZ,base on MIPS
+* 64KB L1-Cache/128KB L2-Cache
+* MXU2.0 (SIMD128)
+* Video and audio intelligent analysis
+* High Level ISP, Support AE, AWB, AF, 3D De-noise, WDR, DRC
+* Smart H.265, high profile, maximum 2688x2048 resolution
+* Internal integration 64MB/128MB DDR2
+* Typical Power: 500mW including DDR (1080P@25fps H.265)
+* Fast boot and quick stream
 
 |             | T30L      | T30N      | T30X      | T30A      | 
 |-------------|-----------|-----------|-----------|-----------|
@@ -120,6 +139,22 @@ SoC UART pins:
 | Package     | BGA223    | BGA223    | BGA223    | BGA223    |
 
 ### T31 Family (Swan)
+
+* Smart H.265/H.264 encoding engine, full real-time performance
+* Starlight-level ISP, multiple noise reduction
+* HD resolution,5M/4M/3M/2M/1M simultaneous support
+* Ultra low power consumption, minimum 300MW
+* Support microphone arrays, activate audio and video applications
+* Built-in vector acceleration engine to support end-level lightweight AI applications
+* CPU operating at 1.0GHZ,base on MIPS
+* 64KB L1-Cache/128KB L2-Cache
+* MXU2.0 (SIMD128)
+* Video and audio intelligent analysis
+* High Level ISP, Support AE, AWB, AF, 3D De-noise, WDR, DRC
+* Smart H.265, high profile, maximum 2688x2048 resolution
+* Internal integration 64MB/128MB DDR2
+* Typical Power: 500mW including DDR (1080P@25fps H.265)
+* Fast boot and quick stream
 
 > The main difference between T31 and T30/T21 are:
 > 1. FrameSource module adds `fcrop` parameter to realize pre-crop function.
