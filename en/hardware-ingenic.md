@@ -51,6 +51,13 @@ SoC UART pins:
 | Package     | BGA181    | BGA181    | BGA181    |
 
 ### T21 Family (Turkey)
+![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191107/20191107160331_53743.png)
+
+* Professional level imaging ISP, night vision enhancement
+* Smart H.264 coding engine, ultra low code flow control
+* Extreme BOM cost control
+* Leading low power technology
+* Built-in Ethernet PHY 
 
 |              | T21L      | T21N      | T21X      | T21ZL     | 
 |--------------|-----------|-----------|-----------|-----------|
