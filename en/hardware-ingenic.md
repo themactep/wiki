@@ -6,6 +6,18 @@ Xburst http://www.ingenic.com.cn/en/?xburst.html
 
 ### T10 Family (Mango)
 
+* Professional image signal process and H.264 encoding(960P)
+* High performance CPU with intelligent analysis (>1G CPU, 128Bits SIMD engine)
+* Lowest power consumer in IPC market (typical running power: 390mw including DDRII)
+* CPU operating at 1.0Ghz, base on MIPS
+* 128KB L2-cache
+* MXU2.0 (SIMD128)
+* Video and audio intelligent analysis
+* High Level ISP, support 3D denoise, WDR
+* H.264 baseline, mainprofile, up to 960P resolution
+* Package with 64MB DDR2
+* Low to less than 400mw power consumption including DDRII in working time 
+
 SoC UART pins:
 - P11 - UART0_TX
 - P12 - UART0_RTS
