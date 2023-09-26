@@ -42,9 +42,27 @@ SoC UART pins:
 | Video Sub   | 640x640   | 640x640   |
 | Package     | BGA181    | BGA181    |
 
+
 ### T15 Family (?)
 
+
 ### T20 Family (Bull)
+
+![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191120/20191120163141_11452.jpg)
+
+* Surveillance level ISP engine，LLL night vision
+* Smart H.264 Encoder engine,ultra low bit stream control
+* High performance computing platform,visual intelligent analysis
+* The leading low power technology
+* CPU operating at 1.0Ghz, base on MIPS
+* 128KB L2-cache
+* MXU2.0 (SIMD128)
+* Video and audio intelligent analysis
+* High Level ISP, support 3D denoise, WDR
+* Smart H.264, high profile, maximum 2048x2048 resolution
+* Package with 64MB/128MB DDR2
+* Less than 600mw typical power consumption
+* Fast boot and quick stream 
 
 |             | T20L      | T20N      | T20X      |
 |-------------|-----------|-----------|-----------|
