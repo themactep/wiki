@@ -94,7 +94,7 @@ IPC Glossary
 ### M
 
 - MJPEG - Motion JPEG (video format)
-- MPLL - Multipurpose PLL
+- MPLL - Multipurpose Phase-Locked Loop
 
 ### N
 
@@ -149,6 +149,7 @@ IPC Glossary
 ### V
 
 - VCO - Voltage-Controlled Oscillator
+- VPLL - Vector Phase-Locked Loop
 - VPU - Vision Processing Unit
  
 ### W
