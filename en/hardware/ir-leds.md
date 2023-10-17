@@ -27,6 +27,6 @@ supplying power to the LEDs, and a 1.25mm CDS port to report LDR status back
 to the camera so that can switch between Day and Night Vision Mode opening or
 closing the IR-CUT filter to let infrared light to the sensor.
 
-Links:
-------
-http://www.feyondcctvled.com/
+### Links:
+
+- <http://www.feyondcctvled.com/>
