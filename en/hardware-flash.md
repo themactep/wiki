@@ -28,6 +28,7 @@ data sheet from the manufacturer.
 - IS - [ISSI](https://www.issi.com/) [9Dh]
 - KH - [KHIC](https://www.macronix.com.hk/) [C2h]
 - LE - [OnSemi](https://www.onsemi.com/) [62h]
+- MD - [GigaDevice](https://www.gigadevice.com/) [C8h]
 - MT - [Micron](https://www.micron.com/) [20h]
 - MX - [Macronix](https://www.macronix.com) [C2h]
 - N - [Numonyx](https://www.micron.com/) [20h]
