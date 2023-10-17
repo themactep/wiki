@@ -34,7 +34,7 @@ the OSD region will call the IPU for drawing.
 
 #### The position of the OSD in the whole system.
 
-![](assets/net-img-ec5260a140a8f53be476e4d6e173bb5b-20230919120329-w2ynggr.png)
+![](pix/net-img-ec5260a140a8f53be476e4d6e173bb5b-20230919120329-w2ynggr.png)
 
 #### Sequence of OSD module calls:
 
@@ -66,7 +66,7 @@ Next is the exit process:
 
 #### Functions called by the API
 
-![](assets/net-img-25e4f79b69eb19ab1f9a103182a20029-20230919120329-lsxb4q0.png)
+![](pix/net-img-25e4f79b69eb19ab1f9a103182a20029-20230919120329-lsxb4q0.png)
 
 
 ### Detailed analysis of Ingenic's demo:
@@ -238,7 +238,7 @@ int IMP_OSD_Start(int grpNum);
 
 #### Binding OSD layers to our coding sequence
 
-![](assets/net-img-2212e032620909327c6c3864b7c75a92-20230919120330-4wittfx.png)
+![](pix/net-img-2212e032620909327c6c3864b7c75a92-20230919120330-4wittfx.png)
 
 ```
 /* Step.5 Bind */
@@ -378,8 +378,8 @@ It's just some anti-initialization functions and things like that.
 
 ### Experimental Phenomena
 
-![](assets/net-img-b1d0687bd8302118938b257aa980c8ff-20230919120330-yzf7z21.png)
+![](pix/net-img-b1d0687bd8302118938b257aa980c8ff-20230919120330-yzf7z21.png)
 
-![](assets/net-img-25eff3e94b3c49e288a5ca0dffca3f48-20230919120330-fkbyou2.png)
+![](pix/net-img-25eff3e94b3c49e288a5ca0dffca3f48-20230919120330-fkbyou2.png)
 
 [toc]: index.md

@@ -3,7 +3,7 @@ Ingenic T31: Audio
 
 ### Basic playback of a PCM file
 
-![](./images/chart12.png)
+![](pix/chart12.png)
 
 Key components: 
 - output device (you need to know in advance what the format of the input data is.)
@@ -14,15 +14,15 @@ Key components:
 Record microphone input signal into an audio file for further storage or
 transmitting over network.
 
-![](./images/chart15.png)
-![](./images/chart16.png)
+![](pix/chart15.png)
+![](pix/chart16.png)
 
 Recording is the foundation, providing material for later storage or network
 transmission of audio data.
 
 ### Convert G711A to PCM
 
-![](./images/chart13.png)
+![](pix/chart13.png)
 
 Related API interfaces used:
 - `IMP_ADEC_RegisterDecoder`
@@ -44,7 +44,7 @@ Key components:
 
 Process of inputting PCM files and outputting G711A encoding
 
-![](./images/chart14.png)
+![](pix/chart14.png)
 
 analyze:
 

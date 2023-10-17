@@ -24,12 +24,12 @@ In addition to these three formats, we also can get the YUV stream.
 
 Samples of encoding data into these three formats are provided in Ingenic's demo code.
 
-![](assets/net-img-3faa21484cff414aca5f192127df53c2-20230919120230-bvm1yax.png)
+![](pix/net-img-3faa21484cff414aca5f192127df53c2-20230919120230-bvm1yax.png)
 
 The encoding module consists of encoder groups; each encoder group consists of an encoder channels
 and output stream buffers, which consist of multiple buffers.
 
-![](assets/net-img-64e2baae8160b42df88fd36ad78d65c2-20230919120230-o1em2m7.png)
+![](pix/net-img-64e2baae8160b42df88fd36ad78d65c2-20230919120230-o1em2m7.png)
 
 
 ### Basic concepts related to video
@@ -49,9 +49,9 @@ __PPS__ - the set of image parameters.
 
 ### Some of the Ingenic image encoding module APIs.
 
-![](assets/net-img-991c40cd229dfa520bb7a10db7ce5354-20230919120230-0olvaga.png)
+![](pix/net-img-991c40cd229dfa520bb7a10db7ce5354-20230919120230-0olvaga.png)
 
-![](assets/net-img-e8cca30733b0f8b60291067690f916b7-20230919120230-vz1j9qa.png)
+![](pix/net-img-e8cca30733b0f8b60291067690f916b7-20230919120230-vz1j9qa.png)
 
 
 ### Video Source Module
@@ -91,6 +91,6 @@ Exit - exit process:
 
 #### FrameSource module partial API:
 
-![](assets/net-img-57228b918a5375fe77b925829b74150d-20230919120231-0fu6ih4.png)
+![](pix/net-img-57228b918a5375fe77b925829b74150d-20230919120231-0fu6ih4.png)
 
 [toc]: index.md

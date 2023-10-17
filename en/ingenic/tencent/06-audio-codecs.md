@@ -16,28 +16,28 @@ The PCM file is relatively large.
 In some cases, when the network bandwidth is low, partial audio data can be lost, resulting in lagging sound.
 Audio data encoded with G711A or AAC codec will be twice as small as the original PCM file data.
 
-![](assets/net-img-24651c215b6993da009e0a56215ad9fb-20230919120206-f875jt1.png)
+![](pix/net-img-24651c215b6993da009e0a56215ad9fb-20230919120206-f875jt1.png)
 
-![](assets/net-img-ae5154ac8d45a11fe8c73daab92d7d92-20230919120206-xcjzo25.jpg)
+![](pix/net-img-ae5154ac8d45a11fe8c73daab92d7d92-20230919120206-xcjzo25.jpg)
 
 
 ### Audio codec APIs used by Ingenic
 
-![](assets/net-img-f078d0dc4504faa469db08444e7d182d-20230919120207-sga690o.png)
+![](pix/net-img-f078d0dc4504faa469db08444e7d182d-20230919120207-sga690o.png)
 
-![](assets/net-img-d9fd5768a3e7c8e230744e517a280a80-20230919120207-1v5hwgz.png)
+![](pix/net-img-d9fd5768a3e7c8e230744e517a280a80-20230919120207-1v5hwgz.png)
 
 
 ### Ingenic's audio codec practice
 
 Over here I bought a development board from the internet, roughly as shown below.
 
-![](assets/net-img-8939c52f97ff4e0f5690ae14cf84d86b-20230919120207-bzgvjbt.png)
+![](pix/net-img-8939c52f97ff4e0f5690ae14cf84d86b-20230919120207-bzgvjbt.png)
 
 We modified the demo written in Ingenic's SDK, and then experimented with the following results;
 you can see that the size of the same size recording audio file G711A is only about half the size of PCM.
 
-![](assets/net-img-ee29e10de3223514470d6a25a69046a2-20230919120207-xrkz9ax.png)
+![](pix/net-img-ee29e10de3223514470d6a25a69046a2-20230919120207-xrkz9ax.png)
 
 #### Code
 

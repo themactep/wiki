@@ -36,7 +36,7 @@ __NV12__ is VU alternation. The rest and __NV21__ is the same, is also 4 __Y__ c
 group of UV components; in fact, __YUV:4:2:0__ means 4 __Y__ component data, 2 __U__ and __V__ component data.
 The approximate occupied space is 12 bits of data.
 
-![](assets/net-img-72655bea607588644d18d3626ac8c16b-20230919115838-17trt69.png)
+![](pix/net-img-72655bea607588644d18d3626ac8c16b-20230919115838-17trt69.png)
 
 # 2: How to get YUV and RAW data for Ingenic T31
 
@@ -111,7 +111,7 @@ It is the same as the original counter-initialization and will not be repeated.
 
 ### Experimental Phenomena
 
-![](assets/net-img-15097e3079df1d2f942210a0d01c12b1-20230919115839-c12da3z.png)
+![](pix/net-img-15097e3079df1d2f942210a0d01c12b1-20230919115839-c12da3z.png)
 
 RAW data is very large without compression, much larger than JPEG, so we generally use JPEG format
 for network transmission to save bandwidth.
@@ -126,7 +126,7 @@ Size comparison. Generally a five megapixel photo:
 
 Below is a picture of what the YUV image actually looks like.
 
-![](assets/net-img-2d98db182030b8737b8d380492192294-20230919115839-al19eq9.png)
+![](pix/net-img-2d98db182030b8737b8d380492192294-20230919115839-al19eq9.png)
 
 Appendix: screenshot YUV full code:
 

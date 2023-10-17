@@ -16,7 +16,7 @@ captured sound, transmitted to the Ingenic T31 chip speakers play.
 
 ### Audio output system block diagram
 
-![](assets/net-img-874e3d9b46f83ed2f7042e91103f9d04-20230919120119-xfl74e1.png)
+![](pix/net-img-874e3d9b46f83ed2f7042e91103f9d04-20230919120119-xfl74e1.png)
 
 
 ### Code details for audio output

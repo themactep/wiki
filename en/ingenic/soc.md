@@ -1,22 +1,24 @@
-Ingenic SoC
------------
+Ingenic T-series SoC
+--------------------
+
+Allegedly, "T" in the name of the series stands for "Tomahawk".
 
 Xburst http://www.ingenic.com.cn/en/?xburst.html
 
-
 ### T10 Family (Mango)
 
-* Professional image signal process and H.264 encoding(960P)
-* High performance CPU with intelligent analysis (>1G CPU, 128Bits SIMD engine)
-* Lowest power consumer in IPC market (typical running power: 390mw including DDRII)
-* CPU operating at 1.0Ghz, base on MIPS
+![](pix/T10_Block_Diagram.png)
+
+* H.264 encoding @ 960P
+* High-performance CPU with intelligent analysis (>1G CPU, 128-bit SIMD engine)
+* MIPS CPU operating at 1.0Ghz
 * 128KB L2-cache
 * MXU2.0 (SIMD128)
-* Video and audio intelligent analysis
+* Intelligent video and audio analysis
 * High Level ISP, support 3D denoise, WDR
-* H.264 baseline, mainprofile, up to 960P resolution
+* H.264 baseline, main profile, up to 960P resolution
 * Package with 64MB DDR2
-* Low to less than 400mw power consumption including DDRII in working time 
+* Typical power consumption: less than 400mW including DDR2
 
 SoC UART pins:
 - P11 - UART0_TX
@@ -50,18 +52,17 @@ SoC UART pins:
 
 ![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191120/20191120163141_11452.jpg)
 
-* Surveillance level ISP engine，LLL night vision
-* Smart H.264 Encoder engine,ultra low bit stream control
-* High performance computing platform,visual intelligent analysis
-* The leading low power technology
-* CPU operating at 1.0Ghz, base on MIPS
+* Surveillance level ISP engine, LLL night vision
+* Smart H.264 Encoder engine, ultra-low bitstream control
+* The leading low-power technology
+* CPU operating at 1.0Ghz, based on MIPS
 * 128KB L2-cache
 * MXU2.0 (SIMD128)
-* Video and audio intelligent analysis
+* Intelligent video and audio analysis
 * High Level ISP, support 3D denoise, WDR
 * Smart H.264, high profile, maximum 2048x2048 resolution
 * Package with 64MB/128MB DDR2
-* Less than 600mw typical power consumption
+* Typical power consumption: less than 600mW 
 * Fast boot and quick stream 
 
 |             | T20L      | T20N      | T20X      |
@@ -81,12 +82,13 @@ SoC UART pins:
 | Package     | BGA181    | BGA181    | BGA181    |
 
 ### T21 Family (Turkey)
-![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191107/20191107160331_53743.png)
+
+![](pix/T21_Block_Diagram.png)
 
 * Professional level imaging ISP, night vision enhancement
-* Smart H.264 coding engine, ultra low code flow control
+* Smart H.264 coding engine, ultra-low code flow control
 * Extreme BOM cost control
-* Leading low power technology
+* Leading low-power technology
 * Built-in Ethernet PHY 
 
 |              | T21L      | T21N      | T21X      | T21ZL     | 
@@ -106,22 +108,21 @@ SoC UART pins:
 
 ### T30 Family (Monkey)
 
-![](https://www.indasina.com/js/htmledit/kindeditor/attached/20191120/20191120114629_49922.png)
+![](pix/T30_Block_Diagram.png)
 
 * Smart H.265/H.264 encoding engine, full real-time performance
 * Starlight-level ISP, multiple noise reduction
-* HD resolution,5M/4M/3M/2M/1M simultaneous support
-* Ultra low power consumption, minimum 300MW
+* HD resolution, 5M/4M/3M/2M/1M simultaneous support
 * Support microphone arrays, activate audio and video applications
-* Built-in vector acceleration engine to support end-level  lightweight AI applications
-* CPU operating at 1.0GHZ,base on MIPS
+* Built-in vector acceleration engine to support end-level lightweight AI applications
+* CPU operating at 1.0 GHZ, based on MIPS
 * 64KB L1-Cache/128KB L2-Cache
 * MXU2.0 (SIMD128)
 * Video and audio intelligent analysis
 * High Level ISP, Support AE, AWB, AF, 3D De-noise, WDR, DRC
 * Smart H.265, high profile, maximum 2688x2048 resolution
 * Internal integration 64MB/128MB DDR2
-* Typical Power: 500mW including DDR (1080P@25fps H.265)
+* Typical Power: 500mW including DDR2 (1080P@25fps H.265)
 * Fast boot and quick stream
 
 |             | T30L      | T30N      | T30X      | T30A      | 
@@ -138,22 +139,24 @@ SoC UART pins:
 | Resolution  | 2592x2048 | 2592x2048 | 2592x2048 | 2592x2048 |
 | Package     | BGA223    | BGA223    | BGA223    | BGA223    |
 
+
 ### T31 Family (Swan)
+
+![](pix/T31N_Block_Diagram.png)
 
 * Smart H.265/H.264 encoding engine, full real-time performance
 * Starlight-level ISP, multiple noise reduction
-* HD resolution,5M/4M/3M/2M/1M simultaneous support
-* Ultra low power consumption, minimum 300MW
+* HD resolution, 5M/4M/3M/2M/1M simultaneous support
 * Support microphone arrays, activate audio and video applications
 * Built-in vector acceleration engine to support end-level lightweight AI applications
-* CPU operating at 1.0GHZ,base on MIPS
+* CPU operating at 1.0 GHZ, based on MIPS
 * 64KB L1-Cache/128KB L2-Cache
 * MXU2.0 (SIMD128)
 * Video and audio intelligent analysis
 * High Level ISP, Support AE, AWB, AF, 3D De-noise, WDR, DRC
 * Smart H.265, high profile, maximum 2688x2048 resolution
 * Internal integration 64MB/128MB DDR2
-* Typical Power: 500mW including DDR (1080P@25fps H.265)
+* Typical power consumption: 500mW including DDR2 (1080P@25fps H.265)
 * Fast boot and quick stream
 
 > The main difference between T31 and T30/T21 are:
@@ -183,7 +186,10 @@ SoC UART pins:
 | I2S         |           |           |           |           |           | +         | ?         |
 | Package     | QFN88     | QFN88     | QFN88     | QFN88     | QFN88     | BGA       | BGA       |
 
+
 ### T40 Family (Shark)
+
+![](pix/T40N_Block_Diagram.png)
 
 |              | T40N      | T40XP     | T40A      |
 |--------------|-----------|-----------|-----------|
@@ -240,16 +246,16 @@ SoC UART pins:
 
 ### Data Sheets
 
-- [T10](../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
-- [T21](../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
-- [T30](../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
-- [T31N](../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31X](../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZL](../docs/T31ZL_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZX](../docs/T31ZX_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T40A](../docs/T40A_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40N](../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40XP](../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T10](../../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
+- [T21](../../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
+- [T30](../../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
+- [T31N](../../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31X](../../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31ZL](../../docs/T31ZL_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31ZX](../../docs/T31ZX_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T40A](../../docs/T40A_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T40N](../../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T40XP](../../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
 
 ### Software
 

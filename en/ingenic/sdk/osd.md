@@ -3,9 +3,9 @@ Ingenic T31 SDK: OSD
 
 ### Application process and related knowledge points
 
-![](./images/chart8.png)
+![](pix/chart8.png)
 
-![](./images/chart9.png)
+![](pix/chart9.png)
 
 analyze:
 

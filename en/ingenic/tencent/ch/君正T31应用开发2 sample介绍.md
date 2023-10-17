@@ -16,7 +16,7 @@ Sample 程序位于/samples/libimp-samples，目录下是依赖 SDK 库的应用
 
 XXX\ingentic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2
 
-​![](assets/net-img-6d2913682709a968e87965be9a6aad6b-20230919120645-umbwr8c.png)​
+​![](pix/net-img-6d2913682709a968e87965be9a6aad6b-20230919120645-umbwr8c.png)​
 
 include：是系统库函数的头文件
 
@@ -34,11 +34,11 @@ sample： 就是我们需要编译的文件内容。
 
 第三种是关于移动侦测的sample，OSD的sample
 
-​![](assets/net-img-bbcbcd3464e9ddaae73f48ae73bbc528-20230919120646-cqc081h.png)​
+​![](pix/net-img-bbcbcd3464e9ddaae73f48ae73bbc528-20230919120646-cqc081h.png)​
 
-​![](assets/net-img-061df27c3045846c7fbf1ae73de5b1b9-20230919120646-63azjba.png)​
+​![](pix/net-img-061df27c3045846c7fbf1ae73de5b1b9-20230919120646-63azjba.png)​
 
-​![](assets/net-img-c3a544180aba33890ed6b3a50b6f4794-20230919120646-i8f4tkt.png)​
+​![](pix/net-img-c3a544180aba33890ed6b3a50b6f4794-20230919120646-i8f4tkt.png)​
 
 **后面会逐步用解说这些sample和君正用户手册的关系，这些sample是我们进行大型项目的基础，必须完全掌握。**
 

@@ -30,7 +30,7 @@ __1080P__: Resolution of 1920 x 1080, an equivalent to 2-megapixel devices.
 
 __720P__: Resolution of 1280 x 720, an equivalent to 1-megapixel devices. This is also the mainstream resolution of early IPC.
 
-![](assets/net-img-b3504e80c618965786addf15ad96737a-20230919120549-ti7x21n.png)
+![](pix/net-img-b3504e80c618965786addf15ad96737a-20230919120549-ti7x21n.png)
 
 
 ### Ingenic T31's switching resolution demo
@@ -39,7 +39,7 @@ The purpose of this example is to switch the output stream from 1080p + 720p to 
 and then to 360p + 320x240. The primary and secondary streams can switch the resolution by destroying
 and recreating the encoder and framesource.
 
-![](assets/net-img-7d9d122cf67b91571b09820482e3d775-20230919120550-p8k26qt.png)
+![](pix/net-img-7d9d122cf67b91571b09820482e3d775-20230919120550-p8k26qt.png)
 
 
 #### Setting the initial resolution
@@ -247,7 +247,7 @@ We're going to change the resolution as following:
 This shows that we have successfully realized the function of resolution 
 switching in the process of running the program.
 
-![](assets/net-img-3c5146e9a5a95528163edc8db74be5e3-20230919120550-xxh0w74.png)
+![](pix/net-img-3c5146e9a5a95528163edc8db74be5e3-20230919120550-xxh0w74.png)
 
 
 [toc]: index.md

@@ -9,7 +9,7 @@ File name `sample-Encoder-jpeg.c`
 
 The main code flow for fetching images is like the following:
 
-![](assets/net-img-8c265ec5329bbaf0e3a37aa4e1f6464a-20230919120516-cgml85a.png)
+![](pix/net-img-8c265ec5329bbaf0e3a37aa4e1f6464a-20230919120516-cgml85a.png)
 
 First of all, most of the functions in this file depend on the two files `sample-common.h` and `sample-common.c`.
 Most of the demos are developed by calling the base library provided by `common.c`.
@@ -99,7 +99,7 @@ following figure.
 The default sensor of the SDK library is jxf23, so if we want to call the JPEG stream for operation, we need
 to modify the code before we can use it.
 
-![](assets/net-img-147c643d89c3ad0f3b22c8e256f57aea-20230919120517-tx2pnjw.png)
+![](pix/net-img-147c643d89c3ad0f3b22c8e256f57aea-20230919120517-tx2pnjw.png)
 
 
 #### Initialize the video source: sample_framesource_init
@@ -475,12 +475,12 @@ int sample_system_exit()
 In this, I intentionally added a part of the log inside the demo to make it easier to compare 
 with what I described above, and the actual program run follows the process I described.
 
-![](assets/net-img-90208137f8490ff65853ae21df4486b4-20230919120517-20gmlxn.png)
+![](pix/net-img-90208137f8490ff65853ae21df4486b4-20230919120517-20gmlxn.png)
 
 The resolution obtained is also the same as the one we set up as well, so you can tell that the whole process ended perfectly.
 
-![](assets/net-img-d587bc0a16235e422cff89f5e4f522ba-20230919120517-w00yv5k.png)
+![](pix/net-img-d587bc0a16235e422cff89f5e4f522ba-20230919120517-w00yv5k.png)
 
-![](assets/net-img-8918bcde57b4a343b623d386a67818c9-20230919120518-wocl2on.png)
+![](pix/net-img-8918bcde57b4a343b623d386a67818c9-20230919120518-wocl2on.png)
 
 [toc]: index.md

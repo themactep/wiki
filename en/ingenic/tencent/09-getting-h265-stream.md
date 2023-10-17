@@ -7,7 +7,7 @@ Block diagram of the Ingenic T31 system for acquiring H264 streams and JPEG get 
 are first initialized video-related interfaces, and then call to get the video stream, and finally 
 release the resources of the video.
 
-![](assets/net-img-d5b6702b2f14de0335195d941d21f066-20230919120252-10b39hy.png)
+![](pix/net-img-d5b6702b2f14de0335195d941d21f066-20230919120252-10b39hy.png)
 
 
 ### Initialize the encoder with `sample_encoder_init`
@@ -253,12 +253,12 @@ static void *get_video_stream(void *args)
 
 Execute the command:
 
-![](assets/net-img-3338a4675afe87c01909b5bc1c8f3df1-20230919120252-ztg5t6h.png)
+![](pix/net-img-3338a4675afe87c01909b5bc1c8f3df1-20230919120252-ztg5t6h.png)
 
 Download the generated file to a PC and use VLC version 3.0 or above to play, the effect is as follows:
 
-![](assets/net-img-e8ef329ba3be5549d45718eea9d7f513-20230919120252-lpotce0.png)
+![](pix/net-img-e8ef329ba3be5549d45718eea9d7f513-20230919120252-lpotce0.png)
 
-![](assets/net-img-b487379d88c6ed3fcd6bd69effe52c84-20230919120252-5hfbxsu.png)
+![](pix/net-img-b487379d88c6ed3fcd6bd69effe52c84-20230919120252-5hfbxsu.png)
 
 [toc]: index.md

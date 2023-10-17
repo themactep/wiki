@@ -11,7 +11,7 @@ samples, and so on.
 Developers can quickly carry out product function development through SDK. Simply put, software developers
 use this SDK to develop products.
 
-![](assets/net-img-0cae49d3ec17f86e3111d27a6dbe7255-20230919115938-971um0v.png)
+![](pix/net-img-0cae49d3ec17f86e3111d27a6dbe7255-20230919115938-971um0v.png)
 
 
 #### Tools
@@ -51,7 +51,7 @@ the Ingenic system library function.
 Broadly speaking, a product-level project requires the following R&D workers: embedded software engineers 
 (driver layer), embedded software engineers (application layer), hardware engineers, system engineers.
 
-![](assets/net-img-014d3891d19039064ce48435e4d9281b-20230919115939-efep0c1.png)
+![](pix/net-img-014d3891d19039064ce48435e4d9281b-20230919115939-efep0c1.png)
 
 It is recommended that college students can first study the Embedded Software Engineer (Application Layer) direction, 
 which corresponds to the Application section of the chart above.

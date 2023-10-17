@@ -68,7 +68,7 @@ MIC refers to the thing with the microphone, used to capture the external sound 
 the collection of analog signals into the T31 chip into digital signals, and then saved
 in a certain format into a file down.
 
-![](assets/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
+![](pix/net-img-a79f34e26b27b7b50b6c5b9b9d099051-20230919120046-iemjt81.png)
 
 
 ### Code Practice

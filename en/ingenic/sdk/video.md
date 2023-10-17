@@ -6,7 +6,7 @@ https://blog.csdn.net/code2481632/article/details/129344878
 
 The original image collected by the ISP needs to be further processed, so what has been done?
 
-![](./images/chart17.png)
+![](pix/chart17.png)
 
 Corresponding to the SDK package, there will be a series of interfaces to realize the above functions.
 
@@ -20,7 +20,7 @@ Ingenic T31 video processing chip has so many SDK API interfaces, where to start
 The first step is to understand and master the API related to initialization.
 In order to be more intuitive and read more aspects, I will post the flow chart later:
 
-![](./images/chart1.png)
+![](pix/chart1.png)
 
 analyze:
 
@@ -51,7 +51,7 @@ and some thoughts](https://blog.csdn.net/code2481632/article/details/129225326))
 It is not difficult in practice, as long as the following key API interfaces can
 be realized, now post the flow chart:
 
-![](./images/chart3.png)
+![](pix/chart3.png)
 
 process:
 
@@ -85,7 +85,7 @@ you will see the trees but not the forest. Here Sort out the overall steps of
 
 process:
 
-![](./images/chart7.png)
+![](pix/chart7.png)
 
 analyze:
 
@@ -112,7 +112,7 @@ Many encoding operations are done in the corresponding encoding channel, but
 there is a concept of group. At first glance, it is possible to have no group,
 but why do groups exist?
 
-![](./images/chart4.png)
+![](pix/chart4.png)
 
 analyze:
 
@@ -134,7 +134,7 @@ https://blog.csdn.net/code2481632/article/details/129298279
 
 First look (IMP_Encoder_SetDefaultParam()):
 
-![](./images/chart5.png)
+![](pix/chart5.png)
 
 From the caller's point of view: It is considered that the attributes
 of the corresponding encoding channel are set through a series of input
@@ -145,7 +145,7 @@ analyze:
 After thinking about it again, it turns out that a channel attribute is
 returned through a series of parameters.
 
-![](./images/chart6.png)
+![](pix/chart6.png)
 
 It can be seen from the above that chnAttr is an output parameter. After
 obtaining the channel attribute, set the channel attribute through the
@@ -159,9 +159,9 @@ https://blog.csdn.net/code2481632/article/details/129661603
 For some applications, encoding-related parameters need to be adjusted,
 such as reducing the bit rate. The corresponding process is given below:
 
-![](./images/chart10.png)
+![](pix/chart10.png)
 
-![](./images/chart11.png)
+![](pix/chart11.png)
 
 ---
 
@@ -185,6 +185,6 @@ analyze:
 
 At this time, you can create a thread dedicated to fetching images:
 
-![](./images/chart2.png)
+![](pix/chart2.png)
 
 ---

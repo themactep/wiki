@@ -53,7 +53,7 @@ Step 2: Use the above software 7z to decompress
 
 You can clearly see the location of the decompressed cross-compilation toolchain.
 
-![](assets/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)
+![](pix/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)
 
 Step 3: Add the bin directory under toolchain to the PATH environment variable or permanently change 
 it by adding the following sentence to `~/.bashrc` with the command `export PATH=xxxx:$PATH`.
@@ -62,11 +62,11 @@ Show the absolute path of your installed cross-compilation toolchain with the pw
 to the `.bashrc` file, so that the virtual machine will execute your condition every time it gets up
 and then make your cross-compilation toolchain effective.
 
-![](assets/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)
+![](pix/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)
 
 Step 4: Detect whether the cross-compilation toolchain is installed successfully or not.
 
-![](assets/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)
+![](pix/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)
 
 ### Compile Ingenic T31 sample files
 
@@ -75,12 +75,12 @@ Get `ISVP-T31-1.1.5-20220428.7z` SDK file from Ingenic bundle.
 Use 7z unzip command to unzip the file and compile it inside the SDK. We go to the directory where we store the 
 `SDK\ingenic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2\samples\libimp-samples`
 
-![](assets/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)
+![](pix/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)
 
 Just execute the make command directly.
 
 You can see that after recompiling, the time of the cyan application has changed, proving that we compiled successfully.
 
-![](assets/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)
+![](pix/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)
 
 [toc]: index.md

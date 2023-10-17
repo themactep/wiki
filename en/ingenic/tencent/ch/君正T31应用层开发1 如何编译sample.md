@@ -42,17 +42,17 @@ Ubuntu16.04虚拟机安装流程：
 
 可以清晰的看到解压的交叉编译工具链的位置。
 
-​![](assets/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)​
+​![](pix/net-img-91d27175490a4cebe8735b15da177ace-20230919120019-zalyxs9.png)​
 
 第三步：通过 export PATH=xxxx:$PATH 命令，将 toolchain 下的 bin 目录添加到 PATH 环境变量中或者在~/.bashrc 中加上下面一句永久改变。
 
 把你安装的交叉编译工具链的绝对路径用pwd指令显示出来，然后添加到.bashrc文件里面，这样虚拟机都会在每次起来的时候，执行你的条件，然后让你的交叉编译工具链生效。
 
-​![](assets/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)​
+​![](pix/net-img-41a09d1403a560554920a66bdf31d51f-20230919120019-goujsd8.png)​
 
 第四步：检测交叉编译工具链是否安装成功
 
-​![](assets/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)​
+​![](pix/net-img-e781a1b8437a3f5b7c79aa50550168eb-20230919120019-227zcuw.png)​
 
 ### 3.编译君正T31sample文件
 
@@ -60,13 +60,13 @@ Ubuntu16.04虚拟机安装流程：
 
 使用7z的解压指令解压，进去SDK里面进行编译。我们进去我们存放SDK的目录里面\ingentic\ISVP-T31-1.1.5-20220428\software\sdk\Ingenic-SDK-T31-1.1.5-20220506\sdk\4.7.2\samples\libimp-samples
 
-​![](assets/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)​
+​![](pix/net-img-6c0747720e0207a69f2590ab821eb3f7-20230919120019-3fezaka.png)​
 
 直接执行make指令即可。
 
 可以查看到重新编译以后，青色的应用程序的时间已经变化了，证明我们编译成功了。
 
-​![](assets/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)​
+​![](pix/net-img-f6ea8dff04c67a653c1a402a1bda1c81-20230919120020-f6o1gkv.png)​
 
 原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
 

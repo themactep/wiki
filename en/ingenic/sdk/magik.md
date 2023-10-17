@@ -25,11 +25,11 @@ Magik supports major machine learning frameworks such as
 Magik provides a full-stack training kit allowing users to generate models 
 using their own data.
 
-![](./images/magik1.png)
+![](pix/magik1.png)
 
 Specifically :
 
-![](./images/magik2.png)
+![](pix/magik2.png)
 
 ### 02. Magik training quantization and post-training quantization
 
@@ -97,7 +97,7 @@ from ingenic_magic_trainingkit.QuantizationTrainingPlugin.python import ops
 
 2.5 Specific content of training quantization and supporting operators
 
-![content overview](./images/magik3.png)
+![content overview](pix/magik3.png)
 
 Activation types currently supported by convolution and fully connected operators:
 - `ops.Relu6`
@@ -136,19 +136,19 @@ if the open source code is released.
 
 5.2 Official sample performance
 1. Txx-SSD-based face detection (facedet), lightweight
-![](./images/magik4.png)
+![](pix/magik4.png)
 
 2. Txx-YOLO-based humanoid detection (persondet), lightweight YOLOv3 tiny
-![](./images/magik5.png)
+![](pix/magik5.png)
 
 3. T40-SSD-based face detection (facedet), middleweight
-![](./images/magik6.png)
+![](pix/magik6.png)
 
 4. T40-YOLO-based humanoid detection (YOLOv3), middleweight
-![](./images/magik7.png)
+![](pix/magik7.png)
 
 5. T40-post-quantization model based on YOLOv5s
-![](./images/magik8.png)
+![](pix/magik8.png)
 
 ---
 

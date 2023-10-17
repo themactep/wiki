@@ -16,7 +16,7 @@
 
 主要的取图的代码流程是下面这样的：
 
-​![](assets/net-img-8c265ec5329bbaf0e3a37aa4e1f6464a-20230919120516-cgml85a.png)​
+​![](pix/net-img-8c265ec5329bbaf0e3a37aa4e1f6464a-20230919120516-cgml85a.png)​
 
 首先我们这个文件大部分功能是依赖于sample-common.h和sample-common.c这两个文件的，大部分demo都是调用这个common.c提供的基础库进行开发的。
 
@@ -108,7 +108,7 @@ int sample_system_init()
 
 SDK库默认的sensor是jxf23，所以我们要调用JPEG的码流进行操作的话，需要先进行修改代码才能够使用。
 
-​![](assets/net-img-147c643d89c3ad0f3b22c8e256f57aea-20230919120517-tx2pnjw.png)​
+​![](pix/net-img-147c643d89c3ad0f3b22c8e256f57aea-20230919120517-tx2pnjw.png)​
 
 ### 1.2：初始化视频源：sample_framesource_init
 
@@ -495,13 +495,13 @@ int sample_system_exit()
 
 这里面，我故意在demo里面添加了一部分的日志，方便和我上述的情况做对比，实际程序运行也是按照我说的流程去跑的。
 
-​![](assets/net-img-90208137f8490ff65853ae21df4486b4-20230919120517-20gmlxn.png)​
+​![](pix/net-img-90208137f8490ff65853ae21df4486b4-20230919120517-20gmlxn.png)​
 
 得到的分辨率也和我们设置的分辨率也是一致的，可以判断，整个过程完美结束。
 
-​![](assets/net-img-d587bc0a16235e422cff89f5e4f522ba-20230919120517-w00yv5k.png)​
+​![](pix/net-img-d587bc0a16235e422cff89f5e4f522ba-20230919120517-w00yv5k.png)​
 
-​![](assets/net-img-8918bcde57b4a343b623d386a67818c9-20230919120518-wocl2on.png)​
+​![](pix/net-img-8918bcde57b4a343b623d386a67818c9-20230919120518-wocl2on.png)​
 
 原创声明：本文系作者授权腾讯云开发者社区发表，未经许可，不得转载。
 

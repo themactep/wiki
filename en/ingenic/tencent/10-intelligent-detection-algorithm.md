@@ -58,18 +58,18 @@ In most cases, we use the unbound way to get the motion detection algorithm.
 
 #### Algorithmic Usage of Binding Patterns:
 
-![](assets/net-img-b7acb9d0f97c496be196e5b5e7890614-20230919120311-f9fnqrh.png)
+![](pix/net-img-b7acb9d0f97c496be196e5b5e7890614-20230919120311-f9fnqrh.png)
 
 
 
 #### Unbundled Mode Calling IVS Platforms
 
-![](assets/net-img-cdd0c9348b033fef2858a1b990122488-20230919120311-3ulxxni.png)
+![](pix/net-img-cdd0c9348b033fef2858a1b990122488-20230919120311-3ulxxni.png)
 
 
 ### APIs for intelligent algorithms
 
-![](assets/net-img-2ffa3510851c79ed477bc78067bd7019-20230919120311-irh1kb5.png)
+![](pix/net-img-2ffa3510851c79ed477bc78067bd7019-20230919120311-irh1kb5.png)
 
 
 ### Key Code Analysis
@@ -399,6 +399,6 @@ if (ret < 0) {
 IMP_LOG_INFO(TAG, "frame[%d], result->retRoi(%d,%d,%d,%d)\n", i, result->retRoi[0], result->retRoi[1], result->retRoi[2], result->retRoi[3]);
 ```
 
-![](assets/net-img-1cfff84c898b3d0864e9ab113ab79142-20230919120311-kibggux.png)
+![](pix/net-img-1cfff84c898b3d0864e9ab113ab79142-20230919120311-kibggux.png)
 
 [toc]: index.md
