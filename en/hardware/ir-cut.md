@@ -1,18 +1,24 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
-IR-CUT (Infrared Ray Filter Switcher)
+IR-cut (Infrared Ray Filter Switcher)
 -------------------------------------
 
 An infrared filter is placed between the camera lens and the camera's image sensor
 to filter out a number of light waves that, while invisible to the naked human eye,
 can affect the image produced by the camera's image sensor.
 
-![](../images/hardware-ircut.webp)
+![](../../images/hardware-ircut.webp)
 
 These rays cause the resulting image to take on a reddish-purple hue. Therefore,
 the filter cuts off a certain wavelength of light coming through the lens, making
 the resulting image closer to what we see with our eyes.
+
+![IR-cut filter open](../../images/ircut-off.webp)  
+_IR-cut filter open_
+
+![IR-cut filter closed](../../images/ircut-on.webp)  
+_IR-cut filter closed_
 
 Although infrared rays are abundant and inconvenient during the day, they are still
 present at night when reflected from the moon and can help the camera see better at
@@ -25,7 +31,7 @@ There are at least two types of sliding mechanism for moving the filter: a drawe
 where the filter moves front and back, and swing type where the filter rotates around a 
 pivoting point.
 
-A typical IR-CUT filter switcher for an IP camera will operate within a voltage range
+A typical IR-cut filter switcher for an IP camera will operate within a voltage range
 of 3.5V to 12V DC, sending short pulses about 100 ms long. The switcher uses two wires
 to connect to the board, and it uses polarity reversal to change the direction of its
 action. The polarity change is controlled via GPIO. Therefore, it is important to set

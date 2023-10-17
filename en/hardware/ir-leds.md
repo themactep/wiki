@@ -1,15 +1,16 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 IR LEDs (Infrared Ray Light-Emitting Diode Array)
 -------------------------------------------------
 
 Many older image sensors cannot see well in dark environment, so they need
-help at nighttime, a light source to highlight the scenery. Luckily, sensitivity
-of image sensors covers much wider range of wavelengths than that of a human eye.
-So the scenery can be highlighted with lights emitting waves in a spectre 
-invisible to human eye but effective to get a clear image from the sensor.
-Usually it is infrared range of light waves from 850nm to 940nm.
+help at nighttime, a light source to highlight the scenery. Luckily, the 
+sensitivity of image sensors covers a much wider range of wavelengths than 
+that of a human eye. So the scenery can be highlighted with lights emitting
+waves in a specter invisible to the human eye but effective to get a clear
+image from the sensor. Usually it is the infrared range of light waves from
+850nm to 940nm.
 
 Infrared LEDs can be of different beam angle to better suite the lens on the
 camera. Thus 45° angle LEDs are better for 8mm lens, 60° angle LEDs are better
