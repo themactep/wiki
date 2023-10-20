@@ -108,10 +108,16 @@ SoC UART pins:
 
 ### T23 Family (Pike)
 
+* Extremely cost-effective
+* Support dual camera, support dual camera 1080P application under 64MB memory
+* Up to 300W resolution
 * XBurst®-1core CPU:1.2~1.4GHz
-* Professional ISP, support dual camera input
 * H.264 Encoder: 3MP (2308x*2048)
-* Typical power consumption 300mW
+* Security-grade ISP imaging, IQ is better than T31
+* Support memory-saving technology
+* Low power consumption optimization, about 300mW
+* Startup time optimized, startup time is faster than T31
+* Hardware and software design are basically compatible with T31
 
 ![](pix/T23_Block_Diagram.png)
 
@@ -316,10 +322,10 @@ on the adapter before booting.
 - [为什么禁止使用system](https://caibiao-lee.blog.csdn.net/article/details/114757327)
 
 #### Ingenic Zeratul Development (English translation by Deepl)
-- [Part 0. Preface and Table of Contents](zeratul/zeratul-0.md)
-- [Part 1. Partition Boot Analysis](zeratul/zeratul-1.md)
-- [Part 2. U-Boot Boot Analysis](zeratul/zeratul-2.md) 
-- [Part 3. Upgrade and Rollback](zeratul/zeratul-3.md)
-- [Part 4. Image Effects Debugging](zeratul/zeratul-4.md)
-- [Part 5. Quick Start Optimization](zeratul/zeratul-5.md)
-- [Part 6. Why disable the use of system_system function to disable the reason](zeratul/zeratul-6.md)
+- [Part 0. Preface and Table of Contents](csdn/caibiao-lee/zeratul-0.md)
+- [Part 1. Partition Boot Analysis](csdn/caibiao-lee/zeratul-1.md)
+- [Part 2. U-Boot Boot Analysis](csdn/caibiao-lee/zeratul-2.md) 
+- [Part 3. Upgrade and Rollback](csdn/caibiao-lee/zeratul-3.md)
+- [Part 4. Image Effects Debugging](csdn/caibiao-lee/zeratul-4.md)
+- [Part 5. Quick Start Optimization](csdn/caibiao-lee/zeratul-5.md)
+- [Part 6. Why disable the use of system_system function to disable the reason](csdn/caibiao-lee/zeratul-6.md)
