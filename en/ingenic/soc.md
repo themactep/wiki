@@ -106,6 +106,15 @@ SoC UART pins:
 | Process tech | 28nm      | 28nm      | 28nm      | 28nm      |
 
 
+### T23 Family (Pike)
+
+* XBurst®-1core CPU:1.2~1.4GHz
+* Professional ISP, support dual camera input
+* H.264 Encoder: 3MP (2308x*2048)
+* Typical power consumption 300mW
+
+![](pix/T23_Block_Diagram.png)
+
 ### T30 Family (Monkey)
 
 ![](pix/T30_Block_Diagram.png)
@@ -248,6 +257,7 @@ SoC UART pins:
 
 - [T10](../../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
 - [T21](../../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
+- [T23](../../docs/T23_Series_Dual_Camera_Low_Power_Video_Processor_Product_Brief_v1.1.pdf)
 - [T30](../../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
 - [T31N](../../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
 - [T31X](../../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
