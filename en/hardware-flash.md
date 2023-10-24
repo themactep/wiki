@@ -15,30 +15,32 @@ on their website. But as always it is better to consult with a corresponding
 data sheet from the manufacturer.
 
 ##### Manufacturer [ID]
- 
-- AT - [Atmel](https://www.microchip.com/) [1Fh]
-- BY - [Boya](https://www.boyamicro.com/) [68h]
-- DQ - [Douqi](http://www.douqitech.com/) [54h]
-- EN - [Eon](https://www.esmt.com.tw/) [1Ch]
-- F - [ESMT](https://www.esmt.com.tw/) [8Ch]
-- F - [Fudan](https://www.fm-chips.com/) [A1h]
-- FM - [Fidelix](https://www.fidelix.co.kr/) [F8h]
-- FM - [Dosilicon](http://www.dosilicon.com/) [F8h]
-- GD - [GigaDevice](https://www.gigadevice.com/) [C8h]
-- IS - [ISSI](https://www.issi.com/) [9Dh]
-- KH - [KHIC](https://www.macronix.com.hk/) [C2h]
-- LE - [OnSemi](https://www.onsemi.com/) [62h]
-- MD - [GigaDevice](https://www.gigadevice.com/) [C8h]
-- MT - [Micron](https://www.micron.com/) [20h]
-- MX - [Macronix](https://www.macronix.com) [C2h]
-- N - [Numonyx](https://www.micron.com/) [20h]
-- NM - [NOR-MEM](http://www.normem.com/)[52h]
-- S - [Cypress](https://www.infineon.com/)
-- S - [Spansion](https://www.infineon.com/) [01h]
-- SST - [Microchip](https://www.microchip.com/) [00h]
-- W - [Winbond](https://www.winbond.com/) [EFh]
-- ZB - [Zbit](http://zbitsemi.com/) [5Eh]
-- ZD - [Zetta](http://www.zettadevice.com/) [BAh]
+
+| Prefix | ID | Manufacturer |
+|--------|----|----------------|
+| T | 1F | [Atmel](https://www.microchip.com/)
+| BY | 68 |  [Boya](https://www.boyamicro.com/)
+| DQ | 54 | [Douqi](http://www.douqitech.com/)
+| EN | 1C | [Eon](https://www.esmt.com.tw/)
+| F  | 8C | [ESMT](https://www.esmt.com.tw/)
+| F  | A1 | [Fudan](https://www.fm-chips.com/)
+| FM | F8 | [Fidelix](https://www.fidelix.co.kr/)
+| FM | F8 | [Dosilicon](http://www.dosilicon.com/)
+| GD | C8 | [GigaDevice](https://www.gigadevice.com/)
+| IS | 9D | [ISSI](https://www.issi.com/)
+| KH | C2 | [KHIC](https://www.macronix.com.hk/)
+| LE | 62 | [OnSemi](https://www.onsemi.com/)
+| MD | C8 | [GigaDevice](https://www.gigadevice.com/)
+| MT | 20 | [Micron](https://www.micron.com/)
+| MX | C2 | [Macronix](https://www.macronix.com)
+| N  | 20 | [Numonyx](https://www.micron.com/)
+| NM | 52 | [NOR-MEM](http://www.normem.com/)
+| S  |    | [Cypress](https://www.infineon.com/)
+| S  | 01 | [Spansion](https://www.infineon.com/)
+| SST | 00 | [Microchip](https://www.microchip.com/)
+| W  | EF | [Winbond](https://www.winbond.com/)
+| ZB | 5E | [Zbit](http://zbitsemi.com/)
+| ZD | BA | [Zetta](http://www.zettadevice.com/)
 
 ##### Product Family
 
