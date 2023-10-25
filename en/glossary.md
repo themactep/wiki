@@ -98,9 +98,10 @@ IPC Glossary
 
 ### N
 
-- NVR - Network Video Recorder
+- NEMC - NAND/external memory controller
 - NCU - Neural Compute Unit
 - NTP - Network Time Protocol
+- NVR - Network Video Recorder
 
 ### O
 
