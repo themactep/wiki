@@ -11,36 +11,34 @@ flash, capacity, operating voltage, working temperature range and other
 information. Below is the list of the most common codes. 
 
 Elnec has a convenient [searchable database](https://www.elnec.com/en/search/) 
-on their website. But as always it is better to consult with a corresponding
+on their website. But as always, it is better to consult with a corresponding
 data sheet from the manufacturer.
 
 ##### Manufacturer [ID]
 
-| Prefix | ID | Manufacturer |
-|--------|----|----------------|
-| T | 1F | [Atmel](https://www.microchip.com/)
-| BY | 68 |  [Boya](https://www.boyamicro.com/)
-| DQ | 54 | [Douqi](http://www.douqitech.com/)
-| EN | 1C | [Eon](https://www.esmt.com.tw/)
-| F  | 8C | [ESMT](https://www.esmt.com.tw/)
-| F  | A1 | [Fudan](https://www.fm-chips.com/)
-| FM | F8 | [Fidelix](https://www.fidelix.co.kr/)
-| FM | F8 | [Dosilicon](http://www.dosilicon.com/)
-| GD | C8 | [GigaDevice](https://www.gigadevice.com/)
-| IS | 9D | [ISSI](https://www.issi.com/)
-| KH | C2 | [KHIC](https://www.macronix.com.hk/)
-| LE | 62 | [OnSemi](https://www.onsemi.com/)
-| MD | C8 | [GigaDevice](https://www.gigadevice.com/)
-| MT | 20 | [Micron](https://www.micron.com/)
-| MX | C2 | [Macronix](https://www.macronix.com)
-| N  | 20 | [Numonyx](https://www.micron.com/)
-| NM | 52 | [NOR-MEM](http://www.normem.com/)
-| S  |    | [Cypress](https://www.infineon.com/)
-| S  | 01 | [Spansion](https://www.infineon.com/)
-| SST | 00 | [Microchip](https://www.microchip.com/)
-| W  | EF | [Winbond](https://www.winbond.com/)
-| ZB | 5E | [Zbit](http://zbitsemi.com/)
-| ZD | BA | [Zetta](http://www.zettadevice.com/)
+| Prefix | ID | Manufacturer                                                                  |
+|--------|----|-------------------------------------------------------------------------------|
+| T      | 1F | [Atmel](https://www.microchip.com/)                                           |
+| BY     | 68 | [Boya](https://www.boyamicro.com/)                                            |
+| DQ     | 54 | [Douqi](http://www.douqitech.com/)                                            |
+| EN     | 1C | [Eon](https://www.esmt.com.tw/)                                               |
+| F      | 8C | [ESMT](https://www.esmt.com.tw/)                                              |
+| F      | A1 | [Fudan](https://www.fm-chips.com/)                                            |
+| FM     | F8 | [Fidelix](https://www.fidelix.co.kr/), [Dosilicon](http://www.dosilicon.com/) |
+| GD, MD | C8 | [GigaDevice](https://www.gigadevice.com/)                                     |
+| GM     | 1C | [GallopMem](https://www.chuangfeixin.com/)                                                             |
+| IS     | 9D | [ISSI](https://www.issi.com/)                                                 |
+| KH     | C2 | [KHIC](https://www.macronix.com.hk/)                                          |
+| LE     | 62 | [OnSemi](https://www.onsemi.com/)                                             |
+| MT     | 20 | [Micron](https://www.micron.com/)                                             |
+| MX     | C2 | [Macronix](https://www.macronix.com)                                          |
+| N      | 20 | [Numonyx](https://www.micron.com/)                                            |
+| NM     | 52 | [NOR-MEM](http://www.normem.com/)                                             |
+| S      | 01 | [Cypress](https://www.infineon.com/), [Spansion](https://www.infineon.com/)   |
+| SST    | 00 | [Microchip](https://www.microchip.com/)                                       |
+| W      | EF | [Winbond](https://www.winbond.com/)                                           |
+| ZB, HM | 5E | [Zbit Semi](http://zbitsemi.com/), [H&M Semi](https://www.hmsemi.com/)        |                                           
+| ZD     | BA | [Zetta](http://www.zettadevice.com/)                                          |
 
 ##### Product Family
 
