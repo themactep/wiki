@@ -35,7 +35,7 @@ Galaxycore
 
 * Ingenic sensor drivers use unshifted I2C bus address. E.g. `0x6E >> 1 = 0x37`, `0x78 >> 1 = 0x3C`.
 * Question mark after an address (`0x6F?`) means it is not corroborated by a data sheet.
-* Exclamation mark after an address (`0x53!`) means the data is probably erroneous. 
+* Exclamation mark after an address (`0x53!`) means the data is probably erroneous.
 
 [t20]: https://github.com/themactep/openingenic/blob/master/kernel/sensors/t20/
 [t30]: https://github.com/themactep/openingenic/blob/master/kernel/sensors/t30/
