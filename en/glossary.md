@@ -15,8 +15,8 @@ IPC Glossary
 - AF - Automatic Focus
 - AHD - Analog High Definition
 - AI - Artificial Intellect
-- APLL - Analog Phase-Locked Loop
 - AM - Amplitude Modulated
+- APLL - Analog Phase-Locked Loop
 - ASIC - Application-Specific Integrated Circuit
 - AWB - Automatic White Balance
 
@@ -31,7 +31,9 @@ IPC Glossary
 - CDU - Clock Distribution Unit
 - CGU - Clock Generation Unit
 - CMOS - Complementary Metal–Oxide Semiconductor
+- CPI - Camera Parallel Interface
 - CPU - Central Processing Unit
+- CSI - Camera Serial Interface
 
 ### D
 
@@ -46,6 +48,7 @@ IPC Glossary
 - DNS - Domain Name Service
 - DPLL - Digital Phase-Locked Loop
 - DRC - Dynamic Range Compression
+- DSI - Display Serial Interface
 - DUT - Device Unit Test
 - DVR - Digital Video Recorder
 
@@ -69,11 +72,13 @@ IPC Glossary
 
 - HD - High Definition
 - HDR - High Dynamic Range
+- HEIF - High Efficiency Image File (Format) 
 - HLS - HTTP Live Streaming (protocol)
 - HTTP - Hypertext Transfer Protocol
 
 ### I
 
+- I2C - Inter-Integrated Circuit (Serial Protocol)
 - IC - Integrated Circuit
 - ICR - Infrared Cutfilter Removal
 - IP - Internet Protocol
@@ -93,13 +98,16 @@ IPC Glossary
 
 ### M
 
+- MIPI - Mobile Industry Processor Interface
+- MISO - Master Input Slave Output 
 - MJPEG - Motion JPEG (video format)
+- MOSI - Master Output Slave Input
 - MPLL - Multipurpose Phase-Locked Loop
 
 ### N
 
-- NEMC - NAND/external memory controller
 - NCU - Neural Compute Unit
+- NEMC - NAND/external memory controller
 - NTP - Network Time Protocol
 - NVR - Network Video Recorder
 
@@ -111,28 +119,33 @@ IPC Glossary
 
 - PCB - Printed Circuit Board
 - PD - Phase Detector
-- PiP - Picture-in-Picture
 - PIR - Passive infrared (sensor)
 - PLL - Phase-Locked Loop
-- PoE - Power over Ethernet
 - PPPoE - Point-to-Point Protocol over Ethernet
 - PTZ - Pan–Tilt–Zoom
+- PiP - Picture-in-Picture
+- PoE - Power over Ethernet
 
 ### R
 
 - ROI - Region of Interest
 - RTCP - Real-Time Transport Control Protocol
-- RTP - Real-time Transport Protocol
 - RTMP - Real-Time Messaging Protocol
+- RTP - Real-time Transport Protocol
 - RTSP - Real Time Streaming Protocol
 
 ### S
 
+- SFC - Serial Flash Controller
 - SMD - Surface-mount Device
 - SMT - Surface-mount Technology
 - SMTP - Simple Mail Transfer Protocol
-- SoC - System on a Chip
+- SPCR - Serial Peripheral Control Register
+- SPDR - Serial Peripheral Data Register
+- SPI - Serial Peripheral Interface
 - SPLL - Software Phase-Locked Loop
+- SPSR - Serial Peripheral Status Register
+- SoC - System on a Chip
 
 ### T
 
@@ -157,6 +170,8 @@ IPC Glossary
 
 - WDR - Wide Dynamic Range
 
+
+## Phrases
 
 - SDK offline mode - image is stored in DDR
 - SDK online mode - image is not stored in DDR
