@@ -1,6 +1,27 @@
 Video Streamers
 ---------------
 
+### RTMP Servers
+
+- FaceBook
+  - rtmps://live-api-s.facebook.com:443/rtmp/xxx
+- Telegram
+  - https://telegram.org/blog/downloads-attachments-streaming#live-streaming-with-other-apps
+  - rtmps://dc1-1.rtmp.t.me/s/xxx:zzzz
+- Twitch
+  - https://dev.twitch.tv/docs/video-broadcast/
+- YouTube
+  - rtmp://a.rtmp.youtube.com/live2
+
+
+### Re-streamers
+
+- OBS Studio
+  - https://obsproject.com/
+- XSplit Broadcaster
+  - https://www.xsplit.com/broadcaster
+
+
 ### MediaMTX (former rtsp-simple-server)
 https://github.com/bluenviron/mediamtx
 

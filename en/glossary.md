@@ -145,6 +145,7 @@ IPC Glossary
 - SPI - Serial Peripheral Interface
 - SPLL - Software Phase-Locked Loop
 - SPSR - Serial Peripheral Status Register
+- SS - Slave Select
 - SoC - System on a Chip
 
 ### T

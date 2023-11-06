@@ -6,9 +6,9 @@ HiSilicon boards
 
 ### Disable subsystems you don't use
 
-Vendor kernel modules take about 5 megabytes of RAM (code with dynamic memory
-for buffers) and some of them are pretty useless you need specific functionality
-like OSD, motion detection, support of audio, or H264/265/JPEG codecs.
+Vendor kernel modules take about five megabytes of RAM (code with dynamic memory
+for buffers), and some of them are pretty useless you need specific functionality
+like OSD, motion detection, support for audio, or H.264/H.265/JPEG codecs.
 
 | Feature                               | Modules                                                                                                 | Size |
 |---------------------------------------|---------------------------------------------------------------------------------------------------------|------|

@@ -311,5 +311,9 @@ root@openipc-hi3518ev100:~# fw_setenv uk 'mw.b ${baseaddr} 0xff ${flashsize}; tf
 ```
 
 
+## U-Boot environment variables
+
+https://source.denx.de/u-boot/u-boot/-/blob/master/doc/usage/environment.rst?ref_type=heads#L106
+
 [burn]: https://github.com/OpenIPC/burn
 [telegram]: https://t.me/OpenIPC
