@@ -1,41 +1,107 @@
 # OpenIPC Wiki
-[Table of Content](../../README.md)
+[Table of Content](../../../README.md)
 
-Wyze integration
-----------------
+Wyze
+----
+https://www.wyze.com/
 
-This is where we'll be writing down our guide to flashing new devices and reports on our experiments.
+An American company based in Seattle, WA. Wyze offers multiple models of IP cameras and IoT 
+devices integrated with an advanced Cloud solution and mobile apps. 
 
-### Current issues
+#### Partners
+- ODM (original design manufacturer)
+  - [Hualai](https://www.hualaikeji.com/)
+- Software
+  - [TUTK/ThroughTek](https://www.tutk.com/) Cloud IoT solution platform
+
+#### Resources
+- Communities
+  - [Wyze forum](https://forums.wyze.com/)
+  - [WyzeCam subreddit](https://www.reddit.com/r/wyzecam/)
+- Research
+  - [Wyze API RE](https://github.com/nblavoie/wyzecam-api)
+  - [Wyze streaming library](https://github.com/kroo/wyzecam)
+  - [Wyze Node API](https://github.com/noelportugal/wyze-node)
+  - [Python Wyze SDK](https://github.com/shauntarves/wyze-sdk)
+  - [WyzeUpdater](https://github.com/HclX/WyzeUpdater)
+  - [WyzeHacks](https://github.com/HclX/WyzeHacks)
+- Utilities
+  - [Wyze Bridge](https://github.com/mrlt8/docker-wyze-bridge)
+  - [HomeAssistant Integration](https://github.com/SecKatie/ha-wyzeapi)
+  - [Homebridge Integration](https://github.com/misenhower/homebridge-wyze-connected-home)
+
+### Wyze Cam Pan V3
+
+#### Known modifications
+
+| MODEL     | IC              | FCC ID         | PCB VER             | SoC  | Wi-Fi              | NOTES                                               |
+|-----------|-----------------|----------------|---------------------|------|--------------------|-----------------------------------------------------|
+| WYZECPAN3 | 25466-WYZECPAN3 | 2AUIUWYZECPAN3 | WYZE PAN V3 MB V1.3 | T31X | SDIO AltoBeam 6031 | MAC: D0:3F:27:9C:0D:E7 https://youtu.be/hXTbDsnN9IY |
+
+http://mobilemodding.info/wyze-cam-pan-v3-teardown/
+
+#### Password hashes
+
+```
+root:$6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1:0:0:99999:7::: 
+```
+
+### Wyze BoorBell
+
+#### Known modifications
+
+| MODEL  | IC                                          | FCC ID      | PCB VER       | SoC   | Wi-Fi                | NOTES                  |
+|--------|---------------------------------------------|-------------|---------------|-------|----------------------|------------------------|
+| WVDB1A | [25466-WVDB1A](https://fccid.io/2AUIUWDB1A) | 2AUIUWVDB1A | WYZEDB_T31_V3 | T31ZX | SDIO Realtek 8189FTV | MAC: D0:3F:27:23:03:3C |
+
+#### Password hashes
+
+```
+root:$6$1RvTcQLM$1K7XwU1HABg1rQQyB99kdHceeqiEsnGfWN3FecCgmc7vnpAL8wxdAzsbLVbLSCXsBRuwVVSnWnVqKDu2a.rw7/:17942:0:99999:7:::
+```
+
+### Wyze Cam V3
+
+#### Known modifications
+
+| MODEL  | IC                                             | FCC ID       | PCB VER                         | SoC      | Wi-Fi                | NOTES                                                                                                                                |
+|--------|------------------------------------------------|--------------|---------------------------------|----------|----------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| WYZEC3 | [25466-WYZEC3A](https://fccid.io/2AUIUWYZEC3A) | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V1.2_20200715  | T31X     | SDIO Realtek 8189FTV | MAC: 7C:78:B2:99:6E:BA https://youtu.be/jm4wze_HY78                                                                                  |
+| WYZEC3 | [25466-WYZEC3A](https://fccid.io/2AUIUWYZEC3A) | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO AltoBeam 6031   | https://t.me/openipc/49049 https://t.me/openipc/49050                                                                                |
+| WYZEC3 | [25466-WYZEC3A](https://fccid.io/2AUIUWYZEC3A) | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.03_20211206 | T31X     | SDIO AltoBeam 6031   | https://t.me/openipc/45444 https://t.me/openipc/48942                                                                                |
+| WYZEC3 | [25466-WYZEC3B](https://fccid.io/2AUIUWYZEC3B) | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO Realtek 8189FTV | MAC: D0:3F:27:46:A7:7B https://t.me/openipc/38728 https://t.me/openipc/38753                                                         |
+| WYZEC3 | [25466-WYZEC3B](https://fccid.io/2AUIUWYZEC3B) | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V2.03_20211206 | T31X     | SDIO Realtek 8189FTV | MAC: D0:3F:27:AD:72:51                                                                                                               |
+| WYZEC3 | [25466-WYZEC3B](https://fccid.io/2AUIUWYZEC3B) | 2AUIUWYZEC3B |                                 |          |                      | MAC: D0:3F:27:A3:7D:0F https://discord.com/channels/1086012062649565286/1089151647067938857/1153422189400424589                      |
+| WYZEC3 | [25466-WYZEC3?]()                              | 2AUIUWYZEC3? | WYZEV3_T31GC2053 V1.4_20201010  | T31ZX    | SDIO Realtek 8189FTV | MAC: 7C:78:B2:69:95:C9 https://t.me/openipc/49957 https://youtu.be/t7Nzo-KXTH0                                                       |
+| WYZEC3 | [25466-WYZEC3B](https://fccid.io/2AUIUWYZEC3B) | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V1.4_20201010  | T31ZX    | SDIO Realtek 8189FTV |                                                                                                                                      |
+| WYZEC3 | [25466-WYZEC3C](https://fccid.io/2AUIUWYZEC3C) | 2AUIUWYZEC3C | WYZEV3_T31GC2053 V1.4_20201010  | T31X     | SDIO Realtek 8189FTV | MAC: BC:FA:28:OA:F2:48                                                                                                               |
+| WYZEC3 | [25466-WYZEC3F](https://fccid.io/2AUIUWYZEC3F) | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO AltoBeam 6031   | MAC: D0:3F:27:4F:23:19 https://youtu.be/VkqX9yg0odU https://t.me/openipc/43299 https://t.me/openipc/38755 https://t.me/openipc/38757 |
+
+
+### Wyze Cam V2
+
+#### Known modifications
+
+| MODEL | IC          | FCC ID     | PCB VER                      | SoC  | Wi-Fi                | NOTES |
+|-------|-------------|------------|------------------------------|------|----------------------|-------|
+| WVOD2 | 25466-WVOD2 | 2AUIUWVOD2 | ISC5C1-MCUP01 V1.9 ISC5C B01 | T20X | SDIO Realtek 8189FTV |       |
+
+http://mobilemodding.info/wyze-cam-v2/
+
+
+#### Current issues
 
 * Exposure does not work well https://github.com/OpenIPC/majestic/issues/102
 * ~~SD card does not work in the U-Boot (power is available)~~ fixed
 * ~~Problem with loading u-boot from a microSD card. It doesn't reach the promt. Not only on wyze v3 (https://t.me/openipc_modding/179369), but also on another board T31L (https://t.me/openipc/47739). Most likely it will be IMPOSSIBLE, because in the camera there is a microSD power management MOSFET, which must be turned on BEFORE booting from the card (the experiment with not fully loaded u-boot was possible due to direct power supply to the microSD card, bypassing the transistor). Please confirm my version if it is not possible otherwise.~~ impossible without modification (direct 3.3V power supply to the microSD card reader)
 
-### Known camera modifications
-* WYZE Cam v3
-
-| MODEL  | IC            | FCC ID       | PCB VER                         | SoC      | WIFI                  | NOTES                                                                            |
-|--------|---------------|--------------|---------------------------------|----------|-----------------------|----------------------------------------------------------------------------------|
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V1.2_20200715  | T31X     | SDIO: Realtek 8189FTV | MAC: 7C:78:B2:99:6E:BA https://youtu.be/jm4wze_HY78                              |
-| WYZEC3 | 25466-WYZEC3  | 2AUIUWYZEC3  | WYZEV3_T31GC2053 V1.4_20201010  | T31ZX    | SDIO: Realtek 8189FTV | https://t.me/openipc/49957 MAC: 7C:78:B2:69:95:C9 https://youtu.be/t7Nzo-KXTH0   |
-| WYZEC3 | 25466-WYZEC3B | 2AUIUWYZEC3B | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO: Realtek 8189FTV | MAC: D0:3F:27:46:A7:7B https://t.me/openipc/38728 https://t.me/openipc/38753     |
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.02_20210523 | T31ZX    | SDIO: AltoBeam 6031   | https://t.me/openipc/49049 https://t.me/openipc/49050                            |
-| WYZEC3 | 25466-WYZEC3A | 2AUIUWYZEC3A | WYZEV3_T31GC2053 V2.03_20211206 | T31X     | SDIO: AltoBeam 6031   | https://t.me/openipc/45444 https://t.me/openipc/48942                            |
-| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031   | https://t.me/openipc/43299 https://t.me/openipc/38755 https://t.me/openipc/38757 |
-| WYZEC3 | 25466-WYZEC3F | 2AUIUWYZEC3F | WYZEV3_T31AGC2053 V3.2_20210714 | T31A BGA | SDIO: AltoBeam 6031   | MAC:D0:3F:27:4F:23:19 https://youtu.be/VkqX9yg0odU                               |
-
 ### OpenIPC installation
-* Disassemble camera and connect UART adapter
-  or your camera should be already connected to network.
-
+* Disassemble camera and connect UART adapter or your camera should be already connected to network.
 * Backup
 
-Downgrade original firmware version to (Jun 2021 w-o internet)demo_wcv3_4.36.2.5.bin 
-[(WYom20200 Jun 2021 w-o internet)demo_wcv3_4.36.2.5.bin.zip](https://github.com/OpenIPC/wiki/files/10755387/WYom20200.Jun.2021.w-o.internet.demo_wcv3_4.36.2.5.bin.zip)
+Downgrade original firmware version to (Jun 2021 w-o internet)demo_wcv3_4.36.2.5.bin [(WYom20200 Jun 2021 w-o internet)demo_wcv3_4.36.2.5.bin.zip](https://github.com/OpenIPC/wiki/files/10755387/WYom20200.Jun.2021.w-o.internet.demo_wcv3_4.36.2.5.bin.zip)
 
-Login with user `root` password `WYom20200` via telnet or UART console.
-Insert microSD card to camera and issue command:
+Login with user `root` password `WYom20200` via telnet or UART console. Insert microSD card to camera and issue command:
 
 `for mtd in $(ls /dev/mtdblock*); do dd if=${mtd} of=/media/mmc/${mtd##/*/}.bin; done`
 
