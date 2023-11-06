@@ -1,7 +1,7 @@
 GrainMedia SoC
 --------------
 
-GM8126 SoC is based on [Faraday FA626TE CPU](hardware-cpu-faraday.md) core.
+GM8126 SoC is based on [Faraday FA626TE CPU](../faraday/hardware-cpu-faraday.md) core.
 
 - ARM RISC 32-bit
 - 533MHz

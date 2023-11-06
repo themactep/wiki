@@ -207,10 +207,3 @@ will be strong light to suppress, and then enhance the soft light in addition
 to the exposure, it is an optimization effect on the image, if you are using
 wide dynamic for photography, strong and low light alternating places, easy to
 produce ripple like effect.
-
-######################2022.08.28######################  
-This blog will stop updating  
-New article content and attached project files  
-Please go to liwen01 blog home page for information  
-liwen01 2022.08.28 Updated on  
-######################2022.08.28######################

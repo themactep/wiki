@@ -261,17 +261,17 @@ SoC UART pins:
 
 ### Data Sheets
 
-- [T10](../../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
-- [T21](../../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
-- [T23](../../docs/T23_Series_Dual_Camera_Low_Power_Video_Processor_Product_Brief_v1.1.pdf)
-- [T30](../../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
-- [T31N](../../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31X](../../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZL](../../docs/T31ZL_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZX](../../docs/T31ZX_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T40A](../../docs/T40A_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40N](../../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40XP](../../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T10](../../../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
+- [T21](../../../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
+- [T23](../../../docs/T23_Series_Dual_Camera_Low_Power_Video_Processor_Product_Brief_v1.1.pdf)
+- [T30](../../../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
+- [T31N](../../../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31X](../../../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31ZL](../../../docs/T31ZL_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T31ZX](../../../docs/T31ZX_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
+- [T40A](../../../docs/T40A_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T40N](../../../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T40XP](../../../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
 
 ### Software
 
