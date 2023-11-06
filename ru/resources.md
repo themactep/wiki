@@ -90,6 +90,7 @@
 - <http://www.hasecurity.com/>
 - <http://www.hlong.asia/>
 - <http://www.ipcam.xin/>
+- <https://ipcameraboard.com/>
 - <https://ipcamtalk.com/>
 - <https://www.nvripc.com/>
 - <https://www.dvraid.com/>
