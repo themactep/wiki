@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Hardware: IPC Board Manufacturers
 ---------------------------------
@@ -110,6 +110,10 @@ Hardware: IPC Board Manufacturers
 ### Safer
 - http://www.safer.net.cn/
 
+### SMTSEC
+- Smart Security Technology Co.,Ltd
+- http://www.smtsec.com/
+
 ### Stavix
 - Zhuhai Gotech Intelligent Technology Co., Ltd.
 - https://stavix.en.alibaba.com/
@@ -158,6 +162,10 @@ Hardware: IPC Board Manufacturers
 
 ### Wansview
 - http://wansview.com/
+
+### Weinan
+- Shenzhen Weinan Electronics Co., Ltd.
+- https://www.weinanelectronics.com/
 
 ### XiongMai (XM)
 - http://www.xiongmaitech.com/
