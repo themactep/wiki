@@ -23,7 +23,8 @@ IPC Glossary
 ### B
 
 - B&W - Black and White
-- BLC - Back Light Compensation
+- BIOS - Basic Input Output System
+- BLC - BackLight Compensation
 
 ### C
 
@@ -59,6 +60,7 @@ IPC Glossary
 
 ### F
 
+- FAT - File Allocation Table
 - FM - Frequency Modulated
 - FLL - Frequency-Locked Loop
 - FPGA - Field-Programmable Gate Array
@@ -74,6 +76,7 @@ IPC Glossary
 - HDR - High Dynamic Range
 - HEIF - High Efficiency Image File (Format) 
 - HLS - HTTP Live Streaming (protocol)
+- HSM - Hardware Security Modules
 - HTTP - Hypertext Transfer Protocol
 
 ### I
@@ -98,6 +101,8 @@ IPC Glossary
 
 ### M
 
+- MBR - Master Boot Record
+- MII - Media-Independent Interface
 - MIPI - Mobile Industry Processor Interface
 - MISO - Master Input Slave Output 
 - MJPEG - Motion JPEG (video format)
@@ -110,14 +115,18 @@ IPC Glossary
 - NEMC - NAND/external memory controller
 - NTP - Network Time Protocol
 - NVR - Network Video Recorder
+- NVRAM - Non-Volatile RAM
 
 ### O
 
 - ONVIF - Open Network Video Interface Forum (standard)
+- OS - Operating System
 
 ### P
 
+- PC - Personal Computer
 - PCB - Printed Circuit Board
+- PCR - Platform Configuration Registers
 - PD - Phase Detector
 - PIR - Passive infrared (sensor)
 - PLL - Phase-Locked Loop
@@ -128,6 +137,7 @@ IPC Glossary
 
 ### R
 
+- RAM - Random Access Memory
 - ROI - Region of Interest
 - RTCP - Real-Time Transport Control Protocol
 - RTMP - Real-Time Messaging Protocol
@@ -145,6 +155,7 @@ IPC Glossary
 - SPI - Serial Peripheral Interface
 - SPLL - Software Phase-Locked Loop
 - SPSR - Serial Peripheral Status Register
+- SRK - Storage Root Key
 - SS - Slave Select
 - SoC - System on a Chip
 
@@ -152,6 +163,7 @@ IPC Glossary
 
 - TCP - Transmission Control Protocol
 - TFTP - Trivial File Transfer Protocol
+- TPM - Trusted Platform Module
 - TPU - Tensor Processing Unit
 - TTL - Transistor-Transistor Logic
 
