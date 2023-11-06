@@ -50,7 +50,7 @@ source code from the repository and run a provided script.
 
 You will be greeted with a list of available targets.
 
-![](../images/firmware-building-whiptail.webp)
+![](../../images/firmware-building-whiptail.webp)
 
 Each target's name consists of a name of vendor, SoC model (System-on-Chip,
 the heart of an IP camera, central processor with extra features) and flavor

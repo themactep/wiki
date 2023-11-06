@@ -1,10 +1,10 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 System features
 ---------------
 
-* Supports for most TrueType (.ttf) and certain OpenType (.otf) fonts.
+* Support for most TrueType (.ttf) and certain OpenType (.otf) fonts.
 
 ### Random Number Generator
 

@@ -115,6 +115,9 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | xt5USRjG7rEDE                         | j1/_7sxw   |
 ```
 
+__VH-NM-T55A:__
+`$6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq.`
+
 ### Software
 
 - [Hashcat](https://hashcat.net/)

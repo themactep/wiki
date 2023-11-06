@@ -1,14 +1,16 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Supported Sensors
 -----------------
 
-Sensors are supported on per SoC family (per SDK) basis.
-To look up the list of supported sensors for your SoC you first need to detemine your SoC family, then check out the corresponding package.
+Sensors are supported on a per-SoC family (per SDK) basis.
+To look up the list of supported sensors for your SoC, you first need to determine your SoC family,
+then check out the corresponding package.
 
-__Please note, that even if you see the driver that matches your sensor, it does not guarantee that the driver works as intended, 
-or even that it will be included with the final binary for that SoC. Some additional testing and tweaking may be needed.__
+__Please note that even if you see the driver that matches your sensor,
+it does not guarantee that the driver works as intended, or even that
+it will be included with the final binary for that SoC. Additional testing and tweaking may be needed.__
 
 - [Ambarella S3L](https://github.com/OpenIPC/firmware/tree/master/general/package/ambarella-osdrv-s3l/files/sensor)
 - [Fullhan FH8852V100](https://github.com/OpenIPC/firmware/tree/master/general/package/fullhan-osdrv-fh8852v100/files/sensor)

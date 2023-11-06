@@ -3,7 +3,7 @@
 Building firmware (NG)
 ----------------------
 
-Major difference from the original OpenIPC Firmware building process 
+A major difference from the original OpenIPC Firmware building process 
 is that everything has been incorporated into Makefile.
 
 ### Configuration
@@ -28,15 +28,17 @@ TFTP_SERVER_IP := 192.168.1.254
 Run `make` in the root directory of the project.
 
 Firmware `Makefile` handles out-of-tree tasks and then delegates the rest of the job to Buildroot,
-accompanied with set of variables for a particular board.
+accompanied by set of variables for a particular board.
 
-Any Buildroot task can be proxied directly to Buildroot if prefixed with `br-`, e.g. `make br-linux` equals to `make linux` ran in Buildroot directory.
+Any Buildroot task can be proxied directly to Buildroot if prefixed with `br-`, e.g. `make br-linux`
+equals to `make linux` ran in Buildroot directory.
 
 ### Development
 
 Buildroot makes it easy to work with in-tree and out-of-tree packages. 
-Each package gets a set of pre-defined `make` tasks which are helpful for checking up on compilation at differet stages.
-Here's a list of standard Buldroot package commands, where `<pkg>` stands for a package name:
+Each package gets a set of pre-defined `make` tasks which are helpful for checking up on compilation
+at different stages. Here's a list of standard Buldroot package commands, where `<pkg>` stands for a
+package name:
 
 ```
 <pkg>                         - Build and install <pkg> and all its dependencies
@@ -58,4 +60,3 @@ Here's a list of standard Buldroot package commands, where `<pkg>` stands for a 
 <pkg>-rebuild                 - Restart the build from the build step
 <pkg>-reinstall               - Restart the build from the install step
 ```
-  

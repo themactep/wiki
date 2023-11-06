@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Upgrading firmware
 ------------------
@@ -15,7 +15,7 @@ last resort. Do not upgrade production cameras unless you really have to!__
 
 ### Upgrading from a TFTP server
 
-[Set up a TFTP server](installation-tftpd.md).
+[Set up a TFTP server](../installation-tftpd.md).
 
 Go to <https://github.com/OpenIPC/firmware/releases/tag/latest> and download the
 latest firmware bundle for your SoC. Extract content of the bundle into the root

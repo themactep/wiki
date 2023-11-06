@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Available Installation Methods
 ==============================
@@ -43,10 +43,10 @@ package on the camera's main PCB (see example photo below), or by using
 software such as [ipctool](https://openipc.github.io/ipctool/) to identify the
 SoC model from the vendor firmware.
 
-![SoC Marking](../images/soc-hisilicon.webp)
-![SoC Marking](../images/soc-ingenic-t20.webp)
-![SoC Marking](../images/soc-ingenic-t31.webp)
-![SoC Marking](../images/soc-ingenic-t40.webp)
+![SoC Marking](../../images/soc-hisilicon.webp)
+![SoC Marking](../../images/soc-ingenic-t20.webp)
+![SoC Marking](../../images/soc-ingenic-t31.webp)
+![SoC Marking](../../images/soc-ingenic-t40.webp)
 
 _Hisilicon Hi3518EV100, Ingenic T20, T31 and T40 SoCs marking.
 Relevant symbols highlighted with yellow._
@@ -80,7 +80,7 @@ sudo systemctl restart tftpd-hpa.service
 In order to make a connection to UART port you will need a
 [serial port adapter][FTDI] for your PC.
 
-![UART Module](../images/uart-module.webp)
+![UART Module](../../images/uart-module.webp)
 
 __Before you connect that adapter to you camera, make sure that it's working
 voltage is set to 3.3 volt!__
@@ -198,7 +198,7 @@ the original firmware should be a breeze. You only need to set up access to your
 TFTP server from step 2.
 
 NB! If your bootloader does not have `tftp`, you can still make a copy of the
-original firmware. [Read here for more](help-uboot.md).
+original firmware. [Read here for more](../help-uboot.md).
 
 Check the system environment using `printenv` command. Look for `ipaddr`,
 `netmask`, `gatewayip` and `serverip` parameters. The first three set IP address,
@@ -312,7 +312,7 @@ partition. Run this in your terminal window:
 firstboot
 ```
 
-[logo]: ../images/logo_openipc.png
+[logo]: ../../images/logo_openipc.png
 [FTDI]: https://www.google.com/search?q=ftdi+usb+ttl
 [TLLC]: https://google.com/search?q=logic+level+converter+3.3v+5v
 [telegram]: https://t.me/OpenIPC

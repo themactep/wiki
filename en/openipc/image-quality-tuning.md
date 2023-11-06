@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 Overview
 --------
@@ -35,7 +35,7 @@ pqtools:Waiting for connection from client!
 
 #### Run server module on XM boards
 
-For sake of simplicity we wse public NFS server:
+For the sake of simplicity, we wse public NFS server:
 
 ```console
 $ mount -o nolock 95.217.179.189:/srv/ro /utils/

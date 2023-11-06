@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 ## Supported sensors per SoC
 
@@ -9,6 +9,7 @@ _Note: This list does not guarantee that your sensor will work. There are nuance
 
 - S2L
 - S3L
+- CV72S 4K, 5nm
 
 ### Anyka
 

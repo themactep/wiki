@@ -1,5 +1,5 @@
 # OpenIPC Wiki
-[Table of Content](../README.md)
+[Table of Content](../../README.md)
 
 For XM boards with SoC GK7202V300, GK7205V200, GK7205V300 ONLY!!!
 -----------------------------------------------------------------
@@ -48,7 +48,7 @@ You always have an option to update the bootloader. However, you need to
 understand what you do.
 
 NB! Replace bootloader filename with the one matching your SoC.
-Full list is [here](https://github.com/OpenIPC/firmware/releases/tag/latest).
+The full list is [here](https://github.com/OpenIPC/firmware/releases/tag/latest).
 
 ```
 mw.b 0x42000000 ff 1000000
