@@ -5,9 +5,9 @@ Pacidal NMHC2290D
 -----------------
 [product page](http://www.pacidal.com/H.265_IP_camera_module_1080p_Sony_IMX290_NMHC2290D.html)
 
-![](images/NMHC2290D-front.jpg)
-![](images/NMHC2290D-back.jpg)
-![](images/NMHC2290D-pins.jpg)
+![](pix/NMHC2290D-front.jpg)
+![](pix/NMHC2290D-back.jpg)
+![](pix/NMHC2290D-pins.jpg)
 
 ### Specification
 
@@ -194,4 +194,65 @@ reset
 After the camera reboots for the first time, get into bootloader shell and run:
 ```
 run setnor16m
+```
+
+#### ipctool
+```
+---
+chip:
+  vendor: HiSilicon
+  model: 3516CV300
+board:
+  vendor: OpenIPC
+  version: 2.3.10.17
+ethernet:
+  mac: "c0:f1:c4:a0:0d:c4"
+  u-mdio-phyaddr: 1
+  phy-id: 0x001cc816
+  d-mdio-phyaddr: 0
+rom:
+- type: nor
+  block: 64K
+  partitions:
+    - name: boot
+      size: 0x40000
+      sha1: b9e93d92
+    - name: env
+      size: 0x10000
+      sha1: 8aed4d7f
+      contains:
+        - name: uboot-env
+          offset: 0x0
+    - name: kernel
+      size: 0x300000
+      sha1: 1b79c7fe
+    - name: rootfs
+      size: 0xa00000
+      path: /,squashfs
+      sha1: 6bfe84d1
+    - name: rootfs_data
+      size: 0x2b0000
+      path: /overlay,jffs2,rw
+  size: 16M
+  addr-mode: 3-byte
+ram:
+  total: 256M
+  media: 224M
+firmware:
+  u-boot: "2010.06 (Nov 14 2022 - 19:27:03)"
+  kernel: "3.18.20 (Tue Oct 17 22:16:51 UTC 2023)"
+  toolchain: buildroot-gcc-12.2.0
+  sdk: "Hi3516CV300_MPP_V1.0.4.0 B050 Release (Jun  3 2018, 21:42:04)"
+sensors:
+- vendor: Sony
+  model: IMX291
+  control:
+    bus: 0
+    type: i2c
+    addr: 0x34
+  params:
+    bitness: 12
+    databus: LVDS 4 ch
+    fps: 30
+  vicap-state: down
 ```
