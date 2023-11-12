@@ -45,24 +45,26 @@ Realtek SoC
 - https://www.amebaiot.com/
 
 #### RTL8715AD/RTL8715AH/RTL8715AQ
-– Arm v8M @300MHz(Max.)
-– Integrated with 802.11ac/n Wi-Fi
-– Support Trustzone & Secure boot
-– ISP Integrated
-– H.264 encoder integrated up to 1080P@30fps
-– Up to 64MB RAM(Max.)
-– Ultra Low Power design
+
+- Arm v8M @300MHz(Max.)
+- Integrated with 802.11ac/n Wi-Fi
+- Support Trustzone & Secure boot
+- ISP Integrated
+- H.264 encoder integrated up to 1080P@30fps
+- Up to 64MB RAM(Max.)
+- Ultra Low Power design
 
 #### RTL8735B
-– Arm v8M @500MHz(Max.)
-– Integrated with 802.11 a/b/g/n Wi-Fi
-– Bluetooth Low Energy (BLE) 5.1
-– Support Secure boot & Crypto Engine
-– ISP Integrated
-– H.264/H.265 encoder up to 5MP or 1080p@45fps
-– Integrated Intelligent Engine @0.4 TOPS
-– Up to 128MB RAM(Max.)
-– Low Power design
+
+- Arm v8M @500MHz(Max.)
+- Integrated with 802.11 a/b/g/n Wi-Fi
+- Bluetooth Low Energy (BLE) 5.1
+- Support Secure boot & Crypto Engine
+- ISP Integrated
+- H.264/H.265 encoder up to 5MP or 1080p@45fps
+- Integrated Intelligent Engine @0.4 TOPS
+- Up to 128MB RAM(Max.)
+- Low Power design
 
 ### Resources
 
