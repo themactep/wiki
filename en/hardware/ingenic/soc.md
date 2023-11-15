@@ -232,7 +232,7 @@ SoC UART pins:
 | Fast stream  | +         | +         | +         |
 | Package      | BGA356    | BGA356    | BGA356    |
 
-### T41 Family
+### T41 Family (Marmot) 
 
 |             | T41LQ      | T41NQ      | T41ZL      | T41ZN      | T41ZX      | T41A       |
 |-------------|------------|------------|------------|------------|------------|------------|

@@ -1,7 +1,9 @@
 U-Boot Cheatsheet
 -----------------
 
-Make sure network setting are set correctly in U-Boot environment.
+__Flashing from bootloader is kinda risky due to lack of verification!__
+
+Make sure network settings are set correctly in U-Boot environment.
 If not, set it yourself according to your network configuration.
 ```
 setenv ipaddr 192.168.1.10;
@@ -12,7 +14,7 @@ saveenv
 ```
 
 Set base address for your SoC.
-Look up proper value for your SoC in a corresponding data sheet.
+Look up the proper value for your SoC in a corresponding data sheet.
 ```
 setenv baseaddr 0x82000000;
 saveenv
@@ -20,7 +22,7 @@ saveenv
 
 ## Save firmware
 
-#### save firmware image to a SD card (8MB)
+#### save firmware image to an SD card (8MB)
 ```
 mmc dev 0;
 mmc erase 0x10 0x4000;
@@ -31,7 +33,7 @@ mmc write ${baseaddr} 0x10 0x4000
 ```
 Read it later on a desktop with `sudo dd bs=512 skip=16 count=16384 if=/dev/sdb of=./fulldump.bin`, where `/dev/sdb` is the card device.
 
-#### save firmware image to a SD card (16MB)
+#### save firmware image to an SD card (16MB)
 ```
 mmc dev 0;
 mmc erase 0x10 0x8000;
@@ -99,9 +101,9 @@ xxd -revert -plain fulldump.hex fulldump.bin
 ```
 Use binwalk to unpack the binary file.
 
-## Burn full image
+## Burn the full image
 
-#### burn full image from a SD card (8MB)
+#### burn the full image from an SD card (8MB)
 ```
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize};
@@ -110,7 +112,7 @@ sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn full image from a TFTP server (8MB)
+#### burn the full image from a TFTP server (8MB)
 ```
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize};
@@ -119,7 +121,7 @@ sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn full image via a serial connection (8MB)
+#### burn the full image via a serial connection (8MB)
 ```
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize}
@@ -129,7 +131,7 @@ sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn full image from a SD card (16MB)
+#### burn the full image from an SD card (16MB)
 ```
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize};
@@ -138,7 +140,7 @@ sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn full image from a TFTP server (16MB)
+#### burn the full image from a TFTP server (16MB)
 ```
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize};
@@ -147,7 +149,7 @@ sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn full image via a serial connection (16MB)
+#### burn the full image via a serial connection (16MB)
 ```
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize}
@@ -159,7 +161,7 @@ sf write ${baseaddr} 0x0 ${filesize}
 
 ## Burn bootloader only
 
-#### burn bootloader from a SD card
+#### burn bootloader from an SD card
 ```
 setenv bootsize 0x50000;
 mw.b ${baseaddr} 0xff ${bootsize};
@@ -189,7 +191,7 @@ sf write ${baseaddr} 0x0 ${filesize}
 
 ## Burn kernel only
 
-#### burn kernel from a SD card (lite)
+#### burn kernel from an SD card (lite)
 ```
 setenv kernelsize 0x200000;
 mw.b ${baseaddr} 0xff ${kernelsize};
@@ -217,7 +219,7 @@ sf probe 0; sf erase 0x0 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel from a SD card (ultimate)
+#### burn kernel from an SD card (ultimate)
 ```
 setenv kernelsize 0x300000;
 mw.b ${baseaddr} 0xff ${kernelsize};
@@ -247,7 +249,7 @@ sf write ${baseaddr} 0x50000 ${filesize}
 
 ## Burn rootfs only
 
-#### burn rootfs from a SD card (lite)
+#### burn rootfs from an SD card (lite)
 ```
 setenv rootfssize 0x500000;
 mw.b ${baseaddr} 0xff ${rootfssize};
@@ -275,7 +277,7 @@ sf probe 0; sf erase 0x250000 ${rootfssize};
 sf write ${baseaddr} 0x250000 ${filesize}
 ```
 
-#### burn rootfs from a SD card (ultimate)
+#### burn rootfs from an SD card (ultimate)
 ```
 setenv rootfssize 0xA00000;
 mw.b ${baseaddr} 0xff ${rootfssize};

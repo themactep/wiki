@@ -13,22 +13,22 @@ TP-Link
 | TP-Link Tapo C200V2     | RTS3903N     |              | 25Q64      | RTL8188FTV  | 2AXJ4C200V2   |
 | TP-Link Tapo C210       | SSC335       |              | 25Q?       | SSW101B     | 2AXJ4C210     |
 | TP-Link Tapo C210P2     |              |              |            |             |               |
-| TP-Link Tapo C225       | SSC30KQ      |              | F50L1G41LB | RTL8188FTV  | 2AXJ4C225     |
+| TP-Link Tapo C225       | SSC30KQ      |              | F50L1G41LB | RTL8188FTV  | 2AXJ4C225     | Starlight Sensor
 | TP-Link Tapo C225V2     | SSC337D      | SC430AI?     | 25Q128     | SV6355      | 2AXJ4C225V2   |
 | TP-Link Tapo C310       |              |              |            |             |               |
 | TP-Link Tapo C310V2     | SSC335       |              | 25Q?       | RTL8192EU   | 2AXJ4C310V2   |
-| TP-Link Tapo C320WS     | SSC337       |              | 25Q?       | RTL8192EU   | 2AXJ4C320WS   |
-| TP-Link Tapo C320WSV2   | NT98562      |              | 25Q?       | RTL8192EU   | 2AXJ4C320WSV2 |
-| TP-Link Tapo C325WB     | NT98562      |              | 25Q128     | RTL8192EU   | 2AXJ4C325WB   |
+| TP-Link Tapo C320WS     | SSC337       |              | 25Q?       | RTL8192EU   | 2AXJ4C320WS   | Starlight Color Night Vision
+| TP-Link Tapo C320WSV2   | NT98562      |              | 25Q?       | RTL8192EU   | 2AXJ4C320WSV2 | 
+| TP-Link Tapo C325WB     | NT98562      |              | 25Q128     | RTL8192EU   | 2AXJ4C325WB   | ColorPro Night Vision
 | TP-Link Tapo C340W      | NT98566      |              | 25Q128     | RTL8192EU   | 2AXJ4C340W    |
 | TP-Link Tapo C400       | T31ZL        |              | 25Q128     | MT7682SN    | 2AXJ4C400     |
-| TP-Link Tapo C420       | T31ZX        |              | 25Q64      | MT7682SN    | 2AXJ4C420     |
+| TP-Link Tapo C420       | T31ZX        |              | 25Q64      | MT7682SN    | 2AXJ4C420     | Color Night Vision
 | TP-Link Tapo C425       | T41ZN        |              | 25Q128     | MT7682SN    | 2AXJ4C425     |
 | TP-Link Tapo C440W      | NT98566      |              | 25Q?       | RTL         | 2AXJ4C440W    |
-| TP-Link Tapo C500       | T31L         |              | 25Q64      | RTL8188FTV  | 2AXJ4C500     |
-| TP-Link Tapo C510W      | T31L         |              | 25Q64      | RTL8188FTV  | 2AXJ4C510W    |
+| TP-Link Tapo C500       | T31L         |              | 25Q64      | RTL8188FTV  | 2AXJ4C500     | 
+| TP-Link Tapo C510W      | T31L         |              | 25Q64      | RTL8188FTV  | 2AXJ4C510W    | Full-Color Night Vision
 | TP-Link Tapo C510WS     |              |              |            |             |               |
-| TP-Link Tapo C520WS     | NT98562      |              | 25Q128     | RTL8192EU   | 2AXJ4C520WS   |
+| TP-Link Tapo C520WS     | NT98562      |              | 25Q128     | RTL8192EU   | 2AXJ4C520WS   | Starlight Color Night Vision
 | TP-Link Tapo C720       | SSC30KQ      |              | F50L1G41LB | RTL8192EU   | 2AXJ4C720     |  
 | TP-Link Tapo D230       | T31ZX        |              | 25Q128     | MT7682SN    | 2AXJ4D230     |
 | TP-Link Tapo D230S1     |              |              |            |             |               |

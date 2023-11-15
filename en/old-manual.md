@@ -653,7 +653,7 @@ To be written...
 [6]: https://aliexpress.com/item/4000054902736.html
 [7]: https://aliexpress.com/item/1005001933429701.html
 [8]: https://translate.google.com/translate?sl=ru&tl=en&u=https://www.cctvsp.ru/articles/obzor-i-sravnenie-matrits-dlya-kamer-videonablyudeniya
-[9]: majestic-streamer.md
+[9]: openipc/majestic-streamer.md
 
 [b1]: https://github.com/openipc/chaos_calmer/actions/workflows/hi3516cv100_images.yml/badge.svg?branch=master
 [b2]: https://github.com/openipc/chaos_calmer/actions/workflows/hi3516cv200_images.yml/badge.svg?branch=master
