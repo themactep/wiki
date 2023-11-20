@@ -8,7 +8,7 @@ Wansview / Galayou / Cinnado
 | Make Model Name                   | SoC   | Image Sensor | Flash Chip | WiFi Module | FCC ID | Link                                                               |
 |-----------------------------------|-------|--------------|------------|-------------|--------|--------------------------------------------------------------------|
 | Cinnado B6 2K Outdoor PTZ Battery |       |              |            |             |        | https://cinnado.com/b6                                             |
-| Cinnado D1 2K Indoor PTZ          |       |              |            |             |        | https://cinnado.com/D1                                             |
+| Cinnado D1 2K Indoor PTZ          | T31L  |              |            | ATBM6031    |        | https://cinnado.com/D1                                             |
 | Galayou G2 2K Indoor              |       |              |            |             |        | https://www.galayou-store.com/g2                                   |
 | Galayou G7 2K Indoor              |       |              |            |             |        | https://www.galayou-store.com/G7                                   |
 | Galayou Y4 2K Outdoor PT          |       |              |            |             |        | https://www.galayou-store.com/y4                                   |
