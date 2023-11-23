@@ -1,8 +1,9 @@
-eufy (Anker)
-------------
-- 
+eufy/Anker/CZEview
+------------------
+
 - https://en.anker-in.com/
 - https://eufy.com/
+- https://czeview.net/
 
 | Model Number | Make Model Name                                    | SoC         | Image Sensor | Flash Chip | DRAM            | WiFi Module    | MCU           | FCC ID        | Link                                                      |
 |--------------|----------------------------------------------------|-------------|--------------|------------|-----------------|----------------|---------------|---------------|-----------------------------------------------------------|
