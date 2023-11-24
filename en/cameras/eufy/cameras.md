@@ -74,6 +74,5 @@ eufy/Anker/CZEview
 | T8851?       | eufyCam S221                                       |             |              |            |                 |                |               |               | https://ca.eufy.com/products/t88511d1                     |
 | T8861?       | eufyCam S220                                       |             |              |            |                 |                |               |               | https://ca.eufy.com/products/t88611d1                     |
 | T8871?       | eufyCam S330 (3)                                   |             |              |            |                 |                |               | 2AOKB-T86P2?  | https://us.eufy.com/products/t88711w1                     |
-|              |                                                    |             |              |            |                 |                |               |               |                                                           |
 
 [^1]: Hi1131V101 as FN-Link 3131A-S
