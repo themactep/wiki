@@ -1,5 +1,6 @@
 Galaxycore
 ----------
+https://en.gcoreinc.com/
 
 ### CMOS Image Sensors
 
