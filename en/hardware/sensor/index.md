@@ -11,6 +11,7 @@ Image Sensors Manufacturers
 - [SmartSens Technology](smartsens.md)
 - [OmniVision](omnivision.md)
 - [ON Semiconductor](onsemi.md)
+- [PixArt Imaging](pixart.md)
 - [Silicon Optronics](soi.md)
 - [Sony Semiconductor](sony.md)
 
