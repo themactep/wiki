@@ -74,7 +74,7 @@ researchers in the field could dedicate their cryptographic resources to
 discover even more yet unknown passwords. Sharing is caring, boys!
 
 ### Some passwords that we found in different firmware
-```
+
 | Hash                                  | Plain text |
 |---------------------------------------|------------|
 | 7wtxBdUGBnuoY                         | runtop10   |
@@ -115,13 +115,12 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $enWsv2cbxPCrd0WeXUXtX0               | nobody     |
 | $qZV4X6DTqMHUDIyZG.8PH.               |            |
 | $z2VkRbfNoE/xHLBj8i2cv.               | ftp        |
-| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |
-| $6$4GbqAXEFqeauykeE$a6dqh2CoO6SucAplB/b4uvS5z0hN1Cb2r1pNWpsXL96vMqrrY42lFylXGNJm6RcY.3Lte/QS2.yyI4/pZDHAa1 |
-| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |
-| $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |
-| $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |
-| $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |
-```
+| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. | |
+| $6$4GbqAXEFqeauykeE$a6dqh2CoO6SucAplB/b4uvS5z0hN1Cb2r1pNWpsXL96vMqrrY42lFylXGNJm6RcY.3Lte/QS2.yyI4/pZDHAa1 | |
+| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. | |
+| $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        | |
+| $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     | |
+| $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   | |
 
 ### Software
 
