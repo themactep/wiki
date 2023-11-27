@@ -77,6 +77,14 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 ```
 | Hash                                  | Plain text |
 |---------------------------------------|------------|
+| 7wtxBdUGBnuoY                         | runtop10   |
+| 9B60FC59706134759DBCAEA58CAF9068      | Fireitup   |
+| CYjoTKVIDJ0bg                         | tianwang   |
+| LHjQopX4yjf1Q                         | ls123      |
+| Sk.MffUl2mnm2                         |            |
+| ab8nBoH3mb8.g                         | helpme     |
+| absxcfbgXtb3o                         | xc3511     |
+| xt5USRjG7rEDE                         | j1/_7sxw   |
 | $1$0Me7S3z5$.uQ4Pr/QjJQ/0JUZI0w4m.    |            |
 | $1$MoCJ1nRA$NfsI1wlYcWoF5MbU4t3Og0    | ivdev      |
 | $1$ZebZnWdY$QZ1Aa.7hwBshCS5k40MUE1    | xc12345    |
@@ -107,17 +115,13 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $enWsv2cbxPCrd0WeXUXtX0               | nobody     |
 | $qZV4X6DTqMHUDIyZG.8PH.               |            |
 | $z2VkRbfNoE/xHLBj8i2cv.               | ftp        |
-| 7wtxBdUGBnuoY                         | runtop10   |
-| 9B60FC59706134759DBCAEA58CAF9068      | Fireitup   |
-| CYjoTKVIDJ0bg                         | tianwang   |
-| LHjQopX4yjf1Q                         | ls123      |
-| ab8nBoH3mb8.g                         | helpme     |
-| absxcfbgXtb3o                         | xc3511     |
-| xt5USRjG7rEDE                         | j1/_7sxw   |
+| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |
+| $6$4GbqAXEFqeauykeE$a6dqh2CoO6SucAplB/b4uvS5z0hN1Cb2r1pNWpsXL96vMqrrY42lFylXGNJm6RcY.3Lte/QS2.yyI4/pZDHAa1 |
+| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |
+| $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |
+| $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |
+| $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |
 ```
-
-__VH-NM-T55A:__
-`$6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq.`
 
 ### Software
 
