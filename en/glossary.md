@@ -34,6 +34,7 @@ IPC Glossary
 - CMOS - Complementary Metal–Oxide Semiconductor
 - CPI - Camera Parallel Interface
 - CPU - Central Processing Unit
+- CRC - Cyclic Redundancy Code
 - CSI - Camera Serial Interface
 
 ### D
