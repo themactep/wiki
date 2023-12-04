@@ -16,6 +16,7 @@ Wansview / Galayou / Cinnado
 | Galayou R1 2K Outdoor PTZ Battery |       |              |            |             |        | https://www.galayou-store.com/R1                                   |
 | Galayou R2 2K Battery             | T31ZX |              |            |             |        | https://www.galayou-store.com/r2                                   |
 | Wansview 1080 K5                  |       |              |            |             |        | https://wansview.com/cn/proinfo.aspx?proid=46&categoryid=4&aids=2  |
+| Wansview 1080 Q5                  | T21Z  | OV2735B      | 25Q128     | RTL8188FTV  |        | discontinued                                                       |
 | Wansview 2K Q5                    | T31L  | SC2336       |            |             |        | https://wansview.com/cn/proinfo.aspx?proid=29&categoryid=4&aids=2  |
 | Wansview 1080P Q6                 |       |              |            |             |        | https://wansview.com/cn/proinfo.aspx?proid=36&categoryid=4&aids=2  |
 | Wansview 2K Q7                    |       |              |            |             |        | https://wansview.com/cn/proinfo.aspx?proid=51&categoryid=4&aids=2  |
