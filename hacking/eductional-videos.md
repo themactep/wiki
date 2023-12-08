@@ -1,10 +1,7 @@
-Embedded Programming
-====================
+Educational Videos
+------------------
 
-Device Tree
------------
-
-### Videos
+### Device Tree
 
 - [Brief introduction to the Device Tree on GNU/Linux](https://www.youtube.com/watch?v=_Z65pqLSMi8)
 - [Linux device driver lecture 20: Device tree writing syntax](https://www.youtube.com/watch?v=fVuv8Rr6arM)
@@ -15,3 +12,4 @@ Device Tree
 - [Device Tree overlays and U-Boot extension board management, Köry Maincent](https://www.youtube.com/watch?v=mxWiK2v-KZc)
 - [Zephyr 101 - Using the Device Tree](https://www.youtube.com/watch?v=5UUS44S4kaQ)
 - [Beaglebone: Introduction to GPIOs - Using Device Tree Overlays under Linux 3.8+](https://www.youtube.com/watch?v=wui_wU1AeQc)
+
