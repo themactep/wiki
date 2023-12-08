@@ -2,7 +2,9 @@ IP Camera Cables
 ----------------
 
 ### 9-core RJ45 + DC-jack
-##### 1.25mm pitch headers
+
+##### 1.25 mm pitch headers
+
 | color of wire | function                 |
 |---------------|--------------------------|
 | green         | Ethernet Rx-, RJ45 pin 1 |
@@ -12,15 +14,21 @@ IP Camera Cables
 | purple        | Ethernet status LED      |
 | red           | Power +12V               |
 | black         | Power GND                |
-##### 2.0mm pitch header
+
+##### 2.0 mm pitch header
+
 | color of wire | function   |
 |---------------|------------|
 | red           | Power +12V |
 | black         | Power GND  |
 
+
 ### 9-core with built-in 48V to 12V/1A POE
+
 IEEE802.3af, 15.4W, Endspan: 1/2(+), 3/6(-) or Midspan: 4/5(+), 7/8(-)
-##### 1.25mm pitch headers
+
+##### 1.25 mm pitch headers
+
 | color of wire | function                 |
 |---------------|--------------------------|
 | green         | Ethernet Rx-, RJ45 pin 1 |
@@ -31,14 +39,17 @@ IEEE802.3af, 15.4W, Endspan: 1/2(+), 3/6(-) or Midspan: 4/5(+), 7/8(-)
 | red           | Power +12V               |
 | black         | Power GND                |
 
-##### 2.0mm pitch header
+##### 2.0 mm pitch header
+
 | color of wire | function   |
 |---------------|------------|
 | red           | Power +12V |
 | black         | Power GND  |
 
 ### 11-core RJ45 + DC-jack
-##### 1.25mm pitch headers
+
+##### 1.25 mm pitch headers
+
 | color of wire | function                    | alt. color   |
 |---------------|-----------------------------|--------------|
 | green         | Ethernet Rx-, RJ45 pin 1    |              |
@@ -51,7 +62,8 @@ IEEE802.3af, 15.4W, Endspan: 1/2(+), 3/6(-) or Midspan: 4/5(+), 7/8(-)
 | yellow        | RJ45 pins 7/8, Midspan POE- |              |
 | gray          | RJ45 pins 4/5, Midspan POE+ |              |
 
-##### 2.0mm pitch header
+##### 2.0 mm pitch header
+
 | color of wire | function   |
 |---------------|------------|
 | red           | Power +12V |
