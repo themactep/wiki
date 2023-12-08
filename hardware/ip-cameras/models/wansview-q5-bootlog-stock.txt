@@ -1,0 +1,891 @@
+U-Boot SPL 2013.07 (Dec 05 2022 - 10:55:23)
+
+Timer init
+CLK stop
+PLL init
+pll_init:366
+pll_cfg.pdiv = 10, pll_cfg.h2div = 5, pll_cfg.h0div = 5, pll_cfg.cdiv = 1, pll_cfg.l2div = 2
+nf=84 nr = 1 od0 = 1 od1 = 2
+cppcr is 05405100
+CPM_CPAPCR 0540510d
+nf=84 nr = 1 od0 = 1 od1 = 2
+cppcr is 05405100
+CPM_CPMPCR 07d0590d
+nf=100 nr = 1 od0 = 1 od1 = 2
+cppcr is 06405100
+CPM_CPVPCR 0640510d
+cppcr 0x9a773310
+apll_freq 1008000000
+mpll_freq 1000000000
+vpll_freq = 1200000000
+ddr sel mpll, cpu sel apll
+ddrfreq 500000000
+cclk  1008000000
+l2clk 504000000
+h0clk 200000000
+h2clk 200000000
+pclk  100000000
+CLK init
+SDRAM init
+ddr_inno_phy_init ..!
+DDR PHY init OK
+DDR Controller init
+SDRAM init ok.
+lessPower(), board_init_r
+image entry point: 0x80100000
+
+U-Boot 2013.07 (Dec 05 2022 - 10:55:23)
+
+Board: ISVP (Ingenic XBurst T31 SoC)
+DRAM:  64 MiB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 446k for U-Boot at: 83f90000
+Reserving 32784k for malloc() at: 81f8c000
+Reserving 32 Bytes for Board Info at: 81f8bfe0
+Reserving 124 Bytes for Global Data at: 81f8bf64
+Reserving 128k for boot params() at: 81f6bf64
+Stack Pointer at: 81f6bf48
+Now running in RAM - U-Boot at: 83f90000
+MMC:   msc: 0
+the manufacturer 85
+SF: Detected P25Q64H
+
+*** Warning - bad CRC, using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ====>PHY not found!Jz4775-9161
+---- T31L 8M {{ check Update:mmc_num=1
+Card did not respond to voltage select!
+Card did not respond to voltage select!
+** Bad device mmc 0 **
+Card did not respond to voltage select!
+** Bad device mmc 0 **
+updateFlashPartion, no tfcard
+---- }} check Update. bTFCard=0 bFat=0 nRet=-10
+Hit any key to stop autoboot:  0
+the manufacturer 85
+SF: Detected P25Q64H
+
+--->probe spend 4 ms
+SF: 2621440 bytes @ 0x40000 Read: OK
+--->read spend 842 ms
+
+## Booting kernel from Legacy Image at 80600000 ...
+   Image Name:   Linux-3.10.14__isvp_swan_1.0__
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1542158 Bytes = 1.5 MiB
+   Load Address: 80010000
+   Entry Point:  8034de00
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.10.14__isvp_swan_1.0__ (root@ubuntu-server) (gcc version 4.7.2 (Ingenic r2.3.3 2016.12) ) #3 PREEMPT Sun Aug 7 18:41:22 CST 2022
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 RESET ERROR PC:05002E15
+[    0.000000] CPU0 revision is: 00d00100 (Ingenic Xburst)
+[    0.000000] FPU revision is: 00b70000
+[    0.000000] CCLK:1008MHz L2CLK:504Mhz H0CLK:250MHz H2CLK:250Mhz PCLK:125Mhz
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 00450000 @ 00010000 (usable)
+[    0.000000]  memory: 00030000 @ 00460000 (usable after init)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 02a80000 @ 00000000 (usable)
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x00000000-0x02a7ffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x00000000-0x02a7ffff]
+[    0.000000] Primary instruction cache 32kB, 8-way, VIPT, linesize 32 bytes.
+[    0.000000] Primary data cache 32kB, 8-way, VIPT, no aliases, linesize 32 bytes
+[    0.000000] pls check processor_id[0x00d00100],sc_jz not support!
+[    0.000000] MIPS secondary cache 128kB, 8-way, linesize 32 bytes.
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping off.  Total pages: 10795
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 37856k/43520k available (3354k kernel code, 5664k reserved, 1058k data, 192k init, 0k highmem)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:358
+[    0.000000] clockevents_config_and_register success.
+[    0.000020] Calibrating delay loop... 1001.88 BogoMIPS (lpj=5009408)
+[    0.037788] pid_max: default: 32768 minimum: 301
+[    0.042706] Mount-cache hash table entries: 512
+[    0.047756] Initializing cgroup subsys debug
+[    0.052018] Initializing cgroup subsys freezer
+[    0.058682] regulator-dummy: no parameters
+[    0.062908] NET: Registered protocol family 16
+[    0.078960] bio: create slab <bio-0> at 0
+[    0.084924] jz-dma jz-dma: JZ SoC DMA initialized
+[    0.090017] usbcore: registered new interface driver usbfs
+[    0.095572] usbcore: registered new interface driver hub
+[    0.101006] usbcore: registered new device driver usb
+[    0.106252] i2c-gpio i2c-gpio.1: using pins 16 (SDA) and 17 (SCL)
+[    0.112431]  (null): set:311  hold:312 dev=125000000 h=625 l=625
+[    0.118560] media: Linux media interface: v0.10
+[    0.123114] Linux video capture interface: v2.00
+[    0.129460] Switching to clocksource jz_clocksource
+[    0.134946] NET: Registered protocol family 2
+[    0.139396] cfg80211: Calling CRDA to update world regulatory domain
+[    0.146367] TCP established hash table entries: 512 (order: 0, 4096 bytes)
+[    0.153285] TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+[    0.159770] TCP: Hash tables configured (established 512 bind 512)
+[    0.166049] TCP: reno registered
+[    0.169256] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.175204] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.181767] NET: Registered protocol family 1
+[    0.186502] freq_udelay_jiffys[0].max_num = 10
+[    0.190930] cpufreq 	udelay 	loops_per_jiffy
+[    0.195387] 12000	 59635	 59635
+[    0.198612] 24000	 119271	 119271
+[    0.202055] 60000	 298179	 298179
+[    0.205510] 120000	 596358	 596358
+[    0.209030] 200000	 993930	 993930
+[    0.212562] 300000	 1490895	 1490895
+[    0.216280] 600000	 2981790	 2981790
+[    0.219978] 792000	 3935963	 3935963
+[    0.223686] 1008000	 5009408	 5009408
+[    0.227492] 1200000	 5963580	 5963580
+[    0.236149] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.242168] jffs2: version 2.2. � 2001-2006 Red Hat, Inc.
+[    0.248090] msgmni has been set to 73
+[    0.252997] io scheduler noop registered
+[    0.257048] io scheduler cfq registered (default)
+[    0.263214] jz-uart.0: ttyS0 at MMIO 0x10030000 (irq = 59) is a uart0
+[    0.269918] jz-uart.1: ttyS1 at MMIO 0x10031000 (irq = 58) is a uart1
+[    0.277892] console [ttyS1] enabled, bootconsole disabled
+[    0.277892] console [ttyS1] enabled, bootconsole disabled
+[    0.292588] brd: module loaded
+[    0.297655] loop: module loaded
+[    0.301452] zram: Created 2 device(s) ...
+[    0.305779] logger: created 256K log 'log_main'
+[    0.324713] jz SADC driver registeres over!
+[    0.330127] jz TCU driver register completed
+[    0.335058] the id code = 856017, the flash name is P25Q64H
+[    0.340824] JZ SFC Controller for SFC channel 0 driver register
+[    0.346998] 7 cmdlinepart partitions found on MTD device jz_sfc
+[    0.353120] Creating 7 MTD partitions on "jz_sfc":
+[    0.361273] SPI NOR MTD LOAD OK
+[    0.364652] tun: Universal TUN/TAP device driver, 1.6
+[    0.369872] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.376446] jz-dwc2 jz-dwc2: cgu clk gate get error
+[    0.381504] DWC IN OTG MODE
+[    0.385064] dwc2 dwc2: Keep PHY ON
+[    0.388581] dwc2 dwc2: Using Buffer DMA mode
+[    0.392997] dwc2 dwc2: Core Release: 3.00a
+[    0.397288] dwc2 dwc2: DesignWare USB2.0 High-Speed Host Controller
+[    0.403798] dwc2 dwc2: new USB bus registered, assigned bus number 1
+[    0.411224] hub 1-0:1.0: USB hub found
+[    0.415166] hub 1-0:1.0: 1 port detected
+[    0.419368] dwc2 dwc2: DWC2 Host Initialized
+[    0.424406] TCP: cubic registered
+[    0.427842] NET: Registered protocol family 17
+[    0.433241] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    0.440420] drivers/rtc/hctosys.c: unable to open rtc device (rtc0)
+[    0.451128] VFS: Mounted root (squashfs filesystem) readonly on device 31:2.
+[    0.458863] Freeing unused kernel memory: 192K (80460000 - 80490000)
+[    0.497286] dwc2 dwc2: ID PIN CHANGED!
+swapoff: applet not found
+mdev is ok......
+[    1.244241] exFAT: Version 1.2.9
+[    1.319765] jzmmc_v1.2 jzmmc_v1.2.0: vmmc regulator missing
+[    1.328248] jzmmc_v1.2 jzmmc_v1.2.0: register success!
+[    1.333625] jzmmc_v1.2 jzmmc_v1.2.1: vmmc regulator missing
+[    1.342263] jzmmc_v1.2 jzmmc_v1.2.1: register success!
+[    1.676786] atbm603x_ht20_sdio SVN20816_LMAC14449_20220606
+[    1.682464] build time: Aug 15 2022 17:41:07
+[    2.259507] mmc1: new SDIO card at address 0001
+[    2.270165] [atbm_log]:atbm_HwGetChipType, chipver=0x49, g_wifi_chip_type[10]
+[    2.277718] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    2.284734] [atbm_log]:atbm_before_load_firmware:0xab0016c = [34800000]
+[    2.291659] [atbm_log]:atbm_before_load_firmware:do not set config to smu
+[    2.299856] [atbm_log]:atbm_before_load_firmware:read [0x16100074]=[0],ret(0)
+[    2.307274] [atbm_log]:rx timeout
+[    2.310895] [atbm_log]:atbm_before_load_firmware:write [0x16100074]=[1],ret(0)
+[    2.368413] [atbm_log]:wsm_generic_confirm:status(2)
+[    2.373626] [atbm_log]:<WARNING> wsm_write_mib fail !!! mibId=4132
+[    2.380308] [atbm_log]:apollo wifi : can't open /var/syscfg/.mac.info
+[    2.387439] [atbm_log]:apollo wifi : can't open /var/syscfg/atbm_txpwer_dcxo_cfg.txt
+[    2.395579] [atbm_log]:apollo wifi : can't open /var/syscfg/set_rate_power.txt
+[    2.403427] [atbm_log]:get chip id [b4][1][1]
+[    2.408153] current chiptype 6032is
+[    2.418807] [atbm_log]:mmc1 has been attached
+[    2.478989] [atbm_log]:is registered as 'ALTOBEAM'
+[    2.514749] crash_test gpioCtrl gpioCtrl_drv_init,720] will read ini.
+[    2.528547] gpioCtrl.ko(v2.2), hw=0 kver=30A0E
+[    2.533147] crash_test gpioCtrl gpioCtrl_drv_init,731] will init gpio
+[    2.557576] crash_test gpioCtrl gpioCtrl_drv_init,847] gpioCtrl.ko v2.2 success
+mount /mnt/mtd success
+[    4.906028] @@@@ tx-isp-probe ok(version H20220426a), compiler date=Apr 26 2022 @@@@@
+attr_nrvbs=1
+[    4.959077] jz_codec_register: probe() successful!
+[    5.374640] dma dma0chan24: Channel 24 have been requested.(phy id 7,type 0x06 desc a1f4c000)
+[    5.383901] dma dma0chan25: Channel 25 have been requested.(phy id 6,type 0x06 desc a1a48000)
+[    5.393207] dma dma0chan26: Channel 26 have been requested.(phy id 5,type 0x04 desc a1e39000)
+ptz support, load ptz driver
+[    5.428941] ptzCtrl.ko(v1.6)
+[01/Jan/1970:00:00:05 +0000] boa: server version Boa/0.94.13
+[01/Jan/1970:00:00:05 +0000] boa: server built Jul 29 2022 at 19:18:21.
+[01/Jan/1970:00:00:05 +0000] boa: starting server pid=169, port 80
+ipc_sdk_v1.3.41;bulid:23-02-14T09:02
+00:00:00.000 00 INITA> main,80] wssApp BUILDTIME=2023-02-17T18:03
+00:00:00.042 00 INITA> main,81] FwVersion: 01.10105.09.65
+00:00:00.091 00 INITA> eeprom_init,1056]
+00:00:00.091 00 WDT> initWatchDog,150]
+shellcmdD.c_473 serv_accept(.)=4 uidCli=0 err=2
+shellcmdD.c_473 serv_accept(.)=5 uidCli=0 err=2
+00:00:00.093 00 WDT> WatchdogOpen,52] WatchdogOpen success :5
+00:00:00.096 00 WDT> WatchdogOpen,71] WatchdogOpen complete value = 2,timeout= 60
+00:00:00.128 22 INITA> libcurl/7.65.3 mbedTLS/2.14.0 nghttp2/1.35.000:00:00.162 00 RECTS> clearRecordCacheDir,340]
+00:00:00.420 00 INITA> sync_time_saved,840]
+00:00:00.421 00 INITA> sync_time_saved,848] read time saved : 1693941382
+00:00:00.421 00 BASEF> hy_set_systime_by_utc_time_t,1144] date -s '2023-09-05 19:16:22'
+Tue Sep  5 19:16:22 UTC 2023
+00:00:00.627 00 USER> fUMG_Init,65]
+00:00:00.679 00 USER> fUMG_Init,91] Read user Info:216,siz:216,0xad7350
+00:00:00.679 00 INITA> wssAppStart,2247]
+00:00:00.679 02 INITA> UploadLogFuncInit,2229] upload log file function is disable
+ 00:00:00.760 00 SYSCF> syscfg_init,385] ir_support: 1, white_light_support: 0, red_led_support: 1,blue_led_support: 1
+00:00:00.761 00 SYSCF> syscfg_init,393] reset_key_support: 1, call_key_support: 0, ptz_h_support: 1, ptz_v_support: 1, zoom_support: 0, eth0_support: 1
+00:00:00.761 00 SYSCF> syscfg_init,399] pelco_ptz_support: 0, tf_support: 1, battery_support: 0, flood_support: 0
+00:00:00.761 00 SYSCF> syscfg_init,429] mic_support: 1, spk_support: 1, nSampleRate: 8000, nSampleSize: 16 aec_support: 0
+00:00:00.761 00 SYSCF> syscfg_init,478] Video nChnNum: 2
+00:00:00.761 00 SYSCF> syscfg_init,487] Channel 0 nFps: 15, nNightFps: 10, nKBps: 672, eBrMode: 3, nWidth: 2304, nHeight: 1296, eVideoFormat: 4
+00:00:00.761 00 SYSCF> syscfg_init,535] Channel 1 nFps: 15, nNightFps: 10, nKBps: 256, eBrMode: 3, nWidth: 640, nHeight: 360, eVideoFormat: 3
+00:00:00.761 00 SYSCF> syscfg_init,561] dbl_sensor_support: 0 shortf_io_level: 0 lsfocus_multiple: 4.000000
+00:00:00.762 00 SYSCF> syscfg_init,614] product_name: Q5, model: Y3C, vendor: WVC, serialnum: WVCD36MJAWVWNG6B, license_key:
+00:00:00.765 00 SYSCF> syscfg_init,648] auto_reboot: 1, auto_reboot_duration_min: 10080, default_tz: CST-8
+00:00:00.765 00 SYSCF> syscfg_init,691] flip: 0, private_region_support: 1, private_region_switch: 0, private_region_left: 0, private_region_top: 0, private_region_right: 0, private_region_bottom: 0
+00:00:00.765 00 SYSCF> syscfg_init,733] md_switch: 1, md_sensitivity: 60, md_region_left: 0, md_region_top: 0, md_region_right: 10000, md_region_bottom: 10000
+00:00:00.780 00 SYSCF> syscfg_init,754] mic_switch: 1, speaker_volume: 70, mic_volume: 70
+00:00:00.780 00 SYSCF> syscfg_init,776] rtsp_support: 1, rtsp_switch: 1, rtsp_port: 554, rtsp_switch: 0,
+00:00:00.780 00 SYSCF> syscfg_init,798] onvif_support: 1, onvif_switch: 0, onvif_port: 8899, onvif_auth: 1
+00:00:00.780 00 SYSCF> syscfg_init,877] log_level: 0xffff
+00:00:00.780 00 SYSCF> syscfg_init,882] power_freq: 60, alarm_sound_switch: 0, ir_mode: 0, tip_led_switch: 1, telnetd_switch: 60, alarm_interval_sec: 1, sd_capacity_multiply: 0
+00:00:00.780 00 SYSCF> syscfg_init,920] aging_time_hour: 2, aging_ptz: 1, aging_ircut: 1, aging_spk: 1, aging_led: 2
+00:00:00.781 00 SYSCF> syscfg_init,971] region: us
+00:00:00.781 00 SYSCF> syscfg_init,972] reg_url: https://sdc-isc-us.ajcloud.net/api/v1/cmd/register
+00:00:00.781 00 SYSCF> syscfg_init,973] gateway_url: https://cam-gw-isc-us.ajcloud.net/api
+00:00:00.781 00 SYSCF> syscfg_init,974] tunnel_url: wss://cam-tunnel-isc-us.ajcloud.net/tunnel/wssPingInterval-120
+00:00:00.782 00 SYSCF> syscfg_init,975] uac_url: https://uac-isc.ajcloud.net/api
+00:00:00.782 00 SYSCF> syscfg_init,976] cloudstore_url: https://cloud-stor-isc-us.ajcloud.net/api
+00:00:00.782 00 SYSCF> syscfg_init,977] emc_url: https://emc-isc-us.ajcloud.net/api
+00:00:00.782 00 SYSCF> syscfg_init,978] fwVersionCheck_url: https://fw-isc.ajcloud.net/api
+00:00:00.782 00 SYSCF> syscfg_init,979] p2psvrlist: 47.90.139.18,167.172.230.224,132.145.136.179
+00:00:00.782 00 SYSCF> syscfg_init,980] reg_interval: 517331
+00:00:00.782 00 SYSCF> syscfg_init,981] last_reg_time: 1693940545
+00:00:00.785 00 SYSCF> syscfg_init,999] platform_id: 0
+00:00:00.786 00 SYSCF> syscfg_init,1034] silence_switch: 0, silence_duration: 600, allday: 0
+00:00:00.786 00 SYSCF> syscfg_init,1081] local_rec_remain_size_mb: 500, local_rec_channel: 0, local_rec_mode: 1, local_rec_recover: 1, allday: 1
+00:00:00.786 00 SYSCF> syscfg_init,1084] cfg_local_rec.time_plan.week_polices[1].enable: 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[0] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[1] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[2] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[3] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[4] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[5] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1089] cfg_local_rec.week_polices[1].week_day[6] = 0
+00:00:00.786 00 SYSCF> syscfg_init,1094] cfg_local_rec.time_plan.week_polices[1].start_time: , time_plan.week_polices[1].end_time:
+00:00:00.786 00 SYSCF> syscfg_init,1097] cfg_local_rec.time_plan.week_polices[2].enable: 0, 00:00:00.786 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[0] = 0
+00:00:01.118 00 SYS[    8.217110] MOTOR_RESET, bTurn=0 max(3800,1200) cur(33554431,33554431)
+CF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[1] [    8.229983] MOTOR_RESET, bTurn=1 max(3800,1200) cur(1900,600)
+= 0
+00:00:01.118 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[2] = 0
+00:00:01.118 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[3] = 0
+00:00:01.118 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[4] = 0
+00:00:01.118 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[5] = 0
+00:00:01.118 00 SYSCF> syscfg_init,1101] cfg_local_rec.week_polices[2].week_day[6] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1106] cfg_local_rec.time_plan.week_polices[1].start_time: , time_plan.week_polices[1].end_time:
+00:00:01.119 00 SYSCF> syscfg_init,1119] push_media_type: 1
+00:00:01.119 00 SYSCF> syscfg_init,1143] cfg_push_plan.time_plan.week_polices[1].enable: 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[0] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[1] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[2] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[3] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[4] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[5] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1147] cfg_push_plan.week_polices[1].week_day[6] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1152] cfg_push_plan.time_plan.week_polices[1].start_time: , time_plan.week_polices[1].end_time:
+00:00:01.119 00 SYSCF> syscfg_init,1155] cfg_push_plan.time_plan.week_polices[2].enable: 0, 00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[0] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[1] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[2] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[3] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[4] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[5] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1159] cfg_md_plan.week_polices[2].week_day[6] = 0
+00:00:01.119 00 SYSCF> syscfg_init,1164] cfg_push_plan.time_plan.week_polices[1].start_time: , time_plan.week_polices[1].end_time:
+00:00:01.120 00 SYSCF> syscfg_init,1265] mv_track_switch: 0 mv_track_lost_reset_switch: 0
+00:00:01.120 00 SYSCF> syscfg_init,1268] white_light_night_mode_support: 0
+00:00:01.120 00 SYSCF> syscfg_init,1274] lang: en, play_waiting_tip: 0, fw_check_interval_sec: 14400, local_app_support: 1
+00:00:01.120 00 SYSCF> syscfg_init,1276] play_waiting_tip_duration_sec: 0
+00:00:01.120 00 SYSCF> syscfg_getAjyPlatformId,3339] g_global_cfg.cfg_ajy.cfg_common.platform_id: 0
+00:00:01.144 00 INITA> cert_decrpyt,1146] cert_path: /mnt/mtd/cert/pem
+00:00:01.145 11 COPTZ> loadPtzParam,174] ptz_h_init_pos=50.000 ptz_h_init_pos_step=1900
+00:00:01.145 11 COPTZ> loadPtzParam,187] ptz_v_init_pos=50.000 ptz_v_init_pos_step=600
+00:00:01.146 11 COPTZ> loadPtzParam,295] loadPtzParam ok.
+step_1_angle_h=12 step_1_angle_v=13 total:step_H=3800 ang_H=300 total:step_V=1200 ang_V=90  ptz_noise_support=2
+00:00:01.146 11 COPTZ> ptzrecvInit,102] sktFd=9
+00:00:01.158 11 COPTZ> ThreadPtzRecv,46] ----going----
+00:00:01.159 11 COPTZ> corePtz_turn,1204] last pos from file:(0,0), ret=-5
+00:00:01.287 09 CORAV> loadVideoParam,166] cSensorName=sc2336
+ 00:00:01.341 08 NIGHT> loadSoftPhotosensVal,95] day2night:exp=30000 night2day:exp=7500 wb_rgain=225 wb_bgain=225
+00:00:01.341 08 MTRAC> loadMTrackParam,106] mtrack_param:support=0 min_pixel=04 | sens=4 ivs_obj_min_width=10 ivs_obj_min_height=10 | timeout= 3s
+00:00:01.342 08 PERDE> loadPerDetParam,58] ai_person_det_support=0
+[    8.605059] -----sc2336_detect: 581 ret = 0, v = 0xcb
+[    8.610902] -----sc2336_detect: 589 ret = 0, v = 0x3a
+[    8.616179] sc2336 chip found @ 0x30 (i2c0)
+[    8.620515] sensor driver version H20210805a
+[    8.941265] sc2336 stream on
+---- FPGA board is ready ----
+  Board UID : 30AB6E51
+  Board HW ID : 72000460
+  Board rev.  : 5DE5A975
+  Board date  : 20190326
+-----------------------------
+00:00:01.927 08 CORAV> sample_sensorInit,265] ok
+00:00:01.928 08 CORAV> sample_encoder_init,320] g_sVideoChnConfig, ch=0 method=4 w=2304 h=1296
+00:00:01.928 08 CORAV> sample_encoder_init,387]  S_RC_METHOD=4, chnNum=0 frm_maxsize=917504(calcu) 393216(core.ini)
+00:00:01.937 08 CORAV> sample_encoder_init,320] g_sVideoChnConfig, ch=1 method=4 w=640 h=360
+00:00:01.937 08 CORAV> sample_encoder_init,387]  S_RC_METHOD=4, chnNum=1 frm_maxsize=349184(calcu) 115200(core.ini)
+00:00:03.006 08 OLogo> isCmpOsdFileSiz_wh,31] chn=0 nFileSiz=117[   10.077494] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+600, nSizCalcu=117600
+00:00:03.006 08 OLogo> isCmpOsdFileSiz_wh,31] chn=1 nFileSiz=16128, nSizCalcu=16128
+00:00:03.006 08 OLogo> osd_logoGenFileAndGet,159] nR=2 arrOsdFile[0]=/tmp/logo_osd_300x98_0_wansv_1296p.rgba 300X98
+00:00:03.006 08 CORAV> sample_createOsd,538] chn=0 PRIVACY_CHN_INDEX!=i (100,100)-(300,300)
+[   10.113713] ################# tisp_mscaler_mask_change, 1370, change=0
+00:00:03.007 08 CORAV> osd_rectZoominByRatio,418] privacy fRatio=3.600000 nDstCenter(720,720), w[   10.127756] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+Xh(720,720)
+00:00:03.020 08 CORAV> getOsdLogoData,65] /tmp/logo_osd_300x98_0_wansv_1296p.rgba nFileSize=117600
+00:00:03.021 08 CORAV> osd_logoInit,136] gs_prHanderLogo[0]=0
+00:00:03.021 08 CORAV> osd_timeInit,170] ----nOsdGrpNo=0 nChn=0
+00:00:03.021 08 CORAV> osd_timeInit,229] IMP_OSD_Start(nGrpNo=0)=0 nChn=0 rHanderTime=1
+00:00:03.022 08 CORAV> getOsdLogoData,65] /tmp/logo_osd_84x48_1_wansv_360p.rgba nFileSize=16128
+00:00:03.022 08 CORAV> osd_logoInit,136] gs_prHanderLogo[1]=2
+00:00:03.022 08 CORAV> osd_timeInit,170] ----nOsdGrpNo=1 nChn=1
+00:00:03.022 08 CORAV> osd_timeInit,229] IMP_OSD_Start(nGrpNo=1)=0 nChn=1 rHanderTime=3
+set jpeg streamMngCtx suceess
+00:00:03.054 09 CORAV> ThreadOsdTimeUpdate,270] ----going---- osd_second_width=8
+ 00:00:03.077 08 CORAV> sample_imageParamSet,1065] sample_imageParamSet, nLastValue=0 nRet=0
+00:00:03.077 00 INITA> av_init,1388] iChn: 0, nFPS: 15
+00:00:03.078 00 INITA> av_init,1391] iChn: 0, nWidth: 2304
+00:00:03.078 00 INITA> av_init,1394] iChn: 0, nHeight: 1296
+00:00:03.078 00 INITA> av_init,1388] iChn: 1, nFPS: 15
+00:00:03.078 00 INITA> av_init,1391] iChn: 1, nWidth: 640
+00:00:03.078 00 INITA> av_init,1394] iChn: 1, nHeight: 360
+00:00:03.078 08 CORAV> coreAV_videoStart,985] coreAV_videoStart pCb=(nil) pAVBufInstance=0xbb9ec8
+00:00:03.091 08 CORAV> coreAV_videoStart,1000] AVBUF_create video 0 is ok handleAVBUF_V0=0xbb9f18
+00:00:03.092 08 CORAV> coreAV_videoStart,1004] AVBUF_create video 1 is ok handleAVBUF_V1=0xbb9fa8
+00:00:03.092 08 CORAV> loadAudioParam,452] bAudioAecSupport=0
+00:00:03.092 08 CORAV> loadAudioParam,466] b_db_det_algo_support=0  default: sensi_level=2 time_sec=2
+00:00:03.092 08 CORAV> coreAV_micStart,1981] bMicSupport=1 coreAV_micStart pCb=(nil) pAVBufInstance=0xbb9ec8 ----semAudioEnc_USE
+00:00:03.093 08 CORAV> coreAV_micStart,2004] AVBUF_create mic audio is ok handleAVBUF_A0=0xc02f28 eAudioFormat=0x12
+00:00:03.093 10 CORAV> coreAV_micStart,2021] failed to AVBUF_create audio1
+ 00:00:03.093 08 CORAV> coreAV_micStart,2034] bNOTPcmFormat=1
+00:00:03.097 09 CORAV> ThreadASample,1879] ----going----
+ 00:00:03.097 08 CORAV> initASample,1687] bAudioAecSupport=0
+00:00:03.097 08 CORAV> sample_audioMICInit,1107] audioIn amplerate=8000, bitwidth=16 soundmode=1 frmNum=40 numPerFrm=320 chnCnt=1
+00:00:03.097 09 CORAV> ThreadVSampleData,964] ----going----
+ 00:00:03.192 08 CORAV> coreAV_micStart,2039] aacEnc_init(.)=0 sampleRate=8000 nSoundMode=1
+00:00:03.193 08 CORAV> coreAV_micStart,2059] g_hASampleThread=0x6a43e4f0 g_hAEncodeThread=0x69a964f0
+00:00:03.193 08 CORAU> audioPlay_init,189] audioOut g_bAoExitStatus=1
+00:00:03.193 08 CORAU> audioPlay_init,214] audioOut amplerate=8000, bitwidth=16 soundmode=1 frmNum=20 numPerFrm=320 chnCnt=1
+00:00:03.193 09 CORAV> ThreadAEncode,1767] ----going---- audioFormat[0,1]=0x12 0x00
+[   10.494429] codec_set_device: set device: speaker...
+ warn: shm_init,53shm init already
+00:00:03.429 09 COAAC> aacDec_init,192] codecid=0x15002
+ 00:00:03.429 08 COAAC> aacDec_init,198] bits_per_coded_sample:2
+00:00:03.450 08 COAAC> aacDec_init,211] gs_pComponent=0xc4bea8[   10.522795] ################# tisp_mscaler_mask_change, 1370, change=0
+
+E_AV_OSD_LOGO_SHOW, pValue=0x7fb89c8c
+E_AV_OSD_LOGO_SHOW, pValue=0x7fb89c8c
+00:00:03.451 02 INITA> av_init,1463] ai a[   10.539696] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+lgorithm 0x40 is not support
+ 00:00:03.451 02 IN[   10.553179] ################# tisp_mscaler_mask_change, 1370, change=0
+ITA> av_init,1463] ai algorithm 0x41 is not support
+ [   10.564842] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+00:00:03.451 02 INITA> av_init,1463] ai algorithm 0x42 is not support
+ 00:00:03.452 02 INITA> av_init,1463] ai algorithm 0x43 is not support
+ 00:00:03.452 02 INITA> av_init,1463] ai algorithm 0x44 is not support
+ 00:00:03.452 02 INITA> av_init,1463] ai algorithm 0x45 is not support
+ 00:00:03.468 09 CORAV> ThreadAPlay,2106] ----going----
+ 00:00:03.469 09 CORAU> ThreadAudioBeep,447] ----going----
+ 00:00:03.482 00 INITA> device_status_init,992] coreAV_videoSet E_AV_FLIP nRet: 0
+00:00:03.507 00 INITA> device_status_init,995] coreAV_videoSet E_AV_MIRROR nRet: 0
+00:00:03.507 00 INITA> set_speaker_volume,261] volume: 70
+00:00:03.507 00 INITA> set_mic_volume,280] volume: 70
+00:00:03.507 08 CORAV> objMDAreaSet,1233] set E_AV_MD_A[   10.644441] codec_set_device: set device: MIC...
+REAS before changing: app coordinate(10000,10000); (0,0) (10000,10000)
+00:00:03.507 08 CORAV> objMDAreaSet,1255] set E_AV_MD_AREAS: chn1=640X360  sMaArea[0]:bEnable=1 (0,32) (640,360)
+00:00:03.508 08 IVS> ivsMD_start,269] g_bMdRunning=0 sMaArea[0]:bEnable=1 (0,32) (640,360)
+00:00:03.508 08 IVS> ivsMD_create,147] ---ivs stParam.roiRect[0].p0,p1=[0, 32, 639, 359],[old_sense=2,sense=2]----
+00:00:03.508 08 IVS> ivsMD_create,151] ---ivs stParam.roiRectCnt=1 skipFrameCnt=5---- 640X360
+00:00:03.510 00 INITA> device_status_init,1017] coreAV_videoSet E_AV_MD_AREAS nRet: 0
+00:00:03.510 00 INITA> device_status_init,1040] coreAV_videoSet E_AV_POWER_HZ nRet: 0
+00:00:03.511 09 IVS> ThreadIVSMdResult,333] ----going---- coreUtil_notifySleepInit(.)=0
+ 00:00:03.554 09 NIGHT> ThreadNightVision,514] ----going---- ir_type=2 ir_mode=0, 5000 ms
+ 00:00:03.600 08 CORAV> sample_audioMICInit,1127] IMP_AI_GetChnParam(.), usrFrmDepth=40
+warn: shm_init,53shm init already
+00:00:03.634 08 CORAV> sample_audioMICInit,1157] nVol=70 nAIGain=28
+00:00:03.720 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_name=America/Detroit
+
+00:00:03.720 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_string=EST5EDT,M3.2.0,M11.1.0
+
+00:00:03.720 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_utc=UTC(-05:00)
+00:00:03.721 00 NTPSY> fNtp_readTzCfg,302] pTimeZoneInfo->szTzName: America/Detroit
+00:00:03.721 00 NTPSY> fNtp_readTzCfg,303] pTimeZoneInfo->szTzString: EST5EDT,M3.2.0,M11.1.0
+00:00:03.721 00 NTPSY> fNtp_readTzCfg,304] pTimeZoneInfo->szTzUtc: UTC(-05:00)
+00:00:03.745 00 LEDCL> fLed_init,112] .
+00:00:03.745 00 LEDCL> fLed_ledControl,365] nLedType: 0, eLedCtrlMode: 0
+00:00:03.746 00 LEDCL> fLed_ledControl,365] nLedType: 1, eLedCtrlMode: 0
+00:00:03.746 00 LEDCL> fLed_setLedSwitch,358] bOpen: 1
+00:00:03.746 00 LEDCL> fLed_setWorkStatus,254] E_WORK_STA_CONN_INTERNET
+00:00:03.746 00 LEDCL> fLed_ledControl,365] nLedType: 1, eLedCtrlMode: 3
+00:00:03.746 00 LEDCL> fLed_ledControl,365] nLedType: 0, eLedCtrlMode: 0
+00:00:03.835 08 CONET> loadNetIni,2357] net support:eth0=1 ra0=1 bStaticIpFlag=0 gs_cAp0GwIpv4=172.50.4.1
+00:00:03.835 08 CONET> loadNetIni,2359] net support: usb0_4g_valid_slot_type=2 4g_builtin_no=1
+00:00:03.920 08 CORAV> sample_audioMICInit,1170] ----enable USE_AUDIO_NS, NS_VERYHIGH---- ret=0
+00:00:03.967 08 CORAV> ThreadASample,1908] bNotPcm=1  audioFormat[0,1]=0x12,0x00
+00:00:03.967 11 CORAV> ptzNoiseWeaken_micSite,1856] ptz_turning... nPtzNoiseVol=20
+avcodec_receive_packet failed�-11
+00:00:03.967 08 CORAV> doAEncode,1730]     aacEnc_frame(.)=-5 nLenAfterEnc=2048
+00:00:03.971 08 CORAV> doAEncode,1723]     aacEnc_frame(.)=0 srcLen=2048 nDstLen=239
+00:00:04.554 00 INITA> callback_ir_mode,1203] nMode: 2, nIrType: 2
+00:00:04.836 08 CONET> LAN_hasAP0,512] =1
+00:00:04.836 00 COMMO> link_beep_audio,420] link_audio_file /var/syscfg/beep/lang/en
+00:00:04.837 08 CONET> ThreadNetEvent,250] ---- ThreadNetEvent is going...  g_bRuningNetEvent=1
+00:00:04.838 00 CLOUD> fCld_StartCloudStore,538]
+StorageServeInit
+00:00:04.839 00 RECTS> fRecord_init,591] .
+00:00:04.839 11 RTSPM> fMiniRtsp_Init,273]
+00:00:04.839 00 RTSPM> start_rtsp_srv,234] start_rtsp_srv
+00:00:04.840 11 CONET> ThreadCoreNet,1798] ---- ThreadCoreNet is going...  gs_bReset_coreNetInit=1
+00:00:04.845 00 RTSPM> rtsp_srv_thrd,173] Start listening RTSP connections ...
+00:00:04.846 00 CLOUD> fCld_ClearCloudCacheDir,747]
+00:00:04.847 00 CLOUD> fCld_ClearCloudMemCacheDir,726]
+00:00:04.847 00 SNAPU> SnapshotCheckThread,334]
+00:00:04.850 00 RECTS> clearRecordCacheDir,340]
+00:00:04.854 08 CONET> ThreadCoreNet,1817]  wpa_supplicant.conf exist=1
+00:00:04.887 02 RECOR> SdCheckThread,169] sdcard is not exist
+ 00:00:04.887 02 SDCAR> SendTfcardConfigRequest,614] not send, GetGatWayUrl error or internet is not ok
+ 00:00:04.887 02 RECOR> SdCheckThread,187] Exit
+ 00:00:04.940 08 MTRAC> coreMTrack_stop,523] gs_bRunningMTrack=0
+00:00:04.940 00 RTMP> fRTMP_Init,77] ajc_rtmp_init nRet: 0
+00:00:04.940 00 RTMP> init_av_param,50] ajc_rtmp_set_video_param nRet: 0
+00:00:04.940 00 RTMP> init_av_param,65] ajc_rtmp_set_audio_param nRet: 0
+killall: udhcpd: no process killed
+killall: hostapd: no process killed
+killall: udhcpc: no process killed
+killall: telnetd: no process killed
+00:00:05.038 00 CLOUD> fCld_ClearCloudSdCacheDir,737]
+killall: wpa_supplicant: no process killed
+[   14.825433] [atbm_log]:br0_netdev_open()-1199: dev_get_by_name(br0)
+[   14.999542] [atbm_log]:ieee80211_prep_hw_scan:n_chans(14),space(14),index(14),scaned(14)
+00:00:08.830 08 CONET> netReset,1377] over  eCurNetEvent=100
+[   16.230319] [atbm_log]:ra0:free authen bss ++
+[   16.274396] [atbm_log]:authen:(60:38:e0:db:bf:32),ssid(wanderlounge)
+[   16.400394] [atbm_log]:ra0: authenticated
+[   16.408367] [atbm_log]:ra0:free authen bss ++
+[   16.434413] [atbm_log]:ra0:free authen bss --
+[   16.459757] [atbm_log]:ra0: associated
+[   16.469630] [atbm_log]:[60:38:e0:db:bf:32]:20M channel
+[   16.477067] [atbm_log]:ieee80211_recalc_ps:work busy
+[   16.505115] [atbm_log]:ieee80211_recalc_ps:work busy
+00:00:10.834 09 CONET> ThreadCoreNet,2012] E_HW_EVENT_RA0_UP
+killall: udhcpc: no process killed
+ 00:00:11.065 09 CONET> ThreadCoreNet,2017] E_HW_EVENT_RA0_UP nRet=1 bStaticIpFlag=0 |
+ 00:00:11.066 00 NETCB> callback_networkStatus,189] nStatus = 5 , pName: ra0
+00:00:11.066 02 NETCB> callback_networkStatus,285] NET_ROUTE_FAILED
+ 00:00:11.317 11 CORAV> ptzNoiseWeaken_micSite,1860] 1 ptz_stop nMicVol_normal=61
+[   18.984378] [atbm_log]:ieee80211_wk_connecting: time out
+[   19.025801] [atbm_log]:wsm_set_pm:pmMode:129,fastPsmIdlePeriod:255,apPsmChangePeriod:0,minAutoPsPollPeriod:0
+00:00:13.069 08 CONET> ra0_stateLoop,1157] WPA_COMPLETED, util_isExist_udhcpc()=0 nCntKillUdhcpc=0,nCntExecUdhcpc=-1
+udhcpc: started, v1.35.0
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 192.168.81.133, server 192.168.81.1
+udhcpc: lease of 192.168.81.133 obtained from 192.168.81.1, lease time 43200
+bufDbg--v2 nChn=1, nBufferPacketNum=0156 nFPS=15 nBufferTime_ms=10400 rbuf nTotalSiz=0 count=156
+Setting IP address 192.168.81.133 on ra0
+[   22.413685] [atbm_log]:atbm_bss_info_changed 749 ,pmMode = 0
+[   22.419824] [atbm_log]:wsm_set_pm:pmMode:0,fastPsmIdlePeriod:255,apPsmChangePeriod:0,minAutoPsPollPeriod:0
+[   22.437050] [atbm_log]:atbm_bss_info_changed 760 : pmMode(0)
+Deleting routers
+route: SIOCDELRT: No such process
+Adding router 192.168.81.1
+Recreating /etc/resolv.conf
+ Adding DNS server 192.168.81.1
+00:00:16.075 08 CONET> ra0_stateLoop,1157] WPA_COMPLETED, util_isExist_udhcpc()=1 nCntKillUdhcpc=0,nCntExecUdhcpc=0
+00:00:16.076 00 NETCB> callback_networkStatus,189] nStatus = 12 , pName: ra0
+00:00:16.076 00 NETCB> callback_networkStatus,255] NET_ROUTE_OK
+00:00:16.076 00 DISCO> fun_StartDiscoverySvr,539]
+00:00:16.076 00 ONVIF> startOnvif,40]
+00:00:16.079 02 DISCO> CreateBroadcastSocket,109] setsockopt SO_BINDTODEVICE Failed errno:19
+ 00:00:16.579 00 NETCB> callback_networkStatus,189] nStatus = 13 , pName: ra0
+00:00:16.579 00 LEDCL> fLed_setWorkStatus,269] E_WORK_STA_CONN_SERVER
+00:00:16.579 00 LEDCL> fLed_ledControl,365] nLedType: 1, eLedCtrlMode: 2
+00:00:16.579 00 LEDCL> fLed_ledControl,365] nLedType: 0, eLedCtrlMode: 0
+00:00:16.579 00 NTPSY> fNtp_start,201] .
+00:00:17.079 00 DISCO> AJDiscoverSvrThread,456] Enter into  AjDiscover svr Thread
+bufDbg--v2 nChn=0, nBufferPacketNum=0217 nFPS=15 nBufferTime_ms=14466 rbuf nTotalSiz=0 count=217
+00:00:18.579 00 NTPSY> syncTime,64]
+00:00:18.580 00 HTPDA> getHTTPdate,130] httpsvr: htpdate.ajcloud.net
+00:00:18.727 00 BASEF> hy_set_systime_by_utc_time_t,1144] date -s '2023-09-06 16:34:09'
+Wed Sep  6 16:34:09 EDT 2023
+00:00:18.739 00 NTPSY> syncTime,70] htpdate nRet = 0
+00:00:18.739 00 NTPSY> timeSyncThread,164] NTP sync success
+00:00:18.739 00 NETCB> callback_ntpStatus,420] bSynced: 1 ---time[1694032449]
+00:00:18.739 00 P2PST> startP2P,171] SE_P2PSDK v03000401
+00:00:18.740 00 UPGRA> fw_check_init,181]
+00:00:18.741 00 WSSCL> wss_start,525]
+00:00:18.741 00 UPGRA> fw_check_thread,83] nFwCheckInterval : 14400
+00:00:18.741 00 P2PCO> ThreadRecvP2PMsg,1580] nMAX_USER_NUM=3
+00:00:18.742 00 P2PST> ThreadP2PListen,58] SN=WVCD36MJAWVWNG6B
+00:00:18.742 00 HTTPS> sendRegisterThread,232]
+00:00:18.743 00 WSSCL> InitWssContextInfo,221] chTunUrl:wss://cam-tunnel-isc-us.ajcloud.net/tunnel/wssPingInterval-120?deviceId=WVCD36MJAWVWNG6B&deviceMode=Y3C&vendorCode=WVC&fwVersion=01.10105.09.65&accessKey=8GZYlq34ONxgZBc6C0HWEJOsZH3d729Qc6xmDeqYpUg&prodName=Q5
+00:00:18.818 00 WSSCL> InitWssContextInfo,228] parse ads:wss
+00:00:18.818 00 WSSCL> InitWssContextInfo,229] parse address:cam-tunnel-isc-us.ajcloud.net
+00:00:18.818 00 WSSCL> InitWssContextInfo,230] parse port:443
+00:00:18.818 00 WSSCL> InitWssContextInfo,231] parse path:tunnel/wssPingInterval-120?deviceId=WVCD36MJAWVWNG6B&deviceMode=Y3C&vendorCode=WVC&fwVersion=01.10105.09.65&accessKey=8GZYlq34ONxgZBc6C0HWEJOsZH3d729Qc6xmDeqYpUg&prodName=Q5
+00:00:18.818 00 WSSCL> InitWssContextInfo,260] pConCrnInfo->ws_ping_pong_interval = 110
+[2023/09/06 16:34:09:0808] NOTICE:  Using SSL
+[2023/09/06 16:34:09:0811] NOTICE:  Cert must validate correctly (use -s to allow selfsigned)
+[2023/09/06 16:34:09:0812] NOTICE:  Requiring peer cert hostname matches
+[2023/09/06 16:34:09:0858] NOTICE: Creating Vhost 'default' (serving disabled), 1 protocols, IPv6 off
+[2023/09/06 16:34:09:1859] NOTICE: client loaded CA for verification /tmp/cert/ca.pem
+Call load crt file
+loca cert ret= 0
+[2023/09/06 16:34:09:1876] NOTICE: client loaded certificate /tmp/cert/cam.pem
+Call load key file
+loca cert ret= 0
+[2023/09/06 16:34:09:2469] NOTICE: client loaded private key /tmp/cert/cam_key.pem
+[2023/09/06 16:34:09:2470] NOTICE: created client ssl context for default
+00:00:18.985 00 WSSCL> WebSocketsThread,409] sCliConInfo.address = cam-tunnel-isc-us.ajcloud.net
+00:00:18.985 00 WSSCL> WebSocketsThread,412] sCliConInfo.path = /tunnel/wssPingInterval-120?deviceId=WVCD36MJAWVWNG6B&deviceMode=Y3C&vendorCode=WVC&fwVersion=01.10105.09.65&accessKey=8GZYlq34ONxgZBc6C0HWEJOsZH3d729Qc6xmDeqYpUg&prodName=Q5
+00:00:18.985 00 WSSCL> WebSocketsThread,415] sCliConInfo.host = cam-tunnel-isc-us.ajcloud.net
+00:00:18.985 00 WSSCL> WebSocketsThread,418] sCliConInfo.origin = cam-tunnel-isc-us.ajcloud.net
+00:00:18.985 00 WSSCL> WebSocketsThread,420] sCliConInfo.port = 443
+00:00:19.048 00 WSSCL> wss_setStatus,59] eWssStatus: 1
+00:00:19.743 00 HTTPS> SendNetworkConfigRequest,817] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+[2023/09/06 16:34:10:7181] NOTICE: LWS_CALLBACK_CLIENT_ESTABLISHED :0,0xd2e2a0
+00:00:20.456 00 WSSCM> processWssCmd,2020] wss connection established
+00:00:20.456 00 WSSCL> wss_setStatus,59] eWssStatus: 2
+00:00:20.456 00 WSSCM> sendConnReadyRequest,1981]
+00:00:20.457 00 ALIVE> HttpsKeepAliveCtrlFunc,951] create send_https_thd
+[2023/09/06 16:34:10:7191] NOTICE: Call Send conn ready command
+00:00:20.659 00 WSSCM> processWssCmd,2089] cmdString = action-control
+00:00:20.660 00 WSSCM> ResponseActionControlAck,120] Success
+00:00:20.660 00 WSSCM> processActionControlCmd,241] Action Control action: sync, n_args: 6
+00:00:20.660 00 WSSCM> StartActionCtrlThread,201]
+00:00:20.660 00 WSSCM> ProcessActionControlThread,146]
+00:00:20.660 00 WSSCM> ProcessActionControlThread,153] Action Control action 0  capability
+00:00:20.660 02 WSSCM> ProcessActionControlThread,160] recv capability, do not handle
+ 00:00:20.761 00 WSSCM> processWssCmd,2089] cmdString = conn-ready
+00:00:20.761 00 WSSCM> processConnReadyAck,380]
+00:00:20.761 00 WSSCL> wss_setStatus,59] eWssStatus: 3
+00:00:20.761 00 LEDCL> fLed_setWorkStatus,284] E_WORK_STA_CONN_OK
+00:00:20.761 00 LEDCL> fLed_ledControl,365] nLedType: 1, eLedCtrlMode: 1
+00:00:20.761 00 LEDCL> fLed_ledControl,365] nLedType: 0, eLedCtrlMode: 0
+00:00:20.761 00 ALIVE> HttpsSyncConfigs,1026] sync all configs
+00:00:20.761 00 ALIVE> HttpsKeepAliveCtrlFunc,954] send signal to send_https_thd
+00:00:20.807 08 CONET> coreNetGet,3503] coreNetGet(.)=0: last g_eNetTypeCurr=2, eNetTypeCurr=2
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,527] nettype = 2
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,528] cIpAddr = 192.168.81.133
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,529] cMask = 255.255.255.0
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,530] cGateWay = 192.168.81.1
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,573] dns_servers: 192.168.81.1,8.8.8.8
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,586] ip_config_mode: auto
+ssid=|wanderlounge|
+00:00:20.808 00 GEN_P> GenNetworkConfigReqInfo,603] ssid: wanderlounge, len: 12
+00:00:20.852 00 HTTPS> SendResourceRequest,990] eCloudStore :2
+00:00:20.852 00 HTTPS> SendResourceRequest,991] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+00:00:20.860 00 WSSCM> ProcessActionControlThread,153] Action Control action 1  local-account-notify
+00:00:20.860 00 LOCAL> sendLocalAccountNotify,323] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+00:00:21.742 00 UPGRA> sendFwversionCheck,324] chFwCheckUrl:https://fw-isc.ajcloud.net/api/v1/cmd/fwversion-check
+00:00:21.742 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_name=America/Detroit
+
+00:00:21.743 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_string=EST5EDT,M3.2.0,M11.1.0
+
+00:00:21.743 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_utc=UTC(-05:00)
+00:00:21.743 00 NTPSY> fNtp_readTzCfg,302] pTimeZoneInfo->szTzName: America/Detroit
+00:00:21.743 00 NTPSY> fNtp_readTzCfg,303] pTimeZoneInfo->szTzString: EST5EDT,M3.2.0,M11.1.0
+00:00:21.743 00 NTPSY> fNtp_readTzCfg,304] pTimeZoneInfo->szTzUtc: UTC(-05:00)
+00:00:21.810 00 GEN_P> GenNetworkConfigReqInfo,628] pNetworkConfigReq->wifi_rssi=-22, wifi_signal = 90
+00:00:22.743 00 UPGRA> GenFwversionCheckReqInfo,204] mac is:WIFI:38:BE:AB:11:30:1B,Eth:@8,Old FwVersion:01.10105.09.65 , tz_name:America/Detroit
+00:00:23.193 00 LOCAL> LocalAccountNotifyResponse,305] Response Ret =0
+00:00:23.194 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/local-account-notify funcRet = 0
+00:00:23.228 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/resource-request funcRet = 0
+00:00:23.396 00 WSSCM> ProcessActionControlThread,153] Action Control action 2  network-config
+00:00:23.396 00 HTTPS> SendNetworkConfigRequest,817] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+00:00:23.846 00 HTTPS> NetworkConfigResponse,770] Ret =0
+00:00:23.846 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/network-config funcRet = 0
+00:00:24.397 08 CONET> coreNetGet,3503] coreNetGet(.)=0: last g_eNetTypeCurr=2, eNetTypeCurr=2
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,527] nettype = 2
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,528] cIpAddr = 192.168.81.133
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,529] cMask = 255.255.255.0
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,530] cGateWay = 192.168.81.1
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,573] dns_servers: 192.168.81.1,8.8.8.8
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,586] ip_config_mode: auto
+ssid=|wanderlounge|
+00:00:24.397 00 GEN_P> GenNetworkConfigReqInfo,603] ssid: wanderlounge, len: 12
+00:00:24.726 00 UPGRA> checkFwversionResponse,290] download_url:http://fw.ajcloud.net/01.10105/7o1fvvfAgnSpe4ajTT5szJ_ota_firmware_01.10105.10.16.pkg, version:01.10105.10.16
+00:00:24.726 00 BASEF> checkVersion,1214] new_version: 01.10105.10.16, GetFwVersion(): 01.10105.09.65
+00:00:24.726 00 BASEF> checkVersion,1228] pass
+00:00:24.726 02 UPGRA> checkFwversionResponse,297] new ota version found, new version: 01.10105.10.16, cur version: 01.10105.09.65
+ 00:00:24.726 00 CURLH> SendHttpsRequestToSvr,193] send https://fw-isc.ajcloud.net/api/v1/cmd/fwversion-check funcRet = 0
+00:00:24.727 00 UPGRA> sendFwversionCheck,350] g_bNotifyNewFwVersion :1
+00:00:24.727 00 UPGRA> sendNewFwversionNotify,151]
+00:00:25.398 00 GEN_P> GenNetworkConfigReqInfo,628] pNetworkConfigReq->wifi_rssi=-21, wifi_signal = 90
+00:00:25.591 00 ALIVE> HttpsKeepAliveFunc,840] handle KEEP_ALIVE_REQ_TYPE_CAPABILITY start
+00:00:25.592 00 ALIVE> CreateCapabilityRequest,636] index: 0, [qualities:1:SD,6:2K]
+00:00:25.944 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/new-fwversion-notify funcRet = 0
+00:00:26.592 00 ALIVE> CreateCapabilityRequest,636] index: 1, [networkConfig:qr]
+00:00:26.592 00 ALIVE> CreateCapabilityRequest,636] index: 2, [onvif:1]
+00:00:26.592 00 ALIVE> CreateCapabilityRequest,636] index: 3, [ptz:1]
+00:00:26.592 00 ALIVE> CreateCapabilityRequest,636] index: 4, [autoTrack:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 5, [pirDetect:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 6, [voiceDetect:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 7, [duplexVoice:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 8, [localStorageTypes:tf]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 9, [battery:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 10, [encryptMode:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 11, [diagnose:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 12, [hibernate:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 13, [indicatorLightCtl:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 14, [opticalZoom:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 15, [mic:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 16, [speaker:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 17, [wlanOnlineSet:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 18, [variFocus:0]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 19, [privLiveStream:1]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 20, [cloudStorageModes:b2,oss]
+00:00:26.593 00 ALIVE> CreateCapabilityRequest,636] index: 21, [newtz:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 22, [pelco:0]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 23, [localStorRmt:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 24, [detectEnhance:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 25, [localRtsp:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 26, [rtmp:0]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 27, [manualNightVersion:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 28, [floodlight:0]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 29, [siren:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 30, [genAlarmThumb:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 31, [floodlightBrightCtrl:0]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 32, [privateBase:1]
+00:00:26.594 00 ALIVE> CreateCapabilityRequest,636] index: 33, [localStorFullDay:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 34, [cloudStorFullDay:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 35, [rtmpStopBySession:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 36, [feeding:0]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 37, [nightVisionColorCtrl:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 38, [floodlightNightMode:0]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 39, [staticLocalIp:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 40, [floodlightTiming:1]
+00:00:26.595 00 ALIVE> CreateCapabilityRequest,636] index: 41, [floodlightDual:0]
+00:00:26.596 00 ALIVE> CreateCapabilityRequest,636] index: 42, [dualLens:0]
+00:00:26.596 00 ALIVE> CreateCapabilityRequest,636] index: 43, [dualLensZoomVerge:0.0]
+00:00:26.596 00 ALIVE> CreateCapabilityRequest,636] index: 44, [osdCtrl:1]
+00:00:26.596 00 ALIVE> CreateCapabilityRequest,636] index: 45, [sims:0]
+00:00:26.597 00 ALIVE> CreateCapabilityRequest,636] index: 46, [simsCtrl:0]
+00:00:26.597 00 ALIVE> CreateCapabilityRequest,636] index: 47, [alarmMediaTypes:image,video]
+00:00:26.597 00 ALIVE> CreateCapabilityRequest,636] index: 48, [insideCognitiveTypes:]
+00:00:26.604 00 HTTPS> NetworkConfigResponse,770] Ret =0
+00:00:26.605 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/network-config funcRet = 0
+00:00:26.807 00 WSSCM> ProcessActionControlThread,153] Action Control action 3  stream-config
+00:00:26.807 00 HTTPS> SendStreamConfigRequest,789] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+00:00:26.807 08 CONET> coreNetGet,3503] coreNetGet(.)=0: last g_eNetTypeCurr=2, eNetTypeCurr=2
+00:00:28.440 00 ALIVE> RptCapabilityResponse,715] resp ret_code = 0
+00:00:28.441 00 ALIVE> HttpsKeepAliveFunc,855] handle KEEP_ALIVE_REQ_TYPE_SYNC_CONFIG start
+00:00:28.485 00 WSSCM> processWssCmd,2089] cmdString = time-config
+00:00:28.485 00 DEVMG> processTimeConfig,393] .
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_name=America/Detroit
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_string=EST5EDT,M3.2.0,M11.1.0
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,260] cReadLine = tz_utc=UTC(-05:00)
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,302] pTimeZoneInfo->szTzName: America/Detroit
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,303] pTimeZoneInfo->szTzString: EST5EDT,M3.2.0,M11.1.0
+00:00:28.486 00 NTPSY> fNtp_readTzCfg,304] pTimeZoneInfo->szTzUtc: UTC(-05:00)
+00:00:28.486 00 DEVMG> RequesetSetTimeConfig,349] tzstring:EST5EDT,M3.2.0,M11.1.0,request set:EST5EDT,M3.2.0,M11.1.0 22,22
+00:00:28.486 00 DEVMG> RequesetSetTimeConfig,350] szTzName:America/Detroit,request set:America/Detroit 15,15
+00:00:28.486 00 DEVMG> RequesetSetTimeConfig,354] Is same tzstring:EST5EDT,M3.2.0,M11.1.0,EST5EDT,M3.2.0,M11.1.0
+00:00:28.539 00 WSSCM> processWssCmd,2089] cmdString = local-stor-config
+00:00:28.554 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/stream-config funcRet = 0
+00:00:28.559 00 AVSTO> processLocalStorConfig,377] local store enable, trigger_mode: 0
+00:00:28.578 00 AVSTO> processLocalStorConfig,404] local config:0,1,000000,235959
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:0,1
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:1,2
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:2,3
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:3,4
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:4,5
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:5,6
+00:00:28.578 00 AVSTO> processLocalStorConfig,411] week days:6,7
+00:00:28.578 00 AVSTO> processLocalStorConfig,404] local config:1,0,,
+00:00:28.578 00 AVSTO> processLocalStorConfig,404] local config:2,0,,
+00:00:28.644 00 WSSCM> processWssCmd,2089] cmdString = cloud-stor-config
+00:00:28.644 00 AVSTO> SetCloudConfig,98] rec_mode:0, n_policies:3, rec_channel: 0, expire_at:0
+00:00:28.644 00 AVSTO> SetCloudConfig,105] n_policies:0, enable:0, start_time:000000, end_time:235959
+00:00:28.644 00 AVSTO> SetCloudConfig,123] week days:0, 1
+00:00:28.644 00 AVSTO> SetCloudConfig,123] week days:1, 2
+00:00:28.644 00 AVSTO> SetCloudConfig,123] week days:2, 3
+00:00:28.645 00 AVSTO> SetCloudConfig,123] week days:3, 4
+00:00:28.645 00 AVSTO> SetCloudConfig,123] week days:4, 5
+00:00:28.645 00 AVSTO> SetCloudConfig,123] week days:5, 6
+00:00:28.645 00 AVSTO> SetCloudConfig,123] week days:6, 7
+00:00:28.645 00 AVSTO> SetCloudConfig,126] week days = 7
+00:00:28.645 00 AVSTO> SetCloudConfig,105] n_policies:1, enable:0, start_time:, end_time:
+00:00:28.645 00 AVSTO> SetCloudConfig,126] week days = 0
+00:00:28.645 00 AVSTO> SetCloudConfig,105] n_policies:2, enable:0, start_time:, end_time:
+00:00:28.645 00 AVSTO> SetCloudConfig,126] week days = 0
+00:00:28.645 00 CLOUD> fCld_RequestCloudStoreResouce,62]
+00:00:28.701 00 WSSCM> processWssCmd,2089] cmdString = move-monitor-config
+00:00:28.701 00 WSSCM> processMoveMonitorConfigCmd,442] .
+00:00:28.754 00 WSSCM> ProcessActionControlThread,153] Action Control action 4  live-policy
+00:00:28.755 00 HTTPS> SendLivePolicyRequest,959] chGateWayUrl = 'https://cam-gw-isc-us.ajcloud.net/api'
+00:00:28.760 00 AVSTO> SetMoveMonitorConfig,165] enable:0, n_policies:3, susceptiveness:60:, thumb:0, media_type:1
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,175] i:0, enable:0, start_time:000000, end_time:235959
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:0, 1
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:1, 2
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:2, 3
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:3, 4
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:4, 5
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:5, 6
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,194] week days:6, 7
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,175] i:1, enable:0, start_time:, end_time:
+00:00:28.761 00 AVSTO> SetMoveMonitorConfig,175] i:2, enable:0, start_time:, end_time:
+00:00:28.780 00 ALARM> fCld_RequestAlarmStoreResouce,64]
+00:00:28.825 00 WSSCM> processWssCmd,2089] cmdString = detections-config
+00:00:28.825 00 WSSCM> processDetectionsConfig,499]
+00:00:28.825 00 AVSTO> SetDetectionsConfig,224] susceptiveness: 60
+00:00:28.847 00 AVSTO> SetDetectionsConfig,235] areas[0]: 0,0,10000,10000
+00:00:28.847 00 AVSTO> SetDetectionsConfig,249] nLeft: 0, nTop: 0, nRight: 10000, nBottom: 10000
+00:00:28.874 08 CORAV> objMDAreaSet,1233] set E_AV_MD_AREAS before changing: app coordinate(10000,10000); (0,0) (10000,10000)
+00:00:28.874 08 CORAV> objMDAreaSet,1255] set E_AV_MD_AREAS: chn1=640X360  sMaArea[0]:bEnable=1 (0,32) (640,360)
+00:00:28.874 08 IVS> ivsMD_start,269] g_bMdRunning=1 sMaArea[0]:bEnable=1 (0,32) (640,360)
+00:00:28.874 08 IVS> ivsMD_chgAreas,235] ---ivs stParam.roiRect[0].p0.x p0.y p0.x p0.y=[0, 32, 639, 359][ses:2,nses:2]---
+00:00:28.874 08 IVS> ivsMD_chgAreas,239] --ivs stParam.roiRectCnt=1,skipFrameCnt=5 wXh=640X360---
+00:00:28.875 00 AVSTO> SetDetectionsConfig,264] coreAV_videoSet E_AV_MD_AREAS nRet: 0
+00:00:28.916 00 WSSCM> processWssCmd,2089] cmdString = audio-config
+00:00:28.916 00 AUDIO> processAudioConfig,101] audio config Mic Enable:1,Vol:70
+00:00:28.978 00 INITA> set_speaker_volume,261] volume: 70
+00:00:28.978 00 INITA> set_mic_volume,280] volume: 70
+00:00:28.978 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("night-vision-config") is not support
+00:00:29.016 00 WSSCM> processWssCmd,2089] cmdString =[   36.087342] ################# tisp_mscaler_mask_change, 1370, change=0
+ orientation-config
+00:00:29.016 00 IMAGE> processOrientationConfig,183] pOrientationConfig->orientation_value = 0
+00:00:29.016 00 IMAGE> processOrientationConfig,214] bFlip: 0, bMirror: 0
+[   36.113441] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+[   36.123951] [atbm_log]:atbm_sdio_irq_period:Miss
+00:00:29.081 00 IMAGE> processOrientationConfig,217] coreAV_vide[   36.151554] ################# tisp_mscaler_mask_change, 1370, change=0
+oSet E_AV_FLIP nRet: 0
+[   36.177133] ################# tisp_mscaler_mask_setreg, 1487: left=360, top=360
+00:00:29.125 00 IMAGE> processOrientationConfig,220] coreAV_videoSet E_AV_MIRROR nRet: 0
+[   36.224418] [atbm_log]:atbm_sdio_irq_period:Miss
+00:00:29.162 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("feed-timing-config") is not support
+ 00:00:29.200 00 WSSCM> processWssCmd,2089] cmdString = susceptiveness-config
+00:00:29.200 00 DEVMG> processSusceptivenessConfig,262] .
+00:00:29.200 00 DEVMG> processSusceptivenessConfig,272] md susceptiveness: 60
+00:00:29.261 00 WSSCM> processWssCmd,2089] cmdString = lighting-freq-config
+00:00:29.300 00 WSSCM> processWssCmd,2089] cmdString = indicator-light-config
+00:00:29.300 00 DEVMG> processIndicatorLightConfig,462]  enable = 1
+00:00:29.330 00 LEDCL> fLed_setLedSwitch,358] bOpen: 1
+00:00:29.331 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("floodlight-config") is not support
+ 00:00:29.368 00 WSSCM> processWssCmd,2089] cmdString = onvif-config
+00:00:29.403 00 WSSCM> processWssCmd,2089] cmdString = rtsp-config
+00:00:29.403 00 LOCAL> processRtspConfig,593] nNewRtspPort: 554 nOldRtspPort: 554
+00:00:29.403 00 LOCAL> processRtspConfig,594] bNewEnable: 1 bOldEnable: 1
+00:00:29.403 00 LOCAL> processRtspConfig,595] bNewAuth: 1 bOldAuth: 1
+00:00:29.444 00 WSSCM> processWssCmd,2089] cmdString = siren-config
+00:00:29.444 00 WSSCM> processSirenConfig,1098] pSirenConfigRequest->auto_policy->enable = 0
+00:00:29.515 00 WSSCM> processWssCmd,2089] cmdString = auto-hibernate-config
+00:00:29.614 00 WSSCM> processWssCmd,2089] cmdString = private-region-config
+00:00:29.656 00 WSSCM> processWssCmd,2089] cmdString = local-account-config
+00:00:29.675 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("track-config") is not support
+00:00:29.714 00 WSSCM> processWssCmd,2089] cmdString = osd-config
+00:00:29.714 00 WSSCM> processOsdConfig,1536] logo_show: 1, datetime_show: 1, logo_url: default, datetime_style: yyyy-MM-dd HH:mm:ss
+E_AV_OSD_LOGO_SHOW, pValue=0x58795994
+E_AV_OSD_LOGO_SHOW, pValue=0x58795994
+00:00:29.766 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("inside-cognitive-lic") is not support
+00:00:29.766 02 ALIVE> HttpsKeepAliveSyncConfigHandle,187] config("inside-cognitive-config") is not support
+00:00:29.766 00 ALIVE> HttpsKeepAliveFunc,871] config("time-config") status: sync success
+00:00:29.766 00 ALIVE> HttpsKeepAliveFunc,871] config("local-stor-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("cloud-stor-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("move-monitor-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("detections-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("audio-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("night-vision-config") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("orientation-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("feed-timing-config") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("susceptiveness-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("lighting-freq-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("indicator-light-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("floodlight-config") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("onvif-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("rtsp-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("siren-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("auto-hibernate-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("private-region-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("local-account-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("track-config") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("osd-config") status: sync success
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("inside-cognitive-lic") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,871] config("inside-cognitive-config") status: not support
+00:00:29.767 00 ALIVE> HttpsKeepAliveFunc,814] https keep alive wait request
+00:00:30.053 00 HTTPS> LivePolicyResponse,941] Ret =0
+00:00:30.054 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/live-policy funcRet = 0
+00:00:30.255 00 WSSCM> ProcessActionControlThread,153] Action Control action 5  tfcard-config
+00:00:30.256 00 SDCAR> GenTfcardConfigReqInfo,505] real nSdToltalMbytes: 0, nSdFreeMbytes: 0 sTfcardConfigReq->status: 1
+00:00:31.268 00 CURLH> SendHttpsRequestToSvr,193] send https://cam-gw-isc-us.ajcloud.net/api/v1/cmd/tfcard-config funcRet = 0
+
+Ingenic-uc1_1 login: root
+Password:
+
+Sep  6 16:34:36 login[67]: root login on 'console'
+[root@Ingenic-uc1_1:~]# ps w
+  PID USER       VSZ STAT COMMAND
+    1 root      1716 S    {linuxrc} init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [ksoftirqd/0]
+    4 root         0 SW   [kworker/0:0]
+    5 root         0 SW<  [kworker/0:0H]
+    6 root         0 SW   [kworker/u2:0]
+    7 root         0 SW   [rcu_preempt]
+    8 root         0 SW   [rcu_bh]
+    9 root         0 SW   [rcu_sched]
+   10 root         0 SW   [watchdog/0]
+   11 root         0 SW<  [khelper]
+   12 root         0 SW<  [writeback]
+   13 root         0 SW<  [bioset]
+   14 root         0 SW<  [kblockd]
+   15 root         0 SW   [khubd]
+   16 root         0 SW   [kworker/0:1]
+   17 root         0 SW<  [cfg80211]
+   18 root         0 SW   [kswapd0]
+   19 root         0 SW   [fsnotify_mark]
+   20 root         0 SW<  [crypto]
+   34 root         0 SW<  [deferwq]
+   35 root         0 SW   [kworker/u2:1]
+   36 root         0 SW<  [kworker/0:1H]
+   37 root         0 SW   [kworker/0:2]
+   38 root         0 SW   [kworker/0:3]
+   65 root         0 SWN  [jffs2_gcd_mtd4]
+   67 root      1716 S    -sh
+   91 root         0 SW   [kworker/u2:2]
+   94 root         0 SW<  [phy0-atbm_wq]
+   95 root         0 SW   [phy0-atbm_bh]
+   96 root         0 SW   [phy0-sdio_tx]
+   97 root         0 SW   [phy0-sdio_rx]
+   98 root         0 SW   [ksdioirqd/mmc1]
+  118 root      1264 S    /bin/shellcmdD
+  119 root      9464 S    /bin/shellcmdD
+  135 root         0 SW   [irq/37-isp-m0]
+  137 root         0 SW   [irq/38-isp-w02]
+  166 root      1704 S    {boa.sh} /bin/sh /mnt/mtd/bin/boa.sh
+  167 root      1708 S    {daemon.sh} /bin/sh /mnt/mtd/bin/daemon.sh
+  168 root      538m S    {main} /mnt/mtd/bin/initApp
+  169 root      1060 S    /mnt/mtd/bin/boa
+  184 root         0 DW   [isp_fw_process]
+  261 root      3640 S    /gm/bin/wpa_supplicant -Dnl80211 -ira0 -c /var/syscfg/config/wpa_supplicant.conf -P /tmp/wpa.pid -B
+  289 root      1716 S    /sbin/udhcpc -a -b -R -i ra0 -x hostname:HHIPC -p /tmp/udhcpc.pid
+  316 root      1708 R    ps w
+[root@Ingenic-uc1_1:~]# 00:00:50.314 00 INITA> callback_md_alarm,963] nAreaNum: 1
