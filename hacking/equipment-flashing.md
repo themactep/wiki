@@ -5,7 +5,7 @@ Equipment for flashing
 
 While some hardened technicians would insist on getting things done
 with a grandfather's kilowatt soldering iron, we suggest that you buy
-a modern [soldering station with a hot air](https://www.aliexpress.com/premium/soldering-station-hot-air.html)
+a modern [soldering station with a hot air][1]
 and temperature control. You don't need to be fancy, an entry level
 soldering station like YIHUA 882D, or JCD 8898, or YOUYUE 8586 would
 do, and it won't break the bank with its price tag of $50-70, more 
@@ -16,15 +16,15 @@ or less.
 ![](../images/equipment-youyue8586.webp)
 
 Throw in a silicone mat, a tube of no-clean flux, a can of solder paste,
-de-soldering copper wick, ceramic tweezers, nonwoven swabs and a bottle
+de-soldering copper wick, ceramic tweezers, non-woven swabs and a bottle
 of isopropyl alcohol. Many of these things can be already included as
 perks with the soldering station.
 
 ### A programmer for flashing memory chips.
 
 Again, some would say that you need a multi-thousand-dollar branded
- programmer, but in real life the [cheapest CH341A USB programmer](https://www.aliexpress.com/w/wholesale-ch341a-programmer.html)
-works like a charm, especially after you [fix the voltage bug][1].
+programmer, but in real life the cheapest [CH341A USB programmer][2]
+works like a charm, especially after you [fix the voltage bug](ch341a-voltage-fix.md).
 
 ![](../images/equipment-ch341a.webp)
 
@@ -33,14 +33,17 @@ problem has already been fixed in design.
 
 ![](../images/equipment-ch341a-v17.webp)
 
-Add a [SOP8 208mil to DIP8 socket adapter](https://www.aliexpress.com/w/wholesale-SOP8-208mil-to-DIP8-socket-adapter.html).
+Add a [SOP8 208mil to DIP8 socket adapter][3].
 
 ![](../images/equipment-sop8-200mil.webp)
 
-Also, it's a good idea to have a bunch of spare [flash memory chips](https://www.aliexpress.com/w/wholesale-25Q128-SOP8.html).
+Also, it's a good idea to have a bunch of spare [flash memory chips][4].
 
 ![](../images/hardware-w25q64fwsig.webp)
 ![](../images/hardware-w25q128jvsq.webp)
 
 
-[1]: hardware/hardware-programmer-ch341a-voltage-fix.md
+[1]: https://www.aliexpress.com/premium/soldering-station-hot-air.html
+[2]: https://www.aliexpress.com/w/wholesale-ch341a-programmer.html
+[3]: https://www.aliexpress.com/w/wholesale-SOP8-208mil-to-DIP8-socket-adapter.html
+[4]: https://www.aliexpress.com/w/wholesale-25Q128-SOP8.html
