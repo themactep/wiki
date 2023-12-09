@@ -6,7 +6,7 @@ Wyze Pan Cam V1 / Xiaomi Dafang
 - IC IC: 24984WYZECP1
 - SoC: Ingenic T20X
 - Sensor: JX-F22
-- Flash: cFeon 25QH128A  
+- Flash: cFeon 25QH128A
 - WiFi: RTL8189FTV or RTL8189ETV (8189es)
 
 ### Specs
@@ -23,6 +23,17 @@ Wyze Pan Cam V1 / Xiaomi Dafang
 - Power Supply: 5V DC 2A
 - Dimensions: 127.5 x 60 x 60 mm
 - Weight: 249 g
+
+### Teardown
+
+![](pix/wyzecp1/img_20231203_115432.webp)
+![](pix/wyzecp1/img_20231203_115505.webp)
+![](pix/wyzecp1/img_20231203_115646.webp)
+![](pix/wyzecp1/img_20231203_115720.webp)
+![](pix/wyzecp1/img_20231203_115820.webp)
+![](pix/wyzecp1/img_20231203_115949.webp)
+![](pix/wyzecp1/img_20231203_120206.webp)
+![](pix/wyzecp1/img_20231203_120320.webp)
 
 ### UART
 
@@ -158,7 +169,7 @@ SF: 2621440 bytes @ 0x40000 Read: OK
    Entry Point:  803f7280
    Verifying Checksum ... OK
    Uncompressing Kernel Image ... OK
-   
+
 Starting kernel ...
 ```
 ```
@@ -434,7 +445,7 @@ sleep   - delay execution for some time
 source  - run script from memory
 version - print monitor, compiler and linker version
 
-isvp_t20# printenv 
+isvp_t20# printenv
 baudrate=115200
 bootargs=console=ttyS1,115200n8 mem=104M@0x0 ispmem=8M@0x6800000 rmem=16M@0x7000000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),2048k(kernel),3392k(root),640k(driver),4736k(appfs),2048k(backupk),640k(backupd),2048k(backupa),256k(config),256k(para),-(flag)
 bootcmd=sdupdate;sf probe;sf read 0x80600000 0x40000 0x280000; bootm 0x80600000
