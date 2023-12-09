@@ -1,4 +1,4 @@
-Wyze Pan Cam V1 / Xiaomi Dafang
+Wyze Cam Pan V1 / Xiaomi Dafang
 -------------------------------
 
 - Model: WYZECP1
