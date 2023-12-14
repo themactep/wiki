@@ -1562,5 +1562,50 @@ Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetBcshHue: symbol n
 Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetDPC_Strength: symbol not found
 ```
 
-2. ISP info is different from T31 
-4. Motors control
+### ISP info is different from T31 
+
+### Motors control
+
+### Audio speaker
+
+Majestic cannot initialize the audio speaker with GPIO pin 63.
+
+__majestic__
+```
+02:26:40  <       majestic> [    main] main@190                      Majestic Lite for Ingenic, version master+d991f86, built on 2023-12-12
+02:26:40  <       majestic> [app_conf] load_config@106               Using /etc/majestic.yaml as main configuration
+02:26:40  <       majestic> [app_conf] parse_app_config@310          Main audio codec is ulaw (other options: opus, aac, pcm, alaw)
+02:26:40  <       majestic> [   httpd] new_http_server@371           HTTP server started on :::80
+02:26:40  <       majestic> [app_conf] load_config@106               Using /etc/majestic.yaml as main configuration
+02:26:40  <       majestic> [app_conf] parse_app_config@310          Main audio codec is ulaw (other options: opus, aac, pcm, alaw)
+02:26:40  <       majestic> [sns_conf] try_sensor_config@13          SENSOR=jxf22
+02:26:40  <       majestic> [sns_conf] load_sensor_config@44         Using /etc/sensor/jxf22.yaml as sensor config
+02:26:40  <       majestic> [sns_conf] parse_sensor_config@125       VI: jxf22 @ 0x40 [1920x1080]
+02:26:40  <       majestic> [     sdk] start_sdk@1261                CPU T20, SDK SYSUTILS-3.12.0, model bull, devID 
+02:26:41  <       majestic> [     sdk] imp_system_init@446           ImpSystemInit success
+i264e[info]: profile High, level 4.0
+02:26:41  <       majestic> [     sdk] start_sdk@1426                [0] H.264 1920x1080 25fps 4096Kbit [VB:1]
+02:26:42  <       majestic> [   audio] init_audio_in@173             Audio initialized
+02:26:42  <       majestic> [    gpio] setup_gpio@91                 Cannot switch GPIO direction 63
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(63, 0)
+02:26:42  <       majestic> [    gpio] set_gpio@30                   set_gpio(63, 0) error
+02:26:42  <       majestic> [     log] printf@268                    [chn0] scaler->outwidth = 1920 scaler->outheight = 1080, sscaler.outwidth = 0 sscaler.outheight = 0
+02:26:42  <       majestic> [     sdk] start_sdk@1534                Ingenic SDK started
+02:26:42  <       majestic> [    rtsp] rtsp_init@31                  RTSP server started on port 554
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(49, 0)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 1)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 0)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 0)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 1)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 0)
+02:26:42  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 0)
+02:26:55  <       majestic> [  levent] signal_hup_cb@61              Signal is not supported on this platform
+^C
+02:26:58  <       majestic> [     log] printf@268                    Interrupt signal received
+02:26:58  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 0)
+02:26:58  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 0)
+02:26:58  <       majestic> [    gpio] set_gpio@25                   set_gpio(49, 0)
+i264e[info]: kb/s:3925.42
+02:27:01  <       majestic> [     sdk] stop_sdk@1676                 Stop Ingenic SDK
+02:27:01  <       majestic> [    main] main@252                      Shutdown main thread
+```
