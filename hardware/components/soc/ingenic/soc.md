@@ -1,10 +1,6 @@
 Ingenic T-series SoC
 --------------------
 
-Allegedly, "T" in the name of the series stands for "Tomahawk".
-
-Xburst http://www.ingenic.com.cn/en/?xburst.html
-
 ### T10 Family (Mango)
 
 ![](pix/T10_Block_Diagram.png)
@@ -259,40 +255,27 @@ SoC UART pins:
 
 * Package 1 and Package 2 differ only in MAC/PHY, the rest is the same.
 
-### Data Sheets
+### Documents
 
-- [T10](../../../docs/T10_Smart_Video_Processor_Data_Sheet_20160614.pdf)
-- [T21](../../../docs/T21_Smart_Video_Application_Processor_Data_Sheet_20180807.pdf)
-- [T23](../../../docs/T23_Series_Dual_Camera_Low_Power_Video_Processor_Product_Brief_v1.1.pdf)
-- [T30](../../../docs/T30_Smart_Video_Application_Processor_Data_Sheet_20180416.pdf)
-- [T31N](../../../docs/T31N_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31X](../../../docs/T31X_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZL](../../../docs/T31ZL_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T31ZX](../../../docs/T31ZX_Smart_Video_Application_Processor_Data_Sheet_v1_4.pdf)
-- [T40A](../../../docs/T40A_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40N](../../../docs/T40N_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
-- [T40XP](../../../docs/T40XP_Smart_Video_Application_Processor_Data_Sheet_v1_0.pdf)
+- [T10 Data Sheet](../docs/T10_DS_20160614.pdf)
+- [T21 Data Sheet](../docs/T21_DS_20180807.pdf)
+- [T23 Product Brief](../docs/T23_PB_v1_1.pdf)
+- [T30 Data Sheet](../docs/T30_DS_20180416.pdf)
+- [T31N Data Sheet](../docs/T31N_DS_v1_4.pdf)
+- [T31X Data Sheet](../docs/T31X_DS_v1_4.pdf)
+- [T31ZL Data Sheet](../docs/T31ZL_DS_v1_4.pdf)
+- [T31ZX Data Sheet](../docs/T31ZX_DS_v1_4.pdf)
+- [T40N Data Sheet](../docs/T40N_DS_v1_0.pdf)
+- [T40A Data Sheet](../docs/T40A_DS_v1_0.pdf)
+- [T40XP Data Sheet](../docs/T40XP_DS_v1_0.pdf)
 
 ### Software
-
-- [Linux port of Ingenic USB boot tools](https://github.com/gcwnow/ingenic-boot)
-
-### Security
-
-Known passwords for accessing U-Boot:
-- _HI2105CHIP_ (CamHi cameras)
-- _hdt2020t31_
-- _gvqrs*&_ (Galayou G7 camera)
-
-### Tools
-
-#### Cloner
 
 The latest version of the cloner is available from <ftp://ftp.ingenic.com.cn/> FTP server.
 - [cloner for Ubuntu Linux](ftp://ftp.ingenic.com.cn/DevSupport/Tools/USBBurner/loner-latest-ubuntu.tar.gz)
 - [cloner for Windows](ftp://ftp.ingenic.com.cn/DevSupport/Tools/USBBurner/loner-latest-windows.zip)
 
-Connect the camera to a PC with a trusted USB cable. Some USB cables are used only for supplying power, 
+Connect the camera to a PC with a trusted USB cable. Some USB cables are used only for supplying power,
 so they lack data lines. Invalidate bootloader in flash memory chip by shorting pins 5 and 6 on that chip,
 then power on the camera.
 
@@ -303,6 +286,15 @@ For _ZB25VQ128_ flash chip, add these lines to `configs/spiflashinfo.cfg`:
 [norkey47]
 value="DS_ZB25VQ128ASIG,0x5e4018,16777216,256,32768,0x60,1,0,800,5,7,100,50,0x03,0,3,0,0x6B,8,3,5,0x02,0,3,0,0x32,0,3,5,0x52,0,3,0,0x06,0,0,0,-1,-1,-1,-1,0x31,1,1,1,1,0,0x35,1,1,1,1,0,0x05,0,1,0,1,0"
 ```
+
+- [Linux port of Ingenic USB boot tools](https://github.com/gcwnow/ingenic-boot)
+
+### Security
+
+Known passwords for accessing U-Boot:
+- _HI2105CHIP_ (CamHi cameras)
+- _hdt2020t31_
+- _gvqrs*&_ (Galayou G7 camera)
 
 ### Troubleshooting
 
