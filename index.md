@@ -1,66 +1,80 @@
-OpenIPC Wiki
-============
+themactep wiki
+==============
 
-> "Improving the world, one patch at a time."
+## Hardware
 
-## Table of Content
+### SoC
 
-### Introduction
-- [About the project](menu-index.md)
-- [Supported devices](en/guide-supported-devices.md)
-- [Supported sensors per SoC](en/guide-supported-sensors.md)
-- [Changelog](en/show-changelog.md)
+[Anyka](hardware/components/soc/anyka.md),
+[Faraday](hardware/components/soc/faraday.md),
+[Goke](hardware/components/soc/goke/goke/soc.md),
+[GrainMedia](hardware/components/soc/grainmedia.md),
+[Ingenic](hardware/components/soc/ingenic/soc.md),
+[Realtek](hardware/components/soc/realtek.md),
+[Sigmastar/MStar](hardware/components/soc/sigmastar.md),
+[Other manufacturers](hardware/components/soc/manufacturers.md)
+
+### Sensors
+[Brigates](hardware/components/sensor/brigates.md),
+[BYD](hardware/components/sensor/byd.md),
+[Galaxycore](hardware/components/sensor/galaxycore.md),
+[OmniVision](hardware/components/sensor/omnivision.md),
+[onsemi.md](hardware/components/sensor/onsemi.md),
+[Pixart](hardware/components/sensor/pixart.md),
+[SmartSens](hardware/components/sensor/smartsens.md),
+[SOI](hardware/components/sensor/soi.md),
+[Sony](hardware/components/sensor/sony.md)
+
+[Identifying a sensor](hardware/components/sensor/detection.md)
+
+## Hacking
+- [Equipment for flashing](hacking/equipment-flashing.md)
+- [CH341A programmer](hacking/programmer-ch341a-voltage-fix.md)
+
+## OpenIPC
 
 ### Installation
-- [Detailed installation guide](en/installation.md)
-- [Installation on Goke](https://openipc.org/cameras/vendors/goke)
-- [Installation on HiSilicon](https://openipc.org/cameras/vendors/hisilicon)
-- [Installation on Novatek](https://openipc.org/cameras/vendors/novatek)
-- [Installation on SigmaStar](https://openipc.org/cameras/vendors/sigmastar)
-- [Installation on XM510/XM530](https://openipc.org/cameras/vendors/xiongmai)
-- [Old installation guides](en/old-installation.md)
-- [Very old full manual](en/old-manual.md)
+- [About the project](openipc/menu-index.md)
+- [Detailed installation guide](openipc/installation.md)
+- [Old installation guides](openipc/old-installation.md)
+- [Very old full manual](openipc/old-manual.md)
 
-### Usage
-- [Network settings](en/network-settings.md)
-- [Wireless settings](en/wireless-settings.md)
-- [Network perversions](en/network-perversions.md)
-- [System features](en/system-features.md)
-- [Majestic streamer](en/majestic-streamer.md)
-- [Microbe web interface](en/microbe-web.md)
-- [Upgrade firmware](en/sysupgrade.md)
-- [Image quality tuning](en/image-quality-tuning.md)
-- [Memory tuning](en/memory-tuning.md)
-- [Using ipctool](en/example-ipctool.md)
-- [Board specific GPIO settings list](en/gpio-settings.md)
-- [ACMEv2](en/acme-v2.md)
-- [YouTube streaming](en/youtube-streaming.md)
-- [WiFi XM530](en/wifi-xm530.md)
+### Settings
+- [Network settings](openipc/network-settings.md)
+- [Wireless settings](openipc/wireless-settings.md)
+- [Network perversions](openipc/network-perversions.md)
+- [System features](openipc/system-features.md)
+- [Majestic streamer](openipc/majestic-streamer.md)
+- [Microbe web interface](openipc/microbe-web.md)
+- [Upgrade firmware](openipc/sysupgrade.md)
+- [Image quality tuning](openipc/image-quality-tuning.md)
+- [Memory tuning](openipc/memory-tuning.md)
+- [Using ipctool](openipc/example-ipctool.md)
+- [Board specific GPIO settings list](openipc/gpio-settings.md)
+- [ACMEv2](openipc/acme-v2.md)
+- [Live Streaming to YouTube](openipc/youtube-streaming.md)
+- [Live Streaming to Telegram](openipc/howto-streaming-telegram.md)
+- [WiFi XM530](openipc/wifi-xm530.md)
 
 ### Troubleshooting
-- [Network does not work](en/trouble-network.md)
-- [Majestic does not work, camera reboots](en/trouble-majestic.md)
-- [Sigmastar unbrick instructions](en/sigmastar-unbrick.md)
-
-### Equipment
-- [Equipment for flashing](equipment-flashing.md)
-- [CH341A programmer](en/hardware-programmer-ch341a-voltage-fix.md)
+- [Bug reports](https://github.com/OpenIPC/firmware/issues)
+- [Network does not work](openipc/trouble-network.md)
+- [Majestic does not work, camera reboots](openipc/trouble-majestic.md)
+- [Sigmastar unbrick instructions](openipc/sigmastar-unbrick.md)
 
 ### Development
-- [Boot device with NFS](en/dev-nfs-boot.md)
-- [FFMPEG usage](en/dev-ffmpeg-usage.md)
-- [Kernel configuration for adding new platforms](integration-kernel.md)
-- [List of supported sensors](en/firmware-sensors.md)
-- [List of OpenIPC Buildroot packages](en/dev-buildroot-packages.md)
-- [Source code](en/source-code.md)
-- [Bug reports](https://github.com/OpenIPC/firmware/issues)
+- [Boot device with NFS](openipc/dev-nfs-boot.md)
+- [FFMPEG usage](openipc/dev-ffmpeg-usage.md)
+- [Kernel configuration for adding new platforms](openipc/integration-kernel.md)
+- [List of supported sensors](openipc/firmware-sensors.md)
+- [List of OpenIPC Buildroot packages](openipc/dev-buildroot-packages.md)
+- [Source code](openipc/source-code.md)
 - [Buildroot User Manual](https://buildroot.org/docs.html)
 - [U-Boot Documentation](https://u-boot.readthedocs.io/)
 
 ### Help, Tips, and Tricks
 - [U-Boot Tips](help-uboot.md)
 - [Web UI Help](en/help-webui.md)
-- [Live streaming to Telegram](en/howto-streaming-telegram.md)
 - [Interesting tricks](en/dev-tricks.md)
 - [Questions and answers](faq.md)
 - [Glossary](glossary.md)
@@ -95,11 +109,6 @@ OpenIPC Wiki
 - [Twitter](https://twitter.com/OpenIPC)
 - [Telegram](https://t.me/openipc)
 
-### Roadmap
-- [ToDo](todo-all.md)
-- [Developers](en/developers.md)
-- [Notes from old sources](en/notes-for-resorting.md)
-
 ### Reference Book
 - [Company names](en/company-names.md)
 - [Dahua Naming Rule](https://dahuawiki.com/Name_Rule)
@@ -110,45 +119,26 @@ OpenIPC Wiki
 - <https://openwrt.org/docs/techref/hardware/soc/soc.hisilicon.hi35xx>
 
 
-In Russian
-----------
-- [О проекте](ru/about.md)
-- [Установка. Шаг за шагом.](ru/installation.md)
-- [Настройка.](ru/configuration.md)
-- [Модернизация адаптера USB2TT_004 для управления питанием.](ru/usb2ttl.md)
-- [Программный переход с openipc-1.0 (OpenWrt) на openipc-2.x (Buildroot)](ru/upgrade-from-1.md)
-- [Вопросы и ответы](ru/faq.md)
-- [Хочу помочь!](ru/contribute.md)
+#### In Russian
 
-### Варианты использования
-- [Для FPV](ru/fpv.md)
-- [Разработка платы расширения 38x38 для FPV систем](ru/fpv-extension.md)
-- [Экшн-камера](ru/action-camera.md)
-- Астрокамера
-- Видеорегистратор
-
-### Помощь
-- [Веб-интерфейс](ru/help-webui.md)
-- [Настройка отправки в Telegram](/ru/telegram_help_ru.md)
-
-### Камеры
-- [Switcam HS-303](ru/hardware-hs303.md)
-- [Ростелекомовская камера с NAND](ru/hardware-rtk-nand.md)
-- [Полезные ссылки](ru/resources.md)
-- [Обзоры камер разных производителей](ru/reviews.md)
-- [Hikvision DS-2CD2345F-IS](ru/hikvision-ds-2cd2345f-is.md)
-- [Ростелеком IPC-HFW1230SP/IPC-HDW1230SP](ru/rostelecom-ipc-hfw1230sp.md)
-
-## Что можно прочитать про прошивку OpenIPC?
-- [Часто задаваемые вопросы и ответы на них][faq1]
-- [Заметки от Олега Левшина][faq3]
-
-## Дискуссии
-- [Дискуссия по дорожной карте проекта](ru/discussion-roadmap.md)
-- [Дискуссия по watchdog и rtc](ru/discussion-watchdog.md)
-- [Дискуссия по версиям Buildroot](ru/discussion-buildroot.md)
-- [Дискуссия по проблемам и поддержке SPI FLASH](ru/discussion-flash.md)
-- [Темы для дискуссий разработчиков](ru/discussion.md)
+- [О проекте](openipc/ru/about.md)
+- [Установка](openipc/ru/installation.md)
+- [Настройка](openipc/ru/configuration.md)
+- [Веб-интерфейс](openipc/ru/help-webui.md)
+- [Настройка отправки в Telegram](openipc/ru/telegram_help_ru.md)
+- [Модернизация адаптера USB2TT_004 для управления питанием](openipc/ru/usb2ttl.md)
+- [Программный переход с openipc-1.0 (OpenWrt) на openipc-2.x (Buildroot)](openipc/ru/upgrade-from-1.md)
+- [Вопросы и ответы](openipc/ru/faq.md)
+- [Хочу помочь!](openipc/ru/contribute.md)
+- [OpenIPC для FPV](openipc/ru/fpv.md)
+- [Разработка платы расширения 38x38 для FPV систем](openipc/ru/fpv-extension.md)
+- [Экшн-камера на базе OpenIPC](openipc/ru/action-camera.md)
+- [Камера Switcam HS-303](openipc/ru/hardware-hs303.md)
+- [Камера Hikvision DS-2CD2345F-IS](openipc/ru/hikvision-ds-2cd2345f-is.md)
+- [Камера Ростелеком IPC-HFW1230SP/IPC-HDW1230SP](openipc/ru/rostelecom-ipc-hfw1230sp.md)
+- [Камера Ростелеком с NAND](openipc/ru/hardware-rtk-nand.md)
+- [Полезные ссылки](openipc/ru/resources.md)
+- [Обзоры камер разных производителей](openipc/ru/reviews.md)
 
 #### This is an open project, so you can help, too.
 
@@ -159,6 +149,4 @@ less familiar with nuts and bolts behind the scene. That is why we set up this
 wiki and let anyone having a GitHub account to make additions and improvements
 to the knowledgebase. Read [How to contribute.](contribute.md)
 
-[faq1]: https://github.com/OpenIPC/camerasrnd/blob/master/docs/XM-FAQ-ru.md
-[faq3]: https://alarmsystem-cctv.ru/openipc-%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D1%8B%D0%B9-%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D0%B8%D0%B2/
 [logo]: images/logo_openipc.png
