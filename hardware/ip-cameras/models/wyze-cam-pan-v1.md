@@ -24,6 +24,10 @@ Wyze Cam Pan V1 / Xiaomi Dafang
 - Dimensions: 127.5 x 60 x 60 mm
 - Weight: 249 g
 
+### Power consumption
+- Stock:   5.01V x 0.28A = 1.4028W
+- OpenIPC: 5.04V x 0.26A = 1.3104W
+
 ### Teardown
 
 ![](pix/wyzecp1/img_20231203_115432.webp)
@@ -77,6 +81,7 @@ h2clk 250000000
 pclk  125000000
 DDRC_DLP:0000f003
 ```
+
 ```
 U-Boot 2013.07 (Jul 05 2018 - 13:33:27)
 
@@ -172,6 +177,7 @@ SF: 2621440 bytes @ 0x40000 Read: OK
 
 Starting kernel ...
 ```
+
 ```
 [    0.000000] Initializing cgroup subsys cpu
 [    0.000000] Initializing cgroup subsys cpuacct
@@ -513,6 +519,15 @@ J2 (vert)
 
 hmaxstep 2590
 vmaxstep 710
+```
+
+### USB disk
+```
+# set the GPIO PC13 to high, make the USB Disk can be used
+echo 77 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio77/direction 
+echo 0 > /sys/class/gpio/gpio77/active_low
+echo 1 > /sys/class/gpio/gpio77/value
 ```
 
 #### misc (unconfirmed)
@@ -1191,6 +1206,30 @@ sensors:
     addr: 0x80
 ```
 
+__cat /proc/cpuinfo__
+```
+system type             : bull
+machine                 : Unknown
+processor               : 0
+cpu model               : Ingenic Xburst V0.1  FPU V0.0
+BogoMIPS                : 858.52
+wait instruction        : yes
+microsecond timers      : no
+tlb_entries             : 32
+extra interrupt vector  : yes
+hardware watchpoint     : yes, count: 1, address/irw mask: [0x0fff]
+isa                     : mips32r1
+ASEs implemented        :
+shadow register sets    : 1
+kscratch registers      : 7
+core                    : 0
+VCED exceptions         : not available
+VCEI exceptions         : not available
+
+Hardware                : isvp
+Serial                  : 00000000 00000000 00000000 00000000
+```
+
 ### Processes
 
 
@@ -1525,45 +1564,6 @@ After inserting a USB stick there dmesg reads:
 
 ## Issues
 
-1. `libimp_control.so` needs patching for T20
-
-__LD_PRELOAD=/usr/lib/libimp_control.so majestic__
-```
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetDefog_Strength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnGopAttr: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetBcshHue: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_GetChnGopAttr: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_AI_SetAlcGain: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetFrontCrop: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_AI_GetAlcGain: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetAeAttr: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetMask: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetDefog_Strength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetAE_IT_MAX: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetDPC_Strength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetAWBCt: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetBacklightComp: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetAutoZoom: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetFrontCrop: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetBacklightComp: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetDRC_Strength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnQpIPDelta: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetAeLuma: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnGopLength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetDRC_Strength: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetAeMin: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnQp: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnBitRate: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_Encoder_SetChnQpBounds: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetAe_IT_MAX: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetMask: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_SetAeMin: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetBcshHue: symbol not found
-Error relocating /usr/lib/libimp_control.so: IMP_ISP_Tuning_GetDPC_Strength: symbol not found
-```
-
-### ISP info is different from T31 
-
 ### Motors control
 
 ### Audio speaker
@@ -1608,4 +1608,89 @@ i264e[info]: profile High, level 4.0
 i264e[info]: kb/s:3925.42
 02:27:01  <       majestic> [     sdk] stop_sdk@1676                 Stop Ingenic SDK
 02:27:01  <       majestic> [    main] main@252                      Shutdown main thread
+```
+
+### Majestic crashes
+
+__majestic__
+```
+02:40:08  <       majestic> [    main] main@190                      Majestic Lite for Ingenic, version master+d991f86, built on 2023-12-12
+02:40:08  <       majestic> [app_conf] load_config@106               Using /etc/majestic.yaml as main configuration
+02:40:08  <       majestic> [   httpd] new_http_server@371           HTTP server started on :::80
+02:40:08  <       majestic> [app_conf] load_config@106               Using /etc/majestic.yaml as main configuration
+02:40:08  <       majestic> [sns_conf] try_sensor_config@13          SENSOR=jxf22
+02:40:08  <       majestic> [sns_conf] load_sensor_config@44         Using /etc/sensor/jxf22.yaml as sensor config
+02:40:08  <       majestic> [sns_conf] parse_sensor_config@125       VI: jxf22 @ 0x40 [1920x1080]
+02:40:08  <       majestic> [     sdk] start_sdk@1261                CPU T20, SDK SYSUTILS-3.12.0, model bull, devID 
+02:40:09  <       majestic> [     sdk] imp_system_init@446           ImpSystemInit success
+i264e[info]: profile High, level 4.0
+02:40:09  <       majestic> [     sdk] start_sdk@1426                [0] H.264 1920x1080 25fps 4096Kbit [VB:1]
+02:40:09  <       majestic> [     log] printf@268                    [chn0] scaler->outwidth = 1920 scaler->outheight = 1080, sscaler.outwidth = 0 sscaler.outheight = 0
+02:40:09  <       majestic> [     sdk] start_sdk@1534                Ingenic SDK started
+02:40:09  <       majestic> [    rtsp] rtsp_init@31                  RTSP server started on port 554
+02:40:09  <       majestic> [    gpio] set_gpio@25                   set_gpio(49, 0)
+02:40:09  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 1)
+02:40:09  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 0)
+02:40:09  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 0)
+02:40:09  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 1)
+02:40:10  <       majestic> [    gpio] set_gpio@25                   set_gpio(25, 0)
+02:40:10  <       majestic> [    gpio] set_gpio@25                   set_gpio(26, 0)
+Failed to parse the request: String mismatch: expected `RTSP/`, found `HTTP/`.
+02:40:20  <       majestic> [  client] RtspClient_on_closed_conn@654 RTSP connection closed.
+02:40:30  <       majestic> [  client] RtspClient_before@402         RTSP OPTIONS rtsp://192.168.1.177:554/stream=0 CSeq=1 from 192.168.1.153:38860
+02:40:30  <       majestic> [  client] RtspClient_before@402         RTSP OPTIONS rtsp://192.168.1.177:554/stream=0 CSeq=2 from 192.168.1.153:38860
+02:40:30  <       majestic> [  client] RtspClient_before@402         RTSP DESCRIBE rtsp://192.168.1.177:554/stream=0 CSeq=3 from 192.168.1.153:38860
+02:40:30  <       majestic> [     nal] NalCodec_describe@127         RTSP chn 0 sps_len 0
+02:40:30  <       majestic> [     nal] NalCodec_describe@130         RTSP chn 0 pps_len 0
+02:40:30  <       majestic> [     nal] NalCodec_describe@138         RTSP chn 0 profile_level_id 000000
+02:40:30  <       majestic> [  client] RtspClient_before@402         RTSP SETUP rtsp://192.168.1.177:554/stream=0/video CSeq=4 from 192.168.1.153:38860
+02:40:30  <       majestic> [  client] RtspClient_setup@313          TCP RTSP SETUP done, stream_id=0 from 192.168.1.153:38860
+02:40:30  <       majestic> [  client] RtspClient_before@402         RTSP PLAY rtsp://192.168.1.177:554/stream=0 CSeq=5 from 192.168.1.153:38860
+Segmentation fault
+```
+
+__logcat__
+```
+...
+E/base    ( 9935): Get Dev ID, open /proc/jz/efuse/efuse_chip_id failed
+I/OSD     ( 9935): IMP_OSD_SetPoolSize:524288
+D/IMP-ISP ( 9935): ~~~~~~ IMP_ISP_Open[267] ~~~~~~~
+I/NCU     ( 9935): NCU Debug mode:0
+E/NCU     ( 9935): open /etc/sensor/jxf22_nd.bin failed: No such file or directory
+D/System  ( 9935): IMP_System_Init SDK Version:3.12.0-6f2a7d4 built: Mar 20 2018 18:53:49
+D/System  ( 9935): system_init()
+D/System  ( 9935): Calling DSystem
+D/System  ( 9935): Calling FrameSource
+D/System  ( 9935): [ignored]read /proc/cpuinfo ret is NULL
+D/System  ( 9935): Calling IVS
+D/System  ( 9935): Calling OSD
+I/Alloc Manager( 9935): MEM Alloc Method is kmalloc
+D/KMEM Method( 9935): CMD Line Rmem Size:25165824, Addr:0x02800000
+D/KMEM Method( 9935): alloc->mem_alloc.method = kmalloc
+D/KMEM Method( 9935):                   alloc->mem_alloc.vaddr = 0x75d35000
+D/KMEM Method( 9935):                   alloc->mem_alloc.paddr = 0x02800000
+D/KMEM Method( 9935):                   alloc->mem_alloc.length = 25165824
+I/Alloc Manager( 9935): MEM Manager Method is continuous
+D/System  ( 9935): Calling Encoder
+I/Encoder ( 9935): IMP Alloc BS Buf size:2073600
+E/Encoder ( 9935): init_ispmem_info fread (/proc/cmdline) error
+D/System  ( 9935): Calling Decoder
+D/System  ( 9935): Calling FB
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPVflip(1894), set VIDIOC_S_CTRL failed
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPVflip(1906), set VIDIOC_S_CTRL failed
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPVflip(1914), set VIDIOC_S_CTRL failed
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPHflip(1819), set VIDIOC_S_CTRL failed
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPHflip(1830), set VIDIOC_S_CTRL failed
+E/IMP-ISP ( 9935): IMP_ISP_Tuning_SetISPHflip(1837), set VIDIOC_S_CTRL failed
+D/Encoder ( 9935): channel-0 buffer malloc size=9343872 addr=0x753a55d0
+E/Encoder ( 9935): channel-0: picture size is too large
+W/Encoder ( 9935): Channel-0 ncu off
+D/Encoder ( 9935): channel-4 buffer malloc size=3114624 addr=0x74cd4610
+D/System  ( 9935): system_bind(): bind DST-Encoder-0(1.0.0) to SRC-Framesource-0(0.0.0)
+I/Framesource( 9935): [chn0]: width = 1920 height = 1080
+E/VBM     ( 9935): VBMCreatePool()-0: w=1920 h=1080 f=842094158
+E/VBM     ( 9935): VBMCreatePool()-0: pool->config.fmt.fmt.pix.sizeimage=3110400 sizeimage=3133440
+E/VBM     ( 9935): VBMCreatePool()-0: sizeimage=3133440
+I/VBM     ( 9935): PoolId:0, frame=0x77615f20, frame->priv=0x77615f48, frame[0].virAddr=76615000, frame[0].phyAddr=30e0000
+I/Encoder ( 9935): framePriv->i_fps_num=25, framePriv->i_fps_den=1
 ```
