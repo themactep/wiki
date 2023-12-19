@@ -48,15 +48,15 @@ XBurst: http://www.ingenic.com.cn/en/?xburst.html
 
 ### Swan (T31)
 
-| SoC   | Cores            | RAM   | Max resolution | Maximum encoding | AI | technology |
-|-------|------------------|-------|----------------|------------------|----|------------|
-| T31L  | XBurst1 @ 1GHz   | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm |
-| T31N  | XBurst1 @ 1.4Ghz | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm |
-| T31X  | XBurst1 @ 1.4Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm |
-| T31A  | XBurst1 @ 1.5Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | BGA 40nm   |
-| T31AL | XBurst1 @ 1.5Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | BGA 40nm   |         
-| T31ZL | XBurst1 @ 1.4Ghz | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm |
-| T31ZX | XBurst1 @ 1.4Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm |         
+| SoC   | Cores            | RAM   | Max resolution | Maximum encoding | AI | technology  |
+|-------|------------------|-------|----------------|------------------|----|-------------|
+| T31L  | XBurst1 @ 1GHz   | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm  |
+| T31N  | XBurst1 @ 1.4Ghz | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm  |
+| T31X  | XBurst1 @ 1.4Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm  |
+| T31A  | XBurst1 @ 1.5Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | BGA223 40nm |
+| T31AL | XBurst1 @ 1.5Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | BGA223 40nm |
+| T31ZL | XBurst1 @ 1.4Ghz | 512Mb | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm  |
+| T31ZX | XBurst1 @ 1.4Ghz | 1Gb   | 2592x2048      | 2592x2048@25fps  |    | QFN88 40nm  |         
 
 ### Shark (T40)
 
