@@ -126,7 +126,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 > _tested on Goke_
 
 Over the UART interface, it is possible to temporarily interrupt the normal
-booting sequence and drop into a limited Linux shell at early stage of
+booting sequence and drop into a limited Linux shell at the early stage of
 system startup.
 
 ```
