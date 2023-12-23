@@ -3,10 +3,13 @@ TP-Link
 - https://www.tp-link.com/
 - https://www.amazon.com/stores/TP-Link/page/0A5D3B19-2960-4413-BCCD-1D8979B7F10B
 
+### Known passwords:
+- root/slprealtek
+
 | FCC           | Model                   | SOC          | CMOS     | RES | SPI        | WIFI       | Link | Notes                        |
 |---------------|-------------------------|--------------|----------|-----|------------|------------|------|------------------------------|
 | TE7C100       | TP-Link Tapo C100       | RTS3903N     |          |     | 25Q64      | RTL8188FTV |      |                              |
-| 2AXJ4C100V4   | TP-Link Tapo C100V4     | T31          |          |     | 25Q64      | RTL8188FTV |      |                              |
+| 2AXJ4C100V4   | TP-Link Tapo C100V4     | T31          | SC2336   |     | 25Q64      | RTL8188FTV |      |                              |
 | 2AXJ4C110     | TP-Link Tapo C110       | TP33A        |          |     | 25Q64      | SSW101B    |      |                              |
 | TE7KC110      | TP-Link Tapo C110 (V2?) | SSC335       | SC3338   |     | 25Q64      | SSW101B    |      |                              |
 | 2AXJ4C120     | TP-Link Tapo C120       | SSC377       |          |     | 25Q128     | RTL8188FTV |      |                              |

@@ -14,28 +14,31 @@ The manufacturer claims Ingenic T31 SoC and CG2083 sensor in every model that ye
 - T-Series -
 - X-Series - Outdoor PTZ
 
-| Model            | SOC  | CMOS    | RES | SPI | IRLED  |      WIFI | AUDIO |      BAT | Description                | Link |
-|------------------|------|---------|----:|-----|--------|----------:|-------|---------:|----------------------------|------|
-| Camsoy C2T       | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 1-way |  200 mAh |                            |      |
-| Camsoy C6T       | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 1-way |  300 mAh |                            |      |
-| Camsoy C8T       | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 1-way |  800 mAh |                            |      |
-| Camsoy F1(G)     | T31? | CG2083? |  3M |     |        | 2.4 or 4G | 2-way | 9600 mAh |                            |      |
-| Camsoy F3        | T31? | CG2083? |  3M |     |        |       2.4 | 2-way | 5000 mAh |                            |      |
-| Camsoy S1        | T31? | CG2083? |     |     |        |           |       |          |                            |      |
-| Camsoy S1T       | T31? | CG2083? |  2M |     | 940 nm |       2.4 | 1-way |  800 mAh |                            |      |
-| Camsoy S9W2      | T31? | CG2083? |  2M |     | 940 nm |       2.4 | 1-way | 2800 mAh | PIR                        |      |                                                                                                               
-| Camsoy S20       | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 2-way |          |                            |      |
-| Camsoy S30       | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 1-way | 1600 mAh |                            |      |
-| Camsoy S30W      | T31? | CG2083? |  1M |     | 940 nm |       2.4 | 1-way | 1600 mAh | PIR                        |      |
-| Camsoy S50       | T31? | CG2083? |  2M |     | 940 nm |       2.4 | 2-way | 2800 mAh | PIR                        |      |
-| Camsoy S70(G/W)  | T31? | CG2083? |  3M |     | 940 nm | 4G or 2.4 | 2-way | 2800 mAh | DualLens                   |      |
-| Camsoy T9G2      | T31? | CG2083? |  2M |     | 940 nm |        4G | 2-way |          | PIR                        |      |
-| Camsoy T9G3T     | T31? | CG2083? |  2M |     | 940 nm |        4G | 2-way | 2800 mAh | PIR                        |      |
-| Camsoy T9G5      | T31? | CG2083? |  2M |     | 940 nm |        4G | 2-way | 2800 mAh | PIR                        |      |
-| Camsoy T9G6      | T31? | CG2083? |  2M |     | 940 nm |        4G | 2-way | 2800 mAh | PIR                        |      |
-| Camsoy T9W       | T31? | CG2083? |     |     |        |           | 2-way |          |                            |      |
-| Camsoy T9W2      | T31? | CG2083? |  2M |     | 940 nm |       2.4 | 2-way | 2800 mAh | PIR                        |      |                                                                                                               
-| Camsoy X1        | T31? | CG2083? |  2M |     | 940 nm |       2.4 | 2-way | 1000 mAh | Pan                        |      |
-| Camsoy X3        | T31? | CG2083? |  3M |     |        |       2.4 | 2-way | 9600 mAh | PanTiltZoom Solar          |      |
-| Camsoy X3G       | T31? | CG2083? |  3M |     |        |        4G | 2-way | 9600 mAh | PanTiltZoom Solar          |      |
-| Camsoy X3(G/W)-D | T31? | CG2083? |  3M |     |        | 2.4 or 4G | 2-way | 9600 mAh | PanTiltZoom Solar DualLens |      |
+| Model        | SOC  | CMOS    | RES | SPI | IRLED  | WIFI | CELL | AUDIO |      BAT | PIR | PAN | TILT | Description     | Link |
+|--------------|------|---------|----:|-----|--------|-----:|------|-------|---------:|-----|-----|------|-----------------|------|
+| Camsoy C2T   | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 1-way |  200 mAh |     |     |      |                 |      |
+| Camsoy C6T   | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 1-way |  300 mAh |     |     |      |                 |      |
+| Camsoy C8T   | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 1-way |  800 mAh |     |     |      |                 |      |
+| Camsoy F1    | T31? | CG2083? |  3M |     |        |  2.4 |      | 2-way | 9600 mAh |     |     |      |                 |      |
+| Camsoy F1G   | T31? | CG2083? |  3M |     |        |      | 4G   | 2-way | 9600 mAh |     |     |      |                 |      |
+| Camsoy F3    | T31? | CG2083? |  3M |     |        |  2.4 |      | 2-way | 5000 mAh |     |     |      |                 |      |
+| Camsoy S1    | T31? | CG2083? |     |     |        |      |      |       |          |     |     |      |                 |      |
+| Camsoy S1T   | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 1-way |  800 mAh |     |     |      |                 |      |
+| Camsoy S9W2  | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 1-way | 2800 mAh | +   |     |      |                 |      |                                                                                                               
+| Camsoy S20   | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 2-way |          |     |     |      |                 |      |
+| Camsoy S30   | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 1-way | 1600 mAh |     |     |      |                 |      |
+| Camsoy S30W  | T31? | CG2083? |  1M |     | 940 nm |  2.4 |      | 1-way | 1600 mAh | +   |     |      |                 |      |
+| Camsoy S50   | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy S70W  | T31? | CG2083? |  3M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh |     |     |      | Dual Lens       |      |
+| Camsoy S70G  | T31? | CG2083? |  3M |     | 940 nm |      | 4G   | 2-way | 2800 mAh |     |     |      | Dual Lens       |      |
+| Camsoy T9G2  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way |          | +   |     |      |                 |      |
+| Camsoy T9G3T | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9G5  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9G6  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9W   | T31? | CG2083? |     |     |        |      |      | 2-way |          |     |     |      |                 |      |
+| Camsoy T9W2  | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh | +   |     |      |                 |      |                                                                                                               
+| Camsoy X1    | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 1000 mAh |     | +   |      |                 |      |
+| Camsoy X3    | T31? | CG2083? |  3M |     |        |  2.4 |      | 2-way | 9600 mAh |     | +   | +    | Solar           |      |
+| Camsoy X3G   | T31? | CG2083? |  3M |     |        |      | 4G   | 2-way | 9600 mAh |     | +   | +    | Solar           |      |
+| Camsoy X3W-D | T31? | CG2083? |  3M |     |        |  2.4 |      | 2-way | 9600 mAh |     | +   | +    | Solar Dual Lens |      |
+| Camsoy X3G-D | T31? | CG2083? |  3M |     |        |      | 4G   | 2-way | 9600 mAh |     | +   | +    | Solar Dual Lens |      |
