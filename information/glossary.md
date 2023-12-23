@@ -117,6 +117,7 @@ IPC Glossary
 - NTP - Network Time Protocol
 - NVR - Network Video Recorder
 - NVRAM - Non-Volatile RAM
+- NVT - Network Video Transmitter
 
 ### O
 
