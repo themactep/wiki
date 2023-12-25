@@ -59,8 +59,7 @@ it generates heat and may overheat or even burn. It is crucial to discontinue
 power supply to the solenoid once it has completed its task by setting both 
 GPIO pins to either a HIGH or LOW state. 
 
-### IR LEDs
-
+![Burnt IR-cut filter drive](../../images/ircut/ircut-burnt.jpg)
 
 
 ### Types of filters
