@@ -1,6 +1,8 @@
 IP Camera Cables
 ----------------
 
+![](../../images/ipc-ethernet-cable.jpg)
+
 ### 9-core RJ45 + DC-jack
 
 ##### 1.25 mm pitch headers
