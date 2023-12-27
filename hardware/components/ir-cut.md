@@ -10,16 +10,16 @@ An infrared filter is placed between the camera lens and image sensor to
 eliminate light waves that are invisible to the naked eye but can otherwise
 interfere with the image captured.
 
-![](../../images/hardware-ircut.webp)
+![](../../assets/images/ircut/ircut-back.webp)
 
 The rays cause the image to take on a reddish-purple tint. The filter blocks
 a specific light wavelength passing through the lens, resulting in an image
 that closely resembles what we perceive with our eyes.
 
-![IR-cut filter open](../../images/ircut-off.webp)  
+![IR-cut filter open](../../assets/images/ircut-off.webp)  
 _IR-cut filter open_
 
-![IR-cut filter closed](../../images/ircut-on.webp)  
+![IR-cut filter closed](../../assets/images/ircut-on.webp)  
 _IR-cut filter closed_
 
 Although infrared rays are abundant and inconvenient during the day, they are
@@ -59,7 +59,7 @@ it generates heat and may overheat or even burn. It is crucial to discontinue
 power supply to the solenoid once it has completed its task by setting both 
 GPIO pins to either a HIGH or LOW state. 
 
-![Burnt IR-cut filter drive](../../images/ircut/ircut-burnt.jpg)
+![Burnt IR-cut filter drive](../../assets/images/ircut/ircut-burnt.webp)
 
 
 ### Types of filters
