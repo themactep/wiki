@@ -43,8 +43,8 @@ calls up the Linux kernel.
 Pins 5 and 6 of the SOIC8 chip are on the opposite corner of pin 1, indicated
 by the embossed or drawn dot next to it.
 
-![](images/flash-pins.webp)
-![](images/flash-pins-2.webp)
+![](assets/images/flash-pins.webp)
+![](assets/images/flash-pins-2.webp)
 
 [This hack in details](https://cybercx.co.nz/bypassing-bios-password/)
 

@@ -149,4 +149,4 @@ less familiar with nuts and bolts behind the scene. That is why we set up this
 wiki and let anyone having a GitHub account to make additions and improvements
 to the knowledgebase. Read [How to contribute.](contribute.md)
 
-[logo]: images/logo_openipc.png
+[logo]: assets/images/logo_openipc.png

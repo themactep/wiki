@@ -11,9 +11,9 @@ soldering station like YIHUA 882D, or JCD 8898, or YOUYUE 8586 would
 do, and it won't break the bank with its price tag of $50-70, more 
 or less.
 
-![](../images/equipment-jcd8898.webp)
-![](../images/equipment-yihua882d.webp)
-![](../images/equipment-youyue8586.webp)
+![](../assets/images/equipment-jcd8898.webp)
+![](../assets/images/equipment-yihua882d.webp)
+![](../assets/images/equipment-youyue8586.webp)
 
 Throw in a silicone mat, a tube of no-clean flux, a can of solder paste,
 de-soldering copper wick, ceramic tweezers, non-woven swabs and a bottle
@@ -26,21 +26,21 @@ Again, some would say that you need a multi-thousand-dollar branded
 programmer, but in real life the cheapest [CH341A USB programmer][2]
 works like a charm, especially after you [fix the voltage bug](ch341a-voltage-fix.md).
 
-![](../images/equipment-ch341a.webp)
+![](../assets/images/equipment-ch341a.webp)
 
 Or you can buy an improved model, version 1.7 and higher, where that
 problem has already been fixed in design.
 
-![](../images/equipment-ch341a-v17.webp)
+![](../assets/images/equipment-ch341a-v17.webp)
 
 Add a [SOP8 208mil to DIP8 socket adapter][3].
 
-![](../images/equipment-sop8-200mil.webp)
+![](../assets/images/equipment-sop8-200mil.webp)
 
 Also, it's a good idea to have a bunch of spare [flash memory chips][4].
 
-![](../images/hardware-w25q64fwsig.webp)
-![](../images/hardware-w25q128jvsq.webp)
+![](../assets/images/hardware-w25q64fwsig.webp)
+![](../assets/images/hardware-w25q128jvsq.webp)
 
 
 [1]: https://www.aliexpress.com/premium/soldering-station-hot-air.html

@@ -25,10 +25,10 @@ Because of that, we will need to combine two methods deviating from the standard
 #### Opening the device
 
 Unscrew the visbile phillips screw on the back of the camera's stand with the PH0 screwdriver.
-![unscrew](/images/cip-37210_open_001.jpg "Unscrewing the phillips screw")
+![unscrew](/assets/images/cip-37210_open_001.jpg "Unscrewing the phillips screw")
 
 Use the blade screwdriver to pry open the camera's case, where the stand was attached:
-![pry_open](/images/cip-37210_open_002.jpg "Pry open the camera")
+![pry_open](/assets/images/cip-37210_open_002.jpg "Pry open the camera")
 
 #### Establishing the UART connection
 
@@ -38,11 +38,11 @@ I found two pin holes with 3.3 V, one pin hole with slightly less than 3.3 V and
 
 **In summary:** The pin hole closest to the black screw is RX, the one next to it is TX, the one next to it is GND. Connect GND to GND, TX to RX and RX to TX.
 
-![uart_cip-37210](/images/uart_cip-37210_cropped.jpg "Marked UART pin holes on the CIP-37210 PCB")
+![uart_cip-37210](/assets/images/uart_cip-37210_cropped.jpg "Marked UART pin holes on the CIP-37210 PCB")
 
 I used simple male-to-female DuPont jumper wires to connect to the pin holes. There are of course better solutions like soldering a connector onto the pin holes or using test hooks, but as long the jumper wires don't touch, it will work fine.
 
-![uart_cip-37210_action](/images/uart_cip-37210_action.jpg "Established UART connection.")
+![uart_cip-37210_action](/assets/images/uart_cip-37210_action.jpg "Established UART connection.")
 
 #### Saving the stock firmware
 

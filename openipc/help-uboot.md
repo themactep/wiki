@@ -203,7 +203,7 @@ Download the full firmware binary for your SoC and flash chip from
 [OpenIPC website](https://openipc.org/supported-hardware/) after submitting the
 settings form and clicking the link hidden under "Alternative method" button.
 
-![](../images/firmware-full-binary-link.webp)
+![](../assets/images/firmware-full-binary-link.webp)
 
 Open `screen` and connect to UART port.
 
@@ -355,8 +355,8 @@ calls up the Linux kernel.
 Pins 5 and 6 of the SOIC8 chip are on the opposite corner of pin 1, indicated
 by the embossed or drawn dot next to it.
 
-![](../images/flash-pins.webp)
-![](../images/flash-pins-2.webp)
+![](../assets/images/flash-pins.webp)
+![](../assets/images/flash-pins-2.webp)
 
 #### Downgrading stock firmware.
 

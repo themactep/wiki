@@ -1,7 +1,7 @@
 IP Camera Cables
 ----------------
 
-![](../../images/ipc-ethernet-cable.jpg)
+![](../../assets/images/ipc-ethernet-cable.jpg)
 
 ### 9-core RJ45 + DC-jack
 

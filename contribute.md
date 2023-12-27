@@ -16,14 +16,14 @@ have it yet. It's free.
 
 Fork the repository.
 
-![GitHub Fork](images/gh-fork.webp)
+![GitHub Fork](assets/images/gh-fork.webp)
 
 Make changes (correct a typo, add another record into a table, or write a new
 article) and commit them to your own fork of the repository.
 
 From your repository, create a pull request to the upstream repository.
 
-![GitHub Contribute](images/gh-contribute.webp)
+![GitHub Contribute](assets/images/gh-contribute.webp)
 
 ### Small corrections, typos.
 
@@ -31,6 +31,6 @@ It is even easier to deal with small corrections while using GitHub. Spotted a
 typo? Have an idea of a better wording? Noticed a broken link? Just hit this
 pencil-looking button and make corrections.
 
-![GutHub Correction](images/gh-correction.webp)
+![GutHub Correction](assets/images/gh-correction.webp)
 
 [gh-signup]: https://github.com/signup
