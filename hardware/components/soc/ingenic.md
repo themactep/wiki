@@ -15,13 +15,16 @@ XBurst: http://www.ingenic.com.cn/en/?xburst.html
 
 ### ???? (T15)
 
+| SoC  | Cores            | RAM   | Max resolution | Maximum encoding | AI | technology |
+|------|------------------|-------|----------------|------------------|----|------------|
+
 ### Bull (T20)
 
 | SoC  | Cores            | RAM   | Max resolution | Maximum encoding | AI | technology |
 |------|------------------|-------|----------------|------------------|----|------------|
-| T20L | XBurst1 @ 800MHz | 512Mb | 2048x1536      |                  |    | 40nm       |
-| T20N | XBurst1 @ 800MHz | 512Mb | 2048x1536      |                  |    | 40nm       |
-| T20X | XBurst1 @ 800MHz | 1Gb   | 2048x1536      |                  |    | 40nm       |
+| T20L | XBurst1 @ 800MHz | 512Mb | 2048x1536      |                  |    | BGA 40nm   |
+| T20N | XBurst1 @ 800MHz | 512Mb | 2048x1536      |                  |    | BGA 40nm   |
+| T20X | XBurst1 @ 800MHz | 1Gb   | 2048x1536      |                  |    | BGA 40nm   |
 
 ### Turkey (T21)
 
