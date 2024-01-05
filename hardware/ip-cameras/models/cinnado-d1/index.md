@@ -136,30 +136,30 @@ Environment size: 542/16380 bytes
 ```
 [@Ingenic-uc1_1:root]# cat /sys/kernel/debug/gpio
 GPIOs 0-31, GPIO A:
- gpio-7   (gpioCtrl            ) out hi
- gpio-8   (gpioCtrl            ) out hi
- gpio-9   (gpioCtrl            ) out lo
- gpio-11  (gpioCtrl            ) out lo
- gpio-14  (gpioCtrl            ) in  hi
- gpio-16  (sda                 ) in  hi
- gpio-17  (scl                 ) in  hi
- gpio-18  (sc2336_reset        ) out hi
+ gpio-7   SPEAKER_EN          ) out hi
+ gpio-8   RED_LED             ) out hi
+ gpio-9   BLUE_LED            ) out lo
+ gpio-11  IR LED              ) out lo
+ gpio-14  BUTTON              ) in  hi
+ gpio-16  sda                 ) in  hi
+ gpio-17  scl                 ) in  hi
+ gpio-18  sc2336_reset        ) out hi
 
 GPIOs 32-63, GPIO B:
- gpio-47  (sdio_wifi_power_on  ) out hi
- gpio-49  (ptzCtrl             ) out lo
- gpio-50  (mmc_detect          ) in  lo
- gpio-52  (ptzCtrl             ) out lo
- gpio-53  (ptzCtrl             ) out lo
- gpio-57  (gpioCtrl            ) out lo
- gpio-58  (gpioCtrl            ) out lo
- gpio-59  (ptzCtrl             ) out lo
- gpio-61  (ptzCtrl             ) out lo
- gpio-62  (ptzCtrl             ) out lo
- gpio-63  (ptzCtrl             ) out lo
+ gpio-47  sdio_wifi_power_on  ) out hi
+ gpio-49  PTZ-H Phase A       ) out lo
+ gpio-50  mmc_detect          ) in  lo
+ gpio-52  PTZ-V Phase C       ) out lo
+ gpio-53  PTZ-V Phase B       ) out lo
+ gpio-57  IRCUT 1             ) out lo
+ gpio-58  IRCUT 2             ) out lo
+ gpio-59  PTZ-V Phase D       ) out lo
+ gpio-61  PTZ-H Phase D       ) out lo
+ gpio-62  PTZ-H Phase C       ) out lo
+ gpio-63  PTZ-H Phase B       ) out lo
 
 GPIOs 64-95, GPIO C:
- gpio-64  (ptzCtrl             ) out lo
+ gpio-64  PTZ-V Phase A       ) out lo
  ```
 
 #### Modules
@@ -239,3 +239,8 @@ fw_setenv wlandev atbm603x-generic
 fw_setenv wlanssid MyWirelessNetwork
 fw_setenv wlanpass MySuPerSuKur3Pa$sW0rD
 ```
+
+Motors:
+ 
+`modprobe motor hmaxstep=3700 vmaxstep=1000 hst1=49 hst2=63 hst3=62 hst4=61 vst1=64 vst2=53 vst3=52 vst4=59`
+
