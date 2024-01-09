@@ -32,10 +32,12 @@ IPC Glossary
 - CDU - Clock Distribution Unit
 - CGU - Clock Generation Unit
 - CMOS - Complementary Metal–Oxide Semiconductor
+- COM - Chip On Module
 - CPI - Camera Parallel Interface
 - CPU - Central Processing Unit
 - CRC - Cyclic Redundancy Code
 - CSI - Camera Serial Interface
+- CSP - Chip Scale Package
 
 ### D
 
