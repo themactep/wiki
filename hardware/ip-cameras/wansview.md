@@ -7,7 +7,7 @@ also [Galayou](galayou.md), [Cinnado](cinnado.md)
 | FCC    | Model                        | SOC  | CMOS    | RES | SPI    | WIFI       | SD | PWR   | Link                                                               |
 |--------|------------------------------|------|---------|-----|--------|------------|----|-------|--------------------------------------------------------------------|
 | ZCB-K5 | Wansview K5 1080p            | T21  |         |     | 25Q??  | MT7601UN   | +  | 5V 1A | https://wansview.com/cn/proinfo.aspx?proid=46&categoryid=4&aids=2  |
-|        | Wansview Q5 1080p            | T21Z | OV2735B |     | 25Q128 | RTL8188FTV |    |       |                                                                    |
+|        | Wansview Q5 1080p            | T21Z | OV2735B |     | 25Q128 | RTL8188FTV |    |       | discontinued                                                       |
 |        | Wansview Q5 2K               | T31L | SC2336  |     |        |            |    |       | https://wansview.com/cn/proinfo.aspx?proid=29&categoryid=4&aids=2  |
 |        | Wansview Q6 1080p            |      |         |     |        |            |    |       | https://wansview.com/cn/proinfo.aspx?proid=36&categoryid=4&aids=2  |
 |        | Wansview Q7 2K               |      |         |     |        |            |    |       | https://wansview.com/cn/proinfo.aspx?proid=51&categoryid=4&aids=2  |
