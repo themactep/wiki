@@ -193,6 +193,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | GIgEh3ZZNHRh2                      | IPCam@sw         |
 | LHjQopX4yjf1Q                      | ls123            |
 | LOra.53O7nLVQ                      | ak47agai         |
+| ShRCX9PD3xxus                      | Ubia#180         |
 | Sk.MffUl2mnm2                      | 123              |
 | Uu1Kq8MmXhxqA                      | j1/_6s*w         |
 | X.pOwnufFAWYQ                      | ccadmin          |
@@ -206,7 +207,12 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | hbJdVywKWttVM                      | e177ab8e         |
 | xt5USRjG7rEDE                      | j1/_7sxw         |
 | z1YC93pV6OlQI                      |                  |
-| ShRCX9PD3xxus                      | Ubia#180         |
+
+##### SHA-256
+
+| Hash                                                            | Plain text |
+|-----------------------------------------------------------------|------------|
+| $5$xjY0o85dbuqsAZ2h$t9EeQkJLH0OT5/W1CQcy812YTiJmwtSuI1z2VDb1QV2 |            |
 
 ##### SHA-512
 
