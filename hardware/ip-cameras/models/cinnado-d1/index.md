@@ -235,12 +235,20 @@ exfat 102741 0 - Live 0xc00b6000 (O)
 ### OpenIPC
 
 ```
+fw_setenv gpio_mmc_cd 50
+fw_setenv gpio_wlan 47
 fw_setenv wlandev atbm603x-generic
-fw_setenv wlanssid MyWirelessNetwork
-fw_setenv wlanpass MySuPerSuKur3Pa$sW0rD
+fw_setenv wlanssid <wifi ssid>
+fw_setenv wlanpass <wifi password>
+cli -s .isp.blkCnt 1
+sleep 3
+reboot
 ```
 
-Motors:
+Save this as `autoconfig.sh` on a microSD card and reboot camera with it to apply the commands. The file will be deleted afterwards.
+
+
+**Motors:**
  
 `modprobe motor hmaxstep=3700 vmaxstep=1000 hst1=49 hst2=63 hst3=62 hst4=61 vst1=64 vst2=53 vst3=52 vst4=59`
 
