@@ -2,22 +2,23 @@ Cinnado D1
 ----------
 - https://www.cinnado.com/D1
 - https://www.amazon.com/gp/product/B0CBBT5RMP/
+- Cloud: [AJCloud](https://www.ajcloud.net/)
 
-### Specs
+### Hardware
 
 - SoC: Ingenic T31L
 - Sensor: SmartSens SC2336
 - Flash: BoyaMicro 25Q64ESSIG
 - Wi-Fi: Altobeam 6031
-- Pan motor: 
+- Pan motor: ?
 - Tilt motor: 24BYJ48 5V
-- 4 940nm IR LEDs
-- SD Card Slot
+- 4 x 940nm IR LEDs
+- SD card slot
 - Microphone
 - Speaker
-- Cloud: Wansview
-
-### Hardware
+- Power: USB-C
+- Blue/Red LED indicators
+- Reset button
 
 #### Sensor
 
@@ -49,6 +50,33 @@ UART terminals are located near SD card slot and marked in a silk print.
 
 ![](pix)
 
+#### OpenIPC installation
+
+1. Use `cloner`
+
+2. Format an SD card to FAT and place this file to the root of the card:  
+
+__autoconfig.sh__
+```
+fw_setenv gpio_wlan 47
+fw_setenv gpio_mmc_cd 50
+fw_setenv gpio_ircut 58 57
+fw_setenv gpio_ir940 11
+fw_setenv day_night_min 5000
+fw_setenv day_night_max 15000
+
+fw_setenv wlandev atbm603x-generic
+fw_setenv wlanssid <wifi network ssid>
+fw_setenv wlanpass <wifi password>
+cli -s .isp.blkCnt 1
+sleep 4
+reboot
+```
+
+Include your Wi-Fi network SSID and password.
+
+The file will be deleted from the card after run, so you might want to save a
+copy for future use.
 
 ### Stock firmware analysis
 
@@ -58,60 +86,6 @@ Access to bootloader shell during system start is not guarded by anything.
 Pressing Ctrl-C aborts a booting process and loads the shell.
 
 ```
-isvp_t31# version
-
-U-Boot 2013.07 (Dec 05 2022 - 10:55:23)
-mips-linux-gnu-gcc (Ingenic r2.3.3 2016.12) 4.7.2
-GNU ld (Ingenic r2.3.3 2016.12) 2.24.51.20140512
-
-isvp_t31# help
-?       - alias for 'help'
-base    - print or set address offset
-boot    - boot default, i.e., run 'bootcmd'
-boota   - boot android system
-bootd   - boot default, i.e., run 'bootcmd'
-bootm   - boot application image from memory
-bootp   - boot image via network using BOOTP/TFTP protocol
-chpart  - change active partition
-cmp     - memory compare
-coninfo - print console devices and information
-cp      - memory copy
-crc32   - checksum calculation
-echo    - echo args to console
-env     - environment handling commands
-ethphy  - ethphy contrl
-fatinfo - print information about filesystem
-fatload - load binary file from a dos filesystem
-fatls   - list files in a directory (default /)
-gettime - get timer val elapsed,
-
-go      - start application at address 'addr'
-help    - print command description/usage
-loadb   - load binary file over serial line (kermit mode)
-loads   - load S-Record file over serial line
-loady   - load binary file over serial line (ymodem mode)
-loop    - infinite loop on address range
-md      - memory display
-mm      - memory modify (auto-incrementing address)
-mmc     - MMC sub system
-mmcinfo - display MMC info
-mtdparts- define flash/nand partitions
-mw      - memory write (fill)
-nm      - memory modify (constant address)
-ping    - send ICMP ECHO_REQUEST to network host
-printenv- print environment variables
-reset   - Perform RESET of the CPU
-run     - run commands in an environment variable
-saveenv - save environment variables to persistent storage
-setenv  - set environment variables
-sf      - SPI flash sub-system
-sleep   - delay execution for some time
-source  - run script from memory
-tftpboot- boot image via network using TFTP protocol
-tftpdownload- auto upgrade file from tftp to flash
-version - print monitor, compiler and linker version
-watchdog- open or colse the watchdog
-
 isvp_t31# printenv
 baudrate=115200
 bootargs=tf=0 console=ttyS1,115200n8 mem=43520K@0x0 rmem=22016K@0x2A80000 init=/linuxrc rootfstype=squashfs root=/dev/mtdblock2 rw mtdparts=jz_sfc:256k(boot),1632k(kernel),2752k(rootfs),3136k(app),384k(syscfg),32k(flag),8M@0(all)
@@ -162,74 +136,13 @@ GPIOs 64-95, GPIO C:
  gpio-64  PTZ-V Phase A       ) out lo
  ```
 
-#### Modules
-
+#### Motors
 ```
-[@Ingenic-uc1_1:root]# lsmod
-ptzCtrl 14693 2 - Live 0xc05bf000 (O)
-audio 71526 1 - Live 0xc05a0000 (O)
-sensor_sc2336_t31 8418 0 - Live 0xc057e000 (O)
-sinfo 9574 0 - Live 0xc0573000 (O)
-tx_isp_t31 962822 1 sensor_sc2336_t31, Live 0xc045e000 (O)
-avpu 13463 2 - Live 0xc0341000 (O)
-gpioCtrl 10912 3 - Live 0xc032a000 (O)
-atbm603x_ht20_sdio 827109 0 - Live 0xc0247000 (O)
-mmc_block 24526 2 - Live 0xc012c000
-jzmmc_v12 15451 1 atbm603x_ht20_sdio, Live 0xc0119000
-mmc_core 85246 3 atbm603x_ht20_sdio,mmc_block,jzmmc_v12, Live 0xc00f5000
-exfat 102741 0 - Live 0xc00b6000 (O)
-```
+VM
+[ 52 | 53 | 64 | 59 | xx ]
 
-#### Processes
-
-```
-[@Ingenic-uc1_1:root]# ps
-  PID USER       VSZ STAT COMMAND
-    1 0         1716 S    {linuxrc} init
-    2 0            0 SW   [kthreadd]
-    3 0            0 SW   [ksoftirqd/0]
-    4 0            0 SW   [kworker/0:0]
-    5 0            0 SW<  [kworker/0:0H]
-    7 0            0 SW   [rcu_preempt]
-    8 0            0 SW   [rcu_bh]
-    9 0            0 SW   [rcu_sched]
-   10 0            0 SW   [watchdog/0]
-   11 0            0 SW<  [khelper]
-   12 0            0 SW<  [writeback]
-   13 0            0 SW<  [bioset]
-   14 0            0 SW<  [kblockd]
-   15 0            0 SW   [khubd]
-   17 0            0 SW<  [cfg80211]
-   18 0            0 SW   [kswapd0]
-   19 0            0 SW   [fsnotify_mark]
-   20 0            0 SW<  [crypto]
-   34 0            0 SW<  [deferwq]
-   35 0            0 SW   [kworker/u2:1]
-   36 0            0 SW<  [kworker/0:1H]
-   65 0            0 SWN  [jffs2_gcd_mtd4]
-   67 0         1716 S    -sh
-   83 0            0 SW   [kworker/u2:2]
-   94 0            0 SW<  [phy0-atbm_wq]
-   95 0            0 SW   [phy0-atbm_bh]
-   96 0            0 SW   [phy0-sdio_tx]
-   97 0            0 SW   [phy0-sdio_rx]
-   98 0            0 SW   [ksdioirqd/mmc1]
-  118 0         1264 S    /bin/shellcmdD
-  119 0         9464 S    /bin/shellcmdD
-  122 0            0 SW   [mmcqd/0]
-  151 0            0 SW   [irq/37-isp-m0]
-  153 0            0 SW   [irq/38-isp-w02]
-  186 0         1704 S    {boa.sh} /bin/sh /mnt/mtd/bin/boa.sh
-  187 0         1708 S    {daemon.sh} /bin/sh /mnt/mtd/bin/daemon.sh
-  188 0         425m S    {main} /mnt/mtd/bin/initApp
-  189 0         1060 S    /mnt/mtd/bin/boa
-  205 0            0 DW   [isp_fw_process]
-  356 0         2428 S    /bin/hostapd /var/hostapd.conf -B
-  358 0         1716 S    /usr/sbin/udhcpd -f /etc/udhcpd.conf
- 1053 0            0 SW   [kworker/0:2]
- 1690 0            0 SW   [kworker/0:1]
- 1994 0            0 SW   [kworker/0:3]
- 2126 0         1708 R    ps
+HM
+[ 49 | 63 | 62 | 61 | xx ]
 ```
 
 ### OpenIPC
@@ -251,4 +164,3 @@ Save this as `autoconfig.sh` on a microSD card and reboot camera with it to appl
 **Motors:**
  
 `modprobe motor hmaxstep=3700 vmaxstep=1000 hst1=49 hst2=63 hst3=62 hst4=61 vst1=64 vst2=53 vst3=52 vst4=59`
-
