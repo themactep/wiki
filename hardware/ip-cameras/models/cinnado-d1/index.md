@@ -73,10 +73,9 @@ sleep 4
 reboot
 ```
 
-Include your Wi-Fi network SSID and password.
+Include your Wi-Fi network SSID and password. Reboot camera with the card in it to apply the commands.
 
-The file will be deleted from the card after run, so you might want to save a
-copy for future use.
+The file will be deleted from the card after run, so you might want to save a copy for future use.
 
 ### Stock firmware analysis
 
@@ -144,22 +143,6 @@ VM
 HM
 [ 49 | 63 | 62 | 61 | xx ]
 ```
-
-### OpenIPC
-
-```
-fw_setenv gpio_mmc_cd 50
-fw_setenv gpio_wlan 47
-fw_setenv wlandev atbm603x-generic
-fw_setenv wlanssid <wifi ssid>
-fw_setenv wlanpass <wifi password>
-cli -s .isp.blkCnt 1
-sleep 3
-reboot
-```
-
-Save this as `autoconfig.sh` on a microSD card and reboot camera with it to apply the commands. The file will be deleted afterwards.
-
 
 **Motors:**
  
