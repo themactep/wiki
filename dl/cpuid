@@ -1,0 +1,22 @@
+#!/bin/sh
+
+cpuid=$(devmem 0x1300002C)
+cppsr=$(devmem 0x10000034)
+subrm=$(devmem 0x13540231)
+type1=$(devmem 0x13540238)
+type2=$(devmem 0x13540250)
+
+echo "Raw values"
+printf "0x%08x\t0x%08x\t0x%08x\t0x%08x\t0x%08x\n" "$cpuid" "$cppsr" "$subrm" "$type1" "$type2"
+echo
+
+cpuid=$(( (cpuid >> 12) & 0xFFFF ))
+cppsr=$(( cppsr & 0xFF ))
+subrm=$(( (subrm >> 8) && 0xFF ))
+type1=$(( (type1 >> 16) & 0xFFFF ))
+type2=$(( (type2 >> 16) & 0xFFFF ))
+
+echo "Converted values"
+printf "0x%04x\t0x%04x\t0x%04x\t0x%04x\t0x%04x\n" "$cpuid" "$cppsr" "$subrm" "$type1" "$type2"
+
+exit 0
