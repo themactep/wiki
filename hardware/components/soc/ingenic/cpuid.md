@@ -75,7 +75,7 @@ echo
 
 cpuid=$(( (cpuid >> 12) & 0xFFFF ))
 cppsr=$(( cppsr & 0xFF ))
-subrm=$(( (subrm >> 8) && 0xFF ))
+subrm=$(( (subrm >> 8) & 0xFF ))
 type1=$(( (type1 >> 16) & 0xFFFF ))
 type2=$(( (type2 >> 16) & 0xFFFF ))
 
