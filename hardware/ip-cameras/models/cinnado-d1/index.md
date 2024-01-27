@@ -50,14 +50,12 @@ UART terminals are located near SD card slot and marked in a silk print.
 
 ![UART](uart.webp)
 
-#### OpenIPC installation
+#### OpenIPC installation 
 
-1. Format an SD card to FAT and place the firmware file in the root directory of 
-   the card and name the file `v4_all.bin`. Place the card into your camera and 
-   reboot it. Wait 5 minutes, then remove the card.
-
-2. Format an SD card to FAT and create the following files in the root directory
-   of the card:  
+Format an SD card to FAT and place the firmware binary file and the following 
+configuration files in the root directory of the card. Rename the firmware binary
+file to `v4_all.bin` for flashing from stock firmware or to `autoupdate-full.bin`
+for flashing from an older version of openipc firmware.
 
 __autoconfig.sh__
 ```
@@ -85,10 +83,11 @@ eth_disable=true
 
 Use your Wi-Fi network SSID and password.
 
-Reboot the camera with the card in it to apply the settings.
+Place the card into your camera and reboot it.
 
-`autoconfig.sh` file will be deleted from the card after run, so you might want to save a copy for future use.
-`uEnv.txt` on the other hand won't be deleted, so you might want to wipe the card clean as that file contains credentials for access to your wireless network!
+`autoconfig.sh` file will be deleted from the card after run, `uEnv.txt` on the
+other hand won't be deleted, so you might want to wipe the card clean as that 
+file contains credentials for access to your wireless network!
 
 Find the camera on the network checking DHCP leases on your router.
 
