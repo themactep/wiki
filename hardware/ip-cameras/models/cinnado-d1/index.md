@@ -67,8 +67,8 @@ __uEnv.txt__
 gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 52o 53o 57o 58o 59o 61o 62o 63o 46o
 gpio_wlan=47
 gpio_mmc_cd=50
-gpio_motor_h=52 53 57 51
-gpio_motor_v=59 61 62 63
+gpio_motor_h=49 63 62 61
+gpio_motor_v=52 53 64 59
 motor_maxstep_h=2540
 motor_maxstep_v=720
 wlandev=atbm603x-generic
