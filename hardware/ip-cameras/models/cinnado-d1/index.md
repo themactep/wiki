@@ -52,10 +52,10 @@ UART terminals are located near SD card slot and marked in a silk print.
 
 #### OpenIPC installation 
 
-Format an SD card to FAT and place the firmware binary file and the following 
-configuration files in the root directory of the card. Rename the firmware binary
-file to `v4_all.bin` for flashing from stock firmware or to `autoupdate-full.bin`
-for flashing from an older version of openipc firmware.
+Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240127.bin) 
+and the following configuration files in the root directory of the card. Rename
+the firmware binary file to `v4_all.bin` for flashing from stock firmware or to
+`autoupdate-full.bin` for flashing from an older version of openipc firmware.
 
 __autoconfig.sh__
 ```
