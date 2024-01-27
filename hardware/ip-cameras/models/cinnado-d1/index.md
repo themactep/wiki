@@ -48,34 +48,56 @@ Cinnado D1
 
 UART terminals are located near SD card slot and marked in a silk print.
 
-![](pix)
+![UART](uart.webp)
 
 #### OpenIPC installation
 
-1. Use `cloner`
+1. Format an SD card to FAT and place the firmware file in the root directory of 
+   the card and name the file `v4_all.bin`. Place the card into your camera and 
+   reboot it. Wait 5 minutes, then remove the card.
 
-2. Format an SD card to FAT and place this file to the root of the card:  
+2. Format an SD card to FAT and create the following files in the root directory
+   of the card:  
 
 __autoconfig.sh__
 ```
-fw_setenv gpio_wlan 47
-fw_setenv gpio_mmc_cd 50
-fw_setenv gpio_ircut 58 57
-fw_setenv gpio_ir940 11
-fw_setenv day_night_min 5000
-fw_setenv day_night_max 15000
-
-fw_setenv wlandev atbm603x-generic
-fw_setenv wlanssid <wifi network ssid>
-fw_setenv wlanpass <wifi password>
 cli -s .isp.blkCnt 1
-sleep 4
-reboot
 ```
 
-Include your Wi-Fi network SSID and password. Reboot camera with the card in it to apply the commands.
+__uEnv.txt__
+```
+gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 52o 53o 57o 58o 59o 61o 62o 63o 46o
+gpio_wlan=47
+gpio_mmc_cd=50
+gpio_motor_h=52 53 57 51
+gpio_motor_v=59 61 62 63
+motor_maxstep_h=2540
+motor_maxstep_v=720
+wlandev=atbm603x-generic
+wlanssid=openipc
+wlanpass=openipc12345
+ircut_pins=58 57
+ir940_led_pin=11
+day_night_min=5000
+day_night_max=15000
+eth_disable=true
+```
 
-The file will be deleted from the card after run, so you might want to save a copy for future use.
+Use your Wi-Fi network SSID and password.
+
+Reboot the camera with the card in it to apply the settings.
+
+`autoconfig.sh` file will be deleted from the card after run, so you might want to save a copy for future use.
+`uEnv.txt` on the other hand won't be deleted, so you might want to wipe the card clean as that file contains credentials for access to your wireless network!
+
+Find the camera on the network checking DHCP leases on your router.
+
+To make rebooting faster, run these commands in Linux shell on the camera:
+
+```
+fw_setenv sd_disable true
+fw_setenv bootdelay 1
+```
 
 ### Stock firmware analysis
 
@@ -109,30 +131,30 @@ Environment size: 542/16380 bytes
 ```
 [@Ingenic-uc1_1:root]# cat /sys/kernel/debug/gpio
 GPIOs 0-31, GPIO A:
- gpio-7   SPEAKER_EN          ) out hi
- gpio-8   RED_LED             ) out hi
- gpio-9   BLUE_LED            ) out lo
- gpio-11  IR LED              ) out lo
- gpio-14  BUTTON              ) in  hi
- gpio-16  sda                 ) in  hi
- gpio-17  scl                 ) in  hi
- gpio-18  sc2336_reset        ) out hi
+ gpio-7   (SPEAKER_EN          ) out hi
+ gpio-8   (RED_LED             ) out hi
+ gpio-9   (BLUE_LED            ) out lo
+ gpio-11  (IR LED              ) out lo
+ gpio-14  (BUTTON              ) in  hi
+ gpio-16  (sda                 ) in  hi
+ gpio-17  (scl                 ) in  hi
+ gpio-18  (sc2336_reset        ) out hi
 
 GPIOs 32-63, GPIO B:
- gpio-47  sdio_wifi_power_on  ) out hi
- gpio-49  PTZ-H Phase A       ) out lo
- gpio-50  mmc_detect          ) in  lo
- gpio-52  PTZ-V Phase C       ) out lo
- gpio-53  PTZ-V Phase B       ) out lo
- gpio-57  IRCUT 1             ) out lo
- gpio-58  IRCUT 2             ) out lo
- gpio-59  PTZ-V Phase D       ) out lo
- gpio-61  PTZ-H Phase D       ) out lo
- gpio-62  PTZ-H Phase C       ) out lo
- gpio-63  PTZ-H Phase B       ) out lo
+ gpio-47  (sdio_wifi_power_on  ) out hi
+ gpio-49  (PTZ-H Phase A       ) out lo
+ gpio-50  (mmc_detect          ) in  lo
+ gpio-52  (PTZ-V Phase C       ) out lo
+ gpio-53  (PTZ-V Phase B       ) out lo
+ gpio-57  (IRCUT 1             ) out lo
+ gpio-58  (IRCUT 2             ) out lo
+ gpio-59  (PTZ-V Phase D       ) out lo
+ gpio-61  (PTZ-H Phase D       ) out lo
+ gpio-62  (PTZ-H Phase C       ) out lo
+ gpio-63  (PTZ-H Phase B       ) out lo
 
 GPIOs 64-95, GPIO C:
- gpio-64  PTZ-V Phase A       ) out lo
+ gpio-64  (PTZ-V Phase A       ) out lo
  ```
 
 #### Motors
