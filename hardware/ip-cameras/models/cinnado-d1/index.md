@@ -64,7 +64,7 @@ cli -s .isp.blkCnt 1
 
 __uEnv.txt__
 ```
-gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 52o 53o 57o 58o 59o 61o 62o 63o 46o
+gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 58o 46o
 gpio_wlan=47
 gpio_mmc_cd=50
 gpio_motor_h=52 53 57 51
