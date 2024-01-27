@@ -79,6 +79,8 @@ ir940_led_pin=11
 day_night_min=5000
 day_night_max=15000
 eth_disable=true
+osmem=43520K@0x0
+rmem=22016K@0x2A80000
 ```
 
 Use your Wi-Fi network SSID and password.
