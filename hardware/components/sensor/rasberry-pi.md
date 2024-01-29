@@ -15,8 +15,8 @@ The table below further describes the connector’s location, pitch, location, a
 ### The 15-Pin Connector
 
 This connector is used on the Pi camera and Raspberry Pi A & B series.
-Pi-camera hardware uses about three different 15-pin connectors.
 This connector has a pin pitch of 1mm, and it runs 2-lane MIPI only.
+Pi-camera hardware uses three different 15-pin connectors.
 
 | Pin | Name     | Description               |
 |-----|----------|---------------------------|
@@ -30,8 +30,8 @@ This connector has a pin pitch of 1mm, and it runs 2-lane MIPI only.
 | 8   | CAM_CK_N | MIPI Clock Lane Negative  |
 | 9   | CAM_CK_P | MIPI Clock Lane Positive  |
 | 10  | GND      | Ground                    |
-| 11  | CAM_100  | Power Enable              |
-| 12  | CAM_101  | LED Indicator             |
+| 11  | CAM_IO0  | Power Enable              |
+| 12  | CAM_IO1  | LED Indicator             |
 | 13  | CAM_SCL  | 12C SCL                   |
 | 14  | CAM_SDA  | 12C SDA                   |
 | 15  | CAM_3V3  | 3.3V Power Input          |
@@ -59,8 +59,8 @@ It has a pitch of 0.5mm and provides two additional MIPI data lanes.
 | 14  | CAM_CK_N | MIPI Clock Lane Negative  |
 | 15  | CAM_CK_P | MIPI Clock Lane Positive  |
 | 16  | GND      | Ground                    |
-| 17  | CAM_100  | Power Enable              |
-| 18  | CAM_101  | LED Indicator             |
+| 17  | CAM_IO0  | Power Enable              |
+| 18  | CAM_IO1  | LED Indicator             |
 | 19  | GND      | Ground                    |
 | 20  | CAM_SCL  | 12C SCL                   |
 | 21  | CAM_SDA  | 12C SDA                   |
