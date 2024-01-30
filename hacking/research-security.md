@@ -146,6 +146,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$IZfqary9$IrG6loat5pDTBLr6ksKTD0 |                  |
 | $1$JYFTech$dt2mZnCIdoFSWAog1s.T41  |                  |
 | $1$MoCJ1nRA$NfsI1wlYcWoF5MbU4t3Og0 | ivdev            |
+| $1$NhU8N7Bw$tviIe.J4r/RCm5xK/GgP5/ |                  |
 | $1$OIKWDzOV$WjZNcNtHSKVscbi9WQcpu/ | root             |
 | $1$Qtj8cUMZ$4JhtiYFzOpCzWNI.7433u/ |                  |
 | $1$RYIwEiRA$d5iRRVQ5ZeRTrJwGjRy.B0 | xmhdipc          |
@@ -157,6 +158,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$cNGGWwI/$5/mZTMlcVfJlpE5DGrdsl/ |                  |
 | $1$d3VPdE0x$Ztn09cyReJy5Pyn        | runtop10         |
 | $1$hDwZFK2z$NLzmlcsiUw2zAe8ol1EcI0 | hipc3518         |
+| $1$jv4d1NpW$PpH6Xd79JR1JkUDLMJLch1 |                  |
 | $1$k1wheY2.$XCelh0nbndpez5N/ER6A00 | _blank password_ |
 | $1$lPbKHYLS$r6JMTEm949/hCMv85Fsx9/ |                  |
 | $1$ocmTTAhE$v.q2/jwr4BS.20KYshYQZ1 |                  |
@@ -226,6 +228,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |            |
 | $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |            |
 | $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |            |
+
 
 
 ### Hijacking the default password
