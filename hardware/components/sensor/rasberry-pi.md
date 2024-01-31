@@ -2,18 +2,18 @@ Raspberry Pi
 ------------
 
 ### Raspberry Pi Camera Modules
+
 - https://www.waveshare.com/wiki/Main_Page#RPi-Cameras
 
 ### Raspberry Pi Camera Connector
 
-The Raspberry Pi camera has three major connectors: 54548-2271, SFW15R-2STE1LF, and 1-1734248-5.
-The table below further describes the connector’s location, pitch, location, and mounting angle.
+The Raspberry Pi camera has three major connectors:
 
-| Connector       | Manufacturer    | Location                  | Pins | Mount        | Pitch   |
-|-----------------|-----------------|---------------------------|------|--------------|---------|
-| 1-7342485-5     | TE Connectivity | Pi Board (A & B)          | 15   | Vertical     | 1.0 mm  |
-| 54548-2271      | Molex           | Pi Board (Zero & CM)      | 22   | Right angle  | 0.5 mm  |
-| SFW15R-2STE1LF  | Amphenol FCI    | Camera Module (V1/V2/HQ)  | 15   | Right angle  | 1.0 mm  |
+| Connector      | Manufacturer    | Location                 | Pins | Mount       | Pitch  |
+|----------------|-----------------|--------------------------|------|-------------|--------|
+| [1-1734248-5][3]    | TE Connectivity | Pi Board (A & B)         | 15   | Vertical    | 1.0 mm |
+| [54548-2271][1]     | Molex           | Pi Board (Zero & CM)     | 22   | Right angle | 0.5 mm |
+| [SFW15R-2STE1LF][2] | Amphenol FCI    | Camera Module (V1/V2/HQ) | 15   | Right angle | 1.0 mm |
 
 ### The 15-Pin Connector
 
@@ -68,3 +68,9 @@ It has a pitch of 0.5mm and provides two additional MIPI data lanes.
 | 20  | CAM_SCL    | 12C SCL                   |
 | 21  | CAM_SDA    | 12C SDA                   |
 | 22  | CAM_3V3    | 3.3V Power Input          |
+
+[1]: https://www.digikey.ca/en/products/detail/molex/0545482271/3196988
+
+[2]: https://www.digikey.ca/en/products/detail/amphenol-cs-fci/SFW15R-2STE1LF/1002221
+
+[3]: https://www.digikey.ca/en/products/detail/te-connectivity-amp-connectors/1-1734248-5/2272380 
