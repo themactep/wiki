@@ -52,7 +52,7 @@ UART terminals are located near SD card slot and marked in a silk print.
 
 #### OpenIPC installation 
 
-Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240127.bin) 
+Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240131.bin) 
 and the following configuration files in the root directory of the card. Rename
 the firmware binary file to `v4_all.bin` for flashing from stock firmware or to
 `autoupdate-full.bin` for flashing from an older version of openipc firmware.
@@ -67,6 +67,8 @@ __uEnv.txt__
 gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 58o 46o
 gpio_wlan=47
 gpio_mmc_cd=50
+gpio_ir940=11
+gpio_ircut=58 57
 gpio_motor_h=49 63 62 61
 gpio_motor_v=52 53 64 59
 motor_maxstep_h=3700
@@ -74,8 +76,6 @@ motor_maxstep_v=1000
 wlandev=atbm603x-generic
 wlanssid=openipc
 wlanpass=openipc12345
-ircut_pins=58 57
-ir940_led_pin=11
 day_night_min=5000
 day_night_max=15000
 eth_disable=true
@@ -130,7 +130,7 @@ Environment size: 542/16380 bytes
 #### GPIO
 
 ```
-[@Ingenic-uc1_1:root]# cat /sys/kernel/debug/gpio
+[@Ingenic-uc1_1:root]# mount -t debugfs none /sys/kernel/debug; cat /sys/kernel/debug/gpio
 GPIOs 0-31, GPIO A:
  gpio-7   (SPEAKER_EN          ) out hi
  gpio-8   (RED_LED             ) out hi
