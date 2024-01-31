@@ -9,8 +9,8 @@ Raspberry Pi
 
 The Raspberry Pi camera has three major connectors:
 
-| Connector      | Manufacturer    | Location                 | Pins | Mount       | Pitch  |
-|----------------|-----------------|--------------------------|------|-------------|--------|
+| Connector           | Manufacturer    | Location                 | Pins | Mount       | Pitch  |
+|---------------------|-----------------|--------------------------|------|-------------|--------|
 | [1-1734248-5][3]    | TE Connectivity | Pi Board (A & B)         | 15   | Vertical    | 1.0 mm |
 | [54548-2271][1]     | Molex           | Pi Board (Zero & CM)     | 22   | Right angle | 0.5 mm |
 | [SFW15R-2STE1LF][2] | Amphenol FCI    | Camera Module (V1/V2/HQ) | 15   | Right angle | 1.0 mm |
