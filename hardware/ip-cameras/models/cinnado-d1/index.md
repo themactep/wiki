@@ -78,7 +78,7 @@ wlanssid=openipc
 wlanpass=openipc12345
 day_night_min=5000
 day_night_max=15000
-eth_disable=true
+disable_eth=true
 osmem=43520K@0x0
 rmem=22016K@0x2A80000
 ```
@@ -96,7 +96,7 @@ Find the camera on the network checking DHCP leases on your router.
 To make rebooting faster, run these commands in Linux shell on the camera:
 
 ```
-fw_setenv sd_disable true
+fw_setenv disable_sd true
 fw_setenv bootdelay 1
 ```
 
