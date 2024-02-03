@@ -213,11 +213,13 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | rJ0FHsG0ZbyZo                      | ismart12         |
 
 
+
 ##### SHA-256
 
 | Hash                                                            | Plain text |
 |-----------------------------------------------------------------|------------|
 | $5$xjY0o85dbuqsAZ2h$t9EeQkJLH0OT5/W1CQcy812YTiJmwtSuI1z2VDb1QV2 |            |
+| $5$pb8nYpk/xxu/fjxv$9joq616ABjUVuJFm3ZnIXwdKkbWDViQpnCMv60KRHH6 |            |
 
 ##### SHA-512
 
