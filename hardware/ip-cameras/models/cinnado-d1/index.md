@@ -6,6 +6,8 @@ Cinnado D1
 
 ### Hardware
 
+- Manufacturer: Wansview
+- ODM:
 - SoC: Ingenic T31L
 - Sensor: SmartSens SC2336
 - Flash: BoyaMicro 25Q64ESSIG
@@ -44,15 +46,15 @@ Cinnado D1
     Package:        35 pin CSP package
     Dimensions:     5.718 mm x 3.663 mm
 
-#### UART 
+#### UART
 
 UART terminals are located near SD card slot and marked in a silk print.
 
 ![UART](uart.webp)
 
-#### OpenIPC installation 
+#### OpenIPC installation
 
-Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240131.bin) 
+Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240203.bin)
 and the following configuration files in the root directory of the card. Rename
 the firmware binary file to `v4_all.bin` for flashing from stock firmware or to
 `autoupdate-full.bin` for flashing from an older version of openipc firmware.
@@ -65,7 +67,7 @@ cli -s .isp.blkCnt 1
 __uEnv.txt__
 ```
 gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 58o 46o
-gpio_wlan=47
+gpio_wlan=47O
 gpio_mmc_cd=50
 gpio_ir940=11
 gpio_ircut=58 57
@@ -78,9 +80,9 @@ wlanssid=openipc
 wlanpass=openipc12345
 day_night_min=5000
 day_night_max=15000
-disable_eth=true
 osmem=43520K@0x0
 rmem=22016K@0x2A80000
+disable_eth=true
 ```
 
 Use your Wi-Fi network SSID and password.
@@ -88,7 +90,7 @@ Use your Wi-Fi network SSID and password.
 Place the card into your camera and reboot it.
 
 `autoconfig.sh` file will be deleted from the card after run, `uEnv.txt` on the
-other hand won't be deleted, so you might want to wipe the card clean as that 
+other hand won't be deleted, so you might want to wipe the card clean as that
 file contains credentials for access to your wireless network!
 
 Find the camera on the network checking DHCP leases on your router.
@@ -168,5 +170,5 @@ HM
 ```
 
 **Motors:**
- 
+
 `modprobe motor hmaxstep=3700 vmaxstep=1000 hst1=49 hst2=63 hst3=62 hst4=61 vst1=64 vst2=53 vst3=52 vst4=59`
