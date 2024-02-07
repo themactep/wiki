@@ -61,7 +61,7 @@ Attention! If you're doing upgrade from the stock firmware, place the
 of the card. Rename the file to `v4_boot.bin`.
 
 Place the [firmware file](/dl/cinnado-d1-t31l-20240207.bin)
-in the root directory of the card. Rename the file to `autoupdate_full.bin`.
+in the root directory of the card. Rename the file to `autoupdate-full.bin`.
 Place the following configuration file in the same directory of the card:
 
 __uEnv.txt__
