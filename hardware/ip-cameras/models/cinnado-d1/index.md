@@ -66,6 +66,7 @@ Place the following configuration file in the same directory of the card:
 
 __uEnv.txt__
 ```
+enable_updates=true
 gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 58o 46o
 gpio_button=14
 gpio_wlan=47O
