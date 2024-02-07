@@ -8,9 +8,9 @@ Cinnado D1
 
 - Manufacturer: Wansview
 - ODM:
-- SoC: Ingenic T31L
+- SoC: Ingenic T31L (or Ingenic T23N)
 - Sensor: SmartSens SC2336
-- Flash: BoyaMicro 25Q64ESSIG
+- Flash: 25Q64 8MB
 - Wi-Fi: Altobeam 6031
 - Pan motor: ?
 - Tilt motor: 24BYJ48 5V
@@ -52,21 +52,22 @@ UART terminals are located near SD card slot and marked in a silk print.
 
 ![UART](uart.webp)
 
-#### OpenIPC installation
+#### Thingino installation
 
-Format an SD card to FAT and place the [firmware binary file](/dl/cinnado-d1-t31l-20240203.bin)
-and the following configuration files in the root directory of the card. Rename
-the firmware binary file to `v4_all.bin` for flashing from stock firmware or to
-`autoupdate-full.bin` for flashing from an older version of openipc firmware.
+Format an SD card and create a blank FAT partition.
 
-__autoconfig.sh__
-```
-cli -s .isp.blkCnt 1
-```
+Attention! If you're doing upgrade from the stock firmware, place the
+[bootloader file](/dl/u-boot-isvp_t31_sfcnor_lite.bin) in the root directory
+of the card. Rename the file to `v4_uboot.bin`.
+
+Place the [firmware file](/dl/cinnado-d1-t31l-20240207.bin)
+in the root directory of the card. Rename the file to `autoupdate_full.bin`.
+Place the following configuration file in the same directory of the card:
 
 __uEnv.txt__
 ```
 gpio_default=7O 8O 9o 11o 14i 16I 17I 18O 47O 49o 50I 58o 46o
+gpio_button=14
 gpio_wlan=47O
 gpio_mmc_cd=50
 gpio_ir940=11
@@ -75,23 +76,17 @@ gpio_motor_h=49 63 62 61
 gpio_motor_v=52 53 64 59
 motor_maxstep_h=3700
 motor_maxstep_v=1000
-wlandev=atbm603x-generic
-wlanssid=openipc
-wlanpass=openipc12345
 day_night_min=5000
 day_night_max=15000
 osmem=43520K@0x0
 rmem=22016K@0x2A80000
 disable_eth=true
+wlandev=atbm603x-generic
+wlanssid=<your wireless network name>
+wlanpass=<your wireless network password>
 ```
 
-Use your Wi-Fi network SSID and password.
-
-Place the card into your camera and reboot it.
-
-`autoconfig.sh` file will be deleted from the card after run, `uEnv.txt` on the
-other hand won't be deleted, so you might want to wipe the card clean as that
-file contains credentials for access to your wireless network!
+Insert the card into your camera and reboot the camera.
 
 Find the camera on the network checking DHCP leases on your router.
 
@@ -168,7 +163,3 @@ VM
 HM
 [ 49 | 63 | 62 | 61 | xx ]
 ```
-
-**Motors:**
-
-`modprobe motor hmaxstep=3700 vmaxstep=1000 hst1=49 hst2=63 hst3=62 hst4=61 vst1=64 vst2=53 vst3=52 vst4=59`
