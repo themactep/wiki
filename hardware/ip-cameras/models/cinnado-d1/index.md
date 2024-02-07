@@ -58,7 +58,7 @@ Format an SD card and create a blank FAT partition.
 
 Attention! If you're doing upgrade from the stock firmware, place the
 [bootloader file](/dl/u-boot-isvp_t31_sfcnor_lite.bin) in the root directory
-of the card. Rename the file to `v4_uboot.bin`.
+of the card. Rename the file to `v4_boot.bin`.
 
 Place the [firmware file](/dl/cinnado-d1-t31l-20240207.bin)
 in the root directory of the card. Rename the file to `autoupdate_full.bin`.
