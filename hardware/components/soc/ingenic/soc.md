@@ -250,7 +250,7 @@ SoC UART pins:
 | Magick ISP  | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        | 2.0        |
 | RTC         |            |            | +          | +          | +          | +          |
 | MAC PHY     | external   | external   | external   | external   | built-in   | external   |
-| Package     | QFN96      | QFN96      | BGA232     | BGA232     | BGA232     | BGA232     |
+| Package     | QFN96      | QFN96      | BGA232     | BGA232     | BGA232     | BGA265     |
 | Pins        | Pin2Pin LQ | Pin2Pin NQ | Package 2  | Package 2  | Package 1  | Package 2  |
 
 * Package 1 and Package 2 differ only in MAC/PHY, the rest is the same.
