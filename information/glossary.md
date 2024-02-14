@@ -87,6 +87,7 @@ IPC Glossary
 - I2C - Inter-Integrated Circuit (Serial Protocol)
 - IC - Integrated Circuit
 - ICR - Infrared Cutfilter Removal
+- IMP - Ingenic Media Platform
 - IP - Internet Protocol
 - IPC - IP Camera
 - IR - Infrared
