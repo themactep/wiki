@@ -60,7 +60,7 @@ Attention! If you're doing upgrade from the stock firmware, place the
 [bootloader file](/dl/u-boot-isvp_t31_sfcnor_lite.bin) in the root directory
 of the card. Rename the file to `v4_boot.bin`.
 
-Place the [firmware file](/dl/cinnado-d1-t31l-20240207.bin)
+Place the [firmware file](/dl/cinnado-d1-t31l-20240216.bin)
 in the root directory of the card. Rename the file to `autoupdate-full.bin`.
 Place the following configuration file in the same directory of the card:
 
@@ -80,6 +80,7 @@ day_night_min=5000
 day_night_max=15000
 osmem=43520K@0x0
 rmem=22016K@0x2A80000
+enable_updates=true
 disable_eth=true
 wlandev=atbm603x_wifi_sdio
 wlanssid=<your wireless network name>
