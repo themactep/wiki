@@ -81,7 +81,7 @@ day_night_max=15000
 osmem=43520K@0x0
 rmem=22016K@0x2A80000
 disable_eth=true
-wlandev=atbm603x-generic
+wlandev=atbm603x_wifi_sdio
 wlanssid=<your wireless network name>
 wlanpass=<your wireless network password>
 ```
