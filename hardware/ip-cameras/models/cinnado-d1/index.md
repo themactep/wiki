@@ -97,6 +97,23 @@ fw_setenv disable_sd true
 fw_setenv bootdelay 1
 ```
 
+### Future upgrades
+
+If your camera already has this firmware installed, then further upgrades
+can be done remotely.
+
+Prepare an SD card with `uEnv.txt` file including credentials for accessing your
+wireless network and other camera-specific settings like GPIO pins etc.
+
+Make sure the camera has that SD card inserted and there is at least 8MB of free
+space on the card. Then run these commands on your desktop (use your own camera
+IP address and firmware file name):
+
+```
+scp -O cinnado-d1-t31l.bin root@192.168.1.10:/mnt/mmcblk0p1/autoupdate-full.bin
+ssh root@192.168.1.10 "rm /mnt/mmcblk0p1/autoupdate-full.done; reboot"
+```
+
 ### Stock firmware analysis
 
 #### Bootloader
