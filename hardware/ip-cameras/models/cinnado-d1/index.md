@@ -60,7 +60,7 @@ Attention! If you're doing upgrade from the stock firmware, place the
 [bootloader file](/dl/u-boot-isvp_t31_sfcnor_lite.bin) in the root directory
 of the card. Rename the file to `v4_boot.bin`.
 
-Place the [firmware file](/dl/cinnado-d1-t31l-20240216.bin)
+Place the [firmware file](/dl/cinnado-d1-t31l-20240217.bin)
 in the root directory of the card. Rename the file to `autoupdate-full.bin`.
 Place the following configuration file in the same directory of the card:
 
@@ -111,8 +111,8 @@ space on the card. Then run these commands on your desktop (use your own camera
 IP address and firmware file name):
 
 ```
-scp -O cinnado-d1-t31l.bin root@192.168.1.10:/mnt/mmcblk0p1/autoupdate-full.bin
-ssh root@192.168.1.10 "rm /mnt/mmcblk0p1/autoupdate-full.done; reboot"
+scp -O cinnado-d1-t31l.bin root@192.168.1.10:/tmp/firmware.bin
+ssh root@192.168.1.10 "flashcp -v /tmp/firmware.bin /dev/mtd6; reboot"
 ```
 
 ### Stock firmware analysis
