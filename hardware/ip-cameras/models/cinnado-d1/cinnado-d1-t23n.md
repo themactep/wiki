@@ -1,6 +1,30 @@
 Cinnado D1, T23N edition
 ------------------------
 
+- https://www.cinnado.com/D1
+- https://www.amazon.com/gp/product/B0CBBT5RMP/
+- Cloud: [AJCloud](https://www.ajcloud.net/)
+
+### Hardware
+
+- Manufacturer: Wansview
+- ODM:
+- SoC: Ingenic T23N
+- Sensor: SmartSens SC2336
+- Flash: 25Q64 8MB
+- Wi-Fi: Altobeam 6012B (USB)
+- Pan motor: ?
+- Tilt motor: 24BYJ48 5V
+- 4 x 940nm IR LEDs
+- SD card slot
+- Microphone
+- Speaker
+- Power: USB-C
+- Blue/Red LED indicators
+- Reset button
+
+### Stock firmware
+
 Stock bootloader is not protected. `Ctrl-C` brings in the shell.
 
 ```

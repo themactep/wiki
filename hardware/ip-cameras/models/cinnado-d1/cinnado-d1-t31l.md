@@ -8,10 +8,10 @@ Cinnado D1, T31L edition
 
 - Manufacturer: Wansview
 - ODM:
-- SoC: Ingenic T31L (or Ingenic T23N)
+- SoC: Ingenic T31L
 - Sensor: SmartSens SC2336
 - Flash: 25Q64 8MB
-- Wi-Fi: Altobeam 6031
+- Wi-Fi: Altobeam 6031 (SDIO)
 - Pan motor: ?
 - Tilt motor: 24BYJ48 5V
 - 4 x 940nm IR LEDs
@@ -57,10 +57,10 @@ UART terminals are located near SD card slot and marked in a silk print.
 Format an SD card and create a blank FAT partition.
 
 Attention! If you're doing upgrade from the stock firmware, place the
-[bootloader file](/dl/u-boot-isvp_t31_sfcnor_lite.bin) in the root directory
+[bootloader file][1] in the root directory
 of the card. Rename the file to `v4_boot.bin`.
 
-Get the [latest build of the thingino firmware][1].
+Get the [latest build of the thingino firmware][2].
 Place the firmware file in the root directory of the card.
 Rename the file to `autoupdate-full.bin`.
 Place the following configuration file in the same directory of the card:
@@ -183,5 +183,5 @@ HM
 [ 49 | 63 | 62 | 61 | xx ]
 ```
 
-
-[1]: https://github.com/themactep/thingino-firmware/releases/download/latest/thingino-cinnado_d1_t31l_sc2336.bin
+[1]: https://github.com/gtxaspec/u-boot-ingenic/releases/download/latest/u-boot-t31l.bin
+[2]: https://github.com/themactep/thingino-firmware/releases/download/latest/thingino-cinnado_d1_t31l_sc2336.bin
