@@ -31,10 +31,10 @@ The manufacturer claims Ingenic T31 SoC and CG2083 sensor in every model that ye
 | Camsoy S50   | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh | +   |     |      |                 |      |
 | Camsoy S70W  | T31? | CG2083? |  3M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh |     |     |      | Dual Lens       |      |
 | Camsoy S70G  | T31? | CG2083? |  3M |     | 940 nm |      | 4G   | 2-way | 2800 mAh |     |     |      | Dual Lens       |      |
-| Camsoy T9G2  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way |          | +   |     |      |                 |      |
-| Camsoy T9G3T | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
-| Camsoy T9G5  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
-| Camsoy T9G6  | T31? | CG2083? |  2M |     | 940 nm |   4G |      | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9G2  | T31? | CG2083? |  2M |     | 940 nm |      | 4G   | 2-way |          | +   |     |      |                 |      |
+| Camsoy T9G3T | T31? | CG2083? |  2M |     | 940 nm |      | 4G   | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9G5  | T31? | CG2083? |  2M |     | 940 nm |      | 4G   | 2-way | 2800 mAh | +   |     |      |                 |      |
+| Camsoy T9G6  | T31? | CG2083? |  2M |     | 940 nm |      | 4G   | 2-way | 2800 mAh | +   |     |      |                 |      |
 | Camsoy T9W   | T31? | CG2083? |     |     |        |      |      | 2-way |          |     |     |      |                 |      |
 | Camsoy T9W2  | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 2800 mAh | +   |     |      |                 |      |                                                                                                               
 | Camsoy X1    | T31? | CG2083? |  2M |     | 940 nm |  2.4 |      | 2-way | 1000 mAh |     | +   |      |                 |      |
