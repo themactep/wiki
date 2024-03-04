@@ -1,4 +1,5 @@
-Access to SSH, telnet, FTP and other services---------------------------------------------
+Access to SSH, telnet, FTP and other services
+---------------------------------------------
 
 Very often stock firmware provides access to its operating system but the
 access is closed with an undisclosed password. We can recover a cryptographic
