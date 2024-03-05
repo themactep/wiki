@@ -166,7 +166,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$rHWQwR5V$i4FVDvwhuzau8msvAfHEt. | 2601hx           |                                   |
 | $1$rXUUrUvP$nwGw3hD5lodZU10IC57Ey0 | !@#$qwer         |                                   |
 | $1$rmxcrLSF$Pbx3DU0y7W0eKIpAMRX351 |                  |                                   |
-| $1$rnjbbPTD$tR9oAIWgUp/jRrhjDuUwp0 |                  |                                   |
+| $1$rnjbbPTD$tR9oAIWgUp/jRrhjDuUwp0 | Hello!Linux      |                                   |
 | $1$s8Bhq1gH$2UmLfbcu07nMOdwHkyRYo/ |                  |                                   |
 | $1$soidjfoi$9klIbmCLq2JjYwKfEA5rH1 |                  | Cab-PC-08361, Litokam, Galayou G2 |
 | $1$tiaLlxGM$byeTUfQgqyET5asfwwNjg0 | hichiphx         |                                   |
