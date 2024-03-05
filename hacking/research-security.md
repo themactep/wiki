@@ -235,7 +235,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |            |
 | $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |            |
 | $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |            |
-| $6$wyzecamv3pro$OF4hL.rH6pE4xER81KGG9xNoBOCKz79mxwtgeIupovDnuyL55Rfe0aGF0sLtYDkrg3vnWvWoPPDw8Hs1tYSNE. | |
+| $6$wyzecamv3pro$OF4hL.rH6pE4xER81KGG9xNoBOCKz79mxwtgeIupovDnuyL55Rfe0aGF0sLtYDkrg3vnWvWoPPDw8Hs1tYSNE.     |            |
 
 ### Hijacking the default password
 > _tested on Goke_
