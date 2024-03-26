@@ -31,3 +31,10 @@ Restore power to the chip by re-routing the 3.3V voltage from the 3v3 pin to
 pin 28 of the CH341A IC through the 5V pin connector on the header.
 
 ![CH341A voltage jumper](../assets/images/hardware-ch341a-hack-5.webp)
+
+### Troubleshooting
+
+To make the CH341A work on a Raspberry PI, you must add these to `/boot/cmdline.txt`:
+```
+dwc_otg.fiq_enable=0 dwc_otg.fiq_fsm_enable=0
+```
