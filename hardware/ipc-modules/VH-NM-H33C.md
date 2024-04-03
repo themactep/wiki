@@ -13,15 +13,36 @@ VH-NM-H33C
 ![](pix/T31_GC2083_MINIONS_V1_1_FRONT.png)
 ![](pix/T31_GC2083_MINIONS_V1_1_BACK.png)
 
+
 ### Ports
 
 #### HD port (Horizontal motion motor)
 
 5-pin Molex PicoBlade
+```
+ 12V 60 61 62 63
+[  O  O  O  O  O  ]
+               ^
+```
+- pin 1: GPIO 63 (Hex: 0x3F)
+- pin 2: GPIO 62 (Hex: 0x3E)
+- pin 3: GPIO 61 (Hex: 0x3D)
+- pin 4: GPIO 60 (Hex: 0x3C)
+- pin 5: VCC +12V
 
 #### VD port (Vertical motion motor)
 
 5-pin Molex PicoBlade
+```
+ 12V 49 53 52 59
+[  O  O  O  O  O  ]
+               ^
+```
+- pin 1: GPIO 59 (Hex: 0x3B)
+- pin 2: GPIO 52 (Hex: 0x34)
+- pin 3: GPIO 53 (Hex: 0x35)
+- pin 4: GPIO 49 (Hex: 0x31)
+- pin 5: VCC +12V
 
 #### IRCUT port
 
@@ -59,6 +80,10 @@ UART TX and RX contacts are located in the top left corner, between the micropho
 and the flash memory chip, next to a mounting hole. GND contact is located on the opposite
 side of the module, but it is easier to connect to ground at the mounting hole.
 
+### Flash chip
+
+Flash chip cannot be read reliably with a modified clip. 
+You need to enable pin 8 on the clip, then you will be able to read the chip.
 
 ### ipctool
 ```
@@ -181,35 +206,12 @@ debug : ch0 done 837065,ip done 837067,0,0,0,0,0,0
 debug1 : 0,0,900
 ```
 
-#### GPIO
-
-##### Stock
-
-###### Pan
- 
-- GPIO 63 (Hex: 0x3F)
-- GPIO 62 (Hex: 0x3E)
-- GPIO 61 (Hex: 0x3D)
-- GPIO 60 (Hex: 0x3C)
-
-###### Tilt
-
-- GPIO 59 (Hex: 0x3B)
-- GPIO 52 (Hex: 0x34)
-- GPIO 53 (Hex: 0x35)
-- GPIO 49 (Hex: 0x31)
-
-##### OpenIPC
-
+__uEnv.txt__
 ```
-root@openipc-t31:~# mount -t debugfs none /sys/kernel/debug
-root@openipc-t31:~# cat /sys/kernel/debug/gpio
-GPIOs 0-31, GPIO A:
- gpio-18  (gc2083_reset        ) out hi
-
-GPIOs 32-63, GPIO B:
- gpio-59  (mmc_detect          ) in  lo
- gpio-63  (gpio_spk_en         ) in  lo
-
-GPIOs 64-95, GPIO C:
+gpio_default=18O 57o 58o 49o 52o 53o 59o 60o 61o 62o 63o  
+gpio_ircut=58 57
+gpio_motor_h=63 62 61 60
+gpio_motor_v=59 52 53 49
+motor_maxstep_h=3700
+motor_maxstep_v=1000
 ```
