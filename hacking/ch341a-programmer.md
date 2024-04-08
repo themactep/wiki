@@ -46,7 +46,7 @@ If the checksums match, the firmware is saved correctly. If they don't, check yo
 until you get two identical files.
 
 #### Writing the firmware
-Use `snander -e && snander -w <filename> -v` to save a erase the flash chip clean and write a new firmware to it with
+Use `snander -e && snander -w <filename> -v` to erase the flash chip clean and write a new firmware to it with
 verification of the result.
 
 ### Troubleshooting
