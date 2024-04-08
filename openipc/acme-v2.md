@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../README.md)
-
 How to install HTTPS certificates on your camera
 ------------------------------------------------
 

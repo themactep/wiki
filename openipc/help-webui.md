@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../README.md)
-
 Help: Web UI
 ------------
 

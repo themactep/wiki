@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../README.md)
-
 ## Live streaming to Telegram
 
 Open the channel you want to translate to. Start a streaming session.

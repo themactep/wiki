@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../README.md)
-
 IR-cut (Infrared Ray Filter Switcher)
 -------------------------------------
 

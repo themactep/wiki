@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../README.md)
-
 IR LEDs (Infrared Ray Light-Emitting Diode Array)
 -------------------------------------------------
 

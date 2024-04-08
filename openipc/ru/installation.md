@@ -185,6 +185,5 @@ SPI Nor total size: 16MB
 firstboot
 ```
 
-[logo]: ../images/logo_openipc.png
 [ftdi]: https://www.google.com/search?q=ftdi+usb+ttl
 [tllc]: https://google.com/search?q=logic+level+converter+3.3v+5v

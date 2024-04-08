@@ -19,6 +19,7 @@ data sheet from the manufacturer.
 | Prefix | ID | Manufacturer                                                                  |
 |--------|----|-------------------------------------------------------------------------------|
 | T      | 1F | [Atmel](https://www.microchip.com/)                                           |
+| AT     |    | [Renesas](https://www.renesas.com/)                                           |
 | BY     | 68 | [Boya](https://www.boyamicro.com/)                                            |
 | DQ     | 54 | [Douqi](http://www.douqitech.com/)                                            |
 | EN     | 1C | [Eon](https://www.esmt.com.tw/)                                               |
@@ -26,7 +27,7 @@ data sheet from the manufacturer.
 | F      | A1 | [Fudan](https://www.fm-chips.com/)                                            |
 | FM     | F8 | [Fidelix](https://www.fidelix.co.kr/), [Dosilicon](http://www.dosilicon.com/) |
 | GD, MD | C8 | [GigaDevice](https://www.gigadevice.com/)                                     |
-| GM     | 1C | [GallopMem](https://www.chuangfeixin.com/)                                                             |
+| GM     | 1C | [GallopMem](https://www.chuangfeixin.com/)                                    |
 | IS     | 9D | [ISSI](https://www.issi.com/)                                                 |
 | KH     | C2 | [KHIC](https://www.macronix.com.hk/)                                          |
 | LE     | 62 | [OnSemi](https://www.onsemi.com/)                                             |
@@ -37,7 +38,9 @@ data sheet from the manufacturer.
 | S      | 01 | [Cypress](https://www.infineon.com/), [Spansion](https://www.infineon.com/)   |
 | SST    | 00 | [Microchip](https://www.microchip.com/)                                       |
 | W      | EF | [Winbond](https://www.winbond.com/)                                           |
-| ZB, HM | 5E | [Zbit Semi](http://zbitsemi.com/), [H&M Semi](https://www.hmsemi.com/)        |                                           
+| X      |    | [Xicor](https://www.renesas.com/)                                             |
+| XT     | 0B | [XTX](http://xtxtech.com/)
+| ZB, HM | 5E | [Zbit Semi](http://zbitsemi.com/), [H&M Semi](https://www.hmsemi.com/)        |
 | ZD     | BA | [Zetta](http://www.zettadevice.com/)                                          |
 
 ##### Product Family
