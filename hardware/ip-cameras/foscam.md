@@ -4,7 +4,7 @@ Foscam / Acculenz
 - https://www.foscammall.com/
 - https://www.aliexpress.com/store/1103234235
 
-also [Acculenz](acculenz.md)
+also [Acculenz](acculenz.md), [Assark](assark.md)
 
 Cloud: https://www.myfoscam.com/
 
