@@ -53,8 +53,8 @@ decrypted back to a plaintext password, but it is possible to perform hashing
 of available variants of plaintext passwords until the match is found.
 This method is called the [brute-force attack][2].
 
-You can use [hash analyzer](https://www.tunnelsup.com/hash-analyzer/) to 
-determine the type of hash.
+You can use [hashID](http://psypanda.github.io/hashID/) or
+[hash analyzer](https://www.tunnelsup.com/hash-analyzer/) to determine the type of hash.
 
 IP cameras tend to utilize a relatively simple and fast MD5 hashing algorithm
 so using a password-breaking software and powerful computing resources the
