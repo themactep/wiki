@@ -77,152 +77,153 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 
 ### Some passwords that we found in different firmware
 
-| Hash                               | Plain text       | Camera                            |
-|------------------------------------|------------------|-----------------------------------|
-|                                    | 00000000         |                                   |
-|                                    | 1111             |                                   |
-|                                    | 1111111          |                                   |
-|                                    | 1234             |                                   |
-|                                    | 12345            |                                   |
-|                                    | 123456           |                                   |
-|                                    | 123456asj        |                                   |
-|                                    | 4uvdzKqBkj.jg    |                                   |
-|                                    | 54321            |                                   |
-|                                    | 666666           |                                   |
-|                                    | 7ujMko0admin     |                                   |
-|                                    | 7ujMko0vizxv     |                                   |
-|                                    | 888888           |                                   |
-|                                    | OxhlwSG8         |                                   |
-|                                    | S2fGqNFs         |                                   |
-|                                    | anko             |                                   |
-|                                    | anni2013         |                                   |
-|                                    | annie2012        |                                   |
-|                                    | apix             |                                   |
-|                                    | avtech97         |                                   |
-|                                    | cat1029          |                                   |
-|                                    | cxlinux          |                                   |
-|                                    | default          |                                   |
-|                                    | dreambox         |                                   |
-|                                    | hi3518           |                                   |
-|                                    | ikwb             |                                   |
-|                                    | ipc71a           |                                   |
-|                                    | juantech         |                                   |
-|                                    | jvbzd            |                                   |
-|                                    | klv123           |                                   |
-|                                    | klv1234          |                                   |
-|                                    | meinsm           |                                   |
-|                                    | pass             |                                   |
-|                                    | password         |                                   |
-|                                    | realtek          |                                   |
-|                                    | service          |                                   |
-|                                    | slplzgjipc       |                                   |
-|                                    | slpmstar         |                                   |
-|                                    | slprealtek       |                                   |
-|                                    | smcadmin         |                                   |
-|                                    | supervisor       |                                   |
-|                                    | support          |                                   |
-|                                    | system           |                                   |
-|                                    | tech             |                                   |
-|                                    | tlJwpbo6         |                                   |
-|                                    | ubnt             |                                   |
-|                                    | user             |                                   |
-|                                    | vhd1206          |                                   |
-|                                    | vizxv            |                                   |
-|                                    | zlxx.            |                                   |
-| $1$$.MO09JyxBBNd9Xv0pXIqc0         | lbtech2002       |                                   |
-| $1$$5ICya/hNOkPC33NssbPbs1         | @first!          |                                   |
-| $1$$5g0YQT0RMSzcGI5qmCiAy.         | jvtsmart123      |                                   |
-| $1$$6EWLm0KIyyVuSwSFNbVyS/         |                  |                                   |
-| $1$$8LecoU88mCXdvZAqbWZnn0         |                  |                                   |
-| $1$$BZofx4soyTd/5HrIQGP5L/         | fxjvt1805        |                                   |
-| $1$0Me7S3z5$.uQ4Pr/QjJQ/0JUZI0w4m. |                  |                                   |
-| $1$12345678$CTq8UQyYrE.vbbG7E8Mtj1 |                  |                                   |
-| $1$2ZmxCqpN$I5CzAUtuJId8WDgkxcC2g/ |                  |                                   |
-| $1$4dAkkeWK$HCy0K1z8E.wAuwgLV8bWd/ |                  |                                   |
-| $1$6AHjBnTn$LvoexcPTiWwZP5fLfCGdv1 |                  |                                   |
-| $1$7BqzlCqK$nQXIfc53c1ACEwzNg7G3D. |                  |                                   |
-| $1$7bfnUEjV$3ogadpYTDXtJPV4ubVaGq1 | Zte521           |                                   |
-| $1$EmcmB/9a$UrsXTlmYL/6eZ9A2ST2Yl/ |                  |                                   |
-| $1$EnVGPLqH$Jwh/FgaqrrHwHsmzHibnc1 | hkipc2016        |                                   |
-| $1$FMNq4QIj$lJg6WzZxy1HWl3sL.YwIq1 |                  |                                   |
-| $1$IZfqary9$IrG6loat5pDTBLr6ksKTD0 |                  |                                   |
-| $1$JYFTech$dt2mZnCIdoFSWAog1s.T41  |                  |                                   |
-| $1$MoCJ1nRA$NfsI1wlYcWoF5MbU4t3Og0 | ivdev            |                                   |
-| $1$NhU8N7Bw$tviIe.J4r/RCm5xK/GgP5/ |                  |                                   |
-| $1$OIKWDzOV$WjZNcNtHSKVscbi9WQcpu/ | root             |                                   |
-| $1$Qtj8cUMZ$4JhtiYFzOpCzWNI.7433u/ |                  |                                   |
-| $1$RYIwEiRA$d5iRRVQ5ZeRTrJwGjRy.B0 | xmhdipc          |                                   |
-| $1$SkeH7JZY$7qZCxNB.GP9n7v63.2bSx. | wabjtam          |                                   |
-| $1$WhMKHafk$SS6nPXGF4ErcQn6z3wMd8/ | 1234qwer         |                                   |
-| $1$ZebZnWdY$QZ1Aa.7hwBshCS5k40MUE1 | xc12345          |                                   |
-| $1$abcdefg$7Ul1XQk3sLRYEGBjGrT9Q/  |                  |                                   |
-| $1$asdjwjam$DOS2FrIr2xujxIGDVSjd21 | 23we98oi         |                                   |
-| $1$cNGGWwI/$5/mZTMlcVfJlpE5DGrdsl/ |                  |                                   |
-| $1$d3VPdE0x$Ztn09cyReJy5Pyn        | runtop10         |                                   |
-| $1$hDwZFK2z$NLzmlcsiUw2zAe8ol1EcI0 | hipc3518         |                                   |
-| $1$jv4d1NpW$PpH6Xd79JR1JkUDLMJLch1 | 12345            |                                   |
-| $1$k1wheY2.$XCelh0nbndpez5N/ER6A00 | _blank password_ |                                   |
-| $1$lPbKHYLS$r6JMTEm949/hCMv85Fsx9/ |                  |                                   |
-| $1$ocmTTAhE$v.q2/jwr4BS.20KYshYQZ1 |                  |                                   |
-| $1$qFa2kfke$vJob19l64Q6n8FvP8/kvJ0 | wabjtam          |                                   |
-| $1$qjSPegDG$/ssrGjCPpiWC/A3XNI1w21 |                  |                                   |
-| $1$rHWQwR5V$i4FVDvwhuzau8msvAfHEt. | 2601hx           |                                   |
-| $1$rXUUrUvP$nwGw3hD5lodZU10IC57Ey0 | !@#$qwer         |                                   |
-| $1$rmxcrLSF$Pbx3DU0y7W0eKIpAMRX351 |                  | Wyze AccessPoint                  |
-| $1$rnjbbPTD$tR9oAIWgUp/jRrhjDuUwp0 | Hello!Linux      |                                   |
-| $1$s8Bhq1gH$2UmLfbcu07nMOdwHkyRYo/ |                  |                                   |
-| $1$soidjfoi$9klIbmCLq2JjYwKfEA5rH1 |                  | Cab-PC-08361, Litokam, Galayou G2 |
-| $1$tiaLlxGM$byeTUfQgqyET5asfwwNjg0 | hichiphx         |                                   |
-| $1$uF5XC.Im$8k0Gkw4wYaZkNzuOuySIx/ |                  |                                   |
-| $1$vN9F.lHa$E09mbCRo70834AUfkytpX. |                  |                                   |
-| $1$w4uYby9X$MZBZYSSEjhCvwafKv0v2t1 | ivideo           |                                   |
-| $1$wbAnPk8f$yz0PI9vnyLRmWbENUnce3/ |                  |                                   |
-| $1$y5hskMvE$Pdm4AgjJjNL5Uk08vgH/h0 |                  |                                   |
-| $1$yFuJ6yns$33Bk0I91Ji0QMujkR/DPi1 |                  |                                   |
-| $1$ybdHbPDn$ii9aEIFNiolBbM9QxW9mr0 | hslwificam       |                                   |
-| $1$yi$FS7W5j1RJmbRHDe0El/zX/       |                  |                                   |
-| $1$yi$MiivC6pLdwS0zp0pa0cUq1       | qw1234qw         |                                   |
-| $1$yq01TaSp$lkN/azu3IxE97owy27pve. |                  |                                   |
-| $6CJlS7VEVeK2                      |                  |                                   |
-| $Dg.cUjtWGTIVkuFS0ZYbN1            | fx1805           |                                   |
-| $enWsv2cbxPCrd0WeXUXtX0            | nobody           |                                   |
-| $qZV4X6DTqMHUDIyZG.8PH.            |                  |                                   |
-| $z2VkRbfNoE/xHLBj8i2cv.            | ftp              |                                   |
-| 0.IQvJd8bXSWU                      | hdipc%No         |                                   |
-| 04h6XLo9zAfEM                      | sl.x.            |                                   |
-| 7PJZu5rjtntsk                      | HI71323x         |                                   |
-| 7UZzpRuiyJi7E                      | I81ou812         |                                   |
-| 7wtxBdUGBnuoY                      | runtop10         |                                   |
-| 8QYQ7w7.s1xXM                      | HI0605v1         |                                   |
-| 8dxMkZjXi01sk                      |                  |                                   |
-| 90EGfTdw1Sgco                      | 20170912         |                                   |
-| 9B60FC59706134759DBCAEA58CAF9068   | Fireitup         |                                   |
-| CYjoTKVIDJ0bg                      | tianwang         |                                   |
-| EeA5H4cQvy0gc                      |                  | Wansview Q5 and W7                |
-| FCb/N1tGGXtP6                      | 059AnkJ          |                                   |
-| GIgEh3ZZNHRh2                      | IPCam@sw         |                                   |
-| HIeIuIxnglqzk                      |                  |                                   |
-| LHjQopX4yjf1Q                      | ls123            |                                   |
-| LOra.53O7nLVQ                      | ak47agai         |                                   |
-| ShRCX9PD3xxus                      | Ubia#180         |                                   |
-| Sk.MffUl2mnm2                      | 123              |                                   |
-| U3w5K84Y9u88U                      | Al19!@           |                                   |
-| Uu1Kq8MmXhxqA                      | j1/_6s*w         |                                   |
-| X.pOwnufFAWYQ                      | ccadmin          |                                   |
-| Z2eoH2SgzVIfA                      | jvth6cs2         |                                   |
-| a03e3thxwWU0g                      | /*6.=_ja         |                                   |
-| aVG8.5PMEOfnQ                      | WYom2020         |                                   |
-| ab8nBoH3mb8.g                      | helpme           |                                   |
-| absxcfbgXtb3o                      | xc3511           |                                   |
-| esPcWTdhAJX8o                      | LKFmii10         |                                   |
-| fRW5anhWEAGwY                      | 1.oN%cpi         |                                   |
-| hbJdVywKWttVM                      | e177ab8e         |                                   |
-| oBqsME2Lw4Grw                      | wjaipcam         |                                   |
-| qdGt8T0XjiWXI                      | _blank password_ |                                   |
-| rJ0FHsG0ZbyZo                      | ismart12         |                                   |
-| xt5USRjG7rEDE                      | j1/_7sxw         |                                   |
-| yE7gW4O0CSXXg                      |                  | Goke 7205                         |
-| z1YC93pV6OlQI                      | ExVmGaVy         |                                   |
+| Hash                                | Plain text       | Camera                            |
+|-------------------------------------|------------------|-----------------------------------|
+|                                     | 00000000         |                                   |
+|                                     | 1111             |                                   |
+|                                     | 1111111          |                                   |
+|                                     | 1234             |                                   |
+|                                     | 12345            |                                   |
+|                                     | 123456           |                                   |
+|                                     | 123456asj        |                                   |
+|                                     | 4uvdzKqBkj.jg    |                                   |
+|                                     | 54321            |                                   |
+|                                     | 666666           |                                   |
+|                                     | 7ujMko0admin     |                                   |
+|                                     | 7ujMko0vizxv     |                                   |
+|                                     | 888888           |                                   |
+|                                     | OxhlwSG8         |                                   |
+|                                     | S2fGqNFs         |                                   |
+|                                     | anko             |                                   |
+|                                     | anni2013         |                                   |
+|                                     | annie2012        |                                   |
+|                                     | apix             |                                   |
+|                                     | avtech97         |                                   |
+|                                     | cat1029          |                                   |
+|                                     | cxlinux          |                                   |
+|                                     | default          |                                   |
+|                                     | dreambox         |                                   |
+|                                     | hi3518           |                                   |
+|                                     | ikwb             |                                   |
+|                                     | ipc71a           |                                   |
+|                                     | juantech         |                                   |
+|                                     | jvbzd            |                                   |
+|                                     | klv123           |                                   |
+|                                     | klv1234          |                                   |
+|                                     | meinsm           |                                   |
+|                                     | pass             |                                   |
+|                                     | password         |                                   |
+|                                     | realtek          |                                   |
+|                                     | service          |                                   |
+|                                     | slplzgjipc       |                                   |
+|                                     | slpmstar         |                                   |
+|                                     | slprealtek       |                                   |
+|                                     | smcadmin         |                                   |
+|                                     | supervisor       |                                   |
+|                                     | support          |                                   |
+|                                     | system           |                                   |
+|                                     | tech             |                                   |
+|                                     | tlJwpbo6         |                                   |
+|                                     | ubnt             |                                   |
+|                                     | user             |                                   |
+|                                     | vhd1206          |                                   |
+|                                     | vizxv            |                                   |
+|                                     | zlxx.            |                                   |
+| $1$$.MO09JyxBBNd9Xv0pXIqc0          | lbtech2002       |                                   |
+| $1$$5ICya/hNOkPC33NssbPbs1          | @first!          |                                   |
+| $1$$5g0YQT0RMSzcGI5qmCiAy.          | jvtsmart123      |                                   |
+| $1$$6EWLm0KIyyVuSwSFNbVyS/          |                  |                                   |
+| $1$$8LecoU88mCXdvZAqbWZnn0          |                  |                                   |
+| $1$$BZofx4soyTd/5HrIQGP5L/          | fxjvt1805        |                                   |
+| $1$0Me7S3z5$.uQ4Pr/QjJQ/0JUZI0w4m.  |                  |                                   |
+| $1$12345678$CTq8UQyYrE.vbbG7E8Mtj1  |                  |                                   |
+| $1$2ZmxCqpN$I5CzAUtuJId8WDgkxcC2g/  |                  |                                   |
+| $1$4dAkkeWK$HCy0K1z8E.wAuwgLV8bWd/  |                  |                                   |
+| $1$6AHjBnTn$LvoexcPTiWwZP5fLfCGdv1  |                  |                                   |
+| $1$7BqzlCqK$nQXIfc53c1ACEwzNg7G3D.  |                  |                                   |
+| $1$7bfnUEjV$3ogadpYTDXtJPV4ubVaGq1  | Zte521           |                                   |
+| $1$EmcmB/9a$UrsXTlmYL/6eZ9A2ST2Yl/  |                  |                                   |
+| $1$EnVGPLqH$Jwh/FgaqrrHwHsmzHibnc1  | hkipc2016        |                                   |
+| $1$FMNq4QIj$lJg6WzZxy1HWl3sL.YwIq1  |                  |                                   |
+| $1$IZfqary9$IrG6loat5pDTBLr6ksKTD0  |                  |                                   |
+| $1$JYFTech$dt2mZnCIdoFSWAog1s.T41   |                  |                                   |
+| $1$MoCJ1nRA$NfsI1wlYcWoF5MbU4t3Og0  | ivdev            |                                   |
+| $1$NhU8N7Bw$tviIe.J4r/RCm5xK/GgP5/  |                  |                                   |
+| $1$OIKWDzOV$WjZNcNtHSKVscbi9WQcpu/  | root             |                                   |
+| $1$Qtj8cUMZ$4JhtiYFzOpCzWNI.7433u/  |                  |                                   |
+| $1$RYIwEiRA$d5iRRVQ5ZeRTrJwGjRy.B0  | xmhdipc          |                                   |
+| $1$SkeH7JZY$7qZCxNB.GP9n7v63.2bSx.  | wabjtam          |                                   |
+| $1$WhMKHafk$SS6nPXGF4ErcQn6z3wMd8/  | 1234qwer         |                                   |
+| $1$ZebZnWdY$QZ1Aa.7hwBshCS5k40MUE1  | xc12345          |                                   |
+| $1$abcdefg$7Ul1XQk3sLRYEGBjGrT9Q/   |                  |                                   |
+| $1$asdjwjam$DOS2FrIr2xujxIGDVSjd21  | 23we98oi         |                                   |
+| $1$cNGGWwI/$5/mZTMlcVfJlpE5DGrdsl/  |                  |                                   |
+| $1$d3VPdE0x$Ztn09cyReJy5Pyn         | runtop10         |                                   |
+| $1$hDwZFK2z$NLzmlcsiUw2zAe8ol1EcI0  | hipc3518         |                                   |
+| $1$jv4d1NpW$PpH6Xd79JR1JkUDLMJLch1  | 12345            |                                   |
+| $1$k1wheY2.$XCelh0nbndpez5N/ER6A00  | _blank password_ |                                   |
+| $1$lPbKHYLS$r6JMTEm949/hCMv85Fsx9/  |                  |                                   |
+| $1$ocmTTAhE$v.q2/jwr4BS.20KYshYQZ1  |                  |                                   |
+| $1$qFa2kfke$vJob19l64Q6n8FvP8/kvJ0  | wabjtam          |                                   |
+| $1$qjSPegDG$/ssrGjCPpiWC/A3XNI1w21  |                  |                                   |
+| $1$rHWQwR5V$i4FVDvwhuzau8msvAfHEt.  | 2601hx           |                                   |
+| $1$rXUUrUvP$nwGw3hD5lodZU10IC57Ey0  | !@#$qwer         |                                   |
+| $1$rmxcrLSF$Pbx3DU0y7W0eKIpAMRX351  |                  | Wyze AccessPoint                  |
+| $1$rnjbbPTD$tR9oAIWgUp/jRrhjDuUwp0  | Hello!Linux      |                                   |
+| $1$s8Bhq1gH$2UmLfbcu07nMOdwHkyRYo/  |                  |                                   |
+| $1$soidjfoi$9klIbmCLq2JjYwKfEA5rH1  |                  | Cab-PC-08361, Litokam, Galayou G2 |
+| $1$tiaLlxGM$byeTUfQgqyET5asfwwNjg0  | hichiphx         |                                   |
+| $1$uF5XC.Im$8k0Gkw4wYaZkNzuOuySIx/  |                  |                                   |
+| $1$vN9F.lHa$E09mbCRo70834AUfkytpX.  |                  |                                   |
+| $1$w4uYby9X$MZBZYSSEjhCvwafKv0v2t1  | ivideo           |                                   |
+| $1$wbAnPk8f$yz0PI9vnyLRmWbENUnce3/  |                  |                                   |
+| $1$y5hskMvE$Pdm4AgjJjNL5Uk08vgH/h0  |                  |                                   |
+| $1$yFuJ6yns$33Bk0I91Ji0QMujkR/DPi1  |                  |                                   |
+| $1$ybdHbPDn$ii9aEIFNiolBbM9QxW9mr0  | hslwificam       |                                   |
+| $1$yi$FS7W5j1RJmbRHDe0El/zX/        |                  |                                   |
+| $1$yi$MiivC6pLdwS0zp0pa0cUq1        | qw1234qw         |                                   |
+| $1$yq01TaSp$lkN/azu3IxE97owy27pve.  |                  |                                   |
+| $6CJlS7VEVeK2                       |                  |                                   |
+| $Dg.cUjtWGTIVkuFS0ZYbN1             | fx1805           |                                   |
+| $enWsv2cbxPCrd0WeXUXtX0             | nobody           |                                   |
+| $qZV4X6DTqMHUDIyZG.8PH.             |                  |                                   |
+| $z2VkRbfNoE/xHLBj8i2cv.             | ftp              |                                   |
+| 0.IQvJd8bXSWU                       | hdipc%No         |                                   |
+| 04h6XLo9zAfEM                       | sl.x.            |                                   |
+| 1FBC497B4AB24B7CA4D6893F59AE8779    |                  | [$50 bounty][b1]                  |
+| 7PJZu5rjtntsk                       | HI71323x         |                                   |
+| 7UZzpRuiyJi7E                       | I81ou812         |                                   |
+| 7wtxBdUGBnuoY                       | runtop10         |                                   |
+| 8QYQ7w7.s1xXM                       | HI0605v1         |                                   |
+| 8dxMkZjXi01sk                       |                  |                                   |
+| 90EGfTdw1Sgco                       | 20170912         |                                   |
+| 9B60FC59706134759DBCAEA58CAF9068    | Fireitup         |                                   |
+| CYjoTKVIDJ0bg                       | tianwang         |                                   |
+| EeA5H4cQvy0gc                       |                  | Wansview Q5 and W7                |
+| FCb/N1tGGXtP6                       | 059AnkJ          |                                   |
+| GIgEh3ZZNHRh2                       | IPCam@sw         |                                   |
+| HIeIuIxnglqzk                       |                  |                                   |
+| LHjQopX4yjf1Q                       | ls123            |                                   |
+| LOra.53O7nLVQ                       | ak47agai         |                                   |
+| ShRCX9PD3xxus                       | Ubia#180         |                                   |
+| Sk.MffUl2mnm2                       | 123              |                                   |
+| U3w5K84Y9u88U                       | Al19!@           |                                   |
+| Uu1Kq8MmXhxqA                       | j1/_6s*w         |                                   |
+| X.pOwnufFAWYQ                       | ccadmin          |                                   |
+| Z2eoH2SgzVIfA                       | jvth6cs2         |                                   |
+| a03e3thxwWU0g                       | /*6.=_ja         |                                   |
+| aVG8.5PMEOfnQ                       | WYom2020         |                                   |
+| ab8nBoH3mb8.g                       | helpme           |                                   |
+| absxcfbgXtb3o                       | xc3511           |                                   |
+| esPcWTdhAJX8o                       | LKFmii10         |                                   |
+| fRW5anhWEAGwY                       | 1.oN%cpi         |                                   |
+| hbJdVywKWttVM                       | e177ab8e         |                                   |
+| oBqsME2Lw4Grw                       | wjaipcam         |                                   |
+| qdGt8T0XjiWXI                       | _blank password_ |                                   |
+| rJ0FHsG0ZbyZo                       | ismart12         |                                   |
+| xt5USRjG7rEDE                       | j1/_7sxw         |                                   |
+| yE7gW4O0CSXXg                       |                  | Goke 7205                         |
+| z1YC93pV6OlQI                       | ExVmGaVy         |                                   |
 
 ##### SHA-256
 
@@ -318,3 +319,4 @@ own password.
 
 [1]: https://en.wikipedia.org/wiki/Rainbow_table
 [2]: https://en.wikipedia.org/wiki/Brute-force_attack
+[b1]: https://gist.github.com/gabonator/74cdd6ab4f733ff047356198c781f27d?permalink_comment_id=5013284#gistcomment-5013284
