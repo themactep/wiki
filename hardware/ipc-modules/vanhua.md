@@ -16,7 +16,7 @@ Vanhua
 | VH-S85  | D, I                         | T40N  | IMX415 |     |
 | VH-S86  | D, I                         | T40XP | IMX415 |     |
 | VH-S88  | D, I                         | T40XP | IMX334 |     |
-| VH-T55  | A                            | T41LQ |        |     |
+| VH-T55  | A                            | T41LQ | GC5603 |     |
 | VH-X53  | D                            | T31X  | GC4023 |     |
 | VH-X55  | D                            | T31X  | GC4653 |     |
 | VH-Z42  | A-1, D, F, I-1               | T31N  | GC4063 |     |
@@ -24,5 +24,5 @@ Vanhua
 | VN-Z54  | A                            | T31N  | GC4653 |     |
 | VN-Z55  | A, D, F, I                   | T31X  | GC4653 |     |
 | VH-Z56  | D, I                         | T40N  | GC5603 |     |
-| VH-NM-AI-80 |                          | T41NQ | GC8023 |
-| VH-NM-AI-60 |                          | T41NQ | GC6603 |
+| VH-NM-AI-80 |                          | T41NQ | GC8023 |     |
+| VH-NM-AI-60 |                          | T41NQ | GC6603 |     |
