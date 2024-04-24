@@ -151,6 +151,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$NhU8N7Bw$tviIe.J4r/RCm5xK/GgP5/  |                  |                                   |
 | $1$OIKWDzOV$WjZNcNtHSKVscbi9WQcpu/  | root             |                                   |
 | $1$Qtj8cUMZ$4JhtiYFzOpCzWNI.7433u/  |                  |                                   |
+| $1$RiBtxRAG$PvXy3AX92u.mvo/UwXlTJ0  |                  |                                   |
 | $1$RYIwEiRA$d5iRRVQ5ZeRTrJwGjRy.B0  | xmhdipc          |                                   |
 | $1$SkeH7JZY$7qZCxNB.GP9n7v63.2bSx.  | wabjtam          |                                   |
 | $1$WhMKHafk$SS6nPXGF4ErcQn6z3wMd8/  | 1234qwer         |                                   |
@@ -168,6 +169,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$qjSPegDG$/ssrGjCPpiWC/A3XNI1w21  |                  |                                   |
 | $1$rHWQwR5V$i4FVDvwhuzau8msvAfHEt.  | 2601hx           |                                   |
 | $1$rXUUrUvP$nwGw3hD5lodZU10IC57Ey0  | !@#$qwer         |                                   |
+| $1$ri3K4P4s$ne/es0YuNHyn0rti8KJ2a.  |                  |                                   |
 | $1$rmxcrLSF$Pbx3DU0y7W0eKIpAMRX351  |                  | Wyze AccessPoint                  |
 | $1$rnjbbPTD$tR9oAIWgUp/jRrhjDuUwp0  | Hello!Linux      |                                   |
 | $1$s8Bhq1gH$2UmLfbcu07nMOdwHkyRYo/  |                  |                                   |
