@@ -225,7 +225,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | KYkOoCSevDgCU                       | Ayp>52&0         | Wansview 2K / Galayou Y4          |
 | oBqsME2Lw4Grw                       | wjaipcam         |                                   |
 | qdGt8T0XjiWXI                       | _blank password_ |                                   |
-| rJ0FHsG0ZbyZo                       | ismart12         |                                   |
+| rJ0FHsG0ZbyZo                       | ismart12         | Hualai CAM04                      |
 | vq1NITtPb3nMs                       |                  | Personalcam                       |
 | xt5USRjG7rEDE                       | j1/_7sxw         |                                   |
 | yE7gW4O0CSXXg                       |                  | Goke 7205                         |
