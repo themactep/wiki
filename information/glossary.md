@@ -50,6 +50,7 @@ IPC Glossary
 - DMC - Dynamic Memory Controller
 - DNR - Digital Noise Reduction
 - DNS - Domain Name Service
+- DPC - Dead Pixel Compensation
 - DPLL - Digital Phase-Locked Loop
 - DRC - Dynamic Range Compression
 - DSI - Display Serial Interface
