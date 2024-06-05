@@ -228,7 +228,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | rJ0FHsG0ZbyZo                       | ismart12         | Hualai CAM04                      |
 | vq1NITtPb3nMs                       |                  | Personalcam                       |
 | xt5USRjG7rEDE                       | j1/_7sxw         |                                   |
-| yE7gW4O0CSXXg                       |                  | Goke 7205                         |
+| yE7gW4O0CSXXg                       | cxlinux          | Goke 7205                         |
 | z1YC93pV6OlQI                       | ExVmGaVy         |                                   |
 
 ##### SHA-256
