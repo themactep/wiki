@@ -100,7 +100,6 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 |                                     | apix             |                                   |
 |                                     | avtech97         |                                   |
 |                                     | cat1029          |                                   |
-|                                     | cxlinux          |                                   |
 |                                     | default          |                                   |
 |                                     | dreambox         |                                   |
 |                                     | hi3518           |                                   |
@@ -228,7 +227,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | rJ0FHsG0ZbyZo                       | ismart12         | Hualai CAM04                      |
 | vq1NITtPb3nMs                       |                  | Personalcam                       |
 | xt5USRjG7rEDE                       | j1/_7sxw         |                                   |
-| yE7gW4O0CSXXg                       |                  | Goke 7205                         |
+| yE7gW4O0CSXXg                       | cxlinux          | Goke 7205                         |
 | z1YC93pV6OlQI                       | ExVmGaVy         |                                   |
 
 ##### SHA-256
@@ -240,16 +239,16 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 
 ##### SHA-512
 
-| Hash                                                                                                       | Plain text |
-|------------------------------------------------------------------------------------------------------------|------------|
-| $6$4GbqAXEFqeauykeE$a6dqh2CoO6SucAplB/b4uvS5z0hN1Cb2r1pNWpsXL96vMqrrY42lFylXGNJm6RcY.3Lte/QS2.yyI4/pZDHAa1 |            |
-| $6$hmsgateway$A4aIJTn05K9yAgy7tAnw6hxPUn3xpwlTPlb8El8LCbTpq9THjqr4Q5CsWkNYgR6uYMI0lHyH5N6eqiNBJCVEY0       |            |
-| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |            |
-| $6$wyzecampan$iH01lm9SqCfUrc4.Jjp3BLUErTGiiB.pBk/60XuPYxQo7uZIoBjwUrCcoGeesbTa1EP5N/DC1a/GOMVW8qUVY1       |            |
-| $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |            |
-| $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |            |
-| $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |            |
-| $6$wyzecamv3pro$OF4hL.rH6pE4xER81KGG9xNoBOCKz79mxwtgeIupovDnuyL55Rfe0aGF0sLtYDkrg3vnWvWoPPDw8Hs1tYSNE.     |            |
+| Hash                                                                                                       | Plain text | Notes            |
+|------------------------------------------------------------------------------------------------------------|------------|------------------|
+| $6$4GbqAXEFqeauykeE$a6dqh2CoO6SucAplB/b4uvS5z0hN1Cb2r1pNWpsXL96vMqrrY42lFylXGNJm6RcY.3Lte/QS2.yyI4/pZDHAa1 |            |                  |
+| $6$hmsgateway$A4aIJTn05K9yAgy7tAnw6hxPUn3xpwlTPlb8El8LCbTpq9THjqr4Q5CsWkNYgR6uYMI0lHyH5N6eqiNBJCVEY0       |            | Wyze Gateway     |
+| $6$s90ReNRC.jPq3V9Z$oMWkGeVCuBFY/Ey3DS8NxOK2tPD6eFIRxWNaxZx8EhY9aTNzgqM7tSxl.PngyNyYJT06RP8iE3Bd04CuicNiq. |            | Vanhua modules   |
+| $6$wyzecampan$iH01lm9SqCfUrc4.Jjp3BLUErTGiiB.pBk/60XuPYxQo7uZIoBjwUrCcoGeesbTa1EP5N/DC1a/GOMVW8qUVY1       |            | Wyze Cam Pan     |
+| $6$wyzecampanv3$XYNa9HBlTpHg878e3GAckLngvkbs1ndm6YXlTqfxjchAvh2zpzyjtbg4BSvd2cM/dgGx7.FwQEcCbxAg9ODGf1     |            | Wyze Cam Pan v3  |
+| $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |            | Wyze Cam v3      |
+| $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |            | Wyze Doorbell v2 |
+| $6$wyzecamv3pro$OF4hL.rH6pE4xER81KGG9xNoBOCKz79mxwtgeIupovDnuyL55Rfe0aGF0sLtYDkrg3vnWvWoPPDw8Hs1tYSNE.     |            | Wyze Cam v3 Pro  |
 
 ### Hijacking the default password
 > _tested on Goke_
