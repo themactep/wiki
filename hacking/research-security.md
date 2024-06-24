@@ -192,7 +192,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | 0.IQvJd8bXSWU                       | hdipc%No         |                                   |
 | 04h6XLo9zAfEM                       | sl.x.            |                                   |
 | 1FBC497B4AB24B7CA4D6893F59AE8779    |                  | [$50 bounty][b1]                  |
-| 707E6IhmKLZQw                       |                  | Hawk GC6                          |
+| 707E6IhmKLZQw                       | addx-bei         | Hawk GC6                          |
 | 7PJZu5rjtntsk                       | HI71323x         |                                   |
 | 7UZzpRuiyJi7E                       | I81ou812         |                                   |
 | 7wtxBdUGBnuoY                       | runtop10         |                                   |
