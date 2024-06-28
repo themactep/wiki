@@ -3,21 +3,13 @@ U-Boot Cheatsheet
 
 __Flashing from bootloader is risky due to lack of verification!__
 
-### Prepare the environment
-
-Set the base address for your SoC.
-Refer to your SoC datasheet for the correct value.
-
-```
-setenv baseaddr 0x82000000;
-saveenv
-```
+## Prepare the environment
 
 Make sure the network settings are set correctly in the U-Boot environment.
 If not, set them yourself according to your network configuration.
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv ipaddr 192.168.1.10;
 setenv netmask 255.255.255.0;
 setenv gatewayip 192.168.1.1;
@@ -25,12 +17,12 @@ setenv serverip 192.168.1.254;
 saveenv
 ```
 
-### Save firmware
+## Save firmware
 
-#### save firmware image to an SD card (8MB)
+### save firmware image to an SD card (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 mmc dev 0;
 mmc erase 0x10 0x4000;
 setenv flashsize 0x800000;
@@ -43,10 +35,10 @@ Read the saved data on a desktop PC by running
 `sudo dd bs=512 skip=16 count=16384 if=/dev/sdb of=./fulldump.bin`,
 where `/dev/sdb` is the SD card device.
 
-#### save firmware image to an SD card (16MB)
+### save firmware image to an SD card (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 mmc dev 0;
 mmc erase 0x10 0x8000;
 setenv flashsize 0x1000000;
@@ -59,10 +51,10 @@ Read the saved data on a desktop PC by running
 `sudo dd bs=512 skip=16 count=32768 if=/dev/sdb of=./fulldump.bin`,
 where `/dev/sdb` is the SD card device.
 
-#### save firmware to a TFTP server (8MB)
+### save firmware to a TFTP server (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize};
 sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
@@ -75,10 +67,10 @@ if there is no `tftpput` but `tftp` then run this instead
 tftp ${baseaddr} backup-${soc}-nor8m.bin ${flashsize}
 ```
 
-#### save firmware to a TFTP server (16MB)
+### save firmware to a TFTP server (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize};
 sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
@@ -91,7 +83,7 @@ if there is no `tftpput` but `tftp` then run this instead
 tftp ${baseaddr} backup-${soc}-nor16m.bin ${flashsize}
 ```
 
-#### saving firmware via hex dump
+### saving firmware via hex dump
 
 In the terminal program you use to connect to the UART port,
 enable saving the session log files.
@@ -114,8 +106,8 @@ setenv flashsize 0x1000000
 
 then dump the memory contents to the console
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 mw.b ${baseaddr} 0xff ${flashsize};
 sf probe 0; sf read ${baseaddr} 0x0 ${flashsize};
 md.b ${baseaddr} ${flashsize}
@@ -145,89 +137,89 @@ Use it for further investigation or to restore the camera to its original state.
 Use [binwalk](https://github.com/ReFirmLabs/binwalk) to unpack the binary file.
 
 
-### Burn the full image
+## Burn the full image
 
-#### burn the full image from an SD card (8MB)
+### burn the full image from an SD card (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize};
-fatload mmc 0:1 ${baseaddr} openipc-${soc}-lite-8mb.bin;
+fatload mmc 0:1 ${baseaddr} autoupdate-full.bin;
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn the full image from a TFTP server (8MB)
+### burn the full image from a TFTP server (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize};
-tftp ${baseaddr} openipc-${soc}-lite-8mb.bin;
+tftp ${baseaddr} autoupdate-full.bin;
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn the full image via a serial connection (8MB)
+### burn the full image via a serial connection (8MB)
 
 To upload a file over a serial connection by name only, the file should be
 located in the user's home directory, or use the full path to the file instead.
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x800000;
 mw.b ${baseaddr} 0xff ${flashsize}
 loady
-# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem openipc-${soc}-lite-8mb.bin;`
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem autoupdate-full.bin;`
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn the full image from an SD card (16MB)
+### burn the full image from an SD card (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize};
-fatload mmc 0:1 ${baseaddr} openipc-${soc}-ultimate-16mb.bin;
+fatload mmc 0:1 ${baseaddr} autoupdate-full.bin;
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn the full image from a TFTP server (16MB)
+### burn the full image from a TFTP server (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize};
-tftp ${baseaddr} openipc-${soc}-ultimate-16mb.bin;
+tftp ${baseaddr} autoupdate-full.bin;
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn the full image via a serial connection (16MB)
+### burn the full image via a serial connection (16MB)
 
 To upload a file over a serial connection by name only, the file should be
 located in the user's home directory, or use the full path to the file instead.
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv flashsize 0x1000000;
 mw.b ${baseaddr} 0xff ${flashsize}
 loady
-# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem openipc-${soc}-lite-16mb.bin;`
+# press "Ctrl-a" followed by ":", then type `exec !! sz --ymodem autoupdate-full.bin;`
 sf probe 0; sf erase 0x0 ${flashsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
 
-### Burn bootloader only
+## Burn bootloader only
 
-#### burn bootloader from an SD card
+### burn bootloader from an SD card
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv bootsize 0x50000;
 mw.b ${baseaddr} 0xff ${bootsize};
 fatload mmc 0:1 ${baseaddr} u-boot-${soc}-universal.bin;
@@ -235,10 +227,10 @@ sf probe 0; sf erase 0x0 ${bootsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn bootloader from a TFTP server
+### burn bootloader from a TFTP server
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv bootsize 0x50000;
 mw.b ${baseaddr} 0xff ${bootsize};
 tftp ${baseaddr} u-boot-${soc}-universal.bin;
@@ -246,10 +238,10 @@ sf probe 0; sf erase 0x0 ${bootsize};
 sf write ${baseaddr} 0x0 ${filesize}
 ```
 
-#### burn bootloader via a serial connection
+### burn bootloader via a serial connection
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv bootsize 0x50000;
 mw.b ${baseaddr} 0xff ${bootsize}
 loady
@@ -259,12 +251,12 @@ sf write ${baseaddr} 0x0 ${filesize}
 ```
 
 
-### Burn kernel only
+## Burn kernel only
 
-#### burn kernel from an SD card (lite)
+### burn kernel from an SD card (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x200000;
 mw.b ${baseaddr} 0xff ${kernelsize};
 fatload mmc 0:1 ${baseaddr} uImage.${soc};
@@ -272,10 +264,10 @@ sf probe 0; sf erase 0x50000 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel from a TFTP server (lite)
+### burn kernel from a TFTP server (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x200000;
 mw.b ${baseaddr} 0xff ${kernelsize};
 tftp ${baseaddr} uImage.${soc};
@@ -283,10 +275,10 @@ sf probe 0; sf erase 0x50000 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel via a serial connection (lite)
+### burn kernel via a serial connection (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x200000;
 mw.b ${baseaddr} 0xff ${kernelsize}
 loady
@@ -295,10 +287,10 @@ sf probe 0; sf erase 0x0 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel from an SD card (ultimate)
+### burn kernel from an SD card (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x300000;
 mw.b ${baseaddr} 0xff ${kernelsize};
 fatload mmc 0:1 ${baseaddr} uImage.${soc};
@@ -306,10 +298,10 @@ sf probe 0; sf erase 0x50000 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel from a TFTP server (ultimate)
+### burn kernel from a TFTP server (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x300000;
 mw.b ${baseaddr} 0xff ${kernelsize};
 tftp ${baseaddr} uImage.${soc};
@@ -317,10 +309,10 @@ sf probe 0; sf erase 0x50000 ${kernelsize};
 sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
-#### burn kernel via a serial connection (ultimate)
+### burn kernel via a serial connection (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv kernelsize 0x300000;
 mw.b ${baseaddr} 0xff ${kernelsize}
 loady
@@ -330,12 +322,12 @@ sf write ${baseaddr} 0x50000 ${filesize}
 ```
 
 
-### Burn rootfs only
+## Burn rootfs only
 
-#### burn rootfs from an SD card (lite)
+### burn rootfs from an SD card (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0x500000;
 mw.b ${baseaddr} 0xff ${rootfssize};
 fatload mmc 0:1 ${baseaddr} rootfs.squashfs.${soc};
@@ -343,10 +335,10 @@ sf probe 0; sf erase 0x250000 ${rootfssize};
 sf write ${baseaddr} 0x250000 ${filesize}
 ```
 
-#### burn rootfs from a TFTP server (lite)
+### burn rootfs from a TFTP server (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0x500000;
 mw.b ${baseaddr} 0xff ${rootfssize};
 tftp ${baseaddr} rootfs.squashfs.${soc};
@@ -354,10 +346,10 @@ sf probe 0; sf erase 0x250000 ${rootfssize};
 sf write ${baseaddr} 0x250000 ${filesize}
 ```
 
-#### burn rootfs via a serial connection (lite)
+### burn rootfs via a serial connection (8MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0x500000;
 mw.b ${baseaddr} 0xff ${rootfssize}
 loady
@@ -366,10 +358,10 @@ sf probe 0; sf erase 0x250000 ${rootfssize};
 sf write ${baseaddr} 0x250000 ${filesize}
 ```
 
-#### burn rootfs from an SD card (ultimate)
+### burn rootfs from an SD card (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0xA00000;
 mw.b ${baseaddr} 0xff ${rootfssize};
 fatload mmc 0:1 ${baseaddr} rootfs.squashfs.${soc};
@@ -377,10 +369,10 @@ sf probe 0; sf erase 0x350000 ${rootfssize};
 sf write ${baseaddr} 0x350000 ${filesize}
 ```
 
-#### burn rootfs from a TFTP server (ultimate)
+### burn rootfs from a TFTP server (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0xA00000;
 mw.b ${baseaddr} 0xff ${rootfssize};
 tftp ${baseaddr} rootfs.squashfs.${soc};
@@ -388,10 +380,10 @@ sf probe 0; sf erase 0x350000 ${rootfssize};
 sf write ${baseaddr} 0x350000 ${filesize}
 ```
 
-#### burn rootfs via a serial connection (ultimate)
+### burn rootfs via a serial connection (16MB)
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 setenv rootfssize 0xA00000;
 mw.b ${baseaddr} 0xff ${rootfssize}
 loady
@@ -401,37 +393,37 @@ sf write ${baseaddr} 0x350000 ${filesize}
 ```
 
 
-### Erase changes
+## Erase changes
 
-#### erase overlay partition (8MB, lite)
+### erase overlay partition (8MB)
 
 ```
 sf probe 0;
 sf erase 0x750000 0xb0000
 ```
 
-#### erase overlay partition (16MB, lite)
+### erase overlay partition (16MB)
 
 ```
 sf probe 0;
 sf erase 0x750000 0x18B0000
 ```
 
-#### erase overlay partition (16MB, ultimate)
+### erase overlay partition (16MB)
 
 ```
 sf probe 0;
 sf erase 0xD50000 0x2B0000
 ```
 
-#### erase U-Boot environment
+### erase U-Boot environment
 
 ```
 sf probe 0;
 sf erase 0x40000 0x10000
 ```
 
-#### Import environment from SD card
+## Import environment from SD card
 
 ```
 fatload mmc 0 ${baseaddr} uEnv.txt;
@@ -439,12 +431,12 @@ env import -t ${baseaddr} ${filesize};
 saveenv
 ```
 
-### Flash stock firmware
+## Flash stock firmware
 
 For each `.img` file in stock bundle run
 
-[prepare the environment](#prepare-the-environment)
 ```
+setenv baseaddr 0x82000000;
 mw.b ${baseaddr} 0xff ${flashsize};
 tftp ${baseaddr} <filename.img>;
 sf probe 0;
