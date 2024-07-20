@@ -2,6 +2,14 @@ AltoBeam
 --------
 - https://www.altobeam.com/
 
+
+- athenab  = atbm601x atbm602x
+- aresb    = atbm603x
+- asmlite  = atbm6012b-x
+- mercurius = atbm6132
+- comb     = wifi4_all_chip
+- hera     = atbm6041
+
 | chip        | size | prod. date | description                                                                                                                                                                                        | status        |
 |-------------|------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
 | ATBM6012B   | 4x4  | Q2 2019    | 1T1R, IEEE 802.11b/g/n, HT20, USB interface.                                                                                                                                                       | In production |

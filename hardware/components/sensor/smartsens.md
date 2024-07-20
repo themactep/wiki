@@ -58,7 +58,7 @@ https://www.smartsenstech.com/
 | SC5300   |      |                          |     | 2592x1944 |     x     |  1/2.5" | 2.20μm |       |              |      | iLLUMi SmartClarity        |                                                                                         |
 | SC8238   | 0x30 | ?:0x82 ?:0x35            |  30 | 3872x2180 | 3840x2160 |  1/2.7" | 1.50μm |       |  1.16V/lux.s | 36dB | iLLUMi SmartClarity        | [DS](docs/SmartSens_SC8238_DS_V0.7_20200421.CN.pdf)                                     |
 
-## AI SERIES
+## AI SERIES (Advanced Imaging)
 
 | Sensor  | I2C  | register:value | fps |    WxH    | Act. WxH  |   Size |  Pixel | SNR |  Sensitivity | DR | Technology                 | References |
 |---------|------|----------------|----:|:---------:|:---------:|-------:|-------:|----:|-------------:|---:|----------------------------|------------|
@@ -75,7 +75,7 @@ https://www.smartsenstech.com/
 | SC530AI |      |                |  60 |           |           | 1/2.7" | 2.00μm |     | 2.614V/lux.s |    | BSI SCP SmartClarity-2     |            |
 | SC830AI |      |                |  30 | 3840x2160 |           | 1/2.7" | 1.50μm |     | 1.250V/lux.s |    | BSI SmartClarity-2         |            |
 
-## SL SERIES
+## SL SERIES (StarLight)
 
 | Sensor  | I2C | register:value | fps | WxH | Act. WxH  |   Size |  Pixel |  SNR |  Sensitivity | DR | Technology                                         | References |
 |---------|-----|----------------|----:|:---:|:---------:|-------:|-------:|-----:|-------------:|---:|----------------------------------------------------|------------|
