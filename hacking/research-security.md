@@ -153,6 +153,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$Qtj8cUMZ$4JhtiYFzOpCzWNI.7433u/ |                  |                                  |
 | $1$RmWL.6LK$Y4XGlw2iz.iSieR/2Ze4G0 |                  | H3C C2041                        |
 | $1$RiBtxRAG$PvXy3AX92u.mvo/UwXlTJ0 |                  |                                  |
+| $1$RVn0gu3y$fUIKeC8F7rWAzyPpoxhl2/ |                  | iFLYTEK XP-301                   |
 | $1$RYIwEiRA$d5iRRVQ5ZeRTrJwGjRy.B0 | xmhdipc          |                                  |
 | $1$SkeH7JZY$7qZCxNB.GP9n7v63.2bSx. | wabjtam          |                                  |
 | $1$WhMKHafk$SS6nPXGF4ErcQn6z3wMd8/ | 1234qwer         |                                  |
