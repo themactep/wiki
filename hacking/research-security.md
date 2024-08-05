@@ -201,7 +201,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | 7UZzpRuiyJi7E                      | I81ou812         |                                  |
 | 7wtxBdUGBnuoY                      | runtop10         |                                  |
 | 8QYQ7w7.s1xXM                      | HI0605v1         |                                  |
-| 8dxMkZjXi01sk                      |                  |                                  |
+| 8dxMkZjXi01sk                      | ipc@hs66         |                                  |
 | 90EGfTdw1Sgco                      | 20170912         | Vstarcam                         |
 | 9B60FC59706134759DBCAEA58CAF9068   | Fireitup         |                                  |
 | CYjoTKVIDJ0bg                      | tianwang         |                                  |
@@ -216,7 +216,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | Sk.MffUl2mnm2                      | 123              |                                  |
 | U3w5K84Y9u88U                      | Al19!@           |                                  |
 | Uu1Kq8MmXhxqA                      | j1/_6s*w         |                                  |
-| Vs7vxjoYX.OGE                      |                  | Personalcam Upgrade firmware     |
+| Vs7vxjoYX.OGE                      | vC06dm7d         | Personalcam Upgrade firmware     |
 | X.pOwnufFAWYQ                      | ccadmin          |                                  |
 | Z2eoH2SgzVIfA                      | jvth6cs2         |                                  |
 | a03e3thxwWU0g                      | /*6.=_ja         |                                  |
@@ -230,7 +230,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | oBqsME2Lw4Grw                      | wjaipcam         |                                  |
 | qdGt8T0XjiWXI                      | _blank password_ |                                  |
 | rJ0FHsG0ZbyZo                      | ismart12         | Hualai CAM04                     |
-| vq1NITtPb3nMs                      |                  | Personalcam                      |
+| vq1NITtPb3nMs                      | Atomtech         | Personalcam                      |
 | vtujMoozD4OHU                      | 20170912         | Camsoy, Veepai, Vstarcam         |
 | xt5USRjG7rEDE                      | j1/_7sxw         |                                  |
 | yE7gW4O0CSXXg                      | cxlinux          | Goke 7205                        |
