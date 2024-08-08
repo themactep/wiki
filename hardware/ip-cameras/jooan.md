@@ -18,3 +18,4 @@ Jooan (Lenovo)
 |     | Jooan JA-C9E-U       |       |      |     |     |         |      |
 |     | Jooan JA-F10T-4-U    | T31ZX |      |     |     | SV6258P |      |
 |     | Jooan JA-Q7GS        |       |      |     |     |         |      |
+|     | Jooan Q3H-T 360      | T30L  |SC1235|     |     | RTL8189FTV |   |
