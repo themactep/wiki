@@ -1,6 +1,3 @@
-# OpenIPC Wiki
-[Table of Content](../../README.md)
-
 Hardware: Flash Memory Chip IDs
 -------------------------------
 
