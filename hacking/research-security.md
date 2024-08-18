@@ -147,6 +147,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$FMNq4QIj$lJg6WzZxy1HWl3sL.YwIq1 |                  |                                  |
 | $1$IZfqary9$IrG6loat5pDTBLr6ksKTD0 |                  |                                  |
 | $1$JYFTech$dt2mZnCIdoFSWAog1s.T41  |                  |                                  |
+| $1$LHF2S7dn$1rn7VX5OxqNw8Fyg1dg570 |                  | Tapo C100                        |
 | $1$MoCJ1nRA$NfsI1wlYcWoF5MbU4t3Og0 | ivdev            |                                  |
 | $1$NhU8N7Bw$tviIe.J4r/RCm5xK/GgP5/ |                  |                                  |
 | $1$OIKWDzOV$WjZNcNtHSKVscbi9WQcpu/ | root             |                                  |
