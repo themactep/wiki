@@ -135,6 +135,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$$6EWLm0KIyyVuSwSFNbVyS/         |                  |                                  |
 | $1$$8LecoU88mCXdvZAqbWZnn0         |                  |                                  |
 | $1$$BZofx4soyTd/5HrIQGP5L/         | fxjvt1805        |                                  |
+| $1$$qRPK7m23GJusamGpoGLby/         |                  | Ginzzu                           |
 | $1$0Me7S3z5$.uQ4Pr/QjJQ/0JUZI0w4m. |                  |                                  |
 | $1$12345678$CTq8UQyYrE.vbbG7E8Mtj1 |                  |                                  |
 | $1$2ZmxCqpN$I5CzAUtuJId8WDgkxcC2g/ |                  |                                  |
@@ -190,7 +191,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $1$yi$FS7W5j1RJmbRHDe0El/zX/       |                  |                                  |
 | $1$yi$MiivC6pLdwS0zp0pa0cUq1       | qw1234qw         |                                  |
 | $1$yq01TaSp$lkN/azu3IxE97owy27pve. |                  |                                  |
-| $6CJlS7VEVeK2                      |                  |                                  |
+| $6CJlS7VEVeK2                      |                  | Mubview PK320                    |
 | $Dg.cUjtWGTIVkuFS0ZYbN1            | fx1805           |                                  |
 | $enWsv2cbxPCrd0WeXUXtX0            | nobody           |                                  |
 | $qZV4X6DTqMHUDIyZG.8PH.            |                  |                                  |
@@ -211,7 +212,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | FCb/N1tGGXtP6                      | 059AnkJ          |                                  |
 | GIgEh3ZZNHRh2                      | IPCam@sw         |                                  |
 | HIeIuIxnglqzk                      | gz@ipcam         |                                  |
-| KYkOoCSevDgCU                      | Ayp>52&0         | Wansview 2K / Galayou Y4         |
+| KYkOoCSevDgCU                      | Ayp>52&0         | Wansview W6 / Galayou Y4         |
 | LHjQopX4yjf1Q                      | ls123            |                                  |
 | LOra.53O7nLVQ                      | ak47agai         |                                  |
 | ShRCX9PD3xxus                      | Ubia#180         |                                  |
