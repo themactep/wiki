@@ -338,6 +338,20 @@ own password.
 - [John The Ripper](https://www.openwall.com/john/)
 - [Hydra](https://github.com/vanhauser-thc/thc-hydra)
 
+### Distributed cracking with [hashtopolis server](https://hashadmin.watermelons.online/)
+
+Download and install Python from <https://www.python.org/downloads/>, if needed.
+
+Download agent bundle from <https://hashadmin.watermelons.online/agents.php?download=1>.
+
+Open a terminal in the same directory as the agent zip file, and run the following command to start:
+```
+python ./hashtopolis.zip
+````
+Use the following configuration parameters when asked:
+- **API:** `https://hashadmin.watermelons.online/api/server.php`
+- **Voucher key:** `thingino`
+
 [1]: https://en.wikipedia.org/wiki/Rainbow_table
 [2]: https://en.wikipedia.org/wiki/Brute-force_attack
 [b1]: https://gist.github.com/gabonator/74cdd6ab4f733ff047356198c781f27d?permalink_comment_id=5013284#gistcomment-5013284
