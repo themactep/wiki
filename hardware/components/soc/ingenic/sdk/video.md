@@ -85,7 +85,7 @@ you will see the trees but not the forest. Here Sort out the overall steps of
 
 process:
 
-![](pix/chart7.png)
+![video-1](https://github.com/user-attachments/assets/18710845-9391-4066-ac5e-a5f5bfcd14ae)
 
 analyze:
 
