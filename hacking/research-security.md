@@ -259,6 +259,8 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 | $6$wyzecamv3$8gyTEsAkm1d7wh12Eup5MMcxQwuA1n1FsRtQLUW8dZGo1b1pGRJgtSieTI02VPeFP9f4DodbIt2ePOLzwP0WI0        |            | Wyze Cam v3      |
 | $6$wyzedoorbellv2$ha0gh/xUdVLSI6l/4ARLpUmKteW.EuR8PaDcft8ZWfVISzK5yx61nygR08pUZcawc4RITvyfR.cQeMyvme4Gm1   |            | Wyze Doorbell v2 |
 | $6$wyzecamv3pro$OF4hL.rH6pE4xER81KGG9xNoBOCKz79mxwtgeIupovDnuyL55Rfe0aGF0sLtYDkrg3vnWvWoPPDw8Hs1tYSNE.     |            | Wyze Cam v3 Pro  |
+| $6$wyzecamv4$1XGrUewrvImA9joO/w2RGDIMtxr2rfrGUegrGa7Rf6LUjw/e6mCIh4CVzJVxmF1UsK20H4XM4i6j053x7P/BU1        |            | Wyze Cam v4      |
+
 
 #### U-Boot passwords:
 
