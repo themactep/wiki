@@ -2,7 +2,7 @@ Vanhua
 
 | MODEL       | variants                     | SOC   | CMOS   | SPI |
 |-------------|------------------------------|-------|--------|-----|
-| VH-L34      |                              | T31N  | GC2083 |     |
+| VH-L34      |                              | T31L  | GC2083 |     |
 | VH-AK54     | A                            | T31N  | GC4043 |     |
 | VH-H33      | B, C, D, D-F, DW, E, G-G, GW | T31N  | GC4053 |     |
 | VH-H37      | D-G, DW, G-G, GW             | T31N  | IMX307 |     |
