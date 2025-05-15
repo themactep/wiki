@@ -1,3 +1,8 @@
+CVSENS
+------
+http://svsens.com/
+
+
 | Model        | Resolution  | Optical Size | Maximum Frame Rate | Shutter Type | Interface | Encapsulation | Characteristic              |
 |--------------|-------------|--------------|--------------------|--------------|-----------|---------------|-----------------------------|
 | CV1351       | 1280*960    | 1/10         | 60                 | Rolling      | MIPI      | CSP13         | small package               |
