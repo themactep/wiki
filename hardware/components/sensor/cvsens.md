@@ -1,6 +1,6 @@
 CVSENS
 ------
-http://svsens.com/
+http://cvsens.com/
 
 
 | Model        | Resolution  | Optical Size | Maximum Frame Rate | Shutter Type | Interface | Encapsulation | Characteristic              |
