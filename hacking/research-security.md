@@ -268,6 +268,7 @@ discover even more yet unknown passwords. Sharing is caring, boys!
 - fxsdk
 - HI2105CHIP
 - hdipc%No
+- gvqrs*&
 
 ### Hijacking the default password
 > _tested on Goke_
